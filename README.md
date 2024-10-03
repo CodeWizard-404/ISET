@@ -1,6 +1,6 @@
 ## **📚 University Experience**
 
-Here's a glimpse of my academic journey, showcasing my university assignments:
+- Here's a glimpse of my academic journey, showcasing my university assignments:
 ---
 ### 🎓 **1st Year IT**
 
@@ -17,14 +17,14 @@ Here's a glimpse of my academic journey, showcasing my university assignments:
 ### 🌟 **2d Year DSI**
 
 ### 🗓️ Semester 1
-- **📈 Advanced Java**: [Reviewed basic concepts of Java programming and explored introductory topics.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/Java)
+- **🏗️ Java**: [Reviewed basic concepts of Java programming and explored introductory topics.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/Java)
 - **📱 Angular**: [Developed dynamic, scalable web applications.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/Angular)
 - **🔗 HTML, CSS3, JavaScript**: [Crafted interactive and visually appealing web pages.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/DEV%20web)
 - **📊 SQL**: [Optimized database querying and management.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/BD)
 - **🛠️ PHP**: [Built robust server-side applications.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S1/PHP)
 
 ### 🗓️ Semester 2
-- **🏗️ Java**: [Emphasized real-world applications in object-oriented programming.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S2/Java)
+- **📈 Advanced Java**: [Emphasized real-world applications in object-oriented programming.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S2/Java)
 - **🏢 Spring Boot**: [Designed scalable microservices with RESTful services.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S2/Spring)
 - **🖥️ Symfony**: [Focused on best practices in web development.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S2/Symfony)
 - **🐍 Django**: [Rapid development with clean design principles.](https://github.com/CodeWizard-404/ISET/tree/main/2_DSI/S2/Django)
