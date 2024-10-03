@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche d'auteurs</title>
+</head>
+
+<body>
+    <h1>Recherche d'auteurs</h1>
+    <label>Nom de l'auteur :</label>
+    <input type="text" id="nomAuteur">
+    <input type="button" onclick="chercherAuteurs()" value="Rechercher">
+    <br>
+    <ul id="listAuteurs"></ul>
+
+    <script>
+        function chercherAuteurs() {
+            var urlBase = "https://openlibrary.org/search/authors.json";
+            let parametre = document.getElementById("nomAuteur").value;
+            var url = `${urlBase}?q=${parametre}`;
+
+            let ul = document.querySelector('ul');
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    //  console.log(data);
+                    ul.innerHTML = "";
+                    data.docs.forEach(livre => {
+                        let li = document.createElement('li');
+                        li.innerHTML = livre.key + " - " + livre.name;
+                        li.addEventListener('click', () => {
+                            nbLivres(livre.key)
+                        })
+                        ul.appendChild(li);
+                    }
+                    )
+                })
+                .catch(error => console.error(error))
+        }
+
+        function nbLivres(idAuteur) {
+            var urlBase = "https://openlibrary.org/authors";
+            let url = `${urlBase}/${idAuteur}/works.json`;
+            console.log(url);
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    //  console.log(data);
+                    alert(data.size + " livres");
+                })
+                .catch(error => console.error(error))
+        }
+    </script>
+</body>
+</html>

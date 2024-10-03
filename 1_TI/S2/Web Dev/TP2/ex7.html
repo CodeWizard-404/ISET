@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var select = document.getElementById("genre");
+
+select.addEventListener("change", function() {
+  var value = this.value;
+  var message;
+
+  switch (value) {
+    case "rien":
+      message = "Vous n'avez pas sélectionné de genre.";
+      break;
+    case "fille":
+      message = "Vous êtes une fille.";
+      break;
+    case "garcon":
+      message = "Vous êtes un garçon.";
+      break;
+    case "ne_sais_pas":
+      message = "Vous ne savez pas.";
+      break;
+    default:
+      message = "Erreur : valeur inconnue.";
+  }
+
+  alert(message);
+});
+
+    </script>
+</head>
+<body>
+    <label for="genre">Genre :</label>
+<select id="genre" name="genre">
+  <option value="rien">Rien</option>
+  <option value="fille">Fille</option>
+  <option value="garcon">Garçon</option>
+  <option value="ne_sais_pas">Je ne sais pas</option>
+</select>
+<button type="submit" onclick=""></button>
+
+</body>
+</html>

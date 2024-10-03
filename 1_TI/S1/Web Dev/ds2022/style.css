@@ -1,0 +1,32 @@
+*{
+    font-family: Verdana;
+}
+h1{
+    text-align: center;
+    color: purple;
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 20px;
+}
+.c3{
+    text-align: vertical;
+    text-size: none;
+}
+.c4{
+    text-align: left;
+}
+a:visited{
+    color: red;
+}
+ol{
+    list-style-type:upper-roman;
+}
+ul{
+    list-style-type: circle;
+}
+.c5{
+    list-style-type: number;
+}
+img{
+    float: left;
+}

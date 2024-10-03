@@ -1,0 +1,22 @@
+div{
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 15px 0px;
+  text-align: center;
+}
+.d1{
+  transform: translate(100px, -50px);
+  background-color: yellow;
+}
+.d2{
+  transform: translateX(100px);
+  background-color: green;
+}
+.d3{
+  transform: translateY(50px);
+  background-color: blue;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+    <style>
+
+
+        #gameContainer {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .draggable {
+            cursor: move;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 8px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropzone {
+            border: 2px dashed gray;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            width: 300px;
+            height: 600px;
+            text-align: center;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .dropzone:hover {
+            background-color: green;
+        }
+
+        .authers {
+            display: flex;
+        }
+
+        img {
+            max-width: 90px;
+            margin-top: 10px;
+        }
+
+        circle {
+            transition: fill 0.5s ease;
+        }
+
+        .dragging {
+            color: green;
+        }
+
+        .placed {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameContainer">
+        <p id="newgame"><input type="button" value="New Game" id="newGameBtn"></p>
+        <div id="gimage">
+            <svg width="258" height="400">
+                <rect y="380" x="2" width="250" height="10" style="fill:yellow;stroke-width:4;stroke:black" />
+
+                <line x1="20" y1="380" x2="20" y2="10" style="stroke:black;stroke-width:4" />
+
+                <line x1="18" y1="10" x2="140" y2="10" style="stroke:black;stroke-width:4" />
+
+                <line id="i1" x1="138" y1="10" x2="138" y2="50" style="stroke:black;stroke-width:4" />
+
+                <circle id="i2" cx="138" cy="80" r="30" stroke="black" stroke-width="4" fill="yellow" />
+
+                <line id="i3" x1="138" y1="110" x2="138" y2="250" style="stroke:black;stroke-width:4" />
+
+                <line id="i4" x1="138" y1="140" x2="100" y2="200" style="stroke:black;stroke-width:4" />
+
+                <line id="i5" x1="138" y1="140" x2="178" y2="200" style="stroke:black;stroke-width:4" />
+
+                <line id="i6" x1="138" y1="250" x2="100" y2="310" style="stroke:black;stroke-width:4" />
+
+                <line id="i7" x1="138" y1="250" x2="178" y2="310" style="stroke:black;stroke-width:4" />
+            </svg>
+        </div>
+        <div class="authers">
+            <div id="amin" class="dropzone" style="background-color: lightblue;">Amin MAALOUF :</div>
+            <div id="orhan" class="dropzone" style="background-color: lightgreen;">Orhan Pamuk :</div>
+            <div id="khalil" class="dropzone" style="background-color: lightcoral;">Khalil Gibran :</div>
+            <div id="umberto" class="dropzone" style="background-color: lightgoldenrodyellow;">Umberto Eco :</div>
+        </div>
+        <div class="books">
+            <div id="leLabyrinthe" class="draggable" data-author="amin" draggable="true">Le labyrinthe des égarés</div>
+            <div id="croisades" class="draggable" data-author="amin" draggable="true">Les croisades vues par les arabes
+            </div>
+            <div id="derèglement" class="draggable" data-author="amin" draggable="true">Le dérèglement du monde</div>
+
+            <div id="autresCouleurs" class="draggable" data-author="orhan" draggable="true">D'autres couleurs</div>
+            <div id="istanbul" class="draggable" data-author="orhan" draggable="true">Istanbul</div>
+            <div id="nuitsPeste" class="draggable" data-author="orhan" draggable="true">Les nuits de la peste</div>
+
+            <div id="sableEcume" class="draggable" data-author="khalil" draggable="true">Le Sable et l'Écume</div>
+            <div id="prophete" class="draggable" data-author="khalil" draggable="true">Le Prophète</div>
+            <div id="ailesBrisees" class="draggable" data-author="khalil" draggable="true">Les ailes brisées</div>
+
+            <div id="numeroZero" class="draggable" data-author="umberto" draggable="true">Numéro zéro</div>
+            <div id="nomRose" class="draggable" data-author="umberto" draggable="true">Le nom de la rose</div>
+            <div id="penduleFoucault" class="draggable" data-author="umberto" draggable="true">Le Pendule de Foucault
+            </div>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        var newGameBtn = document.getElementById('newGameBtn');
+        var dropzones = document.querySelectorAll('.dropzone');
+        var draggableItems = document.querySelectorAll('.draggable');
+        var resultDiv = document.getElementById('result');
+
+        let correctPlacements = 0;
+        let lostBodyParts = 0;
+
+        newGameBtn.addEventListener('click', startNewGame);
+
+        draggableItems.forEach(item => {
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragend', handleDragEnd);
+        });
+
+        dropzones.forEach(dropzone => {
+            dropzone.addEventListener('dragover', handleDragOver);
+            dropzone.addEventListener('dragenter', handleDragEnter);
+            dropzone.addEventListener('dragleave', handleDragLeave);
+            dropzone.addEventListener('drop', handleDrop);
+        });
+
+        function startNewGame() {
+            correctPlacements = 0;
+            lostBodyParts = 0;
+            resultDiv.innerHTML = '';
+            resetDraggableItems();
+            resetSvg();
+        }
+
+        function handleDragStart(event) {
+            event.dataTransfer.setData('text', event.target.id);
+            event.target.classList.add('dragging');
+        }
+
+        function handleDragEnd(event) {
+            event.target.classList.remove('dragging');
+            updateResult();
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.target.classList.add('dragover');
+        }
+
+        function handleDragEnter(event) {
+            event.preventDefault();
+            if (event.target.classList.contains('dropzone')) {
+                event.target.classList.add('dragover');
+            }
+        }
+
+        function handleDragLeave(event) {
+            if (event.target.classList.contains('dropzone')) {
+                event.target.classList.remove('dragover');
+            }
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            var draggedItemId = event.dataTransfer.getData('text');
+            var draggedItem = document.getElementById(draggedItemId);
+
+            if (event.target.classList.contains('dropzone') && !draggedItem.classList.contains('placed')) {
+                var author = event.target.id.toLowerCase(); // Get the lowercase ID of the dropzone
+                var authorOfBook = draggedItem.dataset.author;
+
+                if (author === authorOfBook) {
+                    event.target.classList.remove('dragover');
+                    event.target.appendChild(draggedItem);
+                    draggedItem.classList.add('placed');
+                    correctPlacements++;
+
+                    if (correctPlacements === draggableItems.length) {
+                        displayResult(true);
+                    }
+                } else {
+                    lostBodyParts++;
+                    removeBodyPart();
+                    displayResult(false);
+                }
+            }
+        }
+
+
+
+        function resetDraggableItems() {
+            draggableItems.forEach(item => {
+                item.classList.remove('placed');
+                item.parentNode.removeChild(item);
+                document.querySelector('.books').appendChild(item);
+            });
+        }
+
+        function resetSvg() {
+            let svgContainer = document.querySelector('#gimage');
+            svgContainer.innerHTML = `
+            <svg width="258" height="400">
+                    <rect y="380" x="2" width="250" height="10" style="fill:yellow;stroke-width:4;stroke:black" />
+
+                    <line x1="20" y1="380" x2="20" y2="10" style="stroke:black;stroke-width:4"/>
+
+                    <line x1="18" y1="10" x2="140" y2="10" style="stroke:black;stroke-width:4"/>
+
+                    <line id="i1" x1="138" y1="10" x2="138" y2="50" style="stroke:black;stroke-width:4"/>
+                    
+                    <circle id="i2" cx="138" cy="80" r="30" stroke="black" stroke-width="4" fill="yellow" />
+
+                    <line id="i3" x1="138" y1="110" x2="138" y2="250" style="stroke:black;stroke-width:4"/>
+
+                    <line id="i4" x1="138" y1="140" x2="100" y2="200" style="stroke:black;stroke-width:4"/>
+
+                    <line id="i5" x1="138" y1="140" x2="178" y2="200" style="stroke:black;stroke-width:4"/>
+
+                    <line id="i6" x1="138" y1="250" x2="100" y2="310" style="stroke:black;stroke-width:4"/>
+
+                    <line id="i7" x1="138" y1="250" x2="178" y2="310" style="stroke:black;stroke-width:4"/>
+                </svg>
+            `;
+        }
+
+        function removeBodyPart() {
+            var bodyParts = ['i7', 'i6', 'i5', 'i4', 'i3', 'i2', 'i1'];
+            var bodyPartToRemove = bodyParts[lostBodyParts - 1];
+            document.getElementById(bodyPartToRemove).style.display = 'none';
+
+            if (lostBodyParts === bodyParts.length) {
+                displayResult(false);
+            }
+        }
+
+        function updateResult() {
+            var imgElement = document.createElement('img');
+            var resultMessage = document.getElementById('result');
+            if (correctPlacements === draggableItems.length) {
+                resultMessage.textContent = 'Bravo, vous avez gagné!';
+                imgElement.src = 'win.jpg';
+                resultMessage.style.color = 'green';
+                resultMessage.style.fontWeight = 'bold';
+            } else if (lostBodyParts === 7) {
+                resultMessage.textContent = 'Vous avez perdu';
+                imgElement.src = 'lost.jpg';
+                resultMessage.style.color = 'red';
+            } else {
+                resultMessage.textContent = 'Continuez à jouer...';
+                resultMessage.style.color = 'black';
+            }
+        }
+
+
+
+        function displayResult(isWin) {
+            var messageDiv = document.createElement('div');
+            var imgElement = document.createElement('img');
+
+            if (isWin) {
+                messageDiv.textContent = 'Bravo, vous avez gagné!';
+                imgElement.src = 'win.jpg';
+            } else {
+                messageDiv.textContent = 'Vous avez perdu';
+                imgElement.src = 'lost.jpg';
+            }
+
+            resultDiv.innerHTML = '';
+            resultDiv.appendChild(imgElement);
+            resultDiv.appendChild(messageDiv);
+
+            localStorage.setItem('gameScore', isWin ? 'win' : 'lose');
+            localStorage.setItem('lostBodyParts', lostBodyParts);
+        }
+
+        window.addEventListener('load', () => {
+            var previousScore = localStorage.getItem('gameScore');
+            var lostParts = localStorage.getItem('lostBodyParts');
+
+            if (previousScore) {
+                var messageDiv = document.createElement('div');
+                var imgElement = document.createElement('img');
+
+                if (previousScore === 'win') {
+                    messageDiv.textContent = `La dernière fois, vous avez gagné. Membres perdus : ${lostParts}`;
+                    imgElement.src = 'win.jpg';
+                } else {
+                    messageDiv.textContent = `La dernière fois, vous avez perdu. Membres perdus : ${lostParts}`;
+                    imgElement.src = 'lost.jpg';
+                }
+
+                resultDiv.innerHTML = '';
+                resultDiv.appendChild(imgElement);
+                resultDiv.appendChild(messageDiv);
+            }
+        });
+    </script>
+</body>
+
+</html>

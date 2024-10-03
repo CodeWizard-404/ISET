@@ -1,0 +1,27 @@
+
+div {
+  background: steelblue;
+  border-radius: 5px;
+  display: inline-block;
+  height: 80px;
+  margin: 20px;
+  width: 80px;
+  }
+  
+.container:hover{
+  transform:scale(1.4);
+  margin: 100px
+  }
+}
+
+.box1 {
+  transition: all 1.3s;
+}
+
+.box2 {
+  transition: all 1.3s 0.5s;
+}
+
+.box3 {
+  transition: all 1.3s 1s;
+}

@@ -1,0 +1,22 @@
+div{
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 15px 0px;
+  text-align: center;
+}
+.d1{
+  transform: rotate(45deg);
+  background-color: red;
+}
+.d2{
+  transform: rotate(90deg);
+  background-color: green;
+}
+.d3{
+  transform: rotate(225deg);
+  background-color: blue;
+}

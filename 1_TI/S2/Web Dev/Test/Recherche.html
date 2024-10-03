@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="script.js"></script>
+  <title>Recherche Employé</title>
+</head>
+
+<body>
+  <form name="f1">
+    <h3 style="text-align:center">Gestion des matricules des employées</h3>
+    <fieldset>
+      <legend>Recherche des employés</legend>
+      Choisir le critère de Recherche :
+      <select name="lstcritere" onchange="RechercheSexe(parseInt(this.value));">
+        <optgroup label="sexe">
+          <option value="1">Masculin</option>
+          <option value="2">Féminin</option>
+        </optgroup>
+      </select>
+      </br>
+      Résultat de recherche :
+      <textarea name="txtresultat" rows="8" cols="30" readonly></textarea>
+      <input type="reset" value="Effacer" />
+    </fieldset>
+  </form>
+</body>
+
+</html>

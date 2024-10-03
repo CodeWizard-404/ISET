@@ -1,0 +1,37 @@
+On veut automatiser la gestion des ventes en lignes: 
+
+un client ne peut être ajouté que s'il passe une commande.
+
+un client a un code, un nom, une adresse et peut passer  plusieurs commandes 
+
+Chaque commande a un numéro unique, une date et plusieurs articles commandés; Chaque article commandé a un code et une quantité commandée. 
+
+On ne peut valider une commande que lorsque tous les articles sont disponibles : quantité en stock >0
+
+A chaque fois qu'un produit est commandé, on soustrait la quantité commandée de la quantité en stock.
+
+Indépendamment des commandes, chaque article a un code, un libellé, une quantité en stock et un prix unitaire.
+
+
+
+Question 1 : Donner les structures correspondantes
+
+Question 2 : Ecrire une fonction qui permet d'ajouter un client s'il n'existe pas 
+
+Question 3 : Ecrire une fonction qui permet d'ajouter une commande pour un client donné
+
+Question 4 : Ecrire une fonction qui permet de saisir les articles commandés d'une commande donnée
+
+Question 5 : Ecrire une fonction qui calcule le total d'une commande donnée
+
+Question 6 : Ecrire une fonction qui affiche les commandes d'un client donné en paramètre (numéro client), on affichera le nom, prénom et adresse du client. pour chaque commande: le numéro, la date et le total
+
+Question 7 : Ecrire une fonction qui retourne pour chaque client (code)  le nombre de commandes
+
+Question 8 : Ecrire une fonction qui affiche pour chaque client (code, nom)  le nombre de commandes
+
+UTILISER UN MENU ET UNE INTERFACE GRAPHIQUE TKINTER pour cette application
+
+Vous devez tester le bon fonctionnement des fonctions en utilisant des asserts. Vous devez travailler à deux de cette façon: pendant qu'un étudiant écrit une fonction, l'autre développe la fonction de test correspondante en se basant sur la spécification.
+
+vous devez  créer un module dans lequel vous allez regrouper toutes les fonctions.  La spécification de chaque fonction doit être faite avec un docstring.

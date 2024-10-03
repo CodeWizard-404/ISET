@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        canvas {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="150" height="150">
+        <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+    </canvas>
+    <script>
+        window.onload = function () {
+            var canvas = document.querySelector('#canvas');
+            var context = canvas.getContext('2d');
+            var radial = context.createRadialGradient(75, 75, 0, 130, 130, 150);
+            radial.addColorStop(0, '#1791a7');
+            radial.addColorStop(1, 'white');
+            context.fillStyle = radial; 
+            context.fillRect(10, 10, 130, 130);
+            
+        }; 
+    </script>
+</body>
+
+</html>

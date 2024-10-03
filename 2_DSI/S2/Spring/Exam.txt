@@ -1,0 +1,21 @@
+on shouaite devlpper une calculatrice avec spring boot, jpa et h2.
+la calculatrice permet la réalisationde quatre operations entiéeres addition, multiplication, division et soustraction.
+chaque operation effectuéé est enregistrée dans la base de données.
+une operation est caractériser par son type(string), deux operands(int), une date et le resultat (int).
+l'application offer les fonctionalités suivantes:
+. API JSON avec l'url/calc/...:
+  - CRUD d'une operation : getALL, add, mul, sub et div; vous devez choisir la méthode HTTP adequate et les paramétres nécessaires.
+
+TRAVAIL DEMAND2:
+1. cree un projet calc-service avec les dependances nécaissaires.
+2. cree un projet service-discovery avec les dependances nécaissaires.
+3. cree un projet api-gateway avec les dependances nécaissaires.
+4. developpez l'entité operation avec son repository.
+5. developpez le service calculatrice pour la gestion des application.
+6. developer le controleur CalculController.
+7. configurez l'application pour :
+  - se connecter a une BD PostgreSQL, les tables doivent etre crees automatiquement.
+  - se connecter au service-discovery.
+8. configuerez le service-discovery
+9. configuerez le gatway pour le routage vers le service calc-service
+10. preparez les tests necessaire dans postman.

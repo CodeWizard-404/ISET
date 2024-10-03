@@ -1,0 +1,35 @@
+h1{
+    font-family: Verdana, arial, sans-serif;
+    font-size: 200%;
+    color: darkgreen;
+}
+h2{
+    font-family: Verdana, arial, sans-serif;
+    font-size: 150%;
+    text-align: center;
+    color: midnightblue;
+}
+p{
+    font-family: Verdana, arial, sans-serif;
+    text-align: justify;
+}
+.titre{
+    font-size: 150%;
+    color: #004488;
+}
+.auteur{
+    font-size: normal;
+    font-weight: bold;
+}
+.date{
+    font-size: normal;
+    font-style: italic;
+}
+.resume{
+    font-size: normal;
+    text-align: justify;
+    color: gray;
+}
+.question{
+    font-weight: bold;
+}

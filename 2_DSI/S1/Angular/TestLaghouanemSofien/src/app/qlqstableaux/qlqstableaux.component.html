@@ -1,0 +1,7 @@
+<h1>Ventes aux enchères du: {{ currentDate | date:'* dd * MMMM * yyyy *' }}</h1>
+<div>
+    <div *ngFor="let p of tableaux" >
+        <app-tableau [tab]="p"></app-tableau>
+    </div>
+</div>
+

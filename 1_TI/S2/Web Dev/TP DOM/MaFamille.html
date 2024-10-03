@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+
+    <script>
+        function MaFamille() {
+          let moi = document.getElementsByName("txtMoi")[0];
+          let parent = document.getElementsByName("txtParent")[0];
+          let frerePrecedent = document.getElementsByName("txtFrerePrecedent")[0];
+          let frereSuivant = document.getElementsByName("txtFrereSuivant")[0];
+          let premierEnfant = document.getElementsByName("txtPremierEnfant")[0];
+          let dernierEnfant = document.getElementsByName("txtDernierEnfant")[0];
+        
+          let nameSpan = document.querySelector('#M span');
+          moi.value = nameSpan.textContent;
+          parent.value = nameSpan.parentElement.parentElement.firstElementChild.textContent;
+          frerePrecedent.value = nameSpan.parentElement.previousElementSibling.textContent;
+          frereSuivant.value = nameSpan.parentElement.nextElementSibling.textContent;
+          premierEnfant.value = nameSpan.nextElementSibling.firstElementChild.textContent;
+          dernierEnfant.value = nameSpan.nextElementSibling.lastElementChild.textContent;
+        }
+        
+
+
+        function MAJFamille() {
+            //Ajouter frere  à la fin
+            let ul = document.getElementById('p');
+            let lastLi = ul.lastElementChild;
+            let newLi = document.createElement('li');
+            newLi.innerText = 'Mon nouveau frere : frere0';
+            ul.insertBefore(newLi, lastLi.nextSibling);
+
+            //Ajouter Enfant avant un enfant
+            let ol = document.querySelector('#M ol');
+            let firstChild = ol.firstElementChild;
+            let newChild = document.createElement('li');
+            newChild.innerText = 'Mon nouveau enfant : Child0';
+            ol.insertBefore(newChild, firstChild);
+        }
+
+
+
+    </script>
+
+<body>
+    <div> Ma Famille
+        <ul id="p"><span>Mes parents sont Souad et Ismail</span>
+            <li>Mon premier frère : Youssef</li>
+            <li id="M"><span>Je suis : c'est moi je m'appelle Sofien</span>
+                <ol>
+                    <li>Mon premier enfant : Child1</li>
+                    <li>Mon deuxième enfant : Child2</li>
+                    <li>Mon dernier enfant : Child3</li>
+                </ol>
+            </li>
+            <li>Mon frère suivant : Amine</li>
+            <li>Mon dernier frère : Emna</li>
+        </ul>
+    </div>
+    <form name="f1">
+        <label>Moi : </label><input type="text" name="txtMoi" size="50" readonly /><br />
+        <label>Mes parents : </label><input type="text" name="txtParent" size="50" readonly /><br />
+        <label>Mon premier frère : </label><input type="text" name="txtFrerePrecedent" size="50" readonly /><br />
+        <label>Mon frère suivant : </label><input type="text" name="txtFrereSuivant" size="50" readonly /><br />
+        <label>Mon premier enfant : </label><input type="text" name="txtPremierEnfant" size="50" readonly /><br />
+        <label>Mon dernier enfant : </label><input type="text" name="txtDernierEnfant" size="50" readonly /><br />
+        <button type="button" name="btnCreer" onclick="MaFamille()" value="Découvrir ma famille">Découvrir ma
+            famille</button>
+        <button type="button" name="btnMAJ" onclick="MAJFamille()" value="Ajouter un menbre à ma famille">Ajouter un
+            membre à ma famille</button>
+    </form>
+
+</body>
+
+</html>

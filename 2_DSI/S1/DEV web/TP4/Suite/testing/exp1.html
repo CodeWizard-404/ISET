@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie V - Chapitre 3 - Exemple 11</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        canvas {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="150" height="150">
+        <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+    </canvas>
+    <script>
+        window.onload = function () {
+            var canvas = document.querySelector('#canvas');
+            var context = canvas.getContext('2d');
+            var linear = context.createLinearGradient(0, 0, 0, 150);
+            linear.addColorStop(0, 'white');
+            linear.addColorStop(0.5, '#1791a7');
+            linear.addColorStop(0.5, 'orange');
+            linear.addColorStop(1, 'white');
+            context.fillStyle = linear;
+            context.fillRect(10, 10, 130, 130);
+        }; 
+    </script>
+</body>
+
+</html>

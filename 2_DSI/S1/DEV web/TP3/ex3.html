@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            width: 400px;
+
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 3s ease-in-out infinite ;
+
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.9);
+            }
+            50% {
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Audio :</h1>
+    <audio controls="controls">
+        <source src="src/Audio_test.mp3" type="audio/mp3">
+        <source src="src/Audio_test.ogg" type="audio/ogg">
+        <object data="src/Audio_test.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas l'audio.
+        </object>
+    </audio>
+    <h1>Video :</h1>
+    <video controls="controls" poster="src/Image_test.jpeg">
+        <source src="src/Video_test.mp4" type="video/mp4">
+        <source src="src/Video_test.WebM" type="video/WebM">
+        <object data="src/Video_test.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </object>
+    </video>
+</body>
+
+</html>

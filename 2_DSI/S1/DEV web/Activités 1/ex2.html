@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Artist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6495ED;
+            color: white;
+            text-align: center;
+            padding: 1px;
+        }
+        nav {
+            text-align: center;
+            background-color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            color: #6495ED;
+        }
+        .c2 {
+            position: relative;
+            margin: 20px auto;
+            
+        }
+        .c1 {
+            display: none;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diaporama  avec défilement</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Acceuil</a></li>
+            <li><a href="#">Produit</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="c2">
+        <div class="c1">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+        <div class="c1">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <div class="c1">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+    </div>
+    <script>
+        let imgs = 0;
+        anim();
+
+        function anim() {
+            let i;
+            let img = document.getElementsByClassName("c1");
+            for (i = 0; i < 3; i++) {
+                img[i].style.display = "none";
+            }
+            imgs++;
+            if (imgs > 3) {
+                imgs = 1;
+            }
+            img[imgs - 1].style.display = "block";
+            setTimeout(anim, 2000); 
+        }
+    </script>
+
+</body>
+</html>

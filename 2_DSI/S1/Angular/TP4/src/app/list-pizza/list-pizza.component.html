@@ -1,0 +1,11 @@
+<h2>Nos choix de pizzaas</h2>
+<div class="list-group">
+    <div *ngFor="let p of lespizzas" class="list-group-item" [ngClass]="!p.vegetarien ? 'bg-warning' : ''" class="c1">
+        <Lag-pizza [pizza]="p"></Lag-pizza>
+        <!-- <div>
+            <span class="badge bg-dark">{{p.nom|uppercase}} </span><br>
+            <img [src]="p.image" alt="a" class="rounded-circle">
+        </div>
+        <div>Prix : {{p.prix|number:'2.3-3'}} DT</div> -->
+    </div>
+</div>

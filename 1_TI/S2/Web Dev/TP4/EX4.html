@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+    <div id="divEx4">
+        <p>Langages basés sur ECMAScript :</p>
+        <ul><li>JavaScript</li><li>JScript</li><li>ActionScript</li></ul>
+    </div>
+</body>
+<script>
+    let langages = document.querySelectorAll("#divEx4 ul")[0].childNodes;
+    let message = 'Langages basés sur ECMAScript : ';
+    for (let i = 0; i < langages.length; i++) {
+        message += langages[i].textContent + ' ';
+    }
+    alert(message);
+
+
+</script>
+</html>

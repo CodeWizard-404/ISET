@@ -1,0 +1,121 @@
+<!-- bonhomme.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2 - Drag and Drop Game</title>
+    <style>
+        /* Add any necessary styles for the game */
+        #gimage {
+            margin-top: 20px;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="newgame"><input type="button" value="New Game" onclick="startGame()"></p>
+    <div id="gimage">
+        <svg width="258" height="400">
+            <rect y="380" x="2" width="250" height="10" style="fill:yellow;stroke-width:4;stroke:black" />
+
+            <line x1="20" y1="380" x2="20" y2="10" style="stroke:black;stroke-width:4"/>
+
+            <line x1="18" y1="10" x2="140" y2="10" style="stroke:black;stroke-width:4"/>
+
+            <line id="i1" x1="138" y1="10" x2="138" y2="50" style="stroke:black;stroke-width:4"/>
+            
+            <circle id="i2" cx="138" cy="80" r="30" stroke="black" stroke-width="4" fill="yellow" />
+
+            <line id="i3" x1="138" y1="110" x2="138" y2="250" style="stroke:black;stroke-width:4"/>
+
+            <line id="i4" x1="138" y1="140" x2="100" y2="200" style="stroke:black;stroke-width:4"/>
+
+            <line id="i5" x1="138" y1="140" x2="178" y2="200" style="stroke:black;stroke-width:4"/>
+
+            <line id="i6" x1="138" y1="250" x2="100" y2="310" style="stroke:black;stroke-width:4"/>
+
+            <line id="i7" x1="138" y1="250" x2="178" y2="310" style="stroke:black;stroke-width:4"/>
+        </svg>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function startGame() {
+            const authors = ['Author1', 'Author2', 'Author3', 'Author4', 'Author5'];
+            const books = {
+                'Author1': ['BookA1', 'BookA2'],
+                'Author2': ['BookB1', 'BookB2'],
+                'Author3': ['BookC1', 'BookC2'],
+                'Author4': ['BookD1', 'BookD2'],
+                'Author5': ['BookE1', 'BookE2'],
+            };
+
+            const gameContainer = document.getElementById('gimage');
+            const resultDiv = document.getElementById('result');
+
+            let currentAuthorIndex = 0;
+            let currentBookIndex = 0;
+
+            function createDraggableBooks() {
+                for (const author of authors) {
+                    const draggableBook = document.createElement('div');
+                    draggableBook.innerText = books[author][currentBookIndex];
+                    draggableBook.draggable = true;
+                    draggableBook.classList.add('draggable');
+                    draggableBook.addEventListener('dragstart', dragStart);
+                    gameContainer.appendChild(draggableBook);
+                }
+            }
+
+            function dragStart(e) {
+                e.dataTransfer.setData('text/plain', e.target.innerText);
+            }
+
+            function allowDrop(e) {
+                e.preventDefault();
+            }
+
+            function drop(e) {
+                e.preventDefault();
+                const draggedBook = e.dataTransfer.getData('text/plain');
+                const author = authors[currentAuthorIndex];
+
+                if (draggedBook === books[author][currentBookIndex]) {
+                    currentAuthorIndex++;
+                    if (currentAuthorIndex === authors.length) {
+                        resultDiv.innerText = 'Bravo, vous avez gagné!';
+                        saveGameProgress(true);
+                        return;
+                    }
+                    currentBookIndex = 0;
+                    gameContainer.innerHTML = '';
+                    createDraggableBooks();
+                } else {
+                    resultDiv.innerText = `Vous avez perdu. La dernière fois, vous avez perdu ${authors.slice(0, currentAuthorIndex + 1).join(', ')}`;
+                    saveGameProgress(false);
+                }
+            }
+
+            function saveGameProgress(isWin) {
+                const gameResult = isWin ? 'gagné' : 'perdu';
+                const lastGameResult = localStorage.getItem('lastGameResult');
+                localStorage.setItem('lastGameResult', gameResult);
+
+                if (lastGameResult) {
+                    resultDiv.innerText += ` La dernière fois, vous avez ${lastGameResult}`;
+                }
+            }
+
+            createDraggableBooks();
+            gameContainer.addEventListener('dragover', allowDrop);
+            gameContainer.addEventListener('drop', drop);
+        }
+    </script>
+</body>
+</html>

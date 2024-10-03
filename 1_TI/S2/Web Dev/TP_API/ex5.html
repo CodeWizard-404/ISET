@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des pays du monde</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Liste des pays du monde</h1>
+  <table id="countriesTable">
+    <thead>
+      <tr>
+        <th>NOM</th>
+        <th>CAPITALE</th>
+        <th>POPULATION</th>
+        <th>DRAPEAU</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function creerTableau(pays) {
+      var tbody = document.querySelector('#countriesTable tbody');
+
+      for (var i = 0; i < pays.length; i++) {
+        var tr = document.createElement('tr');
+
+        var nom = document.createElement('td');
+        nom.textContent = pays[i].name;
+        tr.appendChild(nom);
+
+        var capitale = document.createElement('td');
+        capitale.textContent = pays[i].capital;
+        tr.appendChild(capitale);
+
+        var population = document.createElement('td');
+        population.textContent = pays[i].population;
+        tr.appendChild(population);
+
+        var drapeau = document.createElement('td');
+        var img = document.createElement('img');
+        img.src = pays[i].flags.svg;
+        img.alt = pays[i].name + ' flag';
+        img.style.width = '50px';
+        drapeau.appendChild(img);
+        tr.appendChild(drapeau);
+
+        tbody.appendChild(tr);
+      }
+    }
+
+    function getPays() {
+      fetch('https://restcountries.com/v2/all')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          var countries = [];
+          for (var i = 0; i < data.length; i++) {
+            var country = {
+              name: data[i].name,
+              capital: data[i].capital,
+              population: data[i].population,
+              flags: data[i].flags,
+            };
+            countries.push(country);
+          }
+          creerTableau(countries);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
+    getPays();
+  </script>
+</body>
+</html>

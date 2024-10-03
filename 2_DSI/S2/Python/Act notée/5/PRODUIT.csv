@@ -1,0 +1,11 @@
+prod_id;prod_nom;prod_prix;prod_qte;prod_dispo
+1;Carte réseau;55;100;oui
+2;RAM;150;200;non
+3;Ventilateur;350;300;oui
+4;Carte mère;600;400;oui
+5;Ecran;95;50;non
+6;Carte Son;200;120;oui
+7;Clavier;60;80;oui
+8;Souris;23;110;non
+9;Carte Wifi;100;150;oui
+10;Sacoche;150;190;oui

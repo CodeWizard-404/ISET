@@ -1,0 +1,24 @@
+<h1>Liste des personnages</h1>
+<ul>
+    <li>
+        <img [src]="tabPersonnages[0].image" alt="Donald">
+        <p>Nom:{{ tabPersonnages[0].nom }}</p>
+        <input type="checkbox" disabled [checked]="tabPersonnages[0].majeur">majeur
+        <p> Nombre d'abonnés: {{tabPersonnages[0].nb}}</p>
+        <button (click)="increaseSubscribers(0)">S'abonnés</button>
+    </li>
+    <li>
+        <img [src]="tabPersonnages[1].image" alt="Donald">
+        <p>Nom:{{ tabPersonnages[1].nom }}</p>
+        <input type="checkbox" disabled [checked]="tabPersonnages[1].majeur">majeur
+        <p> Nombre d'abonnés: {{tabPersonnages[1].nb}}</p>
+        <button (click)="increaseSubscribers(1)">S'abonnés</button>
+    </li>
+    <li>
+        <img [src]="tabPersonnages[2].image" alt="Donald">
+        <p>Nom:{{ tabPersonnages[2].nom }}</p>
+        <input type="checkbox" disabled [checked]="tabPersonnages[2].majeur">majeur
+        <p> Nombre d'abonnés: {{tabPersonnages[2].nb}}</p>
+        <button (click)="increaseSubscribers(2)">S'abonnés</button>
+    </li>
+</ul>

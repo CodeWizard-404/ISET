@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      var mafenetre; 
+      function ouvrirPage1() {
+        mafenetre = window.open("ex1.html", "page1", "width=800,height=600");
+      }
+
+      function ouvrirW3Schools() {
+        mafenetre = window.open("https://www.w3schools.com", "_blank");
+      }
+
+      function fermer() {
+        if (mafenetre && !mafenetre.closed) {
+          var confirme = confirm(
+            "Êtes-vous sûr de vouloir fermer la fenêtre ?"
+          );
+          if (confirme) {
+            mafenetre.close();
+          }
+        } else {
+          alert("Aucune fenêtre ouverte !");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="ouvrirPage1()">Ouvrir page 1</button>
+    <button onclick="ouvrirW3Schools()">Ouvrir w3schools</button>
+    <button onclick="fermer()">Fermer la fenêtre</button>
+  </body>
+</html>

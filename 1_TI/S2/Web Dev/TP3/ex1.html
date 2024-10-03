@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 : Exercice 1 JS</title>
+    <style>
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 2px solid red
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Operation sur les chaines de caractères</caption>
+        <tr>
+            <th>NOM</th>
+            <td id="o1"> </td>
+        </tr>
+        <tr>
+            <th>Prénom</th>
+            <td id="o2"></td>
+        </tr>
+        <tr>
+            <th>NOM et prénom</th>
+            <td id="o3"> </td>
+        </tr>
+        <tr>
+            <th>DDN</th>
+            <td id="o4"> </td>
+        </tr>
+        <tr>
+            <th>Recherche de Ben</th>
+            <td id="o5"></td>
+        </tr>
+        <tr>
+            <th>Taille</th>
+            <td id="o6"></td>
+        </tr>
+        <tr>
+            <th>Votre Prénom en inverse</th>
+            <td id="o7"></td>
+        </tr>
+    </table>
+    <script>
+
+            let nom = prompt("Entrez nom:","ben ali");
+            let prenom = prompt("Entrez prénom:","ali");
+            let ddn = prompt("Entrez date de naissance:","28/08/2002");
+            let nomComplet = nom.concat(" ",prenom);
+
+        function affichage() {
+            let res="Jour=";
+            document.getElementById("o1").innerHTML = nom.toUpperCase();
+            document.getElementById("o2").innerHTML = FormatPrenom();
+            document.getElementById("o3").innerHTML = nomComplet;
+            document.getElementById("o4").innerHTML = res.concat(ddn.split("/").join(" Mois="));
+            document.getElementById("o5").innerHTML = RechercheBen();
+            document.getElementById("o6").innerHTML = taille();
+            document.getElementById("o7").innerHTML = inverser();
+        }
+
+        function taille() {
+            return nomComplet.length;
+        }
+        function RechercheBen() {
+            if (nom.includes("ben")) {
+                return "la chaine ben existe";
+            }else{
+                return "la chaine ben n'existe pas";
+            }
+        }
+        function inverser() {
+            return prenom.split("").reverse().join("");
+        }
+        function FormatPrenom() {
+            let res="";
+            prenom = prenom.toLowerCase();
+            return res.concat(prenom.charAt(0).toUpperCase() , prenom.slice(1));
+        }
+        affichage();
+
+    </script>
+</body>
+
+</html>

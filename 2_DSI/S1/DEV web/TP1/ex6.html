@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        div {
+            width: 430px;
+            height: 200px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        p {
+            background-color: red;
+            width: 120px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+            background-color: red;
+            transition: all 5s;
+        }
+
+        p.clicked {
+            left: 300px;
+            top: 10px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p onclick="moveElement(this)"> texte qui se déplace tant qu'on appuie sur le bouton de la souris </p>
+    </div>
+
+    <script>
+        function moveElement(element) {
+            element.classList.toggle("clicked");
+        }
+    </script>
+</body>
+
+</html>

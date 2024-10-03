@@ -1,0 +1,33 @@
+.c1{
+    color: green;
+    font-size: 20px;
+}
+.c2{
+    font-style: italic;
+    font-size: 28px;
+}
+.c3{
+    color: blue;
+}
+.c4{
+    list-style-image: url(image.jpg);
+}
+ol{
+    list-style: upper-alpha;
+    color: red;
+}
+ul{
+    list-style-type: square;
+    color: green;
+}
+.c5{
+    color: black;
+    font-size: 20px;
+}
+ul li ul{
+    list-style-type: circle;
+}
+dt{
+    text-decoration: underline;
+    font-weight: bold;
+}

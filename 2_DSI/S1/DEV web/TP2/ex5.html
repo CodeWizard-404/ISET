@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: blue;
+            color: white;
+            font-family: Arial;
+            font-weight: bold;
+            cursor: pointer; /* Add cursor style to indicate it's clickable */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Élément 1</li>
+        <li>Élément 2</li>
+        <li>Élément 3</li>
+    </ul>
+    <div id="btn">cliquer moi</div>
+    
+    <script>
+        window.addEventListener("load", function () {
+            var li = document.querySelector("ul");
+            var list = li.querySelectorAll("li");
+            li.setAttribute("type", "circle");
+            for (var i = 0; i < list.length; i++) {
+                list[i].textContent = "Bonjour";
+                list[i].addEventListener("click", function () {
+                    alert('Bon Travail');
+                });
+            }
+        });
+
+        let btn = document.getElementById("btn");
+
+        function invert() {
+            btn.style.filter = "invert(1)";
+            btn.style.transform= "rotate(20deg)";
+            alert("Message");
+        }
+
+        btn.addEventListener("click", invert);
+    </script>
+</body>
+</html>

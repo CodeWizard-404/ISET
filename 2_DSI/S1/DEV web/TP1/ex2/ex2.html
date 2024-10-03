@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+        }
+
+        h2 {
+            transform: skewX(20deg) skewY(-10deg);
+        }
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(20px, 20px);
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            position: relative;
+        }
+
+        img {
+            width: 200px;
+            height: 100px;
+            opacity: 0.4;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        img:hover {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Titre H1 vertical et calé</h1>
+    <h2>Titre H2 avec des inclinaisons</h2>
+    <h3>Titre H3 déplacé en bas à droite</h3>
+    <div>
+        <img src="TestImage.png" alt="Image">
+    </div>
+</body>
+
+</html>

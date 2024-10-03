@@ -1,0 +1,29 @@
+#menu {
+    border:2px solid blue;
+    margin:10px; 
+    height:60px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.c1 { 
+    background-color: #DEE9EC; 
+    width:90px; 
+    text-align:center; 
+    padding:5px;
+}
+.c1:nth-child(5){
+    align-self:flex-end;
+}
+.c1:nth-child(4){
+    order: 1;
+}
+
+@media (max-width:600px){ 
+    #menu{
+        flex-direction:column;
+        height:100%; 
+        width :200px ;
+    }
+}

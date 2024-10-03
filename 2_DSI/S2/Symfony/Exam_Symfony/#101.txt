@@ -1,0 +1,67 @@
+
+php -S localhost:8000 -t public
+
+
+composer create-project symfony/website-skeleton SymfonyProject_* ~5.4.21
+
+cd [Project_Folder]
+
+
+
+
+
+composer require --dev symfony/maker-bundle
+composer require annotations
+
+
+--BOOTSTARP
+composer require symfony/webpack-encore-bundle
+
+--SECURITY (auth)
+composer require symfony/security-bundle
+
+--EASY-ADMIN (dashboard)
+composer require easycorp/easyadmin-bundle
+
+--VICH-UPLODER-BUNDLE (image)
+composer require vich/uploader-bundle
+
+--EMAIL-SENDER-VERIFY (register)
+composer require symfonycasts/verify-email-bundle
+
+composer update
+
+
+
+
+--- CREATE CONTROLLER
+php bin/console make:controller DemoController
+
+--- CREATE DATABASE
+php bin/console doctrine:database:create
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:schema:update --force --dump-sql
+
+--- CREATE ENTITY
+php bin/console make:entity
+php bin/console make:user
+php bin/console make:auth
+php bin/console make:admin:dashboard
+php bin/console make:admin:crud User
+
+
+
+composer.json > "symfony/asset-mapper": "6.3.*",
+
+
+
+
+
+
+
+
+
+
+
+

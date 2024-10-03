@@ -1,0 +1,37 @@
+div{
+    width: 90%;
+    height: 100px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: orange;
+}
+
+.d1{
+    transition-property: background-color;
+    transition-duration: 5s;
+}
+.d2{
+    transition-property: background-color, border;
+    transition-duration: 5s;
+}
+.d3{
+    transition-property: all;
+    transition-duration: 5s;
+}
+.d1:hover{
+    background-color: green;
+    border: 5px solid red;
+    color: white;
+}
+.d2:hover{
+    background-color: blue;
+    border: 5px solid red;
+    color: white;
+}
+.d3:hover{
+    background-color: blue;
+    border: 5px solid red;
+    color: white;
+}

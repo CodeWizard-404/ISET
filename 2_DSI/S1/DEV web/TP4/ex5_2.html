@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="300" height="150" style="border:1px solid 
+#d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.strokeRect(5, 5, 25, 15);
+        //translate puis scale
+        ctx.translate(20, 20);
+        ctx.scale(2, 2);
+        // Dessiner un rectangle creux de bordure rouge avec les données (5, 5, 25, 15); 
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(5, 5, 25, 15);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon titre</title>
+</head>
+
+<body>
+    <h1 onClick="showHxContent(1)">Partie 1</h1>
+    <div id="title1" style="display:none">
+        <p>Mon premier paragraphe</p>
+        <p>Mon second paragraphe</p>
+    </div>
+    <h1 onClick="showHxContent(2)">Partie 2</h1>
+    <div id="title2" style="display:none">
+        <p>Mon premier paragraphe</p>
+        <p>Mon second paragraphe</p>
+    </div>
+    <p>
+        <input type="submit" value="Masquer" onClick="hideAllDivs()" />
+    </p>
+    <p>
+        Titre n°: <input type="text" id="title" />
+        <input type="submit" value="Afficher" onClick="alertTitle()" />
+        <input type="submit" value="Effacer" onClick="deleteTitle()" />
+        <input type="submit" value="Définir" onClick="defineTitle()" />
+    </p>
+
+
+
+
+
+    <script>
+        // 1. afficher le contenu du div correspondant au titre cliqué
+        function showHxContent(index) {
+            hideAllDivs();
+            var divId = 'title' + index;
+            var div = document.getElementById(divId);
+            div.style.display = 'block';
+        }
+
+        // 2. masquer le contenu de tous les divs
+        function hideAllDivs() {
+            var divs = document.querySelectorAll('div');
+            for (var div of divs) {
+                div.style.display = 'none';
+            }
+        }
+
+
+
+
+
+
+        // 3. afficher le contenu du énième titre dans une alerte
+        function alertTitle() {
+            var titre = document.getElementById('title').value;
+            var divId = 'title' + titre;
+            var div = document.getElementById(divId);
+            alert(div.textContent);
+        }
+
+        // 4. effacer le contenu du titre
+        function deleteTitle() {
+            var titre = document.getElementById('title').value;
+            var divId = 'title' + titre;
+            var div = document.getElementById(divId);
+            while (div.firstChild) {
+                div.removeChild(div.firstChild);
+
+            }
+        }
+
+        // 5. définir le contenu du titre avec "Nouveau titre"
+        function defineTitle() {
+            var titre = document.getElementById('title').value;
+            var divId = 'title' + titre;
+            var div = document.getElementById(divId);
+            if (div) {
+                const newText = document.createTextNode('Nouveau titre');
+                while (div.firstChild) {
+                    div.removeChild(div.firstChild);
+                }
+                div.appendChild(newText);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

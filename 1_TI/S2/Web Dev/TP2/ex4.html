@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function afficher() {
+        var texte = document.forms["monForm"]["maZone"].value;
+        alert(texte);
+      }
+    </script>
+  </head>
+  <body>
+    <form name="monForm">
+      <label for="maZone">Saisir une chaîne :</label>
+      <input type="text" id="maZone" name="maZone">
+      <br>
+      <input type="button" value="Afficher" onclick="afficher()">
+    </form>
+  </body>
+</html>

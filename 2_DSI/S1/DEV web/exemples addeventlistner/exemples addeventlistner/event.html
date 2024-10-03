@@ -1,0 +1,34 @@
+<html onclick="alert('Propagation dans l\'élément html')">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Event Bubbles</title>
+<script type="text/javascript">
+function init()
+{
+window.onclick = winEvent
+document.onclick = docEvent;
+document.body.onclick = docBodEvent;
+}
+function winEvent()
+{
+alert("Propagation dans l\'objet window");
+}
+function docEvent()
+{
+alert("Propagation dans l\'objet document");
+}
+function docBodEvent()
+{
+alert("La propagation se fait dans le BODY.");
+}
+</script>
+</head>
+<body onload="init()">
+<h1>Propagation des évènements</h1>
+<hr />
+<form onclick="alert('Il se propage au formulaire.');">
+<input type="button" value="Button ‘main1’" name="main1" onclick="alert('L
+évènement commence au boutton: ' + this.name)" />
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.conteneur{
+    display:flex; 
+}
+.c1{
+    border: 2px solid black;
+    flex: 2;
+}
+.c1:nth-child(2) {
+    flex: 1;
+}
+.c1:nth-child(3){
+    flex: 1;
+}

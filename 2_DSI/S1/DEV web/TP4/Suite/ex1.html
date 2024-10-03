@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400" height="150" style="border:1px solid black;">
+        Your browser does not support HTML5 canvas
+    </canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0, 0, 50, 65);
+
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = 3.5;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 10;
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(55, 0, 50, 65);
+
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        ctx.shadowBlur = 3.5;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 10;
+
+        ctx.fillStyle = 'red';
+        
+        var linear = ctx.createLinearGradient(0, 0, 750,0);
+            linear.addColorStop(0, 'red');
+            linear.addColorStop(0.5, 'blue');
+        ctx.fillStyle = linear;
+        ctx.fillRect(110, 0, 50, 65);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Rectangles</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="500">Votre navigateur ne supporte pas les canvas HTML5</canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(10, 10, 80, 80);
+
+        ctx.save();
+        ctx.translate(0,50);
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100, 10, 80, 80);
+        
+
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(190, 10, 80, 80);
+
+        ctx.restore();
+
+
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(280, 10, 80, 80);
+    </script>
+</body>
+</html>
+

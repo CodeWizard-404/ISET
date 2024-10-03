@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <style>
+        span{
+            margin: 8px;
+            background-color: rgb(48, 170, 240);
+            font-family: 'Segoe UI';
+            font-weight: bolder;
+        }
+        .c1{
+            font-style: italic;
+            text-shadow: 2px 2px 8px;
+        }
+        .c2{
+            text-decoration: underline;
+            text-shadow: 2px 2px 8px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        alert("Bonjour tout le monde !");
+
+        let x= "Iset"
+        let y="TI104"
+
+        alert("Bonjour je m'appelle "+x+" "+y );
+        document.write('<span class="c1">Bonjour je m\'appelle </span>'+x+' '+y +"<br>");
+
+        x=prompt("nom","Iset");
+        y=prompt("prenom","TI104");
+
+        document.write(`<span class="c2"> Bonjour je m'appelle ${x} ${y} </span>`);
+    </script>
+</body>
+</html>

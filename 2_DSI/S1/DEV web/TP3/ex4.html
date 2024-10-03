@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma vidéo</title>
+    <style>
+        video {
+            width: 100%;
+            -o-transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            animation: videoZoom 5s infinite;
+            box-shadow: 2px 4px 50px black;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50px 0px;
+        }
+
+        @keyframes videoZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        video:hover,
+        video:focus {
+            width: 600px;
+        }
+
+        .controles {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            box-shadow: 2px 4px 50px black;
+            border-radius: 10px 0px;
+        }
+
+        button:hover {
+            background-color: transparent;
+            color: green;
+            box-shadow: none;
+            font-weight: bolder;
+            border: 2px solid green;
+        }
+
+        .rep {
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: green;
+            margin: 5px;
+            padding: 0px 5px;
+            box-shadow: 2px 4px 50px black;
+            border-radius: 10px 0px;
+        }
+
+        .rep:hover {
+            background-color: transparent;
+            color: green;
+            box-shadow: none;
+            border: none;
+            font-weight: bolder;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="mavideo">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+        <p class="alert">Votre navigateur ne supporte pas la balise vidéo ! Mettez-vous à jour !</p>
+        <object data="src/test.swf" type="application/x-shockwave-flash">
+            <p>Votre navigateur ne supporte ni la vidéo ni le format Flash.</p>
+        </object>
+    </video>
+    <div class="controles">
+        <button id="lecture">Lecture</button>
+        <button id="pause">Pause</button>
+        <button id="stop">Stop</button>
+        <button id="reculer">-10s</button>
+        <button id="avancer">+10s</button>
+        <div class="rep">
+            <label for="repetition">Repeter</label>
+            <input type="checkbox" id="repetition">
+        </div>
+    </div>
+    <script>
+        var video = document.getElementById('mavideo');
+        var lectureButton = document.getElementById('lecture');
+        var pauseButton = document.getElementById('pause');
+        var stopButton = document.getElementById('stop');
+        var reculerButton = document.getElementById('reculer');
+        var avancerButton = document.getElementById('avancer');
+        var repetitionCheckbox = document.getElementById('repetition');
+
+        function creerBoutons() {
+            lectureButton.addEventListener('click', function () {
+                video.play();
+            });
+
+            pauseButton.addEventListener('click', function () {
+                video.pause();
+            });
+
+            stopButton.addEventListener('click', function () {
+                video.pause();
+                video.currentTime = 0;
+            });
+
+            reculerButton.addEventListener('click', function () {
+                video.currentTime -= 10;
+            });
+
+            avancerButton.addEventListener('click', function () {
+                video.currentTime += 10;
+            });
+
+            repetitionCheckbox.addEventListener('change', function () {
+                video.loop = repetitionCheckbox.checked;
+            });
+        }
+
+        creerBoutons();
+    </script>
+</body>
+
+</html>

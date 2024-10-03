@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="script.js"></script>
+    <title>Creation matricules</title>
+  </head>
+
+  <body>
+    <form name="f1">
+      <h2>Gestion des matricules des employées</h2>
+      <fieldset>
+        <legend>Création du Matricule</legend>
+
+        <label for="n">Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+        <input type="text" id="n" name="txtnom" oninput="ValiderCreation()" /> </br>
+
+        <label for="p">Prénom &nbsp;: </label>
+        <input type="text" id="p" name="txtprenom" oninput="ValiderCreation()" /></br>
+
+        <label for="d">Date De Naissance : </label>
+        <input type="date" id="d" name="txtDDN" oninput="ValiderCreation()" /><br />
+        Sexe :
+        <input type="radio" name="optsexe" value="1" checked oninput="ValiderCreation()" />Masculin
+        <input type="radio" name="optsexe" value="2" oninput="ValiderCreation()" />Féminin
+
+        <button type="button" name="btncreer" disabled onclick="CreerMatricule()">Créer matricule</button>
+        <input type="text" id="m" name="txtmat" readonly />
+        <input type="reset" value="Effacer" /></br>
+      </fieldset>
+    </form>
+  </body>
+</html>

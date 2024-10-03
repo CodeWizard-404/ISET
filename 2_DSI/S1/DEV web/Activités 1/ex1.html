@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li {
+            margin-left: 2px;
+        }
+        ul li a {
+            display: block;
+            float: left;
+            width: 100px;
+            background-color: #6495ED;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 5px;
+            border: 2px solid;
+            border-color: #DCDCDC #696969 #696969 #DCDCDC;
+            border-radius: 5px;
+
+        }
+
+        /* 2) Explication de l'effet de float: left
+        fait que les éléments <a> se placent côte à côte, de gauche à droite, dans la mesure du possible. 
+
+        3) Background renferme quatre valeurs. 
+         Ces valeurs correspondent aux couleurs en format hexadécimal (RVB)*/
+
+        ul li a:hover {
+            position: relative;
+            top: -2px;
+            transform: rotate(30deg);
+        }
+
+        ul li a:active {
+            background-color: #D3D3D3;
+            border-color: #696969 #DCDCDC #DCDCDC #696969;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Acceuil</a></li>
+        <li><a href="#">Produit</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+</html>

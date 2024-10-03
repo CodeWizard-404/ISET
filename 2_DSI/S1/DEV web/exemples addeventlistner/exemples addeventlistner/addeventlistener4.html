@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDiv1, #myDiv2 {
+  background-color: blue;
+  padding: 50px;
+}
+
+#myP1, #myP2 {
+  background-color: white; 
+  font-size: 20px;
+  border: 1px solid;
+  padding: 20px;
+}
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+<body>
+
+<h2> DOM addEventListener</h2>
+
+<div id="myDiv1">
+  <h2>PROPAGATION: capturing = false</h2>
+  <p id="myP1">TESTER</p>
+</div><br/>
+
+<div id="myDiv2">
+  <h2>Capturing =true</h2>
+  <p id="myP2">TESTER</p>
+</div>
+
+<script>
+document.getElementById("myP1").addEventListener("click", function() {
+  alert("voux avez cliquer sur l'élément en blanc!");
+}, false);
+
+document.getElementById("myDiv1").addEventListener("click", function() {
+  alert("vous avez cliquer sur l'élément bleu!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+  alert("vous avez cliquer sur l'élément blanc!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+  alert("vous avez cliquer sur l'élément bleu!");
+}, true);
+</script>
+
+</body>
+</html>
+
+

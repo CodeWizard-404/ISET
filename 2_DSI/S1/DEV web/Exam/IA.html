@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA</title>
+    <style>
+        body {
+            background-color: rgb(238, 238, 238);
+        }
+
+        h1 {
+
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            animation: colorChange 5s infinite;
+        }
+
+        h4 {
+            color: rgb(192, 192, 192);
+            text-align: center;
+            margin-bottom: -9px;
+        }
+
+        h3 {
+            background-color: gray;
+            text-align: center;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: red;
+            }
+
+            25% {
+                color: green;
+            }
+
+            50% {
+                color: aqua;
+            }
+
+            75% {
+                color: blue;
+            }
+
+            100% {
+                color: orange;
+            }
+        }
+
+        .sideBar {
+            padding: 5px;
+            background-color: rgb(49, 49, 49);
+            width: 25%;
+            margin-right: 10px;
+        }
+
+        .article{
+            width: 100%;
+        }
+
+        section {
+            display: flex;
+        }
+
+        ul {
+            margin-left: -40px;
+        }
+
+        li {
+            color: white;
+            list-style-type: none;
+
+        }
+
+        li:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .MsgDiv {
+            background-color: #e6ebef;
+            color: #1c87c9;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .droppable {
+            display: inline-block;
+            padding: 5px;
+            border: 1px solid #1c87c9;
+            margin: 5px;
+            cursor: grab;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="zone1">
+        <h1>Intelligence Artificielle</h1>
+    </div>
+    <section>
+        <div class="sideBar">
+            <div id="zone2">
+                <h4>Documentation</h4>
+                <hr>
+                <ul>
+                    <li id="vdL">Video</li>
+                    <li>Articles</li>
+                </ul>
+            </div>
+            <div id="zone3" class="invisible">
+                <h4>Evaluation</h4>
+                <hr>
+                <ul>
+                    <li id="zone3Evaluation1">Evaluation 1</li>
+                    <li>Evaluation 2</li>
+                    <li>Evaluation 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="article">
+            <div id="zone4">
+                <h3>Présentation</h3>
+                <div id="vdC" class="invisible">
+                    <video id="myVideo" controls>
+                        <source src="IA.mp4" type="video/mp4">
+                        <source src="IA.ogg" type="video/ogg">
+                        <source src="IA.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="messageDiv" class="MsgDiv invisible"></div>
+            </div>
+            <div>
+                <h3>Evaluation</h3>
+                <div id="evC" class="invisible">
+                    <p id="evaluationText">
+                        L'intelligence artificielle ou <span id="drop1">......</span> 
+                        est une branche de l'informatique dédiée à la conception <span id="drop2">......</span>  
+                        capables d'imiter le cerveau <span id="drop3">......</span>  
+                        dans des tâches telles que l'<span id="drop4">......</span>  
+                        ou le <span id="drop5">......</span> 
+                    </p>
+                    <div class="droppable"  data-answer="IA">IA</div>
+                    <div class="droppable"  data-answer="machines">machines</div>
+                    <div class="droppable"  data-answer="humain">humain</div>
+                    <div class="droppable"  data-answer="apprentissage">apprentissage</div>
+                    <div class="droppable"  data-answer="raisonnement">raisonnement</div>
+                </div>
+                <button id="Solution">Afficher la solution</button>
+                <div id="solution" class="MsgDiv invisible"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("vdL").addEventListener("click", function () {
+            var vdC = document.getElementById("vdC");
+            var messageDiv = document.getElementById("messageDiv");
+            var zone3 = document.getElementById("zone3");
+
+            vdC.classList.remove("invisible");
+
+            var views = parseInt(localStorage.getItem("vdH")) || 0;
+            localStorage.setItem("vdH", views + 1);
+
+            views = localStorage.getItem("vdH") || 0;
+            if (parseInt(views) > 0) {
+                zone3.classList.remove("invisible");
+            }
+
+            messageDiv.textContent = "Vous avez vu " + views + " fois cette vidéo.";
+            messageDiv.classList.remove("invisible");
+        });
+
+        document.getElementById("zone3Evaluation1").addEventListener("click", function () {
+            var evC = document.getElementById("evC");
+
+            evC.classList.remove("invisible");
+        });
+
+        var draggables = document.querySelectorAll('.droppable');
+        var droppedCount = 0;
+        var droppedItems = {};
+
+        function dropHandler(e) {
+            e.preventDefault();
+            var draggableData = e.dataTransfer.getData('text');
+            var draggedElement = document.querySelector('.dragging');
+
+            if (!droppedItems[draggableData]) {
+                var dropzone = e.target;
+                dropzone.textContent = draggableData;
+                droppedItems[draggableData] = true;
+                droppedCount++;
+                checkCompletion();
+            }
+
+            draggedElement.classList.remove('dragging');
+        }
+
+        draggables.forEach(function (draggable) {
+            draggable.draggable = true;
+            draggable.addEventListener('dragstart', function (e) {
+                e.dataTransfer.setData('text', draggable.dataset.answer);
+                e.target.classList.add('dragging');
+                var dragImage = document.createElement('div');
+                dragImage.className = 'drag-image';
+                dragImage.textContent = draggable.dataset.answer;
+                document.body.appendChild(dragImage);
+                e.dataTransfer.setDragImage(dragImage, 0, 0);
+            });
+            draggable.addEventListener('dragend', function () {
+                var dragImage = document.querySelector('.drag-image');
+                if (dragImage) {
+                    dragImage.parentNode.removeChild(dragImage);
+                }
+            });
+            draggable.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+            draggable.addEventListener('drop', dropHandler);
+        });
+
+        function checkCompletion() {
+            if (droppedCount === draggables.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            var score = localStorage.getItem("Score") || 0;
+            score = parseInt(score) + 4;
+            localStorage.setItem("Score", score);
+
+            var messageDiv = document.getElementById("messageDiv");
+            messageDiv.textContent = "Score de l'évaluation 1 est " + score + " points.";
+            messageDiv.classList.remove("invisible");
+        }
+
+        document.getElementById("Solution").addEventListener("click", function () {
+            var solution = document.getElementById("solution");
+            solution.textContent = "L'intelligence artificielle ou IA est une branche de l'informatique dédiée à la conception de machines capables d'imiter le cerveau humain dans des tâches telles que l'apprentissage ou le raisonnement.";
+            solution.classList.remove("invisible");
+        });
+    </script>
+</body>
+
+</html>

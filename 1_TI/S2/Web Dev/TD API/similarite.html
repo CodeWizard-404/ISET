@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Taux de similarité</title>
+</head>
+
+<body>
+    <h1>Calculateur de similarité de texte</h1>
+    <label>Texte 1 :</label>
+    <textarea id="text1" rows="2" cols="30"></textarea>
+    <br>
+    <label>Texte 2 :</label>
+    <textarea id="text2" rows="2" cols="30"></textarea>
+    <br>
+    <button onclick="calculerSimilarite()">Calculer</button>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        function calculerSimilarite() {
+            let text1 = document.getElementById("text1").value;
+            let text2 = document.getElementById("text2").value;
+
+            var urlBase = "https://text-similarity-calculator.p.rapidapi.com/stringcalculator.php";
+            var url = `${urlBase}?ftext=${text1}&stext=${text2}`;
+            var options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '255c99d668mshb475ec51acca46ap1353d0jsnf59640bae26c',
+                    'X-RapidAPI-Host': 'text-similarity-calculator.p.rapidapi.com'
+                }
+            };
+
+            fetch(url, options)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result);
+                    document.getElementById("result").innerHTML ="Le pourcentage de similarité des 2 textes est de "+ result.percentage+ "%";
+                })
+                .catch(error => console.error(error))
+        }
+
+    </script>
+
+</body>
+
+</html>

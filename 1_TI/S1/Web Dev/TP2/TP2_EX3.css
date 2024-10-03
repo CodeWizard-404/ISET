@@ -1,0 +1,14 @@
+body{
+    color: blue;
+    size: 20px;
+}
+p{
+    color: green;
+    font-family: 'Times New Roman';
+    text-align: center ;
+}
+h1{
+    color: cyan;
+    size: large;
+    font-weight: bold;
+}

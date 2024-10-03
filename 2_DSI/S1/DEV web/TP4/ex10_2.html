@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    body {
+      background:#eee;
+      text-align:center;
+      padding-top:10%;
+    }
+    canvas {
+      border:5px solid #666;
+      background:white;
+      border-radius:4px;
+      box-shadow:0px 0px 20px #666;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="dessin" width="480" height="360"></canvas>
+  <label for="colorInput">Couleur du trait:</label>
+  <input type="color" id="colorInput"><br>
+  <label for="stepInput">Pas de déplacement:</label>
+  <input type="number" id="stepInput" min="1" value="5">
+  <script>
+    var moncanvas = document.getElementById('dessin');
+    var ctx = moncanvas.getContext('2d');
+    var colorInput = document.getElementById('colorInput');
+    var stepInput = document.getElementById('stepInput');
+
+    // Set the initial stroke style
+    ctx.strokeStyle = colorInput.value;
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+
+    // Calcul du centre
+    var x = moncanvas.width / 2;
+    var y = moncanvas.height / 2;
+
+    // Position de départ (au centre)
+    ctx.moveTo(x, y);
+
+    // Gestionnaire d'événement keydown
+    if (document.body.onkeydown) {
+      document.body.onkeydown = dessiner;
+    } else if (document) {
+      document.onkeydown = dessiner;
+    }
+
+    // Déplacement du "pinceau"
+    function dessiner(event) {
+      var step = parseInt(stepInput.value);
+
+      switch (event.keyCode) {
+        case 38: // Haut
+          event.preventDefault();
+          if (y >= step) y -= step;
+          break;
+        case 40: // Bas
+          event.preventDefault();
+          if (y < moncanvas.height) y += step;
+          break;
+        case 39: // Droite
+          event.preventDefault();
+          if (x < moncanvas.width) x += step;
+          break;
+        case 37: // Gauche
+          event.preventDefault();
+          if (x >= step) x -= step;
+          break;
+      }
+
+      // Set the stroke style based on the color input
+      ctx.strokeStyle = colorInput.value;
+
+      // Tracé d’après le décalage effectué
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    };
+  </script>
+</body>
+</html>

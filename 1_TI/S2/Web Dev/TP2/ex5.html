@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+
+      function afficher(valeur) {
+        var lstTI = document.f1.lstTI;
+        var txtTI = document.f1.txtTI;
+        if (valeur) {
+          lstTI.style.display = "block";
+          txtTI.style.display = "block";
+        } else {
+          lstTI.style.display = "none";
+          txtTI.style.display = "none";
+        }
+      }
+
+      function soumettre() {
+        var txtNomPrenom = document.f1.txtNomPrenom.value;
+        var optDep = document.f1.optDep.value;
+        var txtTI = document.f1.txtTI.value;
+        var message ="Merci " + txtNomPrenom + " pour votre inscription en " + optDep;
+        if (optDep === "TI") {
+          message += " parcours " + txtTI;
+        }
+        alert(message);
+      }
+
+      function afficherParcours() {
+		with (document.f1){
+        var a = txtTI.value;
+        var b =lstTI.options[lstTI.selectedIndex].text;
+        txtTI.value = b;}
+      }
+
+      function effacer() {
+        if (confirm("Attention ! le formulaire va être réinitialisé. Voulez-vous continuer ?")) {
+          document.f1.reset();
+        }
+      }
+
+
+    </script>
+  </head>
+
+  <body>
+    <h2>Inscription</h2>
+    <form name="f1"  method="get">
+
+      <fieldset>
+        <legend>Informations Personnelles</legend>
+
+        <label>Nom et prénom</label>
+        <input type="text" required name="txtNomPrenom" /> <br />
+
+        <label>Choix du département</label>
+        <input type="radio" name="optDep" value="TI" onclick="afficher(true)" />TI
+        <input type="radio" name="optDep" value="SEG" checked onclick="afficher(false)"/>SEG<br>
+
+        <select name="lstTI"  onchange="afficherParcours()" hidden>
+          <option value="SEM">SEM
+          <option value="DSI">DSI
+          <option value="RSI">RSI
+        </select>
+
+        <input type="text" name="txtTI" hidden /><br>
+
+        <input type="button" value="Valider" onclick="soumettre()" />
+        <input type="button" value="Effacer" onclick="effacer()" />
+      </fieldset>
+    </form>
+  </body>
+</html>

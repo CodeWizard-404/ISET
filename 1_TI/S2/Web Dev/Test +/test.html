@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CLUB SPORTIF LET'S GO</title>
+    <script>
+        function affichTxt() {
+            var rdFrm = document.querySelector('input[name="rdFrm"]:checked').value;
+
+            document.getElementById("divEns").hidden = rdFrm !== "Pro";
+            document.getElementById("dEtudiant").hidden = rdFrm !== "Etudiant";
+            document.getElementsByName("txtMontant")[0].value = "";
+        }
+
+        function calculer() {
+            var rdFrm = document.querySelector('input[name="rdFrm"]:checked').value;
+            var montantAbonnement = 100;
+            var nombreMois, reductionOffre, reductionAge, montant;
+
+            if (rdFrm === "Pro") {
+                nombreMois = parseInt(document.getElementsByName("txtAbs")[0].value);
+                reductionOffre = document.getElementById("SP").selectedIndex === 0 ? 0.15 : 0.1;
+                reductionAge = 0;
+            } else if (rdFrm === "Etudiant") {
+                var age = parseInt(document.getElementsByName("txtAge")[0].value);
+                nombreMois = parseInt(document.getElementsByName("txtAbe")[0].value);
+                reductionOffre = document.getElementById("SE").selectedIndex === 0 ? 0.2 : 0.3;
+                reductionAge = age < 18 ? 0.1 : 0;
+            } else {
+                return;
+            }
+
+            montant = nombreMois * montantAbonnement;
+            montant -= montant * reductionOffre;
+            montant -= montant * reductionAge;
+
+            document.getElementsByName("txtMontant")[0].value = montant;
+        }
+
+        function affichOffre() {
+            var offres = {
+                "Offre SPORT PRO": "15%",
+                "Offre SOFT HEALTH": "10%",
+                "Offre YOUNG": "20%",
+                "Offre ALL SPORTS": "30%"
+            };
+
+            var divL = document.getElementById("divL");
+            var table = document.createElement("table");
+            table.border = "1";
+            table.style.marginTop = "10px";
+            var headerRow = table.insertRow();
+            var offreHeader = headerRow.insertCell(0);
+            offreHeader.innerHTML = "<b>Offre</b>";
+            var reductionHeader = headerRow.insertCell(1);
+            reductionHeader.innerHTML = "<b>Réduction</b>";
+
+            for (var offre in offres) {
+                var offreRow = table.insertRow();
+                var offreCell = offreRow.insertCell(0);
+                offreCell.innerHTML = offre;
+                var reductionCell = offreRow.insertCell(1);
+                reductionCell.innerHTML = offres[offre];
+            }
+
+            divL.innerHTML = "";
+            divL.appendChild(table);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CLUB SPORTIF LET'S GO</h1>
+    <h2> OFFRES AUX ÉTUDIANTS ET PROFESSIONNEL </h2>
+    <form name="fForme">
+        <fieldset>
+            <legend> Vous êtes :</legend>
+            <input type="radio" name="rdFrm" value="Pro" onclick="affichTxt()" />Professionnel
+            <input type="radio" name="rdFrm" value="Etudiant" onclick="affichTxt()" /> Etudiant
+            <div id="divEns" hidden>
+                <label>Nombre de mois d'abonnement: </label>
+                <input type="text" name="txtAbs" /><br>
+                <label>Nos Offres</label>
+                <select id="SP">
+                    <option>Offre SPORT PRO (%15 de Réduction)</option>
+                    <option>Offre SOFT HEALTH (10%)</option>
+                </select>
+            </div>
+            <div id="dEtudiant" hidden>
+                <label>Votre Age: </label>
+                <input type="text" name="txtAge" /><br>
+                <label>Nbre de mois d'abonnement: </label>
+                <input type="text" name="txtAbe" /><br>
+                <label>Nos Offres</label>
+                <select id="SE">
+                    <option>Offre YOUNG (%20 de Réduction)</option>
+                    <option>Offre ALL SPORTS(30%)</option>
+                </select>
+            </div>
+        </fieldset>
+        <button type="button" name="btncalcul" onclick="calculer()">Votre abonnement est de</button>
+        <input type="text" name="txtMontant" readonly />
+    </form>
+    <div id="divL"></div>
+    <button type="button" onclick="affichOffre()">Afficher les offres</button>
+</body>
+
+</html>

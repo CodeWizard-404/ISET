@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="UTF_8">
+    <title>TP3 : Exercice 7 JS</title>
+    <script>
+
+
+        let tabJour = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        let tabMois = new Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
+
+
+    function afficherDate() {
+        let dateActuelle = new Date();
+        let jourActuel = tabJour[dateActuelle.getDay()];
+        let moisActuel = tabMois[dateActuelle.getMonth()];
+        let jourNum = dateActuelle.getDate();
+        let anneeActuelle = dateActuelle.getFullYear();
+        let heure = dateActuelle.getHours();
+        let minute = dateActuelle.getMinutes();
+
+        document.getElementById("Le").innerHTML = `Nous sommes le ${jourActuel} ${jourNum} ${moisActuel} ${anneeActuelle} ${heure}h${minute}`;
+    }
+    
+    function calculerAge(DN) {
+        let dateNaissance = new Date(DN);
+        let dateActuelle = new Date();
+        let age = dateActuelle.getFullYear() - dateNaissance.getFullYear();
+        if (dateActuelle.getMonth() < dateNaissance.getMonth() ||
+            (dateActuelle.getMonth() == dateNaissance.getMonth() && dateActuelle.getDate() < dateNaissance.getDate())) {
+            age--;
+        }
+        document.f1.txtAge.value = age;
+    }
+
+
+
+
+</script>
+
+
+</head>
+
+<body onload="afficherDate()">
+    <h4 id="Le">Nous sommes le... </h4>
+    <form name="f1">
+        <label>Donnez votre date d'anniversaire</label>
+        <input type="date" name="txtDate" onchange="calculerAge(this.value)"><br>
+        <label>Age calculé</label>
+        <input type="text" name="txtAge" readonly="" value="" ><br>
+
+        <!-- une fonctionnalité en  bonus -->
+        <label>Nombre De Jours pour Célébrer votre Prochain anniversaire </label>
+        <input type="text" name="txtJours" readonly="" value="">
+
+    </form>
+
+
+
+
+
+
+</body>
+
+</html>

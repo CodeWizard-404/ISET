@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function incrementVisits() {
+        if (sessionStorage.getItem("visits")) {
+          sessionStorage.setItem("visits", Number(sessionStorage.getItem("visits")) + 1);
+        } else {
+          sessionStorage.setItem("visits", 1);
+        }
+        document.getElementById("visitCount").innerText =
+          "Nombre de visites : " + sessionStorage.getItem("visits");
+      }
+
+      window.onload = function () {
+        incrementVisits();
+      };
+ 
+
+    </script>
+  </head>
+  <body>
+    <h2>Compteur de visites</h2>
+    <p id="visitCount"></p>
+  </body>
+</html>

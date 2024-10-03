@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>Exercice 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .list {
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            list-style: none;
+        }
+
+        .item {
+            cursor: grab;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Likes:</h3>
+        <ul class="list" id="likeList">
+            <li class="item" id="like1" draggable="true">Element 1</li>
+            <li class="item" id="like2" draggable="true">Element 2</li>
+            <li class="item" id="like3" draggable="true">Element 3</li>
+            <li class="item" id="like4" draggable="true">Element 4</li>
+        </ul>
+        <h3>Dislikes:</h3>
+        <ul class="list" id="dislikeList">
+            <li class="item" id="dislike1" draggable="true">Element 5</li>
+            <li class="item" id="dislike2" draggable="true">Element 6</li>
+            <li class="item" id="dislike3" draggable="true">Element 7</li>
+            <li class="item" id="dislike4" draggable="true">Element 8</li>
+        </ul>
+    </div>
+
+    <script>
+        var items = document.querySelectorAll('.item');
+        var likeList = document.getElementById('likeList');
+        var dislikeList = document.getElementById('dislikeList');
+
+        items.forEach(item => {
+            item.addEventListener('dragstart', function (e) {
+                e.dataTransfer.setData('text', e.target.id);
+            });
+
+            likeList.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+
+            dislikeList.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+
+            likeList.addEventListener('drop', function (e) {
+                e.preventDefault();
+                var itemId = e.dataTransfer.getData('text');
+                var item = document.getElementById(itemId);
+                likeList.appendChild(item);
+            });
+
+            dislikeList.addEventListener('drop', function (e) {
+                e.preventDefault();
+                var itemId = e.dataTransfer.getData('text');
+                var item = document.getElementById(itemId);
+                dislikeList.appendChild(item);
+            });
+        });
+    </script>
+</body>
+
+</html>

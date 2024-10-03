@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+    <script>
+		function modifierPage() {
+
+			document.fgColor = document.f1.txt_clr.value;
+			document.bgColor = document.f1.bg_clr.value;
+			document.title = document.f1.tl_clr.value;
+
+		}
+	</script>
+</head>
+<body>
+
+<form name="f1">
+	<label for="txt_clr">Couleur du texte :</label>
+	<input type="color" name="txt_clr" ><br>
+
+	<label for="bg_clr">Couleur de fond :</label>
+	<input type="color" name="bg_clr" ><br>
+
+	<label for="tl_clr">Titre :</label>
+	<input type="text" name="tl_clr" ><br>
+
+	<button name="btn" onclick="modifierPage()">Modifier la page</button>
+</form>
+
+
+
+</body>
+</html>

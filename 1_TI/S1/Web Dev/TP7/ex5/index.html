@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{width: 40px;
+            float: left;}
+        p + img{
+            margin-left: 190px;
+        }
+        h1{text-align: center;}
+
+        .conteneur{display:flex;
+                    height: 280px;}
+
+        .c1{margin: 25px;
+            padding: 30px;
+            flex: 1;
+            border: 1px solid green ;
+            background-color:greenyellow ;} 
+
+        header,footer,nav,section{
+            border: 1px solid green;
+            width: 780px;}
+
+        header{height: 60px;}
+        footer,nav{height: 50px;}
+        nav{text-align: right;}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.gif" alt="logo">
+        <h1>Tech com</h1>
+    </header>
+    <nav>
+        <div><a href="commande.html">Commander</a></div>
+    </nav>
+    <section class="conteneur">
+        <div class="c1">
+            <h2>Presentation de la societe</h2>
+            <p>TechCom offre la vente en ligne de materiel informatique</p>
+        </div> 
+        <div class="c1">
+            <h2>Decouvrez nos produit</h2>
+            <p>Consultez notre catalogue</p>
+            <img src="cat.gif" alt="cat">
+        </div> 
+    </section>
+    <footer>
+        <p>Contact: Rue des Entreneurs, Charguia 2. tel: 71 71 71 71</p>
+    </footer>
+</body>
+</html>

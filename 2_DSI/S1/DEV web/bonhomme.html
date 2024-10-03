@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        #changedLocation {
+            color: green; 
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body onload="getLocation()">
+<div>
+    <label for="language">Choose language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+    </select>
+
+    <label for="backgroundColor">Background Color:</label>
+    <input type="color" id="backgroundColor">
+
+    <label for="textColor">Text Color:</label>
+    <input type="color" id="textColor">
+
+    <button onclick="saveStyles()">Save Styles</button>
+
+    <div id="changedLocation"></div>
+
+    <button onclick="applyStyles()">Preview</button>
+</div>
+<div>
+    <p id="geo">Click the button to get your coordinates:</p>
+</div>
+<div id="gameContainer">
+    <p id="newgame"><input type="button" value="Show Character" onclick="toggleBonhomme()"> </p>
+    <div id="gimage" hidden>
+        <svg width="258" height="400">
+            <rect y="380" x="2" width="250" height="10" style="fill:blue;stroke-width:4;stroke:black" />
+
+            <line x1="20" y1="380" x2="20" y2="10" style="stroke:black;stroke-width:4"/>
+
+            <line x1="18" y1="10" x2="140" y2="10" style="stroke:black;stroke-width:4"/>
+
+            <line id="i1" x1="138" y1="10" x2="138" y2="50" style="stroke:black;stroke-width:4"/>
+            
+            <circle id="i2" cx="138" cy="80" r="30" stroke="black" stroke-width="4" fill="blue" />
+
+            <line id="i3" x1="138" y1="110" x2="138" y2="250" style="stroke:black;stroke-width:4"/>
+
+            <line id="i4" x1="138" y1="140" x2="100" y2="200" style="stroke:black;stroke-width:4"/>
+
+            <line id="i5" x1="138" y1="140" x2="178" y2="200" style="stroke:black;stroke-width:4"/>
+
+            <line id="i6" x1="138" y1="250" x2="100" y2="310" style="stroke:black;stroke-width:4"/>
+
+            <line id="i7" x1="138" y1="250" x2="178" y2="310" style="stroke:black;stroke-width:4"/>
+        </svg>
+    </div>
+</div>
+
+<script>
+    function saveStyles() {
+        const language = document.getElementById('language').value;
+        const backgroundColor = document.getElementById('backgroundColor').value;
+        const textColor = document.getElementById('textColor').value;
+
+        localStorage.setItem('styles', JSON.stringify({ language, backgroundColor, textColor }));
+    }
+
+    function applyStyles() {
+        const savedStyles = localStorage.getItem('styles');
+
+        if (savedStyles) {
+            const styles = JSON.parse(savedStyles);
+            document.body.style.backgroundColor = styles.backgroundColor;
+            document.body.style.color = styles.textColor;
+        }
+    }
+
+    function checkAndUpdateLocation(position) {
+        const savedPosition = JSON.parse(localStorage.getItem("position"));
+
+        if (savedPosition &&
+            (savedPosition.latitude !== position.coords.latitude ||
+                savedPosition.longitude !== position.coords.longitude)
+        ) {
+            const changedLocationDiv = document.getElementById('changedLocation');
+            changedLocationDiv.innerHTML =
+                "You have changed location. New position: Latitude: " +
+                position.coords.latitude +
+                ", Longitude: " +
+                position.coords.longitude;
+
+            localStorage.setItem("position", JSON.stringify({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                altitude: position.coords.altitude,
+                coordonneePosition: position.coords.accuracy
+            }));
+        } else {
+            alert("Location has not changed");
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        applyStyles();
+    });
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError, {
+                maximumAge: 5000,
+                timeout: 3000
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        localStorage.setItem("position", JSON.stringify({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            altitude: position.coords.altitude,
+            coordonneePosition: position.coords.accuracy
+        }));
+
+        checkAndUpdateLocation(position);
+
+        const geoElement = document.getElementById("geo");
+        geoElement.innerHTML =
+            "Latitude: " +
+            position.coords.latitude +
+            "<br>Longitude: " +
+            position.coords.longitude +
+            " <br> Altitude:" +
+            position.coords.altitude +
+            "<br> Coordinates Accuracy:" +
+            position.coords.accuracy;
+    }
+
+    function showError(error) {
+        const geoElement = document.getElementById("geo");
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                geoElement.innerHTML = "User denied the geolocation request.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                geoElement.innerHTML = "Location information is not available.";
+                break;
+            case error.TIMEOUT:
+                geoElement.innerHTML = "User's location request timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                geoElement.innerHTML = "An unknown error occurred.";
+                break;
+        }
+    }
+
+    function toggleBonhomme() {
+        const clicValue = localStorage.getItem('clic');
+
+        if (clicValue === 'true') {
+            document.getElementById('gimage').hidden = false;
+            document.getElementById('newgame').innerHTML = '<input type="button" value="Hide" onclick="toggleBonhomme()">';
+            localStorage.setItem('clic', 'false');
+        } else {
+            document.getElementById('gimage').hidden = true;
+            document.getElementById('newgame').innerHTML = '<input type="button" value="Show Character" onclick="toggleBonhomme()">';
+            localStorage.setItem('clic', 'true');
+        }
+    }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: RestaurantService
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: Kayto404
+    url: jdbc:postgresql://localhost:5432/dbRestaurant
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true

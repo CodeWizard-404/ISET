@@ -1,0 +1,99 @@
+python -m venv venv
+
+source venv/Scripts/activate
+
+
+
+pip install django
+
+pip install --upgrade pip
+
+python -m django --version
+
+
+
+django-admin startproject mywebsite
+
+cd mywebsite
+
+
+
+python manage.py migrate
+python manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+--CREATE APP
+python manage.py startapp main
+
+--REGISTER APP
+mywebsite/settings.py :
+INSTALLED_APPS = [
+    ...
+    'main',
+]
+
+
+--VIEW/URLS/TEMPLATES :
+
+main/views.py :
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Hello, world! Welcome to my website.")
+
+main/urls.py:
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]
+
+mywebsite/urls.py:
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('main.urls')),
+]
+
+
+mkdir -p main/templates/main
+main/templates/main/home.html :
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Hello, world! Welcome to my website.</h1>
+</body>
+</html>
+
+
+main/views.py:
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'main/home.html')
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+.c1{
+    color: blue;
+    font-size: xx-large;
+}
+.c2{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.c3{
+    color: black;
+    font-size: large;
+}
+.c4{
+    color: green;
+    font-size: x-large;
+}
+.c5{
+    font-style: italic;
+    font-size: 20px;
+}
+ol{
+    list-style: upper-roman;
+}
+.c6{
+    list-style: lower-alpha;
+}
+.c{
+    list-style-image: url(../Ressources/Images/fleche.jpg);
+}

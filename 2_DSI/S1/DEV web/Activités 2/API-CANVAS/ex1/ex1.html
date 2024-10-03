@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updated ex1</title>
+  <style>
+    canvas {
+      border: 2px solid #3498db;
+      background-color: #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c" width="200" height="200"></canvas>
+
+  <script>
+    var canvas = document.getElementById('c');
+    var context = canvas.getContext('2d');
+
+    window.onload = function () {
+      var initialX = 100;
+      var initialY = 30;
+
+      function drawShape(x, y) {
+        context.beginPath();
+        context.arc(x, y, 10, 0, 2 * Math.PI);
+        context.fillStyle = '#f39c12'; 
+        context.strokeStyle = '#e74c3c'; 
+        context.lineWidth = 2;
+        context.fill();
+        context.stroke();
+        context.moveTo(x, y + 10);
+        context.lineTo(x, y + 70);
+        context.stroke();
+        context.moveTo(x, y + 20);
+        context.lineTo(x - 20, y + 50);
+        context.stroke();
+        context.moveTo(x, y + 20);
+        context.lineTo(x + 20, y + 50);
+        context.stroke();
+        context.moveTo(x, y + 70);
+        context.lineTo(x - 20, y + 100);
+        context.stroke();
+        context.moveTo(x, y + 70);
+        context.lineTo(x + 20, y + 100);
+        context.stroke();
+      }
+
+      function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      canvas.addEventListener('click', function () {
+        clearCanvas();
+        drawShape(initialX++, initialY++);
+      });
+
+      drawShape(initialX, initialY);
+    }
+  </script>
+</body>
+</html>

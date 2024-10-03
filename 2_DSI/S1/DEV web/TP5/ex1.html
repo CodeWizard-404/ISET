@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+  <title>HTML5 géolocalisation</title>
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <p id="demo">Vos coordonnées :</p>
+  <div id="map"></div>
+
+  <script>
+    var x = document.getElementById("demo");
+
+    function initMap() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+
+          x.innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: latitude, lng: longitude },
+            zoom: 15
+          });
+
+          var marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map
+          });
+        }, function(error) {
+          x.innerHTML = "Erreur de géolocalisation : " + error.message;
+        });
+      } else {
+        x.innerHTML = "Geolocation n’est pas prise en charge par ce navigateur.";
+      }
+    }
+
+    window.addEventListener("load", initMap);
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&callback=initMap" async defer></script>
+</body>
+</html>

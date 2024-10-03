@@ -1,0 +1,27 @@
+p {
+  transform: rotate(90deg);
+  transform-origin: bottom left;
+  transform-box: border-box;
+}
+
+.premier {
+  border: 3px black solid;
+}
+
+.deuxieme {
+  border: 3px black solid;
+  padding: 3em;
+}
+
+.troisieme {
+ 
+   transform: rotate(45deg);
+  transform-origin: top left;
+  transform-box: fill-box
+}
+.quatrieme {
+	border: 3px black solid;
+	transform: translate(100);
+	transform-origin: top left;
+	transform-box: view-box;
+}

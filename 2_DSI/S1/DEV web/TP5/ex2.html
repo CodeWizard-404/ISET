@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>Exercice 2</title>
+    <style>
+        #balloons{
+            border: 1px solid black;
+            width: 550px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .balloon {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 110px;
+            font-size: 20px;
+            margin: 10px;            
+            cursor: grab;
+            border: 1px solid gray;
+        }
+
+        .reception {
+            border: 1px dotted black;
+            width: 255px;
+            height: 350px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .receptions {
+            display: flex;
+        }
+
+        .balloon-1 {
+            background-color: lightblue;
+        }
+
+        .balloon-2 {
+            background-color: darkolivegreen;
+        }
+
+        .balloon-3 {
+            background-color: darkorchid;
+        }
+
+        .balloon-4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="balloons">
+        <div class="balloon balloon-1" data-number="1" draggable="true">1</div>
+        <div class="balloon balloon-2" data-number="2" draggable="true">2</div>
+        <div class="balloon balloon-3" data-number="3" draggable="true">3</div>
+        <div class="balloon balloon-4" data-number="4" draggable="true">4</div>
+    </div>
+    <div class="receptions">
+        <div class="reception" id="evenReception">
+            Nombres pairs :
+        </div>
+        <div class="reception" id="oddReception">
+            Nombres impairs :
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var balloons = document.querySelectorAll(".balloon");
+            var evenReception = document.getElementById("evenReception");
+            var oddReception = document.getElementById("oddReception");
+
+            balloons.forEach((balloon) => {
+                balloon.addEventListener("dragstart", function (e) {
+                    e.dataTransfer.setData("text", e.target.dataset.number);
+                });
+            });
+
+            evenReception.addEventListener("dragover", function (e) {
+                e.preventDefault();
+            });
+
+            oddReception.addEventListener("dragover", function (e) {
+                e.preventDefault();
+            });
+
+            evenReception.addEventListener("drop", function (e) {
+                e.preventDefault();
+                var number = e.dataTransfer.getData("text");
+                if (number % 2 === 0) {
+                    var balloon = document.querySelector(`.balloon[data-number="${number}"]`);
+                    evenReception.appendChild(balloon);
+                }
+            });
+
+            oddReception.addEventListener("drop", function (e) {
+                e.preventDefault();
+                var number = e.dataTransfer.getData("text");
+                if (number % 2 !== 0) {
+                    var balloon = document.querySelector(`.balloon[data-number="${number}"]`);
+                    oddReception.appendChild(balloon);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

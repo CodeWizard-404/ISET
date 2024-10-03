@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function testPseudo() {
+  var pseudo = this.value.trim();
+  if (pseudo.length >= 2 && pseudo.length <= 25) {
+    this.style.backgroundColor = "";
+  } else {
+    this.style.backgroundColor = "red";
+  }
+}
+
+function testAge() {
+  var age = this.value.trim();
+  if (!isNaN(age)) {
+    this.style.backgroundColor = "";
+  } else {
+    this.style.backgroundColor = "red";
+  }
+}
+
+function testFormulaire(event) {
+  var pseudo = document.forms[0].elements.namedItem("pseudo").value.trim();
+  var age = document.forms[0].elements.namedItem("age").value.trim();
+  if (pseudo.length < 2 || pseudo.length > 25 || isNaN(age)) {
+    event.preventDefault();
+    alert("Le formulaire est mal rempli !");
+  }
+}
+
+document.forms[0].elements.namedItem("pseudo").addEventListener("blur", testPseudo);
+document.forms[0].elements.namedItem("age").addEventListener("blur", testAge);
+document.forms[0].addEventListener("submit", testFormulaire);
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="pseudo">Pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo"><br>
+
+        <label for="age">Age :</label>
+        <input type="text" id="age" name="age"><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+
+</body>
+
+</html>

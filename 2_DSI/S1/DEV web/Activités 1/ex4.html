@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+        }
+
+        #container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100px;
+        }
+
+        h1 {
+            color: red;
+            background-color: yellow;
+            border-radius: 15px;
+            text-align: center;
+            animation: slideTitle 2s;
+        }
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 300px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @keyframes slideTitle {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes anim {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                transform: rotate(0deg);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(5);
+                transform: rotate(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(2);
+                transform: rotate(360deg);
+            }}
+    </style>
+</head>
+
+<body>
+    <h1>les animations</h1>
+    <div  id="div"></div>
+    <script>
+        var fn = document.getElementById('div');
+
+        fn.addEventListener('click', function (event) {
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+            var message = `Position de la souris : ${mouseX} X, ${mouseY} Y`;
+            alert(message);
+        });
+
+        fn.addEventListener('mouseover', function () {
+            this.textContent = 'Bonjour';
+            this.style.animation = 'anim 2s infinite';
+        });
+
+        fn.addEventListener('mouseout', function () {
+            this.textContent = '';
+            this.style.animation = 'none';
+        });
+    </script>
+</body>
+
+</html>

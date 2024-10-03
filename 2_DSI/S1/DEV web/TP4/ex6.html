@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            width: 100px;
+            height: 100px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas">Votre navigateur ne supporte ps les cnvas HTML5</canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0, 0, 150, 150);
+        // Save the state
+        ctx.save();
+        // Make changes to the settings
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(15, 15, 120, 120);
+        // Save the current state
+        ctx.save()
+        // Make the new changes to the settings
+        ctx.fillStyle = 'yellow';
+        ctx.fillRect(30, 30, 90, 90);
+        // Restore previous state
+        ctx.restore();
+        // Draw a rectangle with restored settings
+        ctx.fillRect(45, 45, 60, 60);
+        // Restore original state
+        ctx.restore();
+        // Draw a rectangle with restored settings
+        ctx.fillRect(50, 50, 45, 45); 
+    </script>
+
+
+</body>
+
+</html>

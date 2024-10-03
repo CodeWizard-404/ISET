@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des événements</title>
+</head>
+<body>
+    <div id="conteneur">
+        <div class="boite">Boite 1</div>
+        <div class="boite">Boite 2</div>
+        <div class="boite">Boite 3</div>
+    </div>
+
+    <script>
+        function handleClick(event) {
+            var boiteText = event.target.textContent;
+            alert(boiteText);
+        }
+
+        function init() {
+            var conteneur = document.getElementById("conteneur");
+            var boites = conteneur.getElementsByClassName("boite");
+            for (let i = 0; i < boites.length; i++) {
+                boites[i].addEventListener("click", handleClick);
+            }
+        }
+        window.addEventListener("load", init);
+    </script>
+</body>
+</html>

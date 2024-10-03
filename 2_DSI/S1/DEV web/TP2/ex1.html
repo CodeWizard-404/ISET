@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Methode A-->
+    <a href="#" id="lien1">Lien vers Gmail A</a>
+    <script>
+        var lien1 = document.getElementsByTagName("a");
+        lien1[0].href = "https://www.gmail.com";
+    </script>
+
+<br>
+
+    <!--Methode B-->
+    <a href="#" id="lien2">Lien vers Gmail B</a>
+    <script>
+        var lien = document.querySelector("a#lien2");
+        lien.href = "https://www.gmail.com";
+    </script>
+
+</body>
+</html>

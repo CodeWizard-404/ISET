@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function incrementVisits() {
+        if (localStorage.getItem("visits")) {
+          localStorage.setItem("visits", Number(localStorage.getItem("visits")) + 1);
+        } else {
+          localStorage.setItem("visits", 1);
+        }
+        document.getElementById("visitCount").innerText =
+          "Bonjour " + getFullName() + ", vous avez visité cette page " + localStorage.getItem("visits") + " fois.";
+      }
+
+      function getFullName() {
+        var title = localStorage.getItem("title");
+        var firstName = localStorage.getItem("firstName");
+        var lastName = localStorage.getItem("lastName");
+        return title + " " + firstName + " " + lastName;
+      }
+
+      function submitForm() {
+        localStorage.setItem("hasVisited", true);
+        localStorage.setItem("title", document.getElementById("title").value);
+        localStorage.setItem("firstName", document.getElementById("firstName").value);
+        localStorage.setItem("lastName", document.getElementById("lastName").value);
+
+        document.getElementById("userInfoForm").style.display = "none";
+        incrementVisits();
+      }
+
+      window.onload = function () {
+        if (!localStorage.getItem("hasVisited")) {
+          document.getElementById("userInfoForm").style.display = "block";
+        }
+        incrementVisits();
+      };
+    </script>
+  </head>
+  <body>
+    <h2>Compteur de visites</h2>
+    <form id="userInfoForm" style="display:none;">
+      <label for="title">Titre de civilité :</label>
+      <input type="text" id="title" name="title"><br>
+
+      <label for="firstName">Prénom :</label>
+      <input type="text" id="firstName" name="firstName"><br>
+
+      <label for="lastName">Nom :</label>
+      <input type="text" id="lastName" name="lastName"><br>
+
+      <button type="button" onclick="submitForm()">Enregistrer</button>
+    </form>
+    <p id="visitCount"></p>
+  </body>
+</html>

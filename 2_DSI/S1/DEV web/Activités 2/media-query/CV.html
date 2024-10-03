@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef's Portfolio</title>
+    <link rel="stylesheet" href="CV.css">
+    <link rel="shortcut icon" href="pfp.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="custom-nav"></div>
+
+    <div id="custom-container">
+
+        <div id="custom-profile">
+            <div id="custom-image">
+                <img id="custom-profile-photo" src="pfp.jpg" alt="Profile-Image">
+            </div>
+            <p id="custom-name">Laghouanem Sofien</p>
+            <p id="custom-designation">IT Student</p>
+            <a id="custom-edit-intro" onclick="customIntro()">Edit Intro</a>
+            <hr>
+            <p id="custom-address">Address<br><strong>Ben Arous, Rades</strong></p>
+            <p id="custom-email">Email<br><strong>sofien.laghouanem@email.com</strong></p>
+            <p id="custom-telephone">Tel°<br><strong>+216-20-031-474</strong></p>
+        </div>
+
+        <div id="custom-info-cards">
+
+            <!-- Work Experience Card -->
+            <div class="custom-card">
+                <p><i class="fas fa-briefcase"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
+                <ul id="custom-wrk0">
+                    <li>
+                        <p class="tags">Concentrix<br><span>Content Moderator | <span>2021-Now</span></span></p>
+                        <a class="custom-edit" href="#"><i class="fas fa-pen"></i></a>
+                    </li>
+                </ul>
+                <a onclick="customWork()">+ Add new</a>
+            </div>
+
+            <!-- Skills Card -->
+            <div class="custom-card">
+                <p><i class="fas fa-briefcase"></i>&nbsp;&nbsp;&nbsp;Skills</p>
+                <ul class="pg-list" id="custom-skl0">
+                    <li>Front End</li>
+                    <li>Back End</li>
+                    <li>Data Base</li>
+                </ul>
+                <a onclick="customSkl()">+ Add new</a>
+            </div>
+
+            <!-- Education Card -->
+            <div class="custom-card">
+                <p><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;Education</p>
+                <ul id="custom-edu0">
+                    <li>ISET Charguia</li>
+                    <li>ISG Gabes</li>
+                    <li></li>
+                </ul>
+                <a onclick="customEdu()">+ Add new</a>
+            </div>
+
+            <!-- Video Audio Card -->
+            <div class="custom-card va">
+                <p><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;Video Audio</p>
+                <video width="100%" height="auto" controls id="custom-videos">
+                    <source src="video_test.mp4" type="video/mp4">
+                    <source src="Video_test.WebM" type="video/webm">
+                    <track src="custom-video.en.vtt" kind="subtitles" srclang="en" label="English" default>
+                </video>
+                <div id="custom-controles" hidden></div>
+            </div>
+
+            <!-- Media Query Card -->
+            <div class="custom-card">
+                <p><i class="fas fa-briefcase"></i>&nbsp;&nbsp;&nbsp;Media Query</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, atque autem molestias corrupti iusto quod aspernatur suscipit quis! Impedit ipsum magnam quidem ab eum voluptates odio dolorum adipisci voluptate! Debitis!.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var customLecteur = document.getElementById("custom-videos");
+
+        function customLecture() {
+            customLecteur.play();
+        }
+
+        function customPause() {
+            customLecteur.pause();
+        }
+
+        function customStop() {
+            customLecteur.load();
+        }
+
+        function customAvancer() {
+            customLecteur.currentTime += 5;
+        }
+
+        function customReculer() {
+            customLecteur.currentTime -= 5;
+        }
+
+        function customVplus() {
+            customLecteur.volume += 0.1;
+        }
+
+        function customVmoins() {
+            customLecteur.volume -= 0.1;
+        }
+
+        function customCreerBoutons() {
+            var customBtnLecture = document.createElement("button");
+            var customBtnPause = document.createElement("button");
+            var customBtnStop = document.createElement("button");
+            var customBtnReculer = document.createElement("button");
+            var customBtnAvancer = document.createElement("button");
+            var customBtnVplus = document.createElement("button");
+            var customBtnVmoins = document.createElement("button");
+            var customControlesBox = document.getElementById("custom-controles");
+
+            customBtnLecture.textContent = "Lecture";
+            customBtnPause.textContent = "Pause";
+            customBtnStop.textContent = "Stop";
+            customBtnReculer.textContent = "-5s";
+            customBtnAvancer.textContent = "+5s";
+            customBtnVplus.textContent = "volume+";
+            customBtnVmoins.textContent = "volume-";
+
+            customControlesBox.appendChild(customBtnLecture);
+            customControlesBox.appendChild(customBtnPause);
+            customControlesBox.appendChild(customBtnStop);
+            customControlesBox.appendChild(customBtnReculer);
+            customControlesBox.appendChild(customBtnAvancer);
+            customControlesBox.appendChild(customBtnVplus);
+            customControlesBox.appendChild(customBtnVmoins);
+
+            customBtnLecture.addEventListener("click", customLecture, false);
+            customBtnPause.addEventListener("click", customPause, false);
+            customBtnStop.addEventListener("click", customStop, false);
+            customBtnReculer.addEventListener("click", customReculer, false);
+            customBtnAvancer.addEventListener("click", customAvancer, false);
+            customBtnVmoins.addEventListener("click", customVmoins, false);
+            customBtnVplus.addEventListener("click", customVplus, false);
+
+            customControlesBox.removeAttribute("hidden");
+        }
+
+        document.addEventListener('DOMContentLoaded', customCreerBoutons, false);
+    </script>
+
+</body>
+
+</html>

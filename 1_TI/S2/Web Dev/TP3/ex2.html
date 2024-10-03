@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        legend {
+            font-weight: bold;
+        }
+    </style>
+    <title>TP3 : Exercice 2 JS</title>
+
+</head>
+
+<body>
+    <h2>Opérations sur un tableau de notes</h2>
+    <form name="f1">
+        <label>Saisir le nombre d'étudiants : </label>
+                <input type="number" name="txtN" min="5" max="20" value="5" required />
+                <button type="button" name="btnCreer" value="Créer tableau"
+                    onclick="saisir(parseInt(document.f1.txtN.value))">Créer tableau</button>
+                <input type="reset" name="btninit" value="Initialiser" onclick="init()" />
+                <br>Contenu du tableau : <label id="lblTab"></label>
+                <fieldset>
+                    <legend>Choisir une opération </legend>
+                    <select name="lstop" onchange="chg()">
+                        <option value="Afficher la liste des notes" selected>Afficher la liste des notes</option>
+                        <option value="Nombres d'étudiants Admis ">Nombres d'étudiants Admis</option>
+                        <option value="Moyenne de la Classe ">Moyenne de la Classe</option>
+                        <option value="Max des notes">Max des notes</option>
+                        <option value="Nombres apparition d'une note">Nombres apparition d'une note</option>
+                    </select>
+
+                    Saisir la note à chercher :<input type="number" name="txtnotApp" min="0" max="20" step="0.01"
+                        onchange="if(document.f1.lstop.value==='Nombres apparition d\'une note'){recherche(parseInt(this.value))}" />
+                    Résultat : <input type="text" name="txtres" size="30" readonly />
+                </fieldset>
+
+    </form>
+</body>
+<script>
+    let tab = [];
+
+    function init() {
+        tab = [];
+        document.f1.txtres.value = "";
+        document.getElementById("lblTab").textContent = "";
+    }
+
+    function saisir(N) {
+        tab = new Array(N);
+        for (let i = 0; i < N; i++) {
+            tab[i] = Math.floor(Math.random() * 20);
+        }
+        document.getElementById("lblTab").textContent = tab.join(", ");
+        document.f1.txtres.value = tab.join(", ");
+
+    }
+
+    function admis() {
+        let x = tab.filter(Element => Element >= 10)
+        document.f1.txtres.value = `${x.length} étudiant(s) ont eu 10 ou plus.`;
+    }
+
+    function moyenne() {
+        let sum = tab.reduce((a, b) => a + b, 0);
+        var moyenne = sum / tab.length;
+        document.f1.txtres.value = `La moyenne de la classe est de ${moyenne.toFixed(2)}`;
+    }
+
+    function Max() {
+        let max = Math.max(...tab);
+        document.f1.txtres.value = `La note maximale est ${max}`;
+    }
+
+
+    function compter(x) {
+        let nbOccurrences = 0;
+        for (let i = 0; i < tab.length; i++) {
+            if (tab[i] === x) {
+                nbOccurrences++;
+            }
+        }
+        return nbOccurrences;
+    }
+
+    function recherche(x) {
+        if (document.f1.txtnotApp.value !== "") {
+            if (compter(x) > 0) {
+                document.f1.txtres.value = x + ' apparaît ' + compter(x) + ' fois dans le tableau.';
+            } else {
+                document.f1.txtres.value = x + ' n\'apparaît pas dans le tableau.';
+            }
+        }
+    }
+    function chg() {
+        switch (document.f1.lstop.value) {
+            case "Afficher la liste des notes":
+                saisir(parseInt(document.f1.txtN.value));
+                break;
+
+            case "Nombres d'étudiants Admis ":
+                admis();
+                break;
+
+            case "Moyenne de la Classe ":
+                moyenne();
+                break;
+
+            case "Max des notes":
+                max();
+                break;
+        }
+    }
+
+
+</script>
+
+</html>

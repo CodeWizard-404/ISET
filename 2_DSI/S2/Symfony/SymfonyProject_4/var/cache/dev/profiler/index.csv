@@ -1,0 +1,10 @@
+362382,::1,GET,http://localhost:8000/,1712082078,,404
+abf250,::1,GET,http://localhost:8000/demo,1712082090,,200
+b07dbf,::1,GET,http://localhost:8000/,1712089207,,404
+1b14ac,::1,GET,http://localhost:8000/,1712089209,,404
+0ef3bc,::1,GET,http://localhost:8000/,1712089575,,404
+0835db,::1,GET,http://localhost:8000/produit,1712089616,,301
+830224,::1,GET,http://localhost:8000/produit/,1712089617,,200
+cc46df,::1,GET,http://localhost:8000/produit/new,1712089659,,200
+b1a484,::1,POST,http://localhost:8000/produit/new,1712089724,,303
+a915b2,::1,GET,http://localhost:8000/produit/,1712089725,,200

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="traitement.php" method="post">
+        <label for="pseudo">Votre pseudo:</label>
+        <input type="text" name="pseudo" id="pseudo"/><br/>
+        <label for="passe">Votre mot de passe:</label>
+        <input type="password" name="passe" id="passe"/><br/>
+        <label for="raison">vos raisons de vous inscrire sur ce site?</label>
+        <textarea name="raison" id="raison"></textarea><br/><br><br><br>
+    </form>
+    <table>
+        <tr>
+            <td><label for="pseudo">votre pseudo:</label></td>
+            <td><input type="text" name="pseudo" id="pseudo"/><br/></td>
+        </tr>
+        <tr>
+            <td><label for="passe">Votre mot de passe:</label></td>
+            <td><input type="password" name="passe" id="passe"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td><label for="ris">vos raisons de vous inscrire sur ce site?</label></td>
+            <td><textarea name="raison" id="raison"></textarea><br/></td>
+        </tr>
+    </table>
+    <input type="submit" name="submit" id="submit" value="submit">
+    <input type="reset" name="reset" id="reset" value="reset">
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Accès à l'API Weather en JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <form name="f">
+        <label>Donnez un pays :</label> 					  
+        <input type="text" name="txtpays" value="Tunisia" placeholder="Exp : Tunisie, France, Liban" required />
+        <button type="button" onclick="afficher(document.f.txtpays.value)">Afficher</button>
+      </form>
+    </header>
+    <section>
+      <div class="D1">
+        Pays: <span id="pays">_</span>
+      </div>
+      <div class="D2">
+        Température: <span id="Temp">_</span><span>°</span>C
+      </div>
+      <div class="D3">
+        Vent: <span id="vent">_</span><span> m/s</span>
+      </div>
+      <div class="D4">
+        Humidité: <span id="Humidite">_</span><span>%</span>
+      </div>
+    </section>
+    <header>
+      <label id="OnEstLe">On est le </label>
+    </header>
+        
+	<script>
+		var options = {
+		  method: 'GET',
+		  headers: {
+			'X-RapidAPI-Key': '69abf540089faa34c26c54c422058fb1',
+			'X-RapidAPI-Host': 'currency-converter18.p.rapidapi.com'
+		  }
+		};
+	  
+		function afficher(pays) {
+		  let link = `https://api.openweathermap.org/data/2.5/weather?q=${pays}&units=metric&appid=69abf540089faa34c26c54c422058fb1`;
+	  
+		  fetch(link, options)
+			.then(response => response.json())
+			.then(data => {
+			  document.getElementById("pays").textContent = data.name;
+			  document.getElementById("Temp").textContent = data.main.temp;
+			  document.getElementById("vent").textContent = data.wind.speed;
+			  document.getElementById("Humidite").textContent = data.main.humidity;
+			})
+			.catch(error => {
+			  console.log(error);
+			});
+		}
+	  
+		function displayCurrentDate() {
+		  var currentDate = new Date();
+		  var options = { day: 'numeric', year: 'numeric', month: 'long' };
+		  var formattedDate = currentDate.toLocaleDateString('en-UK', options);
+		  document.getElementById("OnEstLe").textContent += " " + formattedDate;
+		}
+	  
+		displayCurrentDate();
+	  </script>
+	  
+  </body>
+</html>

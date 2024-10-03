@@ -1,0 +1,18 @@
+<h3>Lise des livres</h3>
+<ul>
+    <li>Id</li>
+    <li *ngFor="let l of tablivre">
+        {{l.id}}
+        {{l.titre}}
+        <button>info</button>
+    </li>
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>id</th> 
+            <th>titre</th>
+            <th>infos</th>
+        </tr>
+    </thead>
+</table>

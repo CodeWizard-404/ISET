@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Web Storage and Styles</title>  
+  <style>  
+    body {  
+      font-size: 40px;  
+      font-weight: 500;  
+      Font-family: sans,cursive;  
+      height: 100vh;  
+      display: flex;  
+      align-items: center;  
+      flex-direction: column;  
+    }  
+    button {  
+      background-color: white;  
+      padding: 10px;  
+      border: none;  
+      margin: 35px;  
+    }  
+    #geo {  
+      font-size: 24px;  
+      font-weight: bold;  
+      color: black;  
+    }  
+    #geo.changed {  
+      color: red;  
+      font-weight: bold;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <label for="language">Choose a language:</label>  
+  <select id="language">  
+    <option value="english">English</option>  
+    <option value="french">French</option>  
+  </select>  
+
+  <br/>  
+
+  <label for="backgroundColor">Choose background color:</label>  
+  <select id="backgroundColor">  
+    <option value="white">White</option>  
+    <option value="lightblue">Light Blue</option>  
+    <option value="lightgreen">Light Green</option>  
+  </select>  
+
+  <br/>  
+
+  <label for="textColor">Choose text color:</label>  
+  <select id="textColor">  
+    <option value="black">Black</option>  
+    <option value="blue">Blue</option>  
+    <option value="green">Green</option>  
+  </select>  
+
+  <br/>  
+
+  <button onclick="saveStyles()">Save Styles</button>  
+  <div id="geo">Geolocation: <span id="geoText"></span></div>  
+  <div id="changeMessage"></div>  
+  <button onclick="visualizeCharacter()">Visualize Character</button>  
+
+  <script>  
+    function saveStyles() {  
+      const language = document.getElementById("language").value;  
+      const backgroundColor = document.getElementById("backgroundColor").value;  
+      const textColor = document.getElementById("textColor").value;  
+
+      localStorage.setItem("language", language);  
+      localStorage.setItem("backgroundColor", backgroundColor);  
+      localStorage.setItem("textColor", textColor);  
+
+      applyStyles();  
+    }  
+
+    function applyStyles() {  
+      const language = localStorage.getItem("language") || "english";  
+      const backgroundColor = localStorage.getItem("backgroundColor") || "white";  
+      const textColor = localStorage.getItem("textColor") || "black";  
+
+      document.body.style.backgroundColor = backgroundColor;  
+      document.body.style.color = textColor;  
+    }  
+
+    function saveGeolocation() {  
+      const geoDiv = document.getElementById("geo");  
+      const savedGeo = localStorage.getItem("geolocation");  
+
+      navigator.geolocation.getCurrentPosition(position => {  
+        const newGeo = `${position.coords.latitude}, ${position.coords.longitude}`;  
+        document.getElementById("geoText").textContent = newGeo;  
+
+        if (savedGeo && savedGeo !== newGeo) {  
+          geoDiv.classList.add("changed");  
+          document.getElementById("changeMessage").textContent = "Vous avez changé de lieu";  
+        }  
+
+        localStorage.setItem("geolocation", newGeo);  
+      });  
+    }  
+
+    function visualizeCharacter() {  
+      const visualizeBtn = document.querySelector("button");  
+      const isVisualizing = localStorage.getItem("visualizingCharacter") === "true";  
+
+      if (isVisualizing) {  
+        visualizeBtn.textContent = "Visualize";  
+        localStorage.setItem("visualizingCharacter", "false");  
+      } else {  
+        visualizeBtn.textContent = "Hide";  
+        localStorage.setItem("visualizingCharacter", "true");  
+      }  
+    }  
+
+    document.addEventListener("DOMContentLoaded", () => {  
+      applyStyles();  
+      saveGeolocation();  
+      visualizeCharacter();  
+    });  
+  </script>  
+</body>  
+</html>

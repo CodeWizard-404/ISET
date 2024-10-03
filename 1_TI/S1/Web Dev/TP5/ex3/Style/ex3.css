@@ -1,0 +1,12 @@
+img{
+    width: 60PX;
+    height: 80PX;
+}
+tr,td,th,table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table{
+    width: 50%;
+    height: 50%;
+}

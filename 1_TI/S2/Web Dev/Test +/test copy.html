@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CLUB SPORTIF LET'S GO</h1>
+    <h2> OFFRES AUX ÉTUDIANTS ET PROFESSIONNEL </h2>
+    <form name="fForme">
+        <fieldset>
+            <legend> Vous êtes :</legend>
+            <input type="radio" name="rdFrm" value="Pro" ??????????? />Professionnel
+            <input type="radio" name="rdFrm" value="Etudiant" ??????????? /> Etudiant
+            <div id="divEns" hidden>
+                <label>Nombre de mois d'abonnement: </label>
+                <input type="text" name="txtAbs" />
+                <label>Nos Offres</label>
+                <select id="SP">
+                    <option>Offre SPORT PRO (%15 de Réduction)</option>
+                    <option>Offre SOFT HEALTH (10%)</option>
+                </select>
+            </div>
+            <div id="dEtudiant" hidden>
+                <label>Votre Age: </label>
+                <input type="text" name="txtAge" /> </br>
+                <label>Nbre de mois d'abonnement: </label>
+                <input type="text" name="txtAbe" /> </br>
+                <label>Nos Offres</label>
+                <select id="SE">
+                    <option>Offre YOUNGY (%20 de Réduction)</option>
+                    <option>Offre ALL SPORTS(30%)</option>
+                </select>
+            </div>
+        </fieldset>
+        <button type="button" name="btncalcul" onclick="????"> Votre abonnement est de </button>
+        <input type="text" name="txtMontant" readonly />
+    </form>
+    <div id="divL"></div>
+
+</body>
+
+</html>

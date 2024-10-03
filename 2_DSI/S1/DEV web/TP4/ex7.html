@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #2C2C2B;
+            /* 1px border around canvas */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="Canvas" width="600" height="250"></canvas>
+    <script>
+        var canvas = document.getElementById('Canvas');
+        var ctx = canvas.getContext('2d');
+        // Configuration des ombrages pour le rectangle
+        ctx.shadowColor='rgba(34, 97, 187)';
+        //Etendue sur l’axe X = 0; Etendue sur Y ;Valeur du flou = 15; couleur ombre = 
+        //'rgba(204,69,228,1)';
+        ctx.shadowOffsetX=0;
+        ctx.shadowOffsetY=0;
+        ctx.shadowBlur=15;
+        // Essayez par la suite offsetX et offsetY 10 et valueur du flou 30
+        ctx.shadowOffsetX=10;
+        ctx.shadowOffsetY=10;
+        ctx.shadowBlur=30;
+
+        // Tracé d'un rectangle
+        var x = 50; 
+        var y = 50; 
+        var width = 200;
+        var height = 100;
+        ctx.fillRect(x, y, width, height);
+
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(10, 10, 150, 150);
+        // Tracé d'un autre rectangle
+        var x = 300; 
+        var y = 90; 
+        var width = 200;
+        var height = 100;
+        ctx.fillRect(x, y, width, height);
+        ctx.fillStyle = '#9f0c9d';
+        ctx.fillRect(50, 50, 70, 70);
+    </script>
+
+</body>
+
+</html>

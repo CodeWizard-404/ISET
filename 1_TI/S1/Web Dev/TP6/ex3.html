@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <table>
+            <tr>
+                <td><label for="numerodelaCIN:">numero de la CIN:</label> </td>
+                <td><input type="number" name="cin" id="cin" maxlength="8"></td>
+            </tr>
+            <tr>
+                <td><label for="nometprenom">nom et prenom:</label></td>
+                <td><input type="text" name="np" id="np" maxlength="40"></td>
+            </tr>
+            <tr>
+                <td><label for="la datede naissance:">la date de naissance:</label></td>
+                <td><input type="date" name="dn" id="dn"></td>
+            </tr>
+            <tr>
+                <td><label for="la moyenne de l’annee dernière:">la moyenne de l’annee dernière:</label></td>
+                <td><input type="range" name="moy" id="moy" min="0" max="20"></td>
+            </tr>
+            <tr>
+                <td><label for=" la Date d’inscription:"> la Date d’inscription:</label></td>
+                <td><input type="date" name="d" id="d"></td>
+            </tr>
+            <tr>
+                <td><label for="parcours à suivre  et du niveau dans le parcours:">parcours à suivre  et du niveau dans le parcours:</label></td>
+                <td>
+                    <select name="Parcours">
+                        <optgroup label="TC">
+                            <option value="1ere">1er</option>
+                        </optgroup>
+                        <optgroup label="SEM">
+                            <option value="2eme">2eme</option>
+                            <option value="2eme">3eme</option>
+                        </optgroup>
+                        <optgroup label="DSI">
+                            <option value="2eme">2eme</option>
+                            <option value="2eme">3eme</option>
+                        </optgroup>
+                        <optgroup label="RSI">
+                            <option value="2eme">2eme</option>
+                            <option value="2eme">3eme</option>
+                        </optgroup>
+                    </select> 
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

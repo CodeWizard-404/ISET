@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="DemoCanvas" width="300" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById("DemoCanvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.lineWidth = "3";
+            ctx.strokeStyle = "blue";
+            ctx.strokeRect(60, 60, 160, 160);
+            //déplacement de (60,60)
+            ctx.translate( 60, 60 );
+            ctx.strokeStyle = "red";
+            ctx.strokeRect(60, 60, 160, 160);
+            ctx.stroke();
+        }
+    </script>
+
+
+</html>

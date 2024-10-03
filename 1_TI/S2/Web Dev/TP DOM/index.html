@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .c1 {
+            color: red;
+        }
+
+        .c2 {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+
+
+
+
+<body>
+    <h1> Formation à l'ISET </h1>
+    <p>
+        La <span id="s1" class="c1 c2"> formation</span> se déroule sur <span>3 </span> années
+    </p>
+    <h2> Formation en TC Sem 2 </h2>
+    <ul><li>Algo</li><li class="c1">Dév Web</li><li>Prog C</li>
+    </ul>
+    <p class="c1">
+        La formation est couronnée d'un <span> PFE </span>
+    </p>
+
+
+
+
+
+
+    <script>
+
+        /* S1
+        let element = document.getElementById("s1");
+        alert(element.textContent);*/
+
+        /* S2
+        let elements = document.getElementsByTagName("p");
+        alert(elements[0].innerText);
+        alert(elements[1].innerHTML);
+        alert(elements[1].outerHTML);
+        alert(elements.item(1).textContent);*/
+
+        /* S3
+        let el = document.getElementsByClassName("c1");
+        alert(el[1].innerHTML);
+        alert(el[1].tagName);*/
+
+        /* S4
+        alert(document.querySelector("p span")[2].innerHTML);*/
+
+        /* S5
+        alert(document.querySelectorAll("p span")[2].innerHTML);*/
+
+        /* S6
+        alert(document.getElementById("s1").classList);*/
+
+        /* S7
+        document.querySelector("h2").setAttribute("style", "color:blue");*/
+
+        /* S8
+        document.getElementById("s1").removeAttribute("class");*/
+
+        /* S9
+        alert(document.querySelector("ul").childNodes[2].innerHTML);*/
+
+        /* S10
+        alert(document.querySelector("ul").firstChild.innerHTML);
+
+        alert(document.querySelector("ul li").nextSibling.innerHTML);
+        
+        alert(document.querySelector("ul li").parentNode.innerHTML);*/
+        
+        /*let par = document.createElement("p");
+        par.innerHTML = " 1ère année TC";
+        document.body.appendChild(par);
+        
+        /*let newLi = document.createElement("li");
+        newLi.innerHTML = "Anglais";
+        let liste = document.getElementsByTagName("ul")[0];
+        liste.insertBefore(newLi, liste.firstChild);
+
+        let newLi2 = document.createElement("li");
+        newLi2.innerHTML = "Systèmes d'exploitation";
+        liste.insertBefore(newLi2, liste.lastChild);
+        liste.insertAdjacentHTML("afterend", "<h2> Spécialité </h2>");
+        
+        let li1 = document.createElement("li");
+        li1.innerHTML = " Communication";
+        
+        let ulParent = document.querySelector("body ul")
+        ulParent.replaceChild(li1, ulParent.firstChild);
+        
+        let par2 = document.querySelector("body p");
+        document.body.removeChild(par2);*/
+
+        let title2 = document.createElement("h1");
+        let title1 =document.getElementsByTagName("h1")[0].innerText;
+        let t =document.getElementsByTagName("h1")[0];
+        title2.innerHTML = title1.concat(" Rades") ;
+        document.body.appendChild(title2);
+        t.innerHTML = title1.concat(" Charguia");
+
+        let newLi = document.createElement("li");
+        newLi.innerHTML = "Anglais";
+        let liste = document.getElementsByTagName("ul")[0];
+        liste.insertBefore(newLi, liste.firstChild);
+
+        let li1 = document.querySelector("ul li:nth-child(2)");;
+        li1.parentNode.removeChild(li1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

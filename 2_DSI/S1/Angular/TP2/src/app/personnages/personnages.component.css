@@ -1,0 +1,15 @@
+img{
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+}
+ul{
+    list-style: none;
+}
+li{
+    display: flex;
+    align-items:last baseline;
+}
+p{
+    font-weight: bold
+}

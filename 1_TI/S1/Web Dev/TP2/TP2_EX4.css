@@ -1,0 +1,23 @@
+h1{
+    color: red;
+    text-align: center;
+    font-size: 32px;
+    font-family: Verdana;
+}
+h2{
+    text-decoration: underline;
+    color: blue;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+.term1{
+    color: purple;
+    text-decoration:underline ;
+    font-weight: bold;
+    font-style: italic;
+}
+.term2{
+    color: yellow;
+    font-family: arial;
+
+}

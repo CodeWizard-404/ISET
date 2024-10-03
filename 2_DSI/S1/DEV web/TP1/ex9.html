@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: yellow;
+            border-radius: 50px;
+            padding: 20px;
+            color: red;
+            animation: TA 2s ease-in-out 6 alternate ;
+        }
+
+        ol {
+            text-align: center;
+            list-style-type: none;
+        }
+
+        li {
+            font-size: 16px;
+        }
+
+        @keyframes TA {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Les Animations</h1>
+    <ol id="anim"></ol>
+
+    <script>
+        var anim = document.getElementById('anim');
+        var title = document.querySelector('h1');
+        let C = 0;
+
+        title.addEventListener('animationstart', () => {
+            var list = document.createElement('li');
+            list.textContent = 'Début animation';
+            anim.appendChild(list);
+        });
+
+        title.addEventListener('animationiteration', () => {
+            C++;
+            var list = document.createElement('li');
+            list.textContent = `Itération numéro ${C}`;
+            anim.appendChild(list);
+        });
+
+        title.addEventListener('animationend', () => {
+            var list = document.createElement('li');
+            list.textContent = 'Fin animation';
+            anim.appendChild(list);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titre" onclick="modif_paragraphe()">Titre</h1>
+    <p id="paragraphe" onclick="centrage_h1()">Ceci est un paragraphe avec un mot original</p>
+    <script>
+        function modif_paragraphe() {
+            var paragraphe = document.getElementById("paragraphe");
+            paragraphe.innerHTML = paragraphe.textContent.replace("original", "<em> corrigé </em>");
+
+        }
+
+        function centrage_h1() {
+            var h1Elements = document.getElementsByTagName("h1");
+            if (h1Elements.length > 0) {
+                var premierH1 = h1Elements[0];
+                premierH1.setAttribute("align", "center");
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+<h3>Liste des pays</h3>
+<ul>
+    <li *ngFor="let pays of paysList">
+        <img [src]="pays.drapeau" alt="{{pays.nom}}" width="50" height="40" (click)="showSelectedPays(pays.continent)">
+        {{pays.nom | uppercase}}
+        <strong>Capital:</strong> {{pays.capitale}} - 
+        <strong>Continent:</strong> {{pays.continent}} - 
+        <strong>Royaume:</strong> <input type="checkbox" [disabled]="true" [checked]="pays.royaume ? 'checked' : null">
+        <br> 
+        * Population: {{pays.population}} 
+        * Superficie: {{pays.superficie}} Km² 
+        * Langues Parlées:
+            <span *ngIf="pays.langues.length > 1" class="badge bg-warning">{{pays.langues.join(', ')}}</span>
+            <span *ngIf="pays.langues.length <= 1" class="badge bg-info">{{pays.langues[0]}}</span>
+        
+    </li>
+</ul>

@@ -1,0 +1,12 @@
+
+connect system/Kayto404
+
+create user sgbd* identified by tp;
+
+grant connect,resource,create view to sgbd*;
+
+connect sgbd*/tp
+
+start path\tp.sql
+
+commit;

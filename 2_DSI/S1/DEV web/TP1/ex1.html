@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        div {
+            background-color: blue;
+            width: 100px;
+            height: 80px;
+            transform-origin: center;
+            transform: none;
+            transition: transform 0.5s;
+        }
+
+        .transTranslate {
+            transform: translateX(100px);
+        }
+
+        .transRotate {
+            transform: rotate(60deg);
+        }
+
+        .transSkew {
+            transform: skewX(10deg) skewY(10deg);
+        }
+
+        .transScale {
+            transform: scale(0.5);
+        }
+    </style>
+
+
+    <script>
+        function animate() {
+            document.getElementById("monBloc").classList.remove("transTranslate");
+            document.getElementById("monBloc").classList.remove("transRotate");
+            document.getElementById("monBloc").classList.remove("transSkew");
+            document.getElementById("monBloc").classList.remove("transScale");
+
+            var radios = document.getElementsByName("rdTrans");
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    var valeurRadio = radios[i].value;
+                    document.getElementById("monBloc").classList.add(valeurRadio);
+                    break; 
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <br /><br />
+    <div id="monBloc"> Transformations avec CSS </div>
+    <br /><br />
+    <form method="GET">
+        <label> Rotation </label> 
+        <input type="radio" name="rdTrans" value="transRotate" onClick="animate()" /><br />
+        <label> Translation </label> 
+        <input type="radio" name="rdTrans" value="transTranslate" onClick="animate()" /><br />
+        <label> Inclinaison </label> 
+        <input type="radio" name="rdTrans" value="transSkew" onClick="animate()" /><br />
+        <label> Mise à l'échelle </label> 
+        <input type="radio" name="rdTrans" value="transScale" onClick="animate()" /><br />
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<h1>Description Téléphone</h1>
+<ul>
+    <li><img [src]="telephone.photo" alt=""></li>
+    <li>Marque: {{telephone.marque}}</li>
+    <li>Modéle: {{telephone.modele}}</li>
+    <li>
+        <input type="radio" [checked]="price()" disabled>Bas Gamme
+        <input type="radio" [checked]="!price()" disabled>Haut Gamme
+    </li>
+    <li>Prix: <input type="text" [(ngModel)]="telephone.prix"></li>
+
+</ul>
+<button (click)="Afficher()">Details</button>

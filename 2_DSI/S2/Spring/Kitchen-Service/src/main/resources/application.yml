@@ -1,0 +1,21 @@
+server:
+  port: 8014
+spring:
+  application:
+    name: KitchenService
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: Kayto404
+    url: jdbc:postgresql://localhost:5432/dbKitchen
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+
+
+

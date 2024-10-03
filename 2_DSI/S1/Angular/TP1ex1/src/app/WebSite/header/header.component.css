@@ -1,0 +1,10 @@
+div{
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+img{
+    width: 50px;
+    margin: 10px;
+}

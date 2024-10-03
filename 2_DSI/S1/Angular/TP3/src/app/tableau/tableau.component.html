@@ -1,0 +1,29 @@
+<ul>
+    <li *ngFor="let t of tab; index as indice; count as compteur">{{t}} a pour position {{indice+1}}/{{compteur}}</li>
+</ul>
+<ul>
+    <li *ngFor="let t of tab; index as indice; count as compteur">{{t}}
+        <button (click)="onPostion(t,indice+1)">Position</button>
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let t of tab; index as indice; count as compteur">  {{t}}
+        <button *ngIf="t%2==0"
+        (click)="onPostion(t,indice+1)">Position</button>
+    </li>
+</ul>
+<h3>4. Affichage des boutons des éléments</h3>
+<ul>
+   <ng-container *ngFor="let t of tab">
+        <li *ngIf="t%2==0">{{t}}</li>
+    </ng-container>
+</ul>
+
+<h3>5. Elément du tableau avec classe personalisée</h3>
+<ul>
+    <li *ngFor="let t of tab">
+        <i [ngClass]="{'fa-solid':true,
+                        'fa-circle-arrow-up':t>50,
+                        'fa-circle-arrow-down':t<=50}"></i> 
+        {{t}}</li>
+</ul>

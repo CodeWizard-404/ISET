@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #eee;
+            text-align: center;
+            padding-top: 3%;
+        }
+
+        .palette span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+        }
+
+        .palette span:hover {
+            border-color: white;
+        }
+
+        canvas {
+            cursor: crosshair;
+            border: 5px solid #666;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0px 0px 20px #666;
+            margin-top: 20px;
+        }
+
+        .Editeurs {
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 5%;
+            transform: translate(0%, -50%);
+            text-align: left;
+            cursor: crosshair;
+            border: 5px solid #666;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0px 0px 20px #666;
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Palette de couleurs -->
+    <div class="palette">
+        <span class="color-option" style="background:#206BA4"></span>
+        <span class="color-option" style="background:#54A4DE"></span>
+        <span class="color-option" style="background:#BBD9EE"></span>
+        <span class="color-option" style="background:#BEDF5D"></span>
+        <span class="color-option" style="background:#D6EB9A"></span>
+        <span class="color-option" style="background:#FF9834"></span>
+        <span class="color-option" style="background:#FFBF80"></span>
+        <span class="color-option" style="background:#F6E896"></span>
+        <span class="color-option" style="background:#b07d42"></span>
+        <span class="color-option" style="background:#FF5349"></span>
+
+    </div>
+    <!-- Canvas -->
+    <canvas id="dessin" width="480" height="360"></canvas>
+    <div class="Editeurs">
+        <label>
+            <input type="radio" name="forme" value="creuse" id="radioCreuse"> Forme creuse
+        </label><br>
+        <label>
+            <input type="radio" name="forme" value="pleine" id="radioPleine"> Forme pleine
+        </label><br>
+        <button id="effacer"> Effacer </button><br>
+        <button id="gomme">Gomme</button><br>
+        <label>
+            Epaisseur du trait: <br><input type="range" id="epaisseur" min="1" max="50" step="1" value="2">
+        </label><br>
+        <label>
+            <input type="radio" name="forme" value="rectangle" id="radioRectangle"> Rectangle
+        </label><br>
+        <label>
+            <input type="radio" name="forme" value="cercle" id="radioCercle"> Cercle
+        </label><br>
+        <label>
+            <input type="checkbox" id="remplir"> Remplir
+        </label>
+    </div>
+    <script>
+        var moncanvas = document.getElementById('dessin');
+        var ctx = moncanvas.getContext('2d');
+        var en_dessin = false;
+        var formeActuelle = 'creuse';
+        var couleurActuelle = "black";
+        var startX, startY, endX, endY;
+        var previousImageData;
+
+        ctx.strokeStyle = couleurActuelle;
+        ctx.lineWidth = 2;
+
+        moncanvas.addEventListener('mousedown', function (e) {
+            en_dessin = true;
+            ctx.beginPath();
+            startX = e.offsetX;
+            startY = e.offsetY;
+            previousImageData = ctx.getImageData(0, 0, moncanvas.width, moncanvas.height);
+        });
+
+        moncanvas.addEventListener('mousemove', function (e) {
+            if (en_dessin) {
+                endX = e.offsetX;
+                endY = e.offsetY;
+                if (formeActuelle === 'rectangle' || formeActuelle === 'cercle') {
+                    ctx.putImageData(previousImageData, 0, 0);
+                    dessinerForme(ctx, startX, startY, endX, endY, formeActuelle);
+                } else {
+                    dessiner(ctx, e.offsetX, e.offsetY);
+                }
+            }
+        });
+
+        moncanvas.addEventListener('mouseup', function (e) {
+            en_dessin = false;
+            previousImageData = ctx.getImageData(0, 0, moncanvas.width, moncanvas.height);
+            if (formeActuelle === 'rectangle' || formeActuelle === 'cercle') {
+                dessinerForme(ctx, startX, startY, endX, endY, formeActuelle);
+            }
+        });
+
+        function dessiner(ctx, x, y) {
+            ctx.lineTo(x, y);
+            if (formeActuelle === 'pleine') {
+                if (remplir.checked) {
+                    ctx.fill();
+                } else {
+                    ctx.stroke();
+                }
+            } else {
+                ctx.stroke();
+            }
+        }
+
+        function dessinerForme(ctx, x1, y1, x2, y2, forme) {
+            if (forme === 'rectangle') {
+                ctx.beginPath();
+                if (remplir.checked) {
+                    ctx.fillStyle = couleurActuelle;
+                    ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
+                } else {
+                    ctx.strokeStyle = couleurActuelle;
+                    ctx.rect(x1, y1, x2 - x1, y2 - y1);
+                    ctx.stroke();
+                }
+            } else if (forme === 'cercle') {
+                var radius = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                ctx.beginPath();
+                if (remplir.checked) {
+                    ctx.fillStyle = couleurActuelle;
+                    ctx.arc(x1, y1, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.strokeStyle = couleurActuelle;
+                    ctx.arc(x1, y1, radius, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        function modifierCouleur(codeCouleur) {
+            if (codeCouleur) {
+                couleurActuelle = codeCouleur;
+                ctx.strokeStyle = codeCouleur;
+                ctx.fillStyle = codeCouleur;
+            }
+        }
+
+        var colorOptions = document.querySelectorAll('.color-option');
+
+        colorOptions.forEach(function (colorOption) {
+            colorOption.addEventListener('click', function () {
+                var color = this.style.background;
+                modifierCouleur(color);
+            });
+        });
+
+
+
+
+        document.getElementById('effacer').addEventListener('click', function () {
+            ctx.clearRect(0, 0, moncanvas.width, moncanvas.height);
+        });
+
+        document.getElementById('gomme').addEventListener('click', function () {
+            modifierCouleur("white");
+        });
+
+        document.getElementById('epaisseur').addEventListener('input', function () {
+            ctx.lineWidth = this.value;
+        });
+
+        document.getElementById('radioCreuse').addEventListener('change', function () {
+            formeActuelle = 'creuse';
+        });
+
+        document.getElementById('radioPleine').addEventListener('change', function () {
+            formeActuelle = 'pleine';
+        });
+
+        document.getElementById('radioRectangle').addEventListener('change', function () {
+            formeActuelle = 'rectangle';
+        });
+
+        document.getElementById('radioCercle').addEventListener('change', function () {
+            formeActuelle = 'cercle';
+        });
+
+        document.getElementById('remplir').addEventListener('change', function () {
+            if (en_dessin) {
+                if (formeActuelle === 'pleine') {
+                    if (this.checked) {
+                        ctx.fill();
+                    } else {
+                        ctx.stroke();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

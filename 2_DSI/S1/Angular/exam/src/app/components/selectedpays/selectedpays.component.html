@@ -1,0 +1,6 @@
+<h3>Pays du continent {{selectedContinent}}</h3>
+<ul>
+  <li *ngFor="let pays of paysList | selectedPaysAsync: selectedContinent | async">
+    {{ pays.nom }}
+  </li>
+</ul>

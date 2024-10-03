@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des universités</title>
+</head>
+<body>
+    <h1>Liste des universités</h1>
+    <form action="">
+        <label>Donnez le pays</label>
+        <input type="text" id="tPays" value="Tunisia" placeholder="Exp: Tunisia,France, Lebanon">
+        <input type="button" value="Afficher" onclick="afficher()">
+    </form>
+    <div id="univ">
+
+    </div>
+
+
+</body>
+
+<script>
+    function afficher() {
+        var pays = document.getElementById("tPays").value;
+        var url = `http://universities.hipolabs.com/search?country=${pays}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                lister(data);
+            })
+            .catch(error => console.error(error));
+    }
+  /*  function lister(universities) {
+    let div = document.getElementById("univ");
+    div.innerHTML = "";
+
+    if (universities.length === 0) {
+        div.innerHTML = "Aucune université trouvée.";
+    } else {
+        let table = document.createElement("table");
+        table.style.borderCollapse = "collapse";
+        table.style.border = "1px solid black";
+
+        let thead = document.createElement("thead");
+        let tbody = document.createElement("tbody");
+
+        let headerRow = document.createElement("tr");
+        let nameHeader = document.createElement("th");
+        nameHeader.textContent = "No.";
+        nameHeader.style.border = "1px solid black";
+        nameHeader.style.padding = "8px";
+        headerRow.appendChild(nameHeader);
+        let universityHeader = document.createElement("th");
+        universityHeader.textContent = "Nom";
+        universityHeader.style.border = "1px solid black";
+        universityHeader.style.padding = "8px";
+        headerRow.appendChild(universityHeader);
+        let websiteHeader = document.createElement("th");
+        websiteHeader.textContent = "Site Web";
+        websiteHeader.style.border = "1px solid black";
+        websiteHeader.style.padding = "8px";
+        headerRow.appendChild(websiteHeader);
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        for (let i = 0; i < universities.length; i++) {
+            let row = document.createElement("tr");
+            let numberCell = document.createElement("td");
+            numberCell.textContent = i + 1;
+            numberCell.style.border = "1px solid black";
+            numberCell.style.padding = "8px";
+            row.appendChild(numberCell);
+            let nameCell = document.createElement("td");
+            nameCell.textContent = universities[i].name;
+            nameCell.style.border = "1px solid black";
+            nameCell.style.padding = "8px";
+            row.appendChild(nameCell);
+            let websiteCell = document.createElement("td");
+            let websiteLink = document.createElement("a");
+            websiteLink.href = universities[i].web_pages[0];
+            websiteLink.textContent = universities[i].web_pages[0];
+            websiteCell.appendChild(websiteLink);
+            websiteCell.style.border = "1px solid black";
+            websiteCell.style.padding = "8px";
+            row.appendChild(websiteCell);
+            tbody.appendChild(row);
+        }
+        table.appendChild(tbody);
+        div.appendChild(table);
+    }
+}
+*/
+
+function lister(universities) {
+  let div = document.getElementById("univ");
+  let ul = document.createElement('ol');
+  div.appendChild(ul);
+  for (let uni of universities) {
+    let li = document.createElement('li');
+    let link = document.createElement('a');
+    link.href = uni.web_pages;
+    link.textContent = uni.web_pages;
+    li.innerHTML = `${uni.name}: `;
+    li.appendChild(link);
+    ul.appendChild(li);
+  }
+}
+
+
+
+</script>
+</html>
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec Gradients CSS</title>
+    <style>
+        div {
+            width: 50%;
+            padding: 20px;
+            margin: 20px;
+            color: white;
+        }
+
+        #div1 {
+            background: radial-gradient(circle, #fffc33, #D90000);
+        }
+
+        #div2 {
+            background: linear-gradient(to bottom, #01a01e, #0033d9);
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        Les API web sont intégrées au navigateur web et permettent de rendre disponibles les données du navigateur et de son environnement afin de réaliser des choses complexes avec. Ainsi, l'API Web Audio fournit des varructions JavaScript pour manipuler des données audio dans le navigateur. On pourra utiliser cette API afin de récupérer une piste audio puis d'abaisser son volume, d'y appliquer des effets, etc. Sous le capot, c'est le navigateur qui s'occupe des couches plus complexes en code « bas niveau » (C++ ou Rust par exemple) afin de réaliser le traitement du signal. Là encore, cette complexité est masquée par l'abstraction offerte par l'API.
+    </div>
+
+    <div id="div2">
+        Les API tierces ne sont pas intégrées au navigateur par défaut, et vous devez généralement récupérer le code de l'API et des informations depuis un site web. Par exemple : l'API Twitter vous permet d'afficher vos derniers tweets sur votre site web. Elle fournit un ensemble de varructions que vous pouvez utiliser pour interroger le service Twitter et qui renvoie alors les informations demandées.
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <p>Utiliser innerHTML et getElementById() pour afficher le contenu de tableaux dans des paragraphes</p>
+
+    <p id='p1'></p>
+    <p id='p2'></p>
+    <p id='p3'></p>
+
+    <script>
+        let prenoms = ['Ali', 'Med', 'Fathi'];
+        let ages = [29, 27, 30];
+        let produits = ['Livre', 20, 'Ordinateur', 5, ['Smartphone', 100]];
+        
+        document.getElementById('p1').innerHTML = prenoms[0] + ' possède 1 '+ produits[2];
+        document.getElementById('p2').innerHTML = prenoms[1] + ' a ' + ages[1] + ' ans';
+        document.getElementById('p3').innerHTML = produits[4][1] + ' ' + produits[4][0];
+    </script>
+</body>
+
+</html>
+
+
+
+<!--
+tableau 2 dim
+chaine caracter traiter tab double dem
+array
+string
+tab
+date
+evenement
+link njs and button
+-->

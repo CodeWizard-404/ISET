@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <canvas id="dessin" width="333" height="500"></canvas>
+  <script>
+    var moncanvas = document.getElementById('dessin');
+    var ctx = moncanvas.getContext('2d');
+    var img = new Image();
+    img.src = 'Suite/src/photo.jpg';
+
+    // Cercle de coordonnées 100, 100, 150, 0, Math.PI * 2, false
+    ctx.beginPath();
+    ctx.arc(100, 100, 150, 0, Math.PI * 2, false);
+    ctx.closePath();
+
+    // Utilisation du premier cercle comme masque
+    ctx.clip();
+
+    // Cercle de coordonnées 200, 200, 150, 0, Math.PI * 2, false
+    ctx.beginPath();
+    ctx.arc(200, 200, 150, 0, Math.PI * 2, false);
+    ctx.closePath();
+
+    // Utilisation du deuxième cercle comme masque
+    ctx.clip();
+
+    img.onload = function() {
+      // Dessin de l'image
+      ctx.drawImage(img, 0, 0);
+    }
+  </script>
+</body>
+</html>

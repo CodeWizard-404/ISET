@@ -1,0 +1,19 @@
+<ol>
+    <li>
+        Votre num °
+    <img [src]=tab.picture alt="">
+    <span>
+        {{tab.name}} * {{tab.painter}}
+    </span>
+    <p>
+            * Genre: <input type="checkbox" [checked]="tab.genre=='surrealisme'"> {{tab.genre|titlecase}}
+            * Prix proposé: ${{tab.price}}
+            * Ajouter <input type="text">
+            <button>Nouvelle offre</button>
+            <button class="btn btn-success">Vendue</button>
+    </p>
+
+    </li>
+</ol>
+    
+

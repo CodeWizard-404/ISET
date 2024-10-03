@@ -1,0 +1,29 @@
+div {
+  display: inline-block;
+  background-color: RGBa(240,160,130,0.5);
+  height: 100px;
+  width: 100px;
+  margin: 50px 5px;
+  animation: rotation 5s linear infinite;
+
+}
+.d2{
+  animation: rotation 5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0) translateX(0px);
+  }
+  25%{
+    transform: rotate(90deg) translateX(50px);
+  }
+  50%{
+    transform: rotate(180deg) translateX(0px);
+  }
+  75%{
+    transform: rotate(270deg) translateX(50px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px);
+  }}
+h3{text-align:center}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bonjour Toast</string>
+    <string name="button_label_toast">Toast</string>
+    <string name="button_label_count">Count</string>
+    <string name="count_initial_value">0</string>
+
+
+    <!-- <string name="app_name">My Application</string> -->
+</resources>

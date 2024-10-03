@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 150px;
+            transition: opacity 0.5s;
+        }
+        body {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="Image" src="img.jpg" alt="Image">
+    <button id="BtnDisp">Faire disparaître l'image</button>
+    <button id="BtnRev">Faire réapparaître l'image</button>
+
+    <script>
+        var Image1 = document.getElementById("Image");
+        var BtnDisp = document.getElementById("BtnDisp");
+        var BtnRev = document.getElementById("BtnRev");
+
+        //disparaître l'image
+        BtnDisp.addEventListener("click", function () {
+            Image1.style.opacity = 0;
+            Image1.style.visibility = "hidden";
+        });
+
+        //réapparaître l'image
+        BtnRev.addEventListener("click", function () {
+            Image1.style.opacity = 1;
+            Image1.style.visibility = "visible";
+        });
+    </script>
+</body>
+
+</html>

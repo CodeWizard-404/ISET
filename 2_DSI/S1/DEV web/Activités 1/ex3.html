@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page HTML</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+
+        /*.container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+        }*/
+
+        .item {
+            width: 40px;
+            height: 40px;
+            background-color: #00897b;
+        }
+        .c1{
+            background-color: black;
+        }
+        .c2{
+            background-color: blue;
+        }
+
+        .circle {
+            border-radius: 50%;
+            margin-left: 80px;
+            animation-direction: alternate;
+            position: absolute;
+        }
+
+        .anim-1 {
+            animation: animation-1 2s infinite;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes animation-1 {
+            0% {
+                transform: translateY(160px);
+            }
+
+            50% {
+                transform: translateY(0%);
+            }
+
+            100% {
+                transform: translateY(160px);
+            }
+        }
+
+        .anim-2 {
+            animation: animation-2 2s infinite;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes animation-2 {
+            0% {
+                transform: translate(160px, 160px);
+            }
+
+            50% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(160px, 160px);
+            }
+        }
+
+        .anim-3 {
+            animation: animation-3 2s infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes animation-3 {
+            0% {
+                transform: translateX(0px);
+            }
+
+            15% {
+                transform: translateX(160px);
+            }
+
+            25% {
+                transform: translate(0, 160px);
+            }
+
+            40% {
+                transform: translate(160px, 160px);
+            }
+
+            60% {
+                transform: translate(0, 160px);
+            }
+
+            80% {
+                transform: translateX(160px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item circle anim-1 "></div>
+        <div class="item circle anim-2 c1"></div>
+        <div class="item circle anim-3 c2"></div>
+    </div>
+</body>
+
+</html>

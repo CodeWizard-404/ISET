@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Modified Game</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <button onclick="startNewGame()">Start a New Game</button>
+    <button onclick="pauseGame()" id="pause">Pause</button>
+    <script>
+        var canvas = document.getElementById('gameCanvas');
+        var context = canvas.getContext('2d');
+        var targetX, targetY, targetSize = 50;
+        var gamePaused = false;
+        var score = 0;
+
+        function getRandomColor() {
+            var hexDigits = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += hexDigits[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function drawTarget() {
+            targetX = Math.floor(Math.random() * (canvas.width - targetSize));
+            targetY = Math.floor(Math.random() * (canvas.height - targetSize));
+            targetSize = Math.floor(Math.random() * 100);
+            context.fillStyle = getRandomColor();
+            context.fillRect(targetX, targetY, targetSize, targetSize);
+        }
+
+        function checkTarget(mouseX, mouseY) {
+            if (gamePaused && mouseX >= targetX && mouseX <= targetX + targetSize && mouseY >= targetY && mouseY <= targetY + targetSize) {
+                score++;
+                drawTarget();
+                alert("Goal! :) Score: " + score);
+            } else {
+                alert("No Goal :( Score: " + score);
+            }
+        }
+
+        canvas.addEventListener('click', function(event) {
+            checkTarget(event.clientX, event.clientY);
+        });
+
+        function playGame() {
+            if (gamePaused) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = getRandomColor();
+                context.fillRect(targetX, targetY, targetSize, targetSize);
+                setTimeout(() => {
+                    drawTarget();
+                    playGame();
+                }, 2000);
+            }
+        }
+
+        function startNewGame() {
+            gamePaused = true;
+            score = 0;
+            drawTarget();
+            playGame();
+        }
+
+        function pauseGame() {
+            gamePaused = false;
+        }
+
+        window.onload = function() {
+            startNewGame();
+        };
+    </script>
+</body>
+</html>

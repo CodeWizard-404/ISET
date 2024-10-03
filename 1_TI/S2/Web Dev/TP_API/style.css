@@ -1,0 +1,32 @@
+*{
+  
+  font-family: 'Poppins', sans-serif;
+}
+button,input {width: 200px; height: 30px}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin : 2px;
+  border: 1px solid blue;
+}
+header{
+flex-wrap : wrap;
+background: azure;
+flex-direction:column;
+}
+section{
+	position : relative;
+	border: 1px solid blue;
+	height: 200px;
+	margin : 2px;
+	
+}
+.D1,.D2,.D3,.D4{display : flex; border: 1px solid blue; width : 30%;
+	height: 30%; margin : 2px; align-items:center; justify-content: center;}
+ .D1{background: #DCDCDC;position: absolute; top:0px;left:0px;}
+ .D2{background: #7FFFD4;position: absolute; top:0px;right:0px;}
+ .D3{background: #4169E1;position: absolute; bottom:0px;right:0px;}
+ .D4{background: #00FFFF;position: absolute; bottom:0px;left:0px;}
+img {width: 20%; height:20%}

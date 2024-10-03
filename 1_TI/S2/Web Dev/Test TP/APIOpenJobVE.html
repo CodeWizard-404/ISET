@@ -1,0 +1,138 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Accès à l'API en JavaScript : API Open Job</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+		}
+
+		th {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Liste d'offres d'emplois par département et par catégorie</h3>
+	<form name="f1">
+		<fieldset>
+			<legend>Les critères de recherche</legend>
+			<label>Choisir un département</label>
+			<input type="radio" name="dep" value="CategoryInfo" checked /> Technologies de l'Informatique
+			<input type="radio" name="dep" value="CategoryGest" /> Sciences Économiques et Gestion
+			<div id="d1">
+				<label>Choisir une catégorie</label>
+				<select name="lstcateg" id="list1">
+				</select>
+			</div>
+		</fieldset>
+		<h4>Résultat de recherche des offres d'emploi pour aujourd'hui : <span></span></h4>
+		<div id="d2"></div>
+	</form>
+
+	<script>
+		let CategoryInfo = ["Data and Analytics", "Computer and IT", "IT", "Software Engineering", "Data Science"];
+		let CategoryGest = ["Human Resources and Recruitment", "Product Management", "Transportation and Logistics", "Marketing"];
+
+		function CreerListe() {
+			let departement = document.querySelector('input[name="dep"]:checked').value;
+			let selectList = document.getElementById("list1");
+
+			// Supprimer les options existantes
+			selectList.innerHTML = "";
+
+			// Sélectionner les catégories appropriées en fonction du département choisi
+			let categories = [];
+
+			if (departement === "CategoryInfo") {
+				categories = CategoryInfo;
+			} else if (departement === "CategoryGest") {
+				categories = CategoryGest;
+			}
+
+			// Créer les nouvelles options
+			categories.forEach((categorie) => {
+				let option = document.createElement("option");
+				option.value = categorie;
+				option.text = categorie;
+				selectList.appendChild(option);
+			});
+		}
+
+		function Recherche(C) {
+			let categorie = C.options[C.selectedIndex].value;
+			let url = `https://www.themuse.com/api/public/jobs?category=${categorie}&page=1`;
+
+			fetch(url)
+				.then((response) => response.json())
+				.then((data) => AfficherResultat(data.results))
+				.catch((error) => console.error("Erreur lors de la recherche :", error));
+		}
+
+		function AfficherResultat(liste) {
+			let table = document.createElement("table");
+			table.classList.add("result-table");
+			let thead = table.createTHead();
+			let row = thead.insertRow();
+			let headers = ["Référence", "Société", "Niveau", "Adresse", "Date de publication"];
+
+			headers.forEach((header) => {
+				let th = document.createElement("th");
+				th.textContent = header;
+				row.appendChild(th);
+			});
+
+			let tbody = table.createTBody();
+
+			liste.forEach((offre) => {
+				let row = tbody.insertRow();
+				let idCell = row.insertCell();
+				let societeCell = row.insertCell();
+				let niveauCell = row.insertCell();
+				let adresseCell = row.insertCell();
+				let dateCell = row.insertCell();
+
+				idCell.textContent = offre.id;
+				idCell.style.cursor = "pointer";
+				idCell.addEventListener("click", () => {
+					window.open(offre.refs.landing_page);
+				});
+
+				societeCell.textContent = offre.company.name;
+				niveauCell.textContent = offre.levels[0]?.name || "---";
+				adresseCell.textContent = offre.locations[0]?.name || "---";
+				dateCell.textContent = offre.publication_date.split("T")[0];
+			});
+
+			let d2 = document.getElementById("d2");
+			d2.innerHTML = "";
+			d2.appendChild(table);
+		}
+		let departmentRadios = document.querySelectorAll('input[name="dep"]');
+		for (let i = 0; i < departmentRadios.length; i++) {
+			departmentRadios[i].addEventListener('change', CreerListe);
+		}
+		document.addEventListener("DOMContentLoaded", () => {
+			CreerListe();
+
+			let today = new Date();
+			let dateElement = document.querySelector("h4 span");
+			dateElement.textContent = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+			let selectList = document.getElementById("list1");
+			selectList.addEventListener("change", () => {
+				Recherche(selectList);
+			});
+		});
+	</script>
+</body>
+
+</html>

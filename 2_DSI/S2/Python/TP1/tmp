@@ -1,0 +1,41 @@
+def voisinsCase(plateau, case):
+    i, j = case
+    voisins = set()
+    # Coordonnées des voisins horizontaux et verticaux
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+    for di, dj in directions:
+        ni, nj = i + di, j + dj
+        if 0 <= ni < len(plateau) and 0 <= nj < len(plateau[0]) and not plateau[ni][nj]:
+            voisins.add((ni, nj))
+
+    return voisins
+
+def voisinsCases(plateau, cases):
+    voisins = set()
+    for case in cases:
+        voisins |= voisinsCase(plateau, case)
+    return voisins
+
+def accessibles(plateau, case):
+    accessibles = {case}
+    frontier = [case]
+
+    while frontier:
+        current = frontier.pop()
+        for voisin in voisinsCase(plateau, current):
+            if voisin not in accessibles:
+                accessibles.add(voisin)
+                frontier.append(voisin)
+
+    return accessibles
+
+def chemin(plateau, deb, fin):
+    accessibles_deb = accessibles(plateau, deb)
+    return fin in accessibles_deb
+
+# Test
+plateau = [[True, False, False, False], [False, True, True, False]]
+
+print(chemin(plateau, (1, 3), (1, 0)))  # Renvoie False
+print(chemin(plateau, (1, 3), (0, 1)))  # Renvoie True

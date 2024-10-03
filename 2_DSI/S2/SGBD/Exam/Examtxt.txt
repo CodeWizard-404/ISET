@@ -1,0 +1,79 @@
+utuliser uniquement des curseurs explicites
+
+un organization de gestion de spectacle, de salles de concert et de vente de billet de spectacles gére une base de données dont le shéma relationnel est le suivant :
+create table Salle(
+salleID number(4),
+nom varchar2(30),
+adresse varchar2(50),
+capacite number(3),
+constraint cp_salle primary key(salleID));
+
+create table chanteur(
+chanteurID number(5),
+nomchanteur varchar2(50),
+constraint cp_chanteur primary key(chanteurID));
+
+create table spectacle(
+spectacleID varchar2(6),
+titre varchar2(60),
+dateSpectacle date,
+heure date,
+salleID number(4),
+constraint cp_spec primary key(spectacleID),
+constraint ce_spec_salle foreign key(salleID) references salle(salleID),
+constraint ck_id check (spectacleID like 'SP____'));
+
+create table participer(
+spectacleID varchar2(6),
+chanteurID number(5),
+constraint cp_part primary key(spectacleID,chanteurID),
+constraint ce_spec_part foreign key(spectacleID) references spectacle(spectacleID),
+constraint ce_chant_part foreign key(chanteurID) references chanteur(chanteurID));
+
+create table billet(
+billetID varchar2(12),
+numPlace number(3),
+prix number(10,3),
+spectacleID varchar2(6),
+constraint cp_billet primary key(billetID),
+constraint ce_spec_billet foreign key(spectacleID) references spectacle(spectacleID));
+
+create table vente(
+venteID varchar2(10),
+MoyenPaiement varchar2(50),
+dateVente date,
+billetID varchar2(12),
+constraint cp_vente primary key(venteID),
+constraint ce_vente_billet foreign key(billetID) references billet(billetID));
+
+create table Modif_Salles(
+salleID number(4),
+nom varchar2(30),
+adresse varchar2(50),
+capacite number(3),
+dateModif date);
+
+create table Supp_Salles(
+salleID number(4),
+nom varchar2(30),
+adresse varchar2(50),
+capacite number(3),
+dateSupp date);
+
+
+
+1. ecrire une function PL/SQL Nbre_billet_vendus qui retourne le nombre de billets vendus pour un spectacle donné.
+function Nbre_billets_vendus(spec spectacle.spectacle_id%type) return number
+
+2. ecrire une procedure Pl/SQL Affiche_Spectacles qui recoit en parameter l'identificateur d'une salle et le numéro d'année et affiche les spectacles réalisés dans la salle donnée pendant l'année donnée. la procedure doit afficher pour chaque spectacle: le titre, la date, l'heure, le nombre des billet vendus ainsi que la liste des chanteurs qui ont particpé à ce spectacle.
+procedure Afficher_spectacle(id salle.salle_id%type, annee number).
+
+3. ecrire une procedure PL/SQL Générer_Billet qui reçoit en parameter un identificateur de spectacle et un prix et génère automatiquement les billers relatifs à ce spectacle dans la table Billet . le nombre de billet depend de la capacité de la salle dans laquelle aura lieu le spectacle. le numéro de place commence par 1 et est incriménté automatiquement . l'identificateur d'un billet doit étre comme le montre l'exemple suivant :
+SP1254BL_125
+
+SP12548BL : identificateur du spectacle 
+215 : identificateur de place
+
+procedure Générer_Billets(spec spectacle.spectacle_id%type, pr billet.prix%type)
+
+4. crée un dclencheur/trigger A
