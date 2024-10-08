@@ -1,0 +1,164 @@
+Compte Rendu sur le Jeu de Données OLAPTRAIN**
+
+**Objectif :**
+
+L objectif de ce travail est de se familiariser avec la base de données OLAPTRAIN, d identifier les dimensions et la table de faits, d observer la structure d un schéma en étoile, de comprendre la notion de hiérarchie et de formuler des requêtes SQL analytiques. 
+
+### **Travail effectué :**
+
+1. **Connexion à la base de données OLAPTRAIN :**  
+   Utilisation de Oracle VM Box pour accéder à la base de données OLAPTRAIN.
+
+2. **Visualisation des tables du schéma :**  
+   Les tables présentes dans la base de données OLAPTRAIN ont été listées à l aide de la requête SQL suivante :
+
+   sql
+   SELECT table_name FROM all_tables WHERE owner = 'OLAPTRAIN';
+   
+   Résultat :  
+   - Tables principales : `SALES_FACT`, `CHANNELS`, `PRODUCTS`, `CUSTOMERS`, `TIMES`, etc.
+
+### **1. Identification des Dimensions et de la Table de Faits :**
+
+- **Table de Faits :**  
+  La table de faits principale est `SALES_FACT`, qui contient des mesures sur les ventes.
+
+- **Tables de Dimensions :**  
+  Les tables de dimensions identifiées sont :
+  - `CHANNELS` : Information sur les canaux de vente.
+  - `PRODUCTS` : Information sur les produits vendus.
+  - `CUSTOMERS` : Information sur les clients.
+  - `TIMES` : Information sur le temps (dates, mois, années).
+
+### **2. Schéma en Étoile Correspondant :**
+
+- **Table de Faits au Centre :** `SALES_FACT`
+- **Dimensions autour de la Table de Faits :**
+  - `CHANNELS`
+  - `PRODUCTS`
+  - `CUSTOMERS`
+  - `TIMES`
+
+Le schéma en étoile est donc constitué d une table de faits centrale (`SALES_FACT`) reliée aux tables de dimensions (`CHANNELS`, `PRODUCTS`, `CUSTOMERS`, `TIMES`).
+
+### **3. Structure des Tables et Contraintes d Intégrité :**
+
+- **`SALES_FACT`** :  
+  Contient les mesures de ventes, incluant des colonnes telles que `sales_id`, `product_id`, `channel_id`, `time_id`, `customer_id`, et les valeurs comme `sales_amount`. Des clés étrangères (`FOREIGN KEY`) relient cette table aux dimensions (`product_id`, `channel_id`, etc.).
+
+- **Contraintes d Intégrité :**  
+  Chaque table de dimension possède une clé primaire (`PRIMARY KEY`), comme `channel_id` dans la table `CHANNELS`, qui est reliée à la clé étrangère correspondante dans `SALES_FACT`. Cela garantit l intégrité des données lors des requêtes analytiques.
+
+### **4. Hiérarchies Identifiées :**
+
+Dans les tables de dimensions, les hiérarchies suivantes ont été identifiées :
+- **Temps (`TIMES`)** : 
+  - Année → Mois → Jour
+- **Produits (`PRODUCTS`)** : 
+  - Catégorie de produit → Type de produit
+
+Ces hiérarchies sont utilisées pour agrandir ou réduire le niveau de détail lors des analyses.
+
+### **5. Requête SQL Analytique :**
+
+Requête pour afficher le total des ventes par boutique pour le mois de décembre 2010 et pour les produits de type `Software` :
+
+sql
+SELECT SUM(s.sales_amount) AS total_ventes, c.channel_type
+FROM SALES_FACT s
+JOIN CHANNELS c ON s.channel_id = c.channel_id
+JOIN TIMES t ON s.time_id = t.time_id
+JOIN PRODUCTS p ON s.product_id = p.product_id
+WHERE t.month_name = 'DEC' AND t.year = 2010
+AND p.type_name = 'Software'
+GROUP BY c.channel_type;
+
+
+**Résultat attendu :**  
+Cette requête affiche le total des ventes de produits du type `Software`, réparties par boutique (`channel_type`), pour le mois de décembre 2010.
+
+---
+
+This report meets the objectives by clearly identifying key elements of the OLAPTRAIN dataset and providing a detailed explanation of the requested SQL query.
+Compte Rendu sur le Jeu de Données OLAPTRAIN**
+
+**Objectif :**
+
+L objectif de ce travail est de se familiariser avec la base de données OLAPTRAIN, d identifier les dimensions et la table de faits, d observer la structure d un schéma en étoile, de comprendre la notion de hiérarchie et de formuler des requêtes SQL analytiques. 
+
+### **Travail effectué :**
+
+1. **Connexion à la base de données OLAPTRAIN :**  
+   Utilisation de Oracle VM Box pour accéder à la base de données OLAPTRAIN.
+
+2. **Visualisation des tables du schéma :**  
+   Les tables présentes dans la base de données OLAPTRAIN ont été listées à l aide de la requête SQL suivante :
+
+   sql
+   SELECT table_name FROM all_tables WHERE owner = 'OLAPTRAIN';
+   
+   Résultat :  
+   - Tables principales : `SALES_FACT`, `CHANNELS`, `PRODUCTS`, `CUSTOMERS`, `TIMES`, etc.
+
+### **1. Identification des Dimensions et de la Table de Faits :**
+
+- **Table de Faits :**  
+  La table de faits principale est `SALES_FACT`, qui contient des mesures sur les ventes.
+
+- **Tables de Dimensions :**  
+  Les tables de dimensions identifiées sont :
+  - `CHANNELS` : Information sur les canaux de vente.
+  - `PRODUCTS` : Information sur les produits vendus.
+  - `CUSTOMERS` : Information sur les clients.
+  - `TIMES` : Information sur le temps (dates, mois, années).
+
+### **2. Schéma en Étoile Correspondant :**
+
+- **Table de Faits au Centre :** `SALES_FACT`
+- **Dimensions autour de la Table de Faits :**
+  - `CHANNELS`
+  - `PRODUCTS`
+  - `CUSTOMERS`
+  - `TIMES`
+
+Le schéma en étoile est donc constitué d une table de faits centrale (`SALES_FACT`) reliée aux tables de dimensions (`CHANNELS`, `PRODUCTS`, `CUSTOMERS`, `TIMES`).
+
+### **3. Structure des Tables et Contraintes d Intégrité :**
+
+- **`SALES_FACT`** :  
+  Contient les mesures de ventes, incluant des colonnes telles que `sales_id`, `product_id`, `channel_id`, `time_id`, `customer_id`, et les valeurs comme `sales_amount`. Des clés étrangères (`FOREIGN KEY`) relient cette table aux dimensions (`product_id`, `channel_id`, etc.).
+
+- **Contraintes d Intégrité :**  
+  Chaque table de dimension possède une clé primaire (`PRIMARY KEY`), comme `channel_id` dans la table `CHANNELS`, qui est reliée à la clé étrangère correspondante dans `SALES_FACT`. Cela garantit l intégrité des données lors des requêtes analytiques.
+
+### **4. Hiérarchies Identifiées :**
+
+Dans les tables de dimensions, les hiérarchies suivantes ont été identifiées :
+- **Temps (`TIMES`)** : 
+  - Année → Mois → Jour
+- **Produits (`PRODUCTS`)** : 
+  - Catégorie de produit → Type de produit
+
+Ces hiérarchies sont utilisées pour agrandir ou réduire le niveau de détail lors des analyses.
+
+### **5. Requête SQL Analytique :**
+
+Requête pour afficher le total des ventes par boutique pour le mois de décembre 2010 et pour les produits de type `Software` :
+
+sql
+SELECT SUM(s.sales_amount) AS total_ventes, c.channel_type
+FROM SALES_FACT s
+JOIN CHANNELS c ON s.channel_id = c.channel_id
+JOIN TIMES t ON s.time_id = t.time_id
+JOIN PRODUCTS p ON s.product_id = p.product_id
+WHERE t.month_name = 'DEC' AND t.year = 2010
+AND p.type_name = 'Software'
+GROUP BY c.channel_type;
+
+
+**Résultat attendu :**  
+Cette requête affiche le total des ventes de produits du type `Software`, réparties par boutique (`channel_type`), pour le mois de décembre 2010.
+
+---
+
+This report meets the objectives by clearly identifying key elements of the OLAPTRAIN dataset and providing a detailed explanation of the requested SQL query.
