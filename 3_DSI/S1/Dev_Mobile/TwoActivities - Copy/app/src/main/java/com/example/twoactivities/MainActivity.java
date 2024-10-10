@@ -15,20 +15,42 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.android.twoactivities.extra.MESSAGE";
     public static final int TEXT_REQUEST = 1;
 
+
     private EditText mMessageEditText;
     private TextView mReplyHeadTextView;
     private TextView mReplyTextView;
 
-
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(mReplyHeadTextView.getVisibility() == View.VISIBLE){
+            outState.putBoolean("reply_visible",true);
+            outState.putString("reply_text",mReplyTextView.getText().toString());
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(LOG_TAG, "________");
+        Log.d(LOG_TAG, "onCreate");
+
+
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
-        Log.d(LOG_TAG, "________");
-        Log.d(LOG_TAG, "onCreate");
+
+        if (savedInstanceState != null){
+            boolean isVisible = savedInstanceState.getBoolean("reply_visible");
+            if(isVisible){
+                mReplyTextView.setVisibility(View.VISIBLE);
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+            }
+        }
+
+
     }
     @Override
     public void onStart() {
@@ -69,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if (requestCode == TEXT_REQUEST){
-            if (requestCode == RESULT_OK){
+            if (resultCode == RESULT_OK){
                 String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
                 mReplyHeadTextView.setVisibility(View.VISIBLE);
                 mReplyTextView.setText(reply);

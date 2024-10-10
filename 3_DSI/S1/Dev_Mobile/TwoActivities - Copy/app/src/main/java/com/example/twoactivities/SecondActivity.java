@@ -24,33 +24,35 @@ public class SecondActivity extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = findViewById(R.id.text_header);
         textView.setText(message);
-        Log.d(LOG_TAG, "________");
-        Log.d(LOG_TAG, "onCreate");
+
+
+        Log.d(LOG_TAG, "________2");
+        Log.d(LOG_TAG, "onCreate2");
     }
     @Override
     public void onStart() {
         super.onStart();
-        Log.d(LOG_TAG, "onStart");
+        Log.d(LOG_TAG, "onStart2");
     }
     @Override
     public void onPause() {
         super.onPause();
-        Log.d(LOG_TAG, "onPause");
+        Log.d(LOG_TAG, "onPause2");
     }
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(LOG_TAG, "onResume");
+        Log.d(LOG_TAG, "onResume2");
     }
     @Override
     public void onStop() {
         super.onStop();
-        Log.d(LOG_TAG, "onStop");
+        Log.d(LOG_TAG, "onStop2");
     }
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
+        Log.d(LOG_TAG, "onDestroy2");
     }
 
     public void returnReply(View view) {
@@ -58,6 +60,9 @@ public class SecondActivity extends AppCompatActivity {
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, reply);
         setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
         finish();
     }
+
+
 }
