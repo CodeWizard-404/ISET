@@ -27,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
+        Log.d(LOG_TAG, "________");
+        Log.d(LOG_TAG, "onCreate");
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(LOG_TAG, "onStart");
     }
 
     public void launchSecondActivity(View view) {
