@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.android.twoactivities.extra.MESSAGE";
     public static final int TEXT_REQUEST = 1;
 
-
     private EditText mMessageEditText;
     private TextView mReplyHeadTextView;
     private TextView mReplyTextView;
+
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "________");
         Log.d(LOG_TAG, "onCreate");
 
-
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
@@ -49,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 mReplyTextView.setText(savedInstanceState.getString("reply_text"));
             }
         }
-
-
     }
+
+
     @Override
     public void onStart() {
         super.onStart();
