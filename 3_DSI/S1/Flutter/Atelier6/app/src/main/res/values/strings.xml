@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Atelier6</string>
+    <string name="edittext_uri">https://www.linkedin.com</string>
+    <string name="button_uri">Open Website</string>
+    <string name="edittext_loc">Aeroport Tunis Carthage</string>
+    <string name="button_loc">Open Location</string>
+    <string name="edittext_share">\'Je veux partager ce texte avec vous</string>
+    <string name="button_share">Share this Texte</string>
+</resources>
