@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Menu.dart';
+
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,6 +9,7 @@ class Page1 extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Page 1'),
       ),
+      drawer: MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
