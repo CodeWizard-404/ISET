@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:tp5/Menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Main'),
       ),
+      drawer: MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
