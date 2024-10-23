@@ -6,7 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\TeamService;
 use Symfony\Component\DependencyInjection\Attribute\AsController;
 
-#[AsController] // This line ensures the controller is public in Symfony 6 or higher
+#[AsController]
 class SoapController
 {
     private TeamService $teamService;
