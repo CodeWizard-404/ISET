@@ -1,0 +1,17 @@
+<resources>
+    <!-- Hints for input fields -->
+    <string name="type_operand_one_hint">Enter first operand</string>
+    <string name="type_operand_two_hint">Enter second operand</string>
+
+    <!-- Button text for operations -->
+    <string name="add_operation_text">Add</string>
+    <string name="sub_operation_text">Subtract</string>
+    <string name="div_operation_text">Divide</string>
+    <string name="mul_operation_text">Multiply</string>
+
+    <!-- Error message for division errors -->
+    <string name="computationError">Error in computation</string>
+    <item name="operation_result_text_view" type="id">operation_result_text_view</item>
+    <item name="operand_one_edit_text" type="id">operand_one_edit_text</item>
+    <item name="operand_two_edit_text" type="id">operand_two_edit_text</item>
+</resources>
