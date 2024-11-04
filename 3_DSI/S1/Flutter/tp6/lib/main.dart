@@ -9,26 +9,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> weekdays = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            title: const Text('Weekdays List')
+          title: const Text('Weekdays List'),
         ),
-        body: ListView(
-          children: [
-            ListTile(
-              title: const Text('Monday'),
-              onTap: () {
-                print('Day');
-              },
-            ),
-            const ListTile(title: Text('Tuesday')),
-            const ListTile(title: Text('Wednesday')),
-            const ListTile(title: Text('Thursday')),
-            const ListTile(title: Text('Friday')),
-            const ListTile(title: Text('Saturday')),
-            const ListTile(title: Text('Sunday')),
-          ],
+        body: ListView.builder(
+          itemCount: weekdays.length,
+          itemBuilder: (context, index) {
+            return ListTile(title: Text(weekdays[index]));
+          },
         ),
       ),
     );
