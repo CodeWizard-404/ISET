@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'list.dart';
+import 'Impaire.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Generate the list of odd numbers here
-    final List<int> Numbers = List.generate(20, (index) => 1 + index * 2);
+    final List<Impaire> Numbers = List.generate(
+      20,
+          (index) => Impaire(lib: 'Entier ${1 + index }', val: 1 + index * 2),
+    );
+
 
     return MaterialApp(
       home: EntierListPage(Numbers: Numbers),

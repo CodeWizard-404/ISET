@@ -1,9 +1,0 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
-affecter_membre:
-    path: /soap/affecter-membre
-    controller: App\Controller\SoapController::affecterMembre
-    methods: POST
