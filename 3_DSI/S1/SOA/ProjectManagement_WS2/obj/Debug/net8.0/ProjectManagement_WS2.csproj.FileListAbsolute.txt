@@ -1,0 +1,8 @@
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.csproj.AssemblyReference.cache
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.AssemblyInfoInputs.cache
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.AssemblyInfo.cs
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.csproj.CoreCompileInputs.cache
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\SOA\ProjectManagement_WS2\obj\Debug\net8.0\ProjectManagement_WS2.sourcelink.json

@@ -1,0 +1,20 @@
+<h1>List of Students</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.nom %></td>
+                <td><%= student.age %></td>
+                <td><%= student.age >= 18 ? 'Majeur' : 'Mineur' %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

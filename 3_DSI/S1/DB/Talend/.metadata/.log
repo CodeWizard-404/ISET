@@ -1,0 +1,1650 @@
+!SESSION 2024-11-05 14:38:47.528 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.24
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -talendReload false -talendRestart true
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -talendReload false -talendRestart true -data file:/C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend/
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-11-05 14:38:48.773
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-11-05 14:38:48.778
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-05 14:38:50.280
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:51.049
+!MESSAGE 2024-11-05 14:38:51,046 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:51.189
+!MESSAGE 2024-11-05 14:38:51,189 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:51.474
+!MESSAGE 2024-11-05 14:38:51,474 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:51.477
+!MESSAGE 2024-11-05 14:38:51,477 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:59.618
+!MESSAGE 2024-11-05 14:38:59,603 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:59.621
+!MESSAGE 2024-11-05 14:38:59,621 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:38:59.621
+!MESSAGE 2024-11-05 14:38:59,621 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:00.637
+!MESSAGE 2024-11-05 14:39:00,622 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:39:02.365
+!MESSAGE 2024-11-05 14:39:02,365 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:03.227
+!MESSAGE 2024-11-05 14:39:03,227 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:60702/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:06.943
+!MESSAGE 2024-11-05 14:39:06,943 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on Local_Project
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:08.635
+!MESSAGE 2024-11-05 14:39:08,635 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:14.109
+!MESSAGE 2024-11-05 14:39:14,109 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:14.501
+!MESSAGE 2024-11-05 14:39:14,501 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 559 ms
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:39:14.848
+!MESSAGE 2024-11-05 14:39:14,848 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:39:14.848
+!MESSAGE 2024-11-05 14:39:14,848 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:39:15.005
+!MESSAGE 2024-11-05 14:39:14,989 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:39:15.005
+!MESSAGE 2024-11-05 14:39:15,005 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:17.292
+!MESSAGE 2024-11-05 14:39:17,292 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:8.0.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:23.961
+!MESSAGE 2024-11-05 14:39:23,961 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:39:24.760
+!MESSAGE 2024-11-05 14:39:24,760 ERROR org.talend.commons.exception.CommonExceptionHandler  - A JSONObject text must begin with '{' at 1 [character 2 line 1]
+
+!STACK 0
+us.monoid.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at us.monoid.json.JSONTokener.syntaxError(JSONTokener.java:423)
+	at us.monoid.json.JSONObject.<init>(JSONObject.java:190)
+	at us.monoid.json.JSONObject.<init>(JSONObject.java:321)
+	at org.talend.core.ui.token.TokenCollectorFactory$2.run(TokenCollectorFactory.java:340)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:39:25.471
+!MESSAGE 2024-11-05 14:39:25,470 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:39:33.139
+!MESSAGE 2024-11-05 14:39:33,139 ERROR org.talend.commons.exception.CommonExceptionHandler  - Can't connect to server
+
+!STACK 0
+java.lang.Exception: Can't connect to server
+	at org.talend.librariesmanager.utils.RemoteModulesHelper.readJsonFromUrl(RemoteModulesHelper.java:569)
+	at org.talend.librariesmanager.utils.RemoteModulesHelper.getLicenseUrl(RemoteModulesHelper.java:624)
+	at org.talend.librariesmanager.ui.wizards.AcceptModuleLicensesWizardPage$4.run(AcceptModuleLicensesWizardPage.java:303)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:39:33.175
+!MESSAGE 2024-11-05 14:39:33,175 ERROR org.talend.commons.exception.CommonExceptionHandler  - 
+
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:397)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:468)
+	at org.talend.librariesmanager.ui.wizards.AcceptModuleLicensesWizardPage.retrieveLicensesModel(AcceptModuleLicensesWizardPage.java:325)
+	at org.talend.librariesmanager.ui.wizards.AcceptModuleLicensesWizardPage.setVisible(AcceptModuleLicensesWizardPage.java:268)
+	at org.eclipse.jface.wizard.WizardDialog.showStartingPage(WizardDialog.java:1279)
+	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:637)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+	at org.talend.librariesmanager.utils.DownloadModuleRunnable$1.run(DownloadModuleRunnable.java:166)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.NullPointerException
+	at org.talend.librariesmanager.utils.RemoteModulesHelper.getLicenseUrl(RemoteModulesHelper.java:625)
+	at org.talend.librariesmanager.ui.wizards.AcceptModuleLicensesWizardPage$4.run(AcceptModuleLicensesWizardPage.java:303)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Root exception:
+java.lang.NullPointerException
+	at org.talend.librariesmanager.utils.RemoteModulesHelper.getLicenseUrl(RemoteModulesHelper.java:625)
+	at org.talend.librariesmanager.ui.wizards.AcceptModuleLicensesWizardPage$4.run(AcceptModuleLicensesWizardPage.java:303)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-05 14:44:41.653
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-hcatalog-pig-adapter-1.0.0-mapr/6.1.0/jar failed, will try to download again
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.core.MavenPlugin.getMaven(MavenPlugin.java:46)
+	at org.talend.designer.maven.utils.PomUtil.generatePomFile(PomUtil.java:657)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:78)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-hcatalog-pig-adapter-1.0.0-mapr/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-hcatalog-pig-adapter-1.0.0-mapr/6.1.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-jdbc-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-jdbc-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-jdbc-1.2.1.2.3.2.0-2950/6.1.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.1.1/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.3.6-amzn-1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.3.6-amzn-1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/2.3.6-amzn-1/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.721
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/3.1.2-amzn-3/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,721 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/3.1.2-amzn-3/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-jdbc/3.1.2-amzn-3/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1408/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1408/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1408/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1501/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.736
+!MESSAGE 2024-11-05 14:44:41,736 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1501/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.752
+!MESSAGE 2024-11-05 14:44:41,736 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.13.0-mapr-1501/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.752
+!MESSAGE 2024-11-05 14:44:41,752 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.14.0.2.2.0.0-2041/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.752
+!MESSAGE 2024-11-05 14:44:41,752 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.14.0.2.2.0.0-2041/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.768
+!MESSAGE 2024-11-05 14:44:41,768 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-0.14.0.2.2.0.0-2041/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.768
+!MESSAGE 2024-11-05 14:44:41,768 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-amzn-0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.768
+!MESSAGE 2024-11-05 14:44:41,768 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-amzn-0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.768
+!MESSAGE 2024-11-05 14:44:41,768 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-amzn-0/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.768
+!MESSAGE 2024-11-05 14:44:41,768 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-mapr/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.784
+!MESSAGE 2024-11-05 14:44:41,768 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-mapr/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.784
+!MESSAGE 2024-11-05 14:44:41,784 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.0.0-mapr/6.1.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.784
+!MESSAGE 2024-11-05 14:44:41,784 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.784
+!MESSAGE 2024-11-05 14:44:41,784 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.799
+!MESSAGE 2024-11-05 14:44:41,784 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-metastore-1.2.1.2.3.2.0-2950/6.1.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,799 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,804 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,804 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.1.1/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,804 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.3.6-amzn-1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,804 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.3.6-amzn-1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.804
+!MESSAGE 2024-11-05 14:44:41,804 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-metastore/2.3.6-amzn-1/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.814
+!MESSAGE 2024-11-05 14:44:41,804 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1408/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.815
+!MESSAGE 2024-11-05 14:44:41,815 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1408/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.831
+!MESSAGE 2024-11-05 14:44:41,831 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1408/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.831
+!MESSAGE 2024-11-05 14:44:41,831 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1501/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.893
+!MESSAGE 2024-11-05 14:44:41,831 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1501/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.893
+!MESSAGE 2024-11-05 14:44:41,893 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0-mapr-1501/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.909
+!MESSAGE 2024-11-05 14:44:41,909 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0.2.1.1.0-385/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.909
+!MESSAGE 2024-11-05 14:44:41,909 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0.2.1.1.0-385/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.909
+!MESSAGE 2024-11-05 14:44:41,909 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.13.0.2.1.1.0-385/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.925
+!MESSAGE 2024-11-05 14:44:41,909 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0.2.2.0.0-2041/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.925
+!MESSAGE 2024-11-05 14:44:41,925 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0.2.2.0.0-2041/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.925
+!MESSAGE 2024-11-05 14:44:41,925 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0.2.2.0.0-2041/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.925
+!MESSAGE 2024-11-05 14:44:41,925 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.935
+!MESSAGE 2024-11-05 14:44:41,935 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.941
+!MESSAGE 2024-11-05 14:44:41,941 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-0.14.0/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.941
+!MESSAGE 2024-11-05 14:44:41,941 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.0.0-amzn-0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.941
+!MESSAGE 2024-11-05 14:44:41,941 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.0.0-amzn-0/6.0.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.941
+!MESSAGE 2024-11-05 14:44:41,941 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.0.0-amzn-0/6.0.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.941
+!MESSAGE 2024-11-05 14:44:41,941 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.951
+!MESSAGE 2024-11-05 14:44:41,941 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.2.1.2.3.2.0-2950/6.1.0/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.951
+!MESSAGE 2024-11-05 14:44:41,951 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.talend.libraries/hive-serde-1.2.1.2.3.2.0-2950/6.1.0/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.956
+!MESSAGE 2024-11-05 14:44:41,951 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-serde/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:44:41.957
+!MESSAGE 2024-11-05 14:44:41,957 WARN  org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-serde/2.1.1/jar failed, will try to download again
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-05 14:44:41.957
+!MESSAGE 2024-11-05 14:44:41,957 ERROR org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable  - Download mvn:org.apache.hive/hive-serde/2.1.1/jar failed.
+
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:91)
+	at org.talend.core.runtime.projectsetting.ProjectPreferenceManager.<init>(ProjectPreferenceManager.java:80)
+	at org.talend.core.nexus.TalendLibsServerManager.getProxyArtifactServer(TalendLibsServerManager.java:253)
+	at org.talend.core.nexus.TalendLibsServerManager.getTalentArtifactServer(TalendLibsServerManager.java:270)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.getNexusServer(AetherArtifactDownloader.java:131)
+	at org.talend.librariesmanager.nexus.utils.AetherArtifactDownloader.download(AetherArtifactDownloader.java:62)
+	at org.talend.librariesmanager.utils.nexus.ArtifactDownloaderRunnable.doDownLoad(ArtifactDownloadManager.java:260)
+	at org.talend.librariesmanager.utils.nexus.AbsArtifactDownLoaderRunnable.run(ArtifactDownloadManager.java:218)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-11-05 14:44:42.304
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.talend.updates.runtime.engine.InstallNewFeatureJob
+!SESSION 2024-11-05 14:44:46.248 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.24
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-11-05 14:44:47.361
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-11-05 14:44:47.361
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-05 14:44:49.036
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:44:49.846
+!MESSAGE 2024-11-05 14:44:49,842 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:44:50.008
+!MESSAGE 2024-11-05 14:44:50,005 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:44:50.312
+!MESSAGE 2024-11-05 14:44:50,312 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:44:50.312
+!MESSAGE 2024-11-05 14:44:50,312 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-05 14:44:50.423
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-05 14:46:04.727
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2024-11-05 14:47:55.906 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.24
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-11-05 14:47:57.126
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-11-05 14:47:57.126
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-05 14:47:58.812
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:47:59.541
+!MESSAGE 2024-11-05 14:47:59,541 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:47:59.669
+!MESSAGE 2024-11-05 14:47:59,669 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:47:59.980
+!MESSAGE 2024-11-05 14:47:59,980 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:47:59.980
+!MESSAGE 2024-11-05 14:47:59,980 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-05 14:48:00.091
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:33.763
+!MESSAGE 2024-11-05 14:48:33,762 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:33.765
+!MESSAGE 2024-11-05 14:48:33,765 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:33.767
+!MESSAGE 2024-11-05 14:48:33,767 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:34.593
+!MESSAGE 2024-11-05 14:48:34,586 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:39.987
+!MESSAGE 2024-11-05 14:48:39,987 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on Local_Project
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:48:43.216
+!MESSAGE 2024-11-05 14:48:43,209 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:43.411
+!MESSAGE 2024-11-05 14:48:43,411 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:43.910
+!MESSAGE 2024-11-05 14:48:43,909 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:44.479
+!MESSAGE 2024-11-05 14:48:44,471 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:61088/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:46.437
+!MESSAGE 2024-11-05 14:48:46,426 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 2698 ms
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:46.958
+!MESSAGE 2024-11-05 14:48:46,958 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:46.958
+!MESSAGE 2024-11-05 14:48:46,958 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /LOCAL_PROJECT_ROUTINES/src/main/java overlaps with sources folder /LOCAL_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:47.005
+!MESSAGE 2024-11-05 14:48:47,005 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:47.005
+!MESSAGE 2024-11-05 14:48:47,005 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:51.956
+!MESSAGE 2024-11-05 14:48:51,956 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.585
+!MESSAGE 2024-11-05 14:48:53,585 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.778
+!MESSAGE 2024-11-05 14:48:53,778 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:8.0.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.933
+!MESSAGE 2024-11-05 14:48:53,933 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.933
+!MESSAGE 2024-11-05 14:48:53,933 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /LOCAL_PROJECT_BEANS/src/main/java overlaps with sources folder /LOCAL_PROJECT_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.955
+!MESSAGE 2024-11-05 14:48:53,955 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /LOCAL_PROJECT_BEANS/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:53.955
+!MESSAGE 2024-11-05 14:48:53,955 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /LOCAL_PROJECT_BEANS/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:48:54.206
+!MESSAGE 2024-11-05 14:48:54,206 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:48:54.206
+!MESSAGE 2024-11-05 14:48:54,206 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:48:54.515
+!MESSAGE 2024-11-05 14:48:54,514 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-05 14:48:54.516
+!MESSAGE 2024-11-05 14:48:54,516 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-05 14:48:57.802
+!MESSAGE 2024-11-05 14:48:57,801 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/LOCAL_PROJECT_ROUTINES: org.example.local_project.code:routines:8.0.1 with classifier  to /LOCAL_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-05 18:12:30.963
+!MESSAGE The workspace will exit with unsaved changes in this session.
