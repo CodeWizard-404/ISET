@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Impaire> Numbers = List.generate(
       20,
-          (index) => Impaire(lib: 'Entier ${1 + index }', val: 1 + index * 2),
+          (index) => Impaire(lib: 'Entier: ${1 + index }', val: 1 + index * 2),
     );
 
 

@@ -1,0 +1,6 @@
+ws1:
+
+
+ws2:
+http://localhost:56446/Service.svc?singleWsdl
+
