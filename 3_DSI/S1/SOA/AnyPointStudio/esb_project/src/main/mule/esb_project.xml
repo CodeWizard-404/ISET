@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
-	xmlns:http="http://www.mulesoft.org/schema/mule/http"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
-http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="de0d8bd7-71e0-44f2-a18f-d5c0d119e3b5" >
 		<http:listener-connection host="localhost" port="9696" />
 	</http:listener-config>
@@ -15,10 +16,57 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="eea43304-0a86-4669-995d-f3f000b7eab1" >
 		<wsc:connection soapVersion="SOAP12" wsdlLocation="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL" service="CountryInfoService" port="CountryInfoServiceSoap" address="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso" />
 	</wsc:config>
-	<flow name="esb_projectFlow2" doc:id="7214fb4a-28fa-4f58-8b78-19db4a8a8a9a" >
-		<http:listener doc:name="Listener" doc:id="67d55def-f34b-44f5-9a42-4ed85a3df9b5" config-ref="HTTP_Listener_config" path="/countriesSoap"/>
-		<wsc:consume operation="FullCountryInfoAllCountries" doc:name="Consume" doc:id="075fc6ed-96ed-4cc0-95df-4eedf25dc6d8" config-ref="Web_Service_Consumer_Config"/>
-		<ee:transform doc:name="Transform Message" doc:id="40d04546-af4b-4c9e-8b7f-0b4d46c56a8a" >
+	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="fb95430f-1c88-402e-bf83-aac9c79985b0" >
+		<jms:active-mq-connection >
+		</jms:active-mq-connection>
+	</jms:config>
+	<flow name="esb_projectFlow" doc:id="6278a29f-d599-4635-a170-d4303c69d115" >
+		<http:listener doc:name="Listener" doc:id="8b8aa584-6bbe-4081-afd3-33af0e18c58e" config-ref="HTTP_Listener_config" path="/countries"/>
+		<http:request method="GET" doc:name="Request" doc:id="b3197764-3dd8-4ec9-8e52-17ebd267aefc" config-ref="HTTP_Request_configuration" path="/all"/>
+	</flow>
+	<flow name="esb_projectFlow1" doc:id="ed8bd5f5-af9c-47a4-87bb-1be0f05ebe31">
+		<http:listener doc:name="Listener" doc:id="3b53044c-2da5-4d8b-a25b-14ebd09fb44e" config-ref="HTTP_Listener_config" path="/countries/{pays}" />
+		<set-variable value="#[attributes.uriParams.pays]" doc:name="Set Variable" doc:id="d307d925-d21a-46c0-8816-cf16f6584611" variableName="countryName" />
+		<http:request method="GET" doc:name="Request" doc:id="918ca221-7c6c-4718-9309-6c3a6c6253ba" config-ref="HTTP_Request_configuration" path="#['/name/' ++ vars.countryName]" />
+	</flow>
+	<flow name="esb_projectFlow2" doc:id="7214fb4a-28fa-4f58-8b78-19db4a8a8a9a">
+		<http:listener doc:name="Listener" doc:id="67d55def-f34b-44f5-9a42-4ed85a3df9b5" config-ref="HTTP_Listener_config" path="/countriesSoap" />
+		<wsc:consume operation="FullCountryInfoAllCountries" doc:name="Consume" doc:id="075fc6ed-96ed-4cc0-95df-4eedf25dc6d8" config-ref="Web_Service_Consumer_Config" />
+		<ee:transform doc:name="Transform Message" doc:id="40d04546-af4b-4c9e-8b7f-0b4d46c56a8a">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="esb_projectFlow4" doc:id="2a54250a-89b6-474b-bab1-f9d3919e21a7" >
+		<jms:listener doc:name="On New Message" doc:id="69bc319d-3042-46ed-9858-f44f1762a71b" config-ref="JMS_Config" destination="queueFlag" numberOfConsumers="1">
+			<jms:consumer-type >
+				<jms:queue-consumer />
+			</jms:consumer-type>
+		</jms:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="ce0e9144-b78f-4e7a-85c0-c1f4603fb36b" message="#[payload]"/>
+	</flow>
+	<flow name="esb_projectFlow3" doc:id="587edadc-86e2-4ef8-aeec-de59eaf3dbc5" >
+		<http:listener doc:name="Listener" doc:id="1241d48d-2b91-4deb-a323-2bb85f292610" config-ref="HTTP_Listener_config" path="/flag?isoCode={isoCode}"/>
+		<set-variable value="#[attributes.queryParams.isoCode]" doc:name="Set Variable" doc:id="d33e77bc-3d5e-45bc-9631-ca361960e418" variableName="code"/>
+		<ee:transform doc:name="Transform Message" doc:id="fc8a7d49-c374-4ed5-82a1-4997e7f9d2a1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://www.oorsprong.org/websamples.countryinfo
+---
+{
+	ns0#CountryFlag: {
+		ns0#sCountryISOCode: vars.code as String
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume operation="CountryFlag" doc:name="Consume" doc:id="8c19f329-27e4-41c2-a57f-13f815255c02" config-ref="Web_Service_Consumer_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="b95c1eba-3964-427b-9a10-c58034c98c03" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
@@ -26,14 +74,6 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-	</flow>
-	<flow name="esb_projectFlow" doc:id="6278a29f-d599-4635-a170-d4303c69d115" >
-		<http:listener doc:name="Listener" doc:id="8b8aa584-6bbe-4081-afd3-33af0e18c58e" config-ref="HTTP_Listener_config" path="/countries"/>
-		<http:request method="GET" doc:name="Request" doc:id="b3197764-3dd8-4ec9-8e52-17ebd267aefc" config-ref="HTTP_Request_configuration" path="/all"/>
-	</flow>
-	<flow name="esb_projectFlow1" doc:id="ed8bd5f5-af9c-47a4-87bb-1be0f05ebe31" >
-		<http:listener doc:name="Listener" doc:id="3b53044c-2da5-4d8b-a25b-14ebd09fb44e" config-ref="HTTP_Listener_config" path="/countries/{pays}"/>
-		<set-variable value="#[attributes.uriParams.pays]" doc:name="Set Variable" doc:id="d307d925-d21a-46c0-8816-cf16f6584611" variableName="countryName"/>
-		<http:request method="GET" doc:name="Request" doc:id="918ca221-7c6c-4718-9309-6c3a6c6253ba" config-ref="HTTP_Request_configuration" path="#['/name/' ++ vars.countryName]"/>
+		<jms:publish doc:name="Publish" doc:id="72c23ddc-a086-4953-81b1-d648218d613d" config-ref="JMS_Config" destination="queueFlag"/>
 	</flow>
 </mule>
