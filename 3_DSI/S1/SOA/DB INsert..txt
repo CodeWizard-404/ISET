@@ -1,0 +1,18 @@
+INSERT INTO `team` (`Id`, `Name`) VALUES
+(1, 'Development Team'),
+(2, 'Design Team'),
+(3, 'Marketing Team');
+
+
+INSERT INTO `member` (`Name`, `TeamId`) VALUES
+('John Doe', 1),
+('Jane Smith', 1),
+('Alice Johnson', 2),
+('Bob Brown', 2),
+('Charlie White', 3);
+
+
+INSERT INTO `project` (`description`, `name`, `status`) VALUES
+('A mobile app development project for e-commerce', 'E-Shop App', 'In Progress'),
+('A website redesign project for the client', 'Client Website Redesign', 'Completed'),
+('A marketing campaign for a new product launch', 'Product Launch Campaign', 'Planned');
