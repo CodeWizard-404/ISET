@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_z1Ft8KP1Ee-qv98fmkvO1g" id="_z1FG4KP1Ee-qv98fmkvO1g" label="tMapJoin" purpose="Joining two different data sources in Studio Talend" description="Using the tMap component to turn two different data sources into one" version="0.1" statusCode="" item="_z1Ft8qP1Ee-qv98fmkvO1g" displayName="tMapJoin">
+    <author href="../talend.project#_pjVuQaJpEe-2O5PTjrBjMA"/>
+    <additionalProperties xmi:id="_z1JYUKP1Ee-qv98fmkvO1g" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_z1JYUaP1Ee-qv98fmkvO1g" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_z1JYUqP1Ee-qv98fmkvO1g" key="created_date" value="2024-11-16T09:36:01.237+0100"/>
+    <additionalProperties xmi:id="_z1JYU6P1Ee-qv98fmkvO1g" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_z1JYVKP1Ee-qv98fmkvO1g" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_z1JYVaP1Ee-qv98fmkvO1g" key="modified_date" value="2024-11-16T10:43:20.714+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_z1Ft8aP1Ee-qv98fmkvO1g" path="" locked="true" lockDate="2024-11-16T09:36:01.393+0100">
+    <locker href="../talend.project#_pjVuQaJpEe-2O5PTjrBjMA"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_z1Ft8qP1Ee-qv98fmkvO1g" property="_z1Ft8KP1Ee-qv98fmkvO1g" state="_z1Ft8aP1Ee-qv98fmkvO1g">
+    <process href="tMapJoin_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

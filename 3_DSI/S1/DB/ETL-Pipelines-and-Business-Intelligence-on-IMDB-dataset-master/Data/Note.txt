@@ -1,0 +1,3 @@
+Folder Contains data from multiple sources. Numbers.com, MovieLens,MOJO
+To Download IMDB data go to the following link and extract tsv files in a folder
+IMDB Dataset link - https://datasets.imdbws.com/

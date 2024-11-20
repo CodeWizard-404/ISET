@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_Y6epIKJqEe-2O5PTjrBjMA" id="_Y6ZwoKJqEe-2O5PTjrBjMA" label="simpleJob" purpose="Display a message" description="This tutorial uses a component to display a message box with a custom message" version="0.1" statusCode="" item="_Y6epIqJqEe-2O5PTjrBjMA" displayName="simpleJob">
+    <author href="../talend.project#_pjVuQaJpEe-2O5PTjrBjMA"/>
+    <additionalProperties xmi:id="_Y6i6kKJqEe-2O5PTjrBjMA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_Y6i6kaJqEe-2O5PTjrBjMA" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_Y6i6kqJqEe-2O5PTjrBjMA" key="created_date" value="2024-11-14T10:25:29.401+0100"/>
+    <additionalProperties xmi:id="_Y6i6k6JqEe-2O5PTjrBjMA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_Y6i6lKJqEe-2O5PTjrBjMA" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_Y6i6laJqEe-2O5PTjrBjMA" key="modified_date" value="2024-11-14T11:34:47.677+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_Y6epIaJqEe-2O5PTjrBjMA" path=""/>
+  <TalendProperties:ProcessItem xmi:id="_Y6epIqJqEe-2O5PTjrBjMA" property="_Y6epIKJqEe-2O5PTjrBjMA" state="_Y6epIaJqEe-2O5PTjrBjMA">
+    <process href="simpleJob_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

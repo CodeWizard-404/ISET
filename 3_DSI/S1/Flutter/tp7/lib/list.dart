@@ -4,7 +4,6 @@ import 'DetailPage.dart';
 
 class EntierListPage extends StatefulWidget {
   final List<Impaire> Numbers;
-
   const EntierListPage({super.key, required this.Numbers});
 
   @override
@@ -12,12 +11,12 @@ class EntierListPage extends StatefulWidget {
 }
 
 class _EntierListPageState extends State<EntierListPage> {
-  TextEditingController resultController = TextEditingController();
+  TextEditingController result = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    resultController.text = "Valeur Initial";
+    result.text = "Valeur Initial";
   }
 
   @override
@@ -26,23 +25,27 @@ class _EntierListPageState extends State<EntierListPage> {
       appBar: AppBar(
         title: const Text('Entiers List'),
       ),
+
+
       body: Column(
         children: [
+
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: resultController,
-            ),
+            padding: const EdgeInsets.all(8),
+            child: Text(result.text),
           ),
+
           Expanded(
             child: ListView.builder(
               itemCount: widget.Numbers.length,
               itemBuilder: (context, index) {
+
                 return ListTile(
                   title: Text(widget.Numbers[index].lib),
                   trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () async {
-                    final result = await Navigator.push(
+
+                    final res = await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const DetailPage(),
@@ -50,10 +53,12 @@ class _EntierListPageState extends State<EntierListPage> {
                       ),
                     );
 
-                    if (result != null) {
-                      setState(() {
-                        resultController.text = '${result.lib}, Value: ${result.val}';
-                      });
+                    if (res != null) {
+                      setState(() {result.text = '${res.lib}, Valeur: ${res.val}';});
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('${res.lib}, Valeur: ${res.val}')),
+                      );
                     }
                   },
                 );
