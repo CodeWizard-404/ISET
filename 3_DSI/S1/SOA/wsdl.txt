@@ -4,3 +4,24 @@ ws1:
 ws2:
 http://localhost:56446/Service.svc?singleWsdl
 
+ws3:
+http://localhost:3000/ProjectService?wsdl
+
+ws4:
+POST http://localhost:3000/calendar
+{    "name": "Project Kickoff",
+    "description": "Initial meeting to discuss project scope and timeline",
+    "start_date": "2024-12-01T10:00:00",
+    "end_date": "2024-12-01T12:00:00",
+    "project_id": 1}
+
+GET http://localhost:3000/calendar
+GET http://localhost:3000/calendar/1
+
+PUT http://localhost:3000/calendar/1
+{    "name": "Updated Project Kickoff",
+    "description": "Updated description",
+    "start_date": "2024-12-01T10:30:00",
+    "end_date": "2024-12-01T12:30:00"}
+
+DELETE http://localhost:3000/calendar/1
