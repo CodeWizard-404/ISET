@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
-	xmlns:http="http://www.mulesoft.org/schema/mule/http"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
-http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
 	<http:listener-config name="WS" doc:name="HTTP Listener config" doc:id="5f9aebef-5c60-4fb0-bfa7-786e0ab55c0e">
 		<http:listener-connection host="localhost" port="9090" />
 	</http:listener-config>
@@ -22,6 +23,9 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<wsc:connection wsdlLocation="http://localhost:3000/ProjectService?wsdl" soapVersion="SOAP12" service="ProjectService" port="ProjectPortBinding" address="http://localhost:3000/ProjectService">
 		</wsc:connection>
 	</wsc:config>
+	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="41f497be-0515-4dc5-ad49-96ce85aaf642" >
+		<jms:active-mq-connection />
+	</jms:config>
 	<flow name="WS1_GetProjects_(REST)" doc:id="9d091878-93fc-4b52-9f57-04cbf34efa5d" >
 		<http:listener doc:name="Listener" doc:id="b11e7cfc-6d69-4425-9839-679981c556f2" config-ref="WS" path="/projects"/>
 		<http:request method="GET" doc:name="Request" doc:id="bfa1df38-d766-4adf-8372-a789d7c9cf67" path="/" config-ref="WS1"/>
@@ -58,6 +62,7 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<jms:publish doc:name="Publish" doc:id="8aef4d20-ad13-40dc-9136-5d0c0ba0ffe9" config-ref="JMS_Config" destination="test"/>
 	</flow>
 	<flow name="WS3_AssignTeamToProject(Soap)" doc:id="2a373b5d-8dcd-4558-9e98-728be0057e13" >
 		<http:listener doc:name="Listener" doc:id="34534397-4161-4196-8f37-ccc74e81df1b" config-ref="WS" path="/AssignTeamToProject?TeamID={TeamID}&amp;ProjectID={ProjectID}"/>

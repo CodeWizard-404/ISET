@@ -27,10 +27,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _Controller1 = TextEditingController();
+  final _formKey = GlobalKey<FormState>();  // Global key for form state
 
   @override
   void initState() {
     super.initState();
+    _Controller1.addListener(() {
+      final tt = _Controller1.text;
+      print('text01: ${tt}');
+    });
   }
 
   @override
@@ -39,11 +44,64 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 
+  void _Valdiation() {
+    if (_formKey.currentState!.validate()) {
+      _submit();
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Error"),
+            content: const Text("Please fill out all fields correctly."),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+
   void _submit() {
-    final Text1 = _Controller1.text.length;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Text 1: $Text1')),
-    );
+    if (_formKey.currentState?.validate() ?? false) {
+      final String value = _Controller1.text;
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("TextField Submitted"),
+            content: Text("Value: $value"),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Error"),
+            content: const Text("Please fill out all fields correctly."),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   @override
@@ -54,56 +112,78 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            TextField(
-              controller: _Controller1,
-              decoration: const InputDecoration(
-                labelText: 'TextField',
-                border: OutlineInputBorder(),
-              ),
-              onSubmitted: (String?value) => _submit(),
-            ),
-            const SizedBox(height: 20),
-
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'TextFormField',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(7),
-                  child: Image.network(
-                    'https://preview.redd.it/3fc3wd5xwf171.png?auto=webp&s=efea2e1ae32067ea07fc547585f64a95171c7902',
-                    height: 57,
-                  ),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextField(
+                controller: _Controller1,
+                decoration: const InputDecoration(
+                  labelText: 'TextField',
+                  border: OutlineInputBorder(),
                 ),
-                const SizedBox(width: 10),
-                const Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Name',
-                      border: OutlineInputBorder(),
+                onSubmitted: (value) => _submit(),
+              ),
+              const SizedBox(height: 20),
+
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'TextFormField',
+                  border: OutlineInputBorder(),
+                ),
+                //onFieldSubmitted: (value) => _submit(),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+
+              TextFormField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a password';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+
+              Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(7),
+                    child: Image.asset(
+                      'images.jpg',
+                      height: 57,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  const SizedBox(width: 10),
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Name',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: _Valdiation,
+                child: const Text("Submit"),
+              ),
+            ],
+          ),
         ),
       ),
     );
