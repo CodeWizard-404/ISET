@@ -710,3 +710,572 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.debug.core.DebugPlugi
 
 !ENTRY org.eclipse.core.resources 2 10035 2024-11-27 21:25:33.779
 !MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2024-11-27 21:28:02.520 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.12
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-11-27 21:28:03.422
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-11-27 21:28:03.424
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-27 21:28:04.505
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:05.189
+!MESSAGE 2024-11-27 21:28:05,188 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: D:\Talend\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:05.334
+!MESSAGE 2024-11-27 21:28:05,333 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:05.488
+!MESSAGE 2024-11-27 21:28:05,488 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:05.490
+!MESSAGE 2024-11-27 21:28:05,490 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-27 21:28:05.642
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 2 2 2024-11-27 21:28:46.387
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2024-11-27 21:28:46.387
+!MESSAGE The project description file (.project) for 'PROJETDB' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:48.015
+!MESSAGE 2024-11-27 21:28:48,015 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:48.016
+!MESSAGE 2024-11-27 21:28:48,016 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:48.017
+!MESSAGE 2024-11-27 21:28:48,017 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:48.244
+!MESSAGE 2024-11-27 21:28:48,244 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-27 21:28:50.368
+!MESSAGE 2024-11-27 21:28:50,367 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:51.170
+!MESSAGE 2024-11-27 21:28:51,169 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:61791/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:52.537
+!MESSAGE 2024-11-27 21:28:52,536 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on ProjetDB1
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:53.223
+!MESSAGE 2024-11-27 21:28:53,223 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Talend TP\PROJETDB1\poms
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:53.226
+!MESSAGE 2024-11-27 21:28:53,225 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s D:\Talend\configuration\maven_user_settings.xml install -llr -N -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:54.095
+!MESSAGE 2024-11-27 21:28:54,095 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:54.279
+!MESSAGE 2024-11-27 21:28:54,278 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:54.506
+!MESSAGE 2024-11-27 21:28:54,506 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 342 ms
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-27 21:28:55.077
+!MESSAGE 2024-11-27 21:28:55,076 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-27 21:28:55.078
+!MESSAGE 2024-11-27 21:28:55,078 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-27 21:28:55.248
+!MESSAGE 2024-11-27 21:28:55,247 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-27 21:28:55.249
+!MESSAGE 2024-11-27 21:28:55,248 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:55.923
+!MESSAGE 2024-11-27 21:28:55,923 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:57.067
+!MESSAGE 2024-11-27 21:28:57,066 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:57.068
+!MESSAGE 2024-11-27 21:28:57,068 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /PROJETDB1_ROUTINES/src/main/java overlaps with sources folder /PROJETDB1_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:57.095
+!MESSAGE 2024-11-27 21:28:57,094 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:57.096
+!MESSAGE 2024-11-27 21:28:57,095 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:57.285
+!MESSAGE 2024-11-27 21:28:57,284 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:59.120
+!MESSAGE 2024-11-27 21:28:59,119 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Talend TP\PROJETDB1\poms\code\routines
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:28:59.121
+!MESSAGE 2024-11-27 21:28:59,120 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s D:\Talend\configuration\maven_user_settings.xml install -llr -Dmaven.main.skip=true -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.048
+!MESSAGE 2024-11-27 21:29:04,047 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.178
+!MESSAGE 2024-11-27 21:29:04,178 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.185
+!MESSAGE 2024-11-27 21:29:04,185 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.415
+!MESSAGE 2024-11-27 21:29:04,415 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.416
+!MESSAGE 2024-11-27 21:29:04,416 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /PROJETDB1_BEANS/src/main/java overlaps with sources folder /PROJETDB1_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.431
+!MESSAGE 2024-11-27 21:29:04,431 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_BEANS/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.432
+!MESSAGE 2024-11-27 21:29:04,431 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_BEANS/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:04.580
+!MESSAGE 2024-11-27 21:29:04,579 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:05.183
+!MESSAGE 2024-11-27 21:29:05,182 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:05.804
+!MESSAGE 2024-11-27 21:29:05,803 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:05.840
+!MESSAGE 2024-11-27 21:29:05,839 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Talend TP\PROJETDB1\poms\code\beans
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:05.841
+!MESSAGE 2024-11-27 21:29:05,841 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s D:\Talend\configuration\maven_user_settings.xml install -llr -Dmaven.main.skip=true -Dci.builder.skip=true
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-27 21:29:08.728
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.IPath.toString()" because "path" is null
+	at org.talend.designer.core.ui.action.CreateProcess.doRun(CreateProcess.java:118)
+	at org.talend.repository.ui.actions.AContextualAction$2.run(AContextualAction.java:678)
+	at org.talend.repository.RepositoryWorkUnit.executeRun(RepositoryWorkUnit.java:103)
+	at org.talend.core.repository.model.AbstractRepositoryFactory.executeRepositoryWorkUnit(AbstractRepositoryFactory.java:259)
+	at org.talend.repository.localprovider.model.LocalRepositoryFactory.executeRepositoryWorkUnit(LocalRepositoryFactory.java:3767)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.executeRepositoryWorkUnit(ProxyRepositoryFactory.java:2679)
+	at org.talend.repository.ui.actions.AContextualAction.run(AContextualAction.java:688)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:27.408
+!MESSAGE 2024-11-27 21:29:27,407 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:27.614
+!MESSAGE 2024-11-27 21:29:27,613 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:27.615
+!MESSAGE 2024-11-27 21:29:27,614 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:27.623
+!MESSAGE 2024-11-27 21:29:27,623 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:27.625
+!MESSAGE 2024-11-27 21:29:27,624 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:52.770
+!MESSAGE 2024-11-27 21:29:52,769 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:53.174
+!MESSAGE 2024-11-27 21:29:53,173 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:53.816
+!MESSAGE 2024-11-27 21:29:53,815 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:53.844
+!MESSAGE 2024-11-27 21:29:53,844 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:54.976
+!MESSAGE 2024-11-27 21:29:54,975 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:56.170
+!MESSAGE 2024-11-27 21:29:56,170 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:56.353
+!MESSAGE 2024-11-27 21:29:56,353 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:58.152
+!MESSAGE 2024-11-27 21:29:58,151 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:59.212
+!MESSAGE 2024-11-27 21:29:59,211 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:29:59.400
+!MESSAGE 2024-11-27 21:29:59,399 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:30:08.636
+!MESSAGE 2024-11-27 21:30:08,635 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:30:09.608
+!MESSAGE 2024-11-27 21:30:09,607 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:30:09.784
+!MESSAGE 2024-11-27 21:30:09,783 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:18.553
+!MESSAGE 2024-11-27 21:34:18,553 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:19.431
+!MESSAGE 2024-11-27 21:34:19,431 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:19.574
+!MESSAGE 2024-11-27 21:34:19,573 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:23.936
+!MESSAGE 2024-11-27 21:34:23,936 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:24.763
+!MESSAGE 2024-11-27 21:34:24,763 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:24.902
+!MESSAGE 2024-11-27 21:34:24,902 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:26.323
+!MESSAGE 2024-11-27 21:34:26,322 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:27.290
+!MESSAGE 2024-11-27 21:34:27,289 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:34:27.424
+!MESSAGE 2024-11-27 21:34:27,424 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:12.915
+!MESSAGE 2024-11-27 21:36:12,914 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:13.784
+!MESSAGE 2024-11-27 21:36:13,783 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:13.919
+!MESSAGE 2024-11-27 21:36:13,918 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:22.199
+!MESSAGE 2024-11-27 21:36:22,198 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:23.087
+!MESSAGE 2024-11-27 21:36:23,086 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:23.222
+!MESSAGE 2024-11-27 21:36:23,221 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:24.300
+!MESSAGE 2024-11-27 21:36:24,300 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:25.192
+!MESSAGE 2024-11-27 21:36:25,180 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:36:25.422
+!MESSAGE 2024-11-27 21:36:25,422 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:01.035
+!MESSAGE 2024-11-27 21:37:01,035 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:01.853
+!MESSAGE 2024-11-27 21:37:01,852 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:01.974
+!MESSAGE 2024-11-27 21:37:01,974 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:04.552
+!MESSAGE 2024-11-27 21:37:04,552 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:05.275
+!MESSAGE 2024-11-27 21:37:05,275 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:05.408
+!MESSAGE 2024-11-27 21:37:05,408 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:06.216
+!MESSAGE 2024-11-27 21:37:06,216 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:06.926
+!MESSAGE 2024-11-27 21:37:06,925 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:07.062
+!MESSAGE 2024-11-27 21:37:07,062 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:36.969
+!MESSAGE 2024-11-27 21:37:36,969 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:37.784
+!MESSAGE 2024-11-27 21:37:37,784 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:37.939
+!MESSAGE 2024-11-27 21:37:37,938 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:43.102
+!MESSAGE 2024-11-27 21:37:43,102 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:44.054
+!MESSAGE 2024-11-27 21:37:44,054 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:44.188
+!MESSAGE 2024-11-27 21:37:44,188 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:44.867
+!MESSAGE 2024-11-27 21:37:44,866 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:45.760
+!MESSAGE 2024-11-27 21:37:45,759 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:37:45.895
+!MESSAGE 2024-11-27 21:37:45,895 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:08.546
+!MESSAGE 2024-11-27 21:38:08,546 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:09.423
+!MESSAGE 2024-11-27 21:38:09,422 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:09.574
+!MESSAGE 2024-11-27 21:38:09,574 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:15.288
+!MESSAGE 2024-11-27 21:38:15,288 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:16.194
+!MESSAGE 2024-11-27 21:38:16,193 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:16.379
+!MESSAGE 2024-11-27 21:38:16,379 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:17.122
+!MESSAGE 2024-11-27 21:38:17,121 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:17.852
+!MESSAGE 2024-11-27 21:38:17,851 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:38:18.093
+!MESSAGE 2024-11-27 21:38:18,093 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:42.652
+!MESSAGE 2024-11-27 21:41:42,652 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:43.420
+!MESSAGE 2024-11-27 21:41:43,420 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:43.550
+!MESSAGE 2024-11-27 21:41:43,550 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:46.797
+!MESSAGE 2024-11-27 21:41:46,797 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:47.473
+!MESSAGE 2024-11-27 21:41:47,472 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:47.582
+!MESSAGE 2024-11-27 21:41:47,581 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:48.112
+!MESSAGE 2024-11-27 21:41:48,111 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:48.841
+!MESSAGE 2024-11-27 21:41:48,841 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:41:48.965
+!MESSAGE 2024-11-27 21:41:48,965 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms256M -Xmx1024M -Dfile.encoding=UTF-8 -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/.Java/target/classpath.jar; projetdb1.shadowfileinputtodelimitedoutput_0_1.ShadowFileInputToDelimitedOutput --context=Shadow %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:45:53.290
+!MESSAGE 2024-11-27 21:45:53,290 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/PROJETDB1_ROUTINES: org.example.projetdb1.code:routines:8.0.1 with classifier  to /PROJETDB1_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:45:53.396
+!MESSAGE 2024-11-27 21:45:53,396 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_FACT_MOVIE_JOB_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:45:53.397
+!MESSAGE 2024-11-27 21:45:53,396 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_FACT_MOVIE_JOB_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:45:53.406
+!MESSAGE 2024-11-27 21:45:53,405 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /PROJETDB1_FACT_MOVIE_JOB_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-27 21:45:53.406
+!MESSAGE 2024-11-27 21:45:53,406 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /PROJETDB1_FACT_MOVIE_JOB_0.1/src/test/resources
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-27 21:46:39.768
+!MESSAGE The workspace will exit with unsaved changes in this session.

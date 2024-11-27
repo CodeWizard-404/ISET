@@ -106,7 +106,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.example.projetdb.code</groupId>
+      <groupId>org.example.projetdb1.code</groupId>
       <artifactId>routines</artifactId>
       <version>8.0.1</version>
     </dependency>
