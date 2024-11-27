@@ -94,9 +94,9 @@
    <soapenv:Body>\r
       <tem:AssignMemberToTeam>\r
          <!--Optional:-->\r
-         <tem:memberId>3</tem:memberId>\r
+         <tem:memberId>5</tem:memberId>\r
          <!--Optional:-->\r
-         <tem:teamId>3</tem:teamId>\r
+         <tem:teamId>1</tem:teamId>\r
       </tem:AssignMemberToTeam>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IMemberService/AssignMemberToTeam"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

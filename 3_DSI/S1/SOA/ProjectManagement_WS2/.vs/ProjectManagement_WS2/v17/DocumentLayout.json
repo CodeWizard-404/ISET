@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\projectmanagement_ws2\\app_code\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|solutionrelative:projectmanagement_ws2\\app_code\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|c:\\users\\kayto\\desktop\\it\\code\\iset\\3_dsi\\s1\\soa\\projectmanagement_ws2\\projectmanagement_ws2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|solutionrelative:projectmanagement_ws2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\projectmanagement_ws2\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|solutionrelative:projectmanagement_ws2\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\projectmanagement_ws2\\app_code\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|solutionrelative:projectmanagement_ws2\\app_code\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2645AD4A-D98D-49C7-A097-1716DBA4FDF6}|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2|C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2\\App_Code\\IMemberService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2\\packages.config",
               "RelativeDocumentMoniker": "ProjectManagement_WS2\\packages.config",
@@ -78,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2\\Web.config",
               "RelativeDocumentMoniker": "ProjectManagement_WS2\\Web.config",
@@ -91,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Service.svc",
               "DocumentMoniker": "C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2\\Service.svc",
               "RelativeDocumentMoniker": "ProjectManagement_WS2\\Service.svc",
@@ -99,7 +99,8 @@
               "RelativeToolTip": "ProjectManagement_WS2\\Service.svc",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003504|",
-              "WhenOpened": "2024-11-11T16:09:27.906Z"
+              "WhenOpened": "2024-11-11T16:09:27.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -115,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MemberService.cs",
               "DocumentMoniker": "C:\\Users\\Kayto\\Desktop\\IT\\CODE\\ISET\\3_DSI\\S1\\SOA\\ProjectManagement_WS2\\ProjectManagement_WS2\\App_Code\\MemberService.cs",
               "RelativeDocumentMoniker": "ProjectManagement_WS2\\App_Code\\MemberService.cs",
@@ -123,7 +124,8 @@
               "RelativeToolTip": "ProjectManagement_WS2\\App_Code\\MemberService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T16:02:07.88Z"
+              "WhenOpened": "2024-11-11T16:02:07.88Z",
+              "EditorCaption": ""
             }
           ]
         }

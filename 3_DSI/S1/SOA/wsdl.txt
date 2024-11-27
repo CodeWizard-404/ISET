@@ -1,27 +1,46 @@
 ws1:
-
+GET http://localhost:8088/projects
+GET http://localhost:8088/projects/id
 
 ws2:
 http://localhost:56446/Service.svc?singleWsdl
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:AssignMemberToTeam>
+         <tem:memberId>id</tem:memberId>
+         <tem:teamId>id</tem:teamId>
+      </tem:AssignMemberToTeam>
+   </soapenv:Body>
+</soapenv:Envelope>
 
 ws3:
 http://localhost:3000/ProjectService?wsdl
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proj="http://example.com/projectservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proj:assignTeam>
+         <teamId>id</teamId>
+         <projectId>id</projectId>
+      </proj:assignTeam>
+   </soapenv:Body>
+</soapenv:Envelope>
 
 ws4:
-POST http://localhost:3000/calendar
+GET http://localhost:4000/calendar
+GET http://localhost:4000/calendar/id
+
+POST http://localhost:4000/calendar
 {    "name": "Project Kickoff",
     "description": "Initial meeting to discuss project scope and timeline",
     "start_date": "2024-12-01T10:00:00",
     "end_date": "2024-12-01T12:00:00",
     "project_id": 1}
 
-GET http://localhost:3000/calendar
-GET http://localhost:3000/calendar/1
-
-PUT http://localhost:3000/calendar/1
+PUT http://localhost:4000/calendar/id
 {    "name": "Updated Project Kickoff",
     "description": "Updated description",
     "start_date": "2024-12-01T10:30:00",
     "end_date": "2024-12-01T12:30:00"}
 
-DELETE http://localhost:3000/calendar/1
+DELETE http://localhost:4000/calendar/id

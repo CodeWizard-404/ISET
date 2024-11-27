@@ -34,7 +34,7 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <proj:assignTeam>\r
-         <teamId>2</teamId>\r
+         <teamId>1</teamId>\r
          <projectId>2</projectId>\r
       </proj:assignTeam>\r
    </soapenv:Body>\r
