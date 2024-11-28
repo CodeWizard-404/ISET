@@ -1,0 +1,204 @@
+﻿1, Gregg Araki	
+2, P.J. Hogan 
+3,Alan Rudolph 
+4,Alex Proyas
+5,   Alex Sichel
+6,Alex Zamm	
+7,Alfonso Cuarón
+8,Alfred Hitchcock
+9, Allison Anders
+10,Andrew Davis 
+11,Andrew Niccol
+12, Antoine Fuqua
+13,Barbet Schroeder 
+14,Barbet Schroeder 
+15, Barry Levinson
+16,Barry Sonnenfeld
+17,Ben Stiller
+18, Bernard Rose
+19,Blake Edwards
+20,Boaz Yakin
+21,Bob Gosse 
+22,Brad Silberling
+23, Brian De Palma
+24,Brian Evans
+25,Bruno Barreto
+26,  Bryan Singer
+27, Cameron Crowe
+28,Caroline Thompson 
+29,Charles Martin Smith
+30,Charles Sturridge
+31, Chris Columbus
+32,  Chris Noonan
+33,Christian Duguay
+34,Chuck Russell
+35, Clint Eastwood
+36,Curtis Hanson
+37,Daniel Taplitz
+38,Danny Boyle
+39,David Breashears
+40,David Cronenberg	
+41,David Fincher		
+42,David Hare
+43,David Lynch
+44,Dean Semler
+45,Dennis Dugan
+46,Don Bluth
+47,Edward Burns
+48,Edward Zwick
+49,Emma-Kate Croghan
+50,Eric Schaeffer
+51,Errol Morris	
+52,Finn Taylor
+53,Francis Ford Coppola
+54,Frank Capra
+55,Frank Coraci
+56,Frank Darabont
+57,Fred Schepisi
+58,Gary Oldman
+59,George Lucas
+60,Gore Verbinski
+61,Graeme Campbell
+62,Greg Spence 
+63,Gregor Nicholas
+64,Gregory Hoblit
+65,Griffin Dunne
+66,Guillermo del Toro
+67,Gus Van Sant
+68,Hark Tsui  
+69,Harold Becker
+70,Harold Ramis
+71,Henry Selick 
+72,Irvin Kershner
+73,James Cameron
+74,James L. Brooks
+75,James Mangold
+76,Jan de Bont
+77,Jay Roach
+78,Jean-Jacques Annaud
+79,Jean-Pierre Jeunet
+80, Jeff Pollack
+81,Jim Abrahams	
+82,Jim Gillespie
+83,Joe Chappelle
+84, Joel Schumacher
+85,John Irvin 
+86,John Landis 
+87, John Lasseter
+88,John McNaughton
+89,John Nicolella
+90,John Sayles 
+91,John Woo  
+92,Jon Amiel
+93,Jonas Pate
+94,Jonathan Darby
+95, Jonathan Demme
+96,Ken Kwapis
+97, Kenneth Branagh  
+98, Kevin Costner
+99,Kevin Reynolds
+100,Kevin Smith
+101, Kevin Spacey
+102,Lance Young	
+103,  Lasse Hallström
+104,Les Mayfield
+105,Louis Saia
+106,Luc Besson
+107,Luis Llosa 
+108,Manny Coto	
+109,Mark A.Z. Dippé
+110,Mark Christopher
+111,Mark Joffe
+112,Mark Pavia
+113,Marshall Herskovitz
+114,Martin Campbell
+115,Martin Scorsese
+116,Marvin Baker
+117,Mel Gibson
+118,Mel Smith
+119,Michael Apted
+120,Michael Bay
+121,Michael Mann
+122,Michael Moore
+123,Michael Paxton
+124,Michael Radford
+125,Michael Seitzman
+126,Michael Winterbottom
+127,Mike Leigh
+128,Mike Newell
+129,Mike Nichols
+130,Milos Forman
+131,Mimi Leder
+132,Morgan J. Freeman
+133,Nana Dzhordzhadze
+134,Neil Jordan
+135,Neil LaBute
+136,Nicholas Hytner
+137,Nick Cassavetes
+138,Oliver Stone
+139,Orson Welles
+140,Paul Thomas Anderson
+141,Paul Verhoeven
+142,Penelope Spheeris  
+143,Peter Cattaneo
+144,Peter Chelsom
+145,Peter Duncan
+146,Peter Howitt  
+147,Peter Weir
+148,Quentin Tarantino 
+149,Raja Gosnell
+150,Randall Wallace
+151,Richard Donner
+152,Richard Linklater
+153,Richard Loncraine
+154,Richard Marquand
+155,Ridley Scott
+156,Rob Minkoff
+157,Rob Reiner
+158,Robert Altman
+159,Robert Benton 
+160,Robert Dornhelm
+161, Robert Duvall 
+162,Robert Kurtzman
+163, Robert Redford 
+164,Robert Rodriguez
+165,Robert Townsend
+166, Robert Wise
+167,Robert Zemeckis
+168,Roberto Benabib
+169,Roger Donaldson
+170,Roger Spottiswoode
+171,  Roland Emmerich
+172,	Ron Clements
+173,Ron Howard
+174,Sam Raimi
+175,Sam Weisman
+176,Sean Mathias
+177,Sean McNamara
+178,Sergio Leone
+179,Seth Zvi Rosenfeld
+180,Sidney Lumet
+181,Simon Wincer
+182,Stanley Kubrick
+183,Stefan Schwartz
+184,Stephen Herek
+185,Stephen Hopkins
+186, Stephen Sommers 
+187,  Steven Spielberg
+188,Stuart Baird
+189,Susan Streitfeld
+190, Takeshi Kitano
+191,Tamra Davis
+192,Terry Gilliam
+193,Terry Jones
+194,The Coen Brothers
+195, Tim Burton
+196, Tim Robbins
+197,  Tom Schulman
+198,Tom Shadyac	
+199,Tony Scott
+200,Victor Fleming
+201,  Volker Schlöndorff
+202,Wes Craven
+203,Wolfgang Petersen
+204,Woody Allen

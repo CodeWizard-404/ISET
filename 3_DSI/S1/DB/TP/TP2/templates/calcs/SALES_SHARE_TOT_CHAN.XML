@@ -1,0 +1,40 @@
+
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.1">
+  <Cube
+    Name="SALES_CUBE">
+    <Measure>
+      <DerivedMeasure
+        Name="SALES_SHARE_TOT_CHAN"
+        MeasureExpression="SHARE(SALES_CUBE.SALES OF CHANNEL.SALES_CHANNEL TOP) * 100"
+        ETMeasureColumnName="SALES_SHARE_TOT_CHAN">
+        <Classification
+          Value="AwmDescriptionType=SHARE"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="SHARE">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="Sales Share Tot Chan">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="Sales Share Tot Chan">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="Sales Share Tot Chan">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+  </Cube>
+</Metadata>

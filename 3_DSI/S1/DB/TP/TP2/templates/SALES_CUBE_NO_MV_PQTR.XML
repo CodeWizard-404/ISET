@@ -1,0 +1,182 @@
+
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.0">
+  <Cube
+    Name="SALES_CUBE"
+    ConsistentSolve="SOLVE 
+(
+  SUM OVER &quot;TIME&quot;, 
+  SUM OVER CHANNEL, 
+  SUM OVER PRODUCT, 
+  SUM OVER GEOGRAPHY
+)"
+    ETViewName="SALES_CUBE_VIEW">
+    <Organization>
+      <AWCubeOrganization
+        NullStorage="MV_READY"
+        SparseType="COMPRESSED"
+        CubeStorageType="NUMBER"
+        DefaultBuild="BUILD SPEC Load_and_Aggregate
+(
+  LOAD NO SYNCH, 
+  SOLVE
+)"
+        PrecomputePercent="35"
+        PrecomputePercentTop="0"
+        MVOption="NONE"
+        MeasureStorage="SHARED">
+        <AW
+          Name="&AW_NAME;"/>
+        <SparseDimension
+          Name="TIME"/>
+        <SparseDimension
+          Name="CHANNEL"/>
+        <SparseDimension
+          Name="PRODUCT"/>
+        <SparseDimension
+          Name="GEOGRAPHY"/>
+        <PartitionLevel
+          Name="TIME.CALENDAR.CALENDAR_QUARTER"/>
+      </AWCubeOrganization>
+    </Organization>
+    <Dimensionality
+      Name="TIME"
+      ETKeyColumnName="TIME">
+      <Dimension
+        Name="TIME"/>
+    </Dimensionality>
+    <Dimensionality
+      Name="CHANNEL"
+      ETKeyColumnName="CHANNEL">
+      <Dimension
+        Name="CHANNEL"/>
+    </Dimensionality>
+    <Dimensionality
+      Name="PRODUCT"
+      ETKeyColumnName="PRODUCT">
+      <Dimension
+        Name="PRODUCT"/>
+    </Dimensionality>
+    <Dimensionality
+      Name="GEOGRAPHY"
+      ETKeyColumnName="GEOGRAPHY">
+      <Dimension
+        Name="GEOGRAPHY"/>
+    </Dimensionality>
+    <Description
+      Language="AMERICAN_AMERICA.AL32UTF8"
+      Type="LongDescription"
+      Value="Sales Cube">
+    </Description>
+    <Description
+      Language="AMERICAN_AMERICA.AL32UTF8"
+      Type="ShortDescription"
+      Value="Sales Cube">
+    </Description>
+    <Description
+      Language="AMERICAN_AMERICA.AL32UTF8"
+      Type="Description"
+      Value="Sales Cube">
+    </Description>
+    <Measure>
+      <BaseMeasure
+        Name="SALES"
+        SQLDataType="NUMBER"
+        ETMeasureColumnName="SALES">
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="LongDescription"
+          Value="Sales">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="ShortDescription"
+          Value="Sales">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="Description"
+          Value="Sales">
+        </Description>
+      </BaseMeasure>
+    </Measure>
+    <Measure>
+      <BaseMeasure
+        Name="QUANTITY"
+        SQLDataType="NUMBER"
+        ETMeasureColumnName="QUANTITY">
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="LongDescription"
+          Value="Quantity">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="ShortDescription"
+          Value="Quantity">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="Description"
+          Value="Quantity">
+        </Description>
+      </BaseMeasure>
+    </Measure>
+    <CubeMap
+      Name="MAP1"
+      Query="SALES_FACT">
+      <CubeDimensionalityMap
+        Name="TIME"
+        Expression="TIMES.MONTH_ID"
+        JoinCondition="TIMES.DAY_KEY = SALES_FACT.DAY_KEY">
+        <Dimensionality
+          Name="TIME"/>
+        <MappedDimension
+          Name="TIME.CALENDAR.MONTH"/>
+      </CubeDimensionalityMap>
+      <CubeDimensionalityMap
+        Name="CHANNEL"
+        Expression="CHANNELS.CHANNEL_KEY"
+        JoinCondition="CHANNELS.DIMENSION_KEY = SALES_FACT.CHANNEL">
+        <Dimensionality
+          Name="CHANNEL"/>
+        <MappedDimension
+          Name="CHANNEL.SALES_CHANNEL.CHANNEL"/>
+      </CubeDimensionalityMap>
+      <CubeDimensionalityMap
+        Name="PRODUCT"
+        Expression="PRODUCTS.ITEM_KEY"
+        JoinCondition="PRODUCTS.DIMENSION_KEY = SALES_FACT.PRODUCT">
+        <Dimensionality
+          Name="PRODUCT"/>
+        <MappedDimension
+          Name="PRODUCT.STANDARD.ITEM"/>
+      </CubeDimensionalityMap>
+      <CubeDimensionalityMap
+        Name="GEOGRAPHY"
+        Expression="CUSTOMERS.STATE_PROVINCE_KEY"
+        JoinCondition="CUSTOMERS.DIMENSION_KEY = SALES_FACT.CUSTOMER">
+        <Dimensionality
+          Name="GEOGRAPHY"/>
+        <MappedDimension
+          Name="GEOGRAPHY.REGIONAL.STATE_PROVINCE"/>
+      </CubeDimensionalityMap>
+      <MeasureMap
+        Name="SALES"
+        Expression="SALES_FACT.SALES">
+        <Measure
+          Name="SALES"/>
+      </MeasureMap>
+      <MeasureMap
+        Name="QUANTITY"
+        Expression="SALES_FACT.QUANTITY">
+        <Measure
+          Name="QUANTITY"/>
+      </MeasureMap>
+    </CubeMap>
+  </Cube>
+</Metadata>

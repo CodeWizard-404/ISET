@@ -1,0 +1,40 @@
+
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.1">
+  <Cube
+    Name="SALES_CUBE">
+    <Measure>
+      <DerivedMeasure
+        Name="SALES_3P_MOV_AVG"
+        MeasureExpression="AVG(SALES_CUBE.SALES) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BETWEEN 1 PRECEDING AND 2 FOLLOWING WITHIN LEVEL)"
+        ETMeasureColumnName="SALES_3P_MOV_AVG">
+        <Classification
+          Value="AwmDescriptionType=TIME_MOV_AVG"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="TIME_MOV_AVG">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+  </Cube>
+</Metadata>
