@@ -1,3 +1,0 @@
-eclipse.preferences.version=1
-log4jContent/log4jContent=<?xml version\="1.0" encoding\="UTF-8"?>\n<Configuration >  \n    <Appenders>  \n        <Console name\="Console" target\="SYSTEM_OUT">  \n            <PatternLayout pattern\="[%-5level] %d{HH\:mm\:ss} %logger{36}- %msg%n" />\n        </Console>  \n    </Appenders>  \n    \n    <Loggers>  \n        <Root level\="WARN">\n            <AppenderRef ref\="Console" />  \n        </Root>  \n    </Loggers>  \n</Configuration>
-log4jEnabled/log4jEnabled=false
