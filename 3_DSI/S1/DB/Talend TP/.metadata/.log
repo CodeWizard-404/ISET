@@ -2818,3 +2818,1055 @@ Caused by: java.lang.OutOfMemoryError: Java heap space
 !ENTRY org.talend.platform.logging 1 0 2024-11-30 12:18:35.270
 !MESSAGE 2024-11-30 12:18:35,269 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_movies_0.1/target/classpath.jar; movies.dim_movies_0_1.Dim_Movies --context=Default --stat_port=3780 %*
 
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.335
+!MESSAGE 2024-11-30 12:24:55,335 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.338
+!MESSAGE 2024-11-30 12:24:55,337 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.411
+!MESSAGE 2024-11-30 12:24:55,411 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.535
+!MESSAGE 2024-11-30 12:24:55,534 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.535
+!MESSAGE 2024-11-30 12:24:55,535 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.537
+!MESSAGE 2024-11-30 12:24:55,536 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.537
+!MESSAGE 2024-11-30 12:24:55,537 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:55.645
+!MESSAGE 2024-11-30 12:24:55,645 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:56.447
+!MESSAGE 2024-11-30 12:24:56,446 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:24:56.571
+!MESSAGE 2024-11-30 12:24:56,571 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_date_0.1/target/classpath.jar; movies.dim_date_0_1.Dim_Date --context=Default --stat_port=3941 %*
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:31:10.901
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.145
+!MESSAGE 2024-11-30 12:33:08,144 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.147
+!MESSAGE 2024-11-30 12:33:08,146 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.220
+!MESSAGE 2024-11-30 12:33:08,220 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.381
+!MESSAGE 2024-11-30 12:33:08,381 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_ACTOR_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.382
+!MESSAGE 2024-11-30 12:33:08,381 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_ACTOR_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.383
+!MESSAGE 2024-11-30 12:33:08,382 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_ACTOR_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:08.383
+!MESSAGE 2024-11-30 12:33:08,383 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_ACTOR_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:10.082
+!MESSAGE 2024-11-30 12:33:10,082 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:12.248
+!MESSAGE 2024-11-30 12:33:12,248 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:12.475
+!MESSAGE 2024-11-30 12:33:12,475 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_actor_0.1/target/classpath.jar; movies.dim_actor_0_1.Dim_Actor --context=Default --stat_port=3921 %*
+
+
+!ENTRY org.eclipse.equinox.event 4 0 2024-11-30 12:33:17.363
+!MESSAGE Exception while dispatching event org.osgi.service.event.Event [topic=org/eclipse/e4/ui/model/ui/ElementContainer/selectedElement/SET] {ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), org.eclipse.e4.data={ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@63268c5b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Actor 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@7c401d45 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Date 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)}, AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@63268c5b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Actor 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@7c401d45 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Date 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)} to handler org.eclipse.e4.ui.services.internal.events.UIEventHandler@24a1fb84
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:31.875
+!MESSAGE 2024-11-30 12:33:31,874 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:31.878
+!MESSAGE 2024-11-30 12:33:31,877 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.253
+!MESSAGE 2024-11-30 12:33:32,252 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.377
+!MESSAGE 2024-11-30 12:33:32,376 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.378
+!MESSAGE 2024-11-30 12:33:32,377 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.380
+!MESSAGE 2024-11-30 12:33:32,379 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.381
+!MESSAGE 2024-11-30 12:33:32,380 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:32.529
+!MESSAGE 2024-11-30 12:33:32,529 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:34.087
+!MESSAGE 2024-11-30 12:33:34,086 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:33:34.258
+!MESSAGE 2024-11-30 12:33:34,257 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_date_0.1/target/classpath.jar; movies.dim_date_0_1.Dim_Date --context=Default --stat_port=3676 %*
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:40:35.688
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:40:44.110
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:40:44.903
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:48.157
+!MESSAGE 2024-11-30 12:40:48,156 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:48.160
+!MESSAGE 2024-11-30 12:40:48,160 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:48.752
+!MESSAGE 2024-11-30 12:40:48,751 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:49.070
+!MESSAGE 2024-11-30 12:40:49,070 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:49.071
+!MESSAGE 2024-11-30 12:40:49,071 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:49.073
+!MESSAGE 2024-11-30 12:40:49,072 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:49.074
+!MESSAGE 2024-11-30 12:40:49,073 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:49.740
+!MESSAGE 2024-11-30 12:40:49,740 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:52.220
+!MESSAGE 2024-11-30 12:40:52,220 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:40:52.538
+!MESSAGE 2024-11-30 12:40:52,538 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_language_0.1/target/classpath.jar; movies.dim_language_0_1.Dim_Language --context=Default --stat_port=3512 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.026
+!MESSAGE 2024-11-30 12:41:03,026 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.029
+!MESSAGE 2024-11-30 12:41:03,029 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.123
+!MESSAGE 2024-11-30 12:41:03,122 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.300
+!MESSAGE 2024-11-30 12:41:03,300 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.301
+!MESSAGE 2024-11-30 12:41:03,301 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.302
+!MESSAGE 2024-11-30 12:41:03,302 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.303
+!MESSAGE 2024-11-30 12:41:03,303 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:03.417
+!MESSAGE 2024-11-30 12:41:03,416 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:04.815
+!MESSAGE 2024-11-30 12:41:04,815 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:04.954
+!MESSAGE 2024-11-30 12:41:04,953 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_language_0.1/target/classpath.jar; movies.dim_language_0_1.Dim_Language --context=Default --stat_port=3748 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:15.785
+!MESSAGE 2024-11-30 12:41:15,785 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:15.788
+!MESSAGE 2024-11-30 12:41:15,788 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:15.874
+!MESSAGE 2024-11-30 12:41:15,874 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:16.261
+!MESSAGE 2024-11-30 12:41:16,260 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:16.262
+!MESSAGE 2024-11-30 12:41:16,261 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:16.264
+!MESSAGE 2024-11-30 12:41:16,263 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:16.265
+!MESSAGE 2024-11-30 12:41:16,264 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:16.663
+!MESSAGE 2024-11-30 12:41:16,663 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:17.670
+!MESSAGE 2024-11-30 12:41:17,670 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:41:17.914
+!MESSAGE 2024-11-30 12:41:17,913 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_director_0.1/target/classpath.jar; movies.dim_director_0_1.Dim_Director --context=Default --stat_port=4078 %*
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:46:17.736
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:46:18.611
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 12:46:23.368
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:32.908
+!MESSAGE 2024-11-30 12:46:32,907 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:32.912
+!MESSAGE 2024-11-30 12:46:32,911 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.078
+!MESSAGE 2024-11-30 12:46:33,078 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.176
+!MESSAGE 2024-11-30 12:46:33,176 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.177
+!MESSAGE 2024-11-30 12:46:33,176 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.178
+!MESSAGE 2024-11-30 12:46:33,177 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.178
+!MESSAGE 2024-11-30 12:46:33,178 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.280
+!MESSAGE 2024-11-30 12:46:33,279 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:33.936
+!MESSAGE 2024-11-30 12:46:33,935 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 12:46:34.075
+!MESSAGE 2024-11-30 12:46:34,074 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_director_0.1/target/classpath.jar; movies.dim_director_0_1.Dim_Director --context=Default --stat_port=3900 %*
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:02:43.367
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.equinox.event 4 0 2024-11-30 13:02:44.734
+!MESSAGE Exception while dispatching event org.osgi.service.event.Event [topic=org/eclipse/e4/ui/model/ui/ElementContainer/selectedElement/SET] {ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), org.eclipse.e4.data={ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@684d5e4b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Director 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@47805458 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Producer 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)}, AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@684d5e4b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Director 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@47805458 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Producer 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)} to handler org.eclipse.e4.ui.services.internal.events.UIEventHandler@24a1fb84
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:02:48.452
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:02:57.121
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.debug.core 4 2 2024-11-30 13:02:59.131
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.fireLaunchHistoryChanged(LaunchConfigurationManager.java:392)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.fireLaunchHistoryChanged(LaunchHistory.java:148)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.removeFavorite(LaunchHistory.java:420)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.checkFavorites(LaunchHistory.java:401)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.addHistory(LaunchHistory.java:121)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.launchAdded(LaunchHistory.java:95)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:425)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:415)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1027)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:678)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:760)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 120 2024-11-30 13:02:59.132
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.fireLaunchHistoryChanged(LaunchConfigurationManager.java:392)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.fireLaunchHistoryChanged(LaunchHistory.java:148)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.removeFavorite(LaunchHistory.java:420)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.checkFavorites(LaunchHistory.java:401)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.addHistory(LaunchHistory.java:121)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchHistory.launchAdded(LaunchHistory.java:95)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:425)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:415)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1027)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:678)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:760)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:03:00.082
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.OutOfMemoryError: Java heap space)
+	at org.eclipse.swt.SWT.error(SWT.java:4893)
+	at org.eclipse.swt.SWT.error(SWT.java:4808)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:188)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.equinox.event 4 0 2024-11-30 13:03:04.162
+!MESSAGE Exception while dispatching event org.osgi.service.event.Event [topic=org/eclipse/e4/ui/model/ui/ElementContainer/selectedElement/SET] {ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), org.eclipse.e4.data={ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@1071ae7c (tags: [org.eclipse.e4.primaryDataStack, EditorStack], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@1dd6e400, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@47805458 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Producer 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: true, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@684d5e4b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Director 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)}, AttName=selectedElement, EventType=SET, OldValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@47805458 (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Producer 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: true, closeable: true, description: null), Widget=CTabFolder {}, NewValue=org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@684d5e4b (tags: [Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], contributorURI: null) (widget: ContributedPartRenderer$1 {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@74214ac3, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: CompatibilityPart [partId=org.eclipse.e4.ui.compatibility.editor, properties=[], tags=[Editor, removeOnHide, org.talend.designer.core.ui.MultiPageTalendEditor], wrapped=class org.talend.designer.core.ui.MultiPageTalendEditor, legacyPart=class org.talend.designer.core.ui.MultiPageTalendEditor, beingDisposed=false, alreadyDisposed=false], context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.talend.designer.core.ui.MultiPageTalendEditorContext, variables: [], label: Job Dim_Director 0.1, iconURI: platform:/plugin/org.talend.designer.core/icons/empty.gif, tooltip: null, dirty: false, closeable: true, description: null)} to handler org.eclipse.e4.ui.services.internal.events.UIEventHandler@24a1fb84
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:03:08.377
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.OutOfMemoryError: Java heap space
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-30 13:03:23.002
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2024-11-30 13:04:53.331 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.12
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-11-30 13:04:55.694
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-11-30 13:04:55.696
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-30 13:05:05.235
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:07.530
+!MESSAGE 2024-11-30 13:05:07,528 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: D:\Talend\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:09.216
+!MESSAGE 2024-11-30 13:05:09,216 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:10.735
+!MESSAGE 2024-11-30 13:05:10,735 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:10.737
+!MESSAGE 2024-11-30 13:05:10,736 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-30 13:05:11.866
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:23.783
+!MESSAGE 2024-11-30 13:05:23,783 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:23.806
+!MESSAGE 2024-11-30 13:05:23,805 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:23.826
+!MESSAGE 2024-11-30 13:05:23,826 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:27.132
+!MESSAGE 2024-11-30 13:05:27,132 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:35.312
+!MESSAGE 2024-11-30 13:05:35,312 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on MOVIES
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-30 13:05:38.811
+!MESSAGE 2024-11-30 13:05:38,811 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:42.481
+!MESSAGE 2024-11-30 13:05:42,481 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:57162/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:45.930
+!MESSAGE 2024-11-30 13:05:45,929 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:05:48.910
+!MESSAGE 2024-11-30 13:05:48,909 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:00.851
+!MESSAGE 2024-11-30 13:06:00,850 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:00.852
+!MESSAGE 2024-11-30 13:06:00,852 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_ROUTINES/src/main/java overlaps with sources folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:00.956
+!MESSAGE 2024-11-30 13:06:00,956 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:00.957
+!MESSAGE 2024-11-30 13:06:00,957 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:10.131
+!MESSAGE 2024-11-30 13:06:10,130 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 21970 ms
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:10.831
+!MESSAGE 2024-11-30 13:06:10,831 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.567
+!MESSAGE 2024-11-30 13:06:11,566 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.835
+!MESSAGE 2024-11-30 13:06:11,835 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.836
+!MESSAGE 2024-11-30 13:06:11,836 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_BEANS/src/main/java overlaps with sources folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.846
+!MESSAGE 2024-11-30 13:06:11,845 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.847
+!MESSAGE 2024-11-30 13:06:11,846 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_BEANS/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:11.870
+!MESSAGE 2024-11-30 13:06:11,869 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-30 13:06:13.042
+!MESSAGE 2024-11-30 13:06:13,042 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-30 13:06:13.043
+!MESSAGE 2024-11-30 13:06:13,043 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-30 13:06:13.812
+!MESSAGE 2024-11-30 13:06:13,811 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-11-30 13:06:13.813
+!MESSAGE 2024-11-30 13:06:13,812 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:06:14.650
+!MESSAGE 2024-11-30 13:06:14,649 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:08:40.109
+!MESSAGE 2024-11-30 13:08:40,108 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:08:40.178
+!MESSAGE 2024-11-30 13:08:40,176 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:08:40.181
+!MESSAGE 2024-11-30 13:08:40,180 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:08:40.186
+!MESSAGE 2024-11-30 13:08:40,185 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:08:40.188
+!MESSAGE 2024-11-30 13:08:40,187 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:05.015
+!MESSAGE 2024-11-30 13:10:05,014 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:05.073
+!MESSAGE 2024-11-30 13:10:05,073 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:05.074
+!MESSAGE 2024-11-30 13:10:05,074 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:05.076
+!MESSAGE 2024-11-30 13:10:05,075 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DATE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:05.076
+!MESSAGE 2024-11-30 13:10:05,076 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DATE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:08.800
+!MESSAGE 2024-11-30 13:10:08,799 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:08.865
+!MESSAGE 2024-11-30 13:10:08,865 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_ACTOR_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:08.867
+!MESSAGE 2024-11-30 13:10:08,866 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_ACTOR_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:08.870
+!MESSAGE 2024-11-30 13:10:08,869 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_ACTOR_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:08.872
+!MESSAGE 2024-11-30 13:10:08,870 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_ACTOR_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:17.774
+!MESSAGE 2024-11-30 13:10:17,773 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:17.830
+!MESSAGE 2024-11-30 13:10:17,830 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:17.831
+!MESSAGE 2024-11-30 13:10:17,831 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:17.834
+!MESSAGE 2024-11-30 13:10:17,833 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_DIRECTOR_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:17.834
+!MESSAGE 2024-11-30 13:10:17,834 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_DIRECTOR_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:22.187
+!MESSAGE 2024-11-30 13:10:22,186 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:22.274
+!MESSAGE 2024-11-30 13:10:22,273 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_PRODUCER_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:22.276
+!MESSAGE 2024-11-30 13:10:22,275 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_PRODUCER_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:22.279
+!MESSAGE 2024-11-30 13:10:22,278 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_PRODUCER_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:22.280
+!MESSAGE 2024-11-30 13:10:22,279 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_PRODUCER_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:25.496
+!MESSAGE 2024-11-30 13:10:25,495 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:25.565
+!MESSAGE 2024-11-30 13:10:25,565 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:25.566
+!MESSAGE 2024-11-30 13:10:25,565 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:25.568
+!MESSAGE 2024-11-30 13:10:25,567 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:25.569
+!MESSAGE 2024-11-30 13:10:25,568 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:29.629
+!MESSAGE 2024-11-30 13:10:29,628 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:29.700
+!MESSAGE 2024-11-30 13:10:29,699 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:29.700
+!MESSAGE 2024-11-30 13:10:29,700 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:29.702
+!MESSAGE 2024-11-30 13:10:29,702 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:10:29.703
+!MESSAGE 2024-11-30 13:10:29,702 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.585
+!MESSAGE 2024-11-30 13:11:26,585 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.591
+!MESSAGE 2024-11-30 13:11:26,590 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.835
+!MESSAGE 2024-11-30 13:11:26,834 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.994
+!MESSAGE 2024-11-30 13:11:26,994 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_PRODUCER_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.995
+!MESSAGE 2024-11-30 13:11:26,994 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_PRODUCER_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.997
+!MESSAGE 2024-11-30 13:11:26,996 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_PRODUCER_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:26.998
+!MESSAGE 2024-11-30 13:11:26,997 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_PRODUCER_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:27.238
+!MESSAGE 2024-11-30 13:11:27,237 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:29.179
+!MESSAGE 2024-11-30 13:11:29,179 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:11:29.530
+!MESSAGE 2024-11-30 13:11:29,530 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_producer_0.1/target/classpath.jar; movies.dim_producer_0_1.Dim_Producer --context=Default --stat_port=4046 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.454
+!MESSAGE 2024-11-30 13:15:26,453 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.461
+!MESSAGE 2024-11-30 13:15:26,460 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.661
+!MESSAGE 2024-11-30 13:15:26,661 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.776
+!MESSAGE 2024-11-30 13:15:26,775 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.777
+!MESSAGE 2024-11-30 13:15:26,776 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.783
+!MESSAGE 2024-11-30 13:15:26,782 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.784
+!MESSAGE 2024-11-30 13:15:26,783 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:26.959
+!MESSAGE 2024-11-30 13:15:26,958 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:28.046
+!MESSAGE 2024-11-30 13:15:28,045 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:15:28.343
+!MESSAGE 2024-11-30 13:15:28,342 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3664 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.278
+!MESSAGE 2024-11-30 13:17:04,278 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.281
+!MESSAGE 2024-11-30 13:17:04,280 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.372
+!MESSAGE 2024-11-30 13:17:04,372 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.447
+!MESSAGE 2024-11-30 13:17:04,446 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.447
+!MESSAGE 2024-11-30 13:17:04,447 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.449
+!MESSAGE 2024-11-30 13:17:04,448 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_DIM_LANGUAGE_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.449
+!MESSAGE 2024-11-30 13:17:04,449 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_DIM_LANGUAGE_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:04.553
+!MESSAGE 2024-11-30 13:17:04,553 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:05.513
+!MESSAGE 2024-11-30 13:17:05,513 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:05.747
+!MESSAGE 2024-11-30 13:17:05,746 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_language_0.1/target/classpath.jar; movies.dim_language_0_1.Dim_Language --context=Default --stat_port=3809 %*
+
