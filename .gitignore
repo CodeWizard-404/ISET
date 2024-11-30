@@ -24,12 +24,4 @@ node_modules/
 Thumbs.db
 
 
-3_DSI/S1/DB/IMDB_DataSet/name.basics.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.akas.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.basics.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.crew.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.episode.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.principals.tsv
-3_DSI/S1/DB/IMDB_DataSet/title.ratings.tsv
-
-3_DSI/S1/DB/Talend/dataset-Kbria.txt
+3_DSI/S1/DB/IMDB_DataSet/
