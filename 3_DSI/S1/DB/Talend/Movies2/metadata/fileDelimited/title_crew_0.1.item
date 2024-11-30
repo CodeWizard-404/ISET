@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_2djdgKfxEe-0n_v7M1oXVg" name="title_crew" dataPackage="_2djdgafxEe-0n_v7M1oXVg" Server="Localhost 127.0.0.1" FilePath="C:/Users/ZMERLI/Downloads/imdb dataset/title.crew.tsv/title.crew.tsv" Encoding="US-ASCII" FieldSeparatorValue="&quot;\t&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Custom UTF8"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_2djdgafxEe-0n_v7M1oXVg" name="default" dataManager="_2djdgKfxEe-0n_v7M1oXVg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_2djdgqfxEe-0n_v7M1oXVg" id="_foQWMKfwEe-0n_v7M1oXVg" label="title_crew">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_2djdg6fxEe-0n_v7M1oXVg" label="tconst" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_2djdhKfxEe-0n_v7M1oXVg" label="directors" length="19" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_2djdhafxEe-0n_v7M1oXVg" label="writers" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

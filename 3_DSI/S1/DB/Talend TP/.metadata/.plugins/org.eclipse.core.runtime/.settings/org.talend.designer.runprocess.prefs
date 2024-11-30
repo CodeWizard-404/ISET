@@ -1,0 +1,4 @@
+CONSOLE_LINE_LIMIT_COUNT=100
+eclipse.preferences.version=1
+tos_count_runs=145
+vmarguments={"JOB_RUN_VM_ARGUMENTS"\:["-Xms24576m","-Xms24576m"]}
