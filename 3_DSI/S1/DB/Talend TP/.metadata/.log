@@ -4281,3 +4281,11 @@ There may be some other errors caused by JVM compatibility. Make sure your JVM s
 !ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:58.660
 !MESSAGE 2024-11-30 13:42:58,659 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3786 %*
 
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 14:16:01.296
+!MESSAGE 2024-11-30 14:16:01,295 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - Physical deletion [[repository.process] Producer] by user@talend.com.
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 14:16:01.417
+!MESSAGE 2024-11-30 14:16:01,417 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - Physical deletion [[repository.process] Dim_Production_Company] by user@talend.com.
+
