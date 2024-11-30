@@ -59,6 +59,30 @@
     "version" : "Latest",
     "type" : "property"
   }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - actors",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - company",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - date",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - directors",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - languages",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_8H7kcK6WEe-lDsS6LQIekQ - movies",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
     "id" : "_oTJRMK1rEe-lGfc9JVUspQ - metadata",
     "version" : "Latest",
     "type" : "schema"

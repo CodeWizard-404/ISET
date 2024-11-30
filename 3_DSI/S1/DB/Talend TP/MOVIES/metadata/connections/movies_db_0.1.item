@@ -20,7 +20,7 @@
   <orgomg.cwm.resource.relational:Catalog xmi:id="_Ujy98q65Ee-B4MpD2b-Meg" name="movies_db" dataManager="_ACkOAK6XEe-lDsS6LQIekQ">
     <ownedElement xsi:type="relational:TdTable" xmi:id="_ORuTMK7KEe-B4MpD2b-Meg" name="actors" id="_ORjUEK7KEe-B4MpD2b-Meg" label="actors" tableType="TABLE">
       <taggedValue xmi:id="_ORuTMa7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_ORuTMq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_ORuTMq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
         <taggedValue xmi:id="_ORuTM67KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_ORuTNK7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_ORuTNa7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
@@ -31,9 +31,22 @@
         <sqlDataType xmi:id="_ORuTOa7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
       </feature>
     </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_zd7XYa8HEe-B4MpD2b-Meg" name="company" id="_zd7XYK8HEe-B4MpD2b-Meg" label="company" tableType="TABLE">
+      <taggedValue xmi:id="_zd7XYq8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
+      <feature xsi:type="relational:TdColumn" xmi:id="_zd7XY68HEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
+        <taggedValue xmi:id="_zd7XZK8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_zd7XZa8HEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_zd7XZq8HEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_zd7XZ68HEe-B4MpD2b-Meg" name="production_companies" label="production_companies" length="255" sourceType="VARCHAR" talendType="id_String">
+        <taggedValue xmi:id="_zd7XaK8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_zd7Xaa8HEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_zd7Xaq8HEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+      </feature>
+    </ownedElement>
     <ownedElement xsi:type="relational:TdTable" xmi:id="_OUKjMK7KEe-B4MpD2b-Meg" name="date" id="_OUJ8IK7KEe-B4MpD2b-Meg" label="date" tableType="TABLE">
       <taggedValue xmi:id="_OUKjMa7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_OUKjMq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_OUKjMq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
         <taggedValue xmi:id="_OUKjM67KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_OUKjNK7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_OUKjNa7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
@@ -46,7 +59,7 @@
     </ownedElement>
     <ownedElement xsi:type="relational:TdTable" xmi:id="_OYXtwK7KEe-B4MpD2b-Meg" name="directors" id="_OYXGsK7KEe-B4MpD2b-Meg" label="directors" tableType="TABLE">
       <taggedValue xmi:id="_OYXtwa7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_OYXtwq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_OYXtwq7KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
         <taggedValue xmi:id="_OYXtw67KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_OYXtxK7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_OYXtxa7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
@@ -59,7 +72,7 @@
     </ownedElement>
     <ownedElement xsi:type="relational:TdTable" xmi:id="_OcNr8a7KEe-B4MpD2b-Meg" name="languages" id="_OcNr8K7KEe-B4MpD2b-Meg" label="languages" tableType="TABLE">
       <taggedValue xmi:id="_OcNr8q7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_OcNr867KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_OcNr867KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
         <taggedValue xmi:id="_OcNr9K7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_OcNr9a7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_OcNr9q7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
@@ -72,7 +85,7 @@
     </ownedElement>
     <ownedElement xsi:type="relational:TdTable" xmi:id="_Of-xoa7KEe-B4MpD2b-Meg" name="movies" id="_Of-xoK7KEe-B4MpD2b-Meg" label="movies" tableType="TABLE">
       <taggedValue xmi:id="_Of-xoq7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_Of-xo67KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_Of-xo67KEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true">
         <taggedValue xmi:id="_Of-xpK7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_Of-xpa7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_Of-xpq7KEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
@@ -91,19 +104,6 @@
         <taggedValue xmi:id="_Of-xsK7KEe-B4MpD2b-Meg" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_Of-xsa7KEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_Of-xsq7KEe-B4MpD2b-Meg" name="INT" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
-      </feature>
-    </ownedElement>
-    <ownedElement xsi:type="relational:TdTable" xmi:id="_zd7XYa8HEe-B4MpD2b-Meg" name="company" id="_zd7XYK8HEe-B4MpD2b-Meg" label="company" tableType="TABLE">
-      <taggedValue xmi:id="_zd7XYq8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_zd7XY68HEe-B4MpD2b-Meg" name="id" label="id" length="9" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
-        <taggedValue xmi:id="_zd7XZK8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
-        <initialValue xsi:type="relational:TdExpression" xmi:id="_zd7XZa8HEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
-        <sqlDataType xmi:id="_zd7XZq8HEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
-      </feature>
-      <feature xsi:type="relational:TdColumn" xmi:id="_zd7XZ68HEe-B4MpD2b-Meg" name="production_companies" label="production_companies" length="255" sourceType="VARCHAR" talendType="id_String">
-        <taggedValue xmi:id="_zd7XaK8HEe-B4MpD2b-Meg" tag="Comment" value=""/>
-        <initialValue xsi:type="relational:TdExpression" xmi:id="_zd7Xaa8HEe-B4MpD2b-Meg" language="COLUMN_DEF"/>
-        <sqlDataType xmi:id="_zd7Xaq8HEe-B4MpD2b-Meg" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
       </feature>
     </ownedElement>
   </orgomg.cwm.resource.relational:Catalog>

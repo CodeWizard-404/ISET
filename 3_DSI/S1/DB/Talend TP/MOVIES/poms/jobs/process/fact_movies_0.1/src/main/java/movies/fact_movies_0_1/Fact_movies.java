@@ -394,7 +394,27 @@ public class Fact_movies implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tAdvancedHash_row3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tAdvancedHash_row4_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -424,7 +444,7 @@ public class Fact_movies implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tAdvancedHash_row4_error(Exception exception, String errorComponent,
+	public void tAdvancedHash_row7_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -435,26 +455,6 @@ public class Fact_movies implements TalendJob {
 	}
 
 	public void tAdvancedHash_row8_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row7_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -476,64 +476,64 @@ public class Fact_movies implements TalendJob {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 
-		public String IdMovies;
+		public String id_movies;
 
-		public String getIdMovies() {
-			return this.IdMovies;
+		public String getId_movies() {
+			return this.id_movies;
 		}
 
-		public String IdDate;
+		public String id_date;
 
-		public String getIdDate() {
-			return this.IdDate;
+		public String getId_date() {
+			return this.id_date;
 		}
 
-		public String IdActors;
+		public String id_actors;
 
-		public String getIdActors() {
-			return this.IdActors;
+		public String getId_actors() {
+			return this.id_actors;
 		}
 
-		public String IdDirectors;
+		public String id_directors;
 
-		public String getIdDirectors() {
-			return this.IdDirectors;
+		public String getId_directors() {
+			return this.id_directors;
 		}
 
-		public String IdLanguage;
+		public String id_languages;
 
-		public String getIdLanguage() {
-			return this.IdLanguage;
+		public String getId_languages() {
+			return this.id_languages;
 		}
 
-		public String IdCompany;
+		public String id_company;
 
-		public String getIdCompany() {
-			return this.IdCompany;
+		public String getId_company() {
+			return this.id_company;
 		}
 
-		public Long Budget;
-
-		public Long getBudget() {
-			return this.Budget;
-		}
-
-		public Long Revenue;
-
-		public Long getRevenue() {
-			return this.Revenue;
-		}
-
-		public Float AverageRating;
+		public Float averageRating;
 
 		public Float getAverageRating() {
-			return this.AverageRating;
+			return this.averageRating;
 		}
 
-		public Integer NumVotes;
+		public Long numVotes;
 
-		public Integer getNumVotes() {
-			return this.NumVotes;
+		public Long getNumVotes() {
+			return this.numVotes;
+		}
+
+		public Long revenue;
+
+		public Long getRevenue() {
+			return this.revenue;
+		}
+
+		public Long budget;
+
+		public Long getBudget() {
+			return this.budget;
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -596,48 +596,6 @@ public class Fact_movies implements TalendJob {
 			}
 		}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
 		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
@@ -646,40 +604,45 @@ public class Fact_movies implements TalendJob {
 
 					int length = 0;
 
-					this.IdMovies = readString(dis);
+					this.id_movies = readString(dis);
 
-					this.IdDate = readString(dis);
+					this.id_date = readString(dis);
 
-					this.IdActors = readString(dis);
+					this.id_actors = readString(dis);
 
-					this.IdDirectors = readString(dis);
+					this.id_directors = readString(dis);
 
-					this.IdLanguage = readString(dis);
+					this.id_languages = readString(dis);
 
-					this.IdCompany = readString(dis);
+					this.id_company = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Budget = null;
+						this.averageRating = null;
 					} else {
-						this.Budget = dis.readLong();
+						this.averageRating = dis.readFloat();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Revenue = null;
+						this.numVotes = null;
 					} else {
-						this.Revenue = dis.readLong();
+						this.numVotes = dis.readLong();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.AverageRating = null;
+						this.revenue = null;
 					} else {
-						this.AverageRating = dis.readFloat();
+						this.revenue = dis.readLong();
 					}
 
-					this.NumVotes = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.budget = null;
+					} else {
+						this.budget = dis.readLong();
+					}
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -698,40 +661,45 @@ public class Fact_movies implements TalendJob {
 
 					int length = 0;
 
-					this.IdMovies = readString(dis);
+					this.id_movies = readString(dis);
 
-					this.IdDate = readString(dis);
+					this.id_date = readString(dis);
 
-					this.IdActors = readString(dis);
+					this.id_actors = readString(dis);
 
-					this.IdDirectors = readString(dis);
+					this.id_directors = readString(dis);
 
-					this.IdLanguage = readString(dis);
+					this.id_languages = readString(dis);
 
-					this.IdCompany = readString(dis);
+					this.id_company = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Budget = null;
+						this.averageRating = null;
 					} else {
-						this.Budget = dis.readLong();
+						this.averageRating = dis.readFloat();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Revenue = null;
+						this.numVotes = null;
 					} else {
-						this.Revenue = dis.readLong();
+						this.numVotes = dis.readLong();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.AverageRating = null;
+						this.revenue = null;
 					} else {
-						this.AverageRating = dis.readFloat();
+						this.revenue = dis.readLong();
 					}
 
-					this.NumVotes = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.budget = null;
+					} else {
+						this.budget = dis.readLong();
+					}
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -747,58 +715,63 @@ public class Fact_movies implements TalendJob {
 
 				// String
 
-				writeString(this.IdMovies, dos);
+				writeString(this.id_movies, dos);
 
 				// String
 
-				writeString(this.IdDate, dos);
+				writeString(this.id_date, dos);
 
 				// String
 
-				writeString(this.IdActors, dos);
+				writeString(this.id_actors, dos);
 
 				// String
 
-				writeString(this.IdDirectors, dos);
+				writeString(this.id_directors, dos);
 
 				// String
 
-				writeString(this.IdLanguage, dos);
+				writeString(this.id_languages, dos);
 
 				// String
 
-				writeString(this.IdCompany, dos);
-
-				// Long
-
-				if (this.Budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Budget);
-				}
-
-				// Long
-
-				if (this.Revenue == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Revenue);
-				}
+				writeString(this.id_company, dos);
 
 				// Float
 
-				if (this.AverageRating == null) {
+				if (this.averageRating == null) {
 					dos.writeByte(-1);
 				} else {
 					dos.writeByte(0);
-					dos.writeFloat(this.AverageRating);
+					dos.writeFloat(this.averageRating);
 				}
 
-				// Integer
+				// Long
 
-				writeInteger(this.NumVotes, dos);
+				if (this.numVotes == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.numVotes);
+				}
+
+				// Long
+
+				if (this.revenue == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.revenue);
+				}
+
+				// Long
+
+				if (this.budget == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.budget);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -811,58 +784,63 @@ public class Fact_movies implements TalendJob {
 
 				// String
 
-				writeString(this.IdMovies, dos);
+				writeString(this.id_movies, dos);
 
 				// String
 
-				writeString(this.IdDate, dos);
+				writeString(this.id_date, dos);
 
 				// String
 
-				writeString(this.IdActors, dos);
+				writeString(this.id_actors, dos);
 
 				// String
 
-				writeString(this.IdDirectors, dos);
+				writeString(this.id_directors, dos);
 
 				// String
 
-				writeString(this.IdLanguage, dos);
+				writeString(this.id_languages, dos);
 
 				// String
 
-				writeString(this.IdCompany, dos);
-
-				// Long
-
-				if (this.Budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Budget);
-				}
-
-				// Long
-
-				if (this.Revenue == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Revenue);
-				}
+				writeString(this.id_company, dos);
 
 				// Float
 
-				if (this.AverageRating == null) {
+				if (this.averageRating == null) {
 					dos.writeByte(-1);
 				} else {
 					dos.writeByte(0);
-					dos.writeFloat(this.AverageRating);
+					dos.writeFloat(this.averageRating);
 				}
 
-				// Integer
+				// Long
 
-				writeInteger(this.NumVotes, dos);
+				if (this.numVotes == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.numVotes);
+				}
+
+				// Long
+
+				if (this.revenue == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.revenue);
+				}
+
+				// Long
+
+				if (this.budget == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.budget);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -875,16 +853,16 @@ public class Fact_movies implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("IdMovies=" + IdMovies);
-			sb.append(",IdDate=" + IdDate);
-			sb.append(",IdActors=" + IdActors);
-			sb.append(",IdDirectors=" + IdDirectors);
-			sb.append(",IdLanguage=" + IdLanguage);
-			sb.append(",IdCompany=" + IdCompany);
-			sb.append(",Budget=" + String.valueOf(Budget));
-			sb.append(",Revenue=" + String.valueOf(Revenue));
-			sb.append(",AverageRating=" + String.valueOf(AverageRating));
-			sb.append(",NumVotes=" + String.valueOf(NumVotes));
+			sb.append("id_movies=" + id_movies);
+			sb.append(",id_date=" + id_date);
+			sb.append(",id_actors=" + id_actors);
+			sb.append(",id_directors=" + id_directors);
+			sb.append(",id_languages=" + id_languages);
+			sb.append(",id_company=" + id_company);
+			sb.append(",averageRating=" + String.valueOf(averageRating));
+			sb.append(",numVotes=" + String.valueOf(numVotes));
+			sb.append(",revenue=" + String.valueOf(revenue));
+			sb.append(",budget=" + String.valueOf(budget));
 			sb.append("]");
 
 			return sb.toString();
@@ -923,68 +901,68 @@ public class Fact_movies implements TalendJob {
 
 	}
 
-	public static class Fact_MovieStruct implements routines.system.IPersistableRow<Fact_MovieStruct> {
+	public static class Facts_MoviesStruct implements routines.system.IPersistableRow<Facts_MoviesStruct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 
-		public String IdMovies;
+		public String id_movies;
 
-		public String getIdMovies() {
-			return this.IdMovies;
+		public String getId_movies() {
+			return this.id_movies;
 		}
 
-		public String IdDate;
+		public String id_date;
 
-		public String getIdDate() {
-			return this.IdDate;
+		public String getId_date() {
+			return this.id_date;
 		}
 
-		public String IdActors;
+		public String id_actors;
 
-		public String getIdActors() {
-			return this.IdActors;
+		public String getId_actors() {
+			return this.id_actors;
 		}
 
-		public String IdDirectors;
+		public String id_directors;
 
-		public String getIdDirectors() {
-			return this.IdDirectors;
+		public String getId_directors() {
+			return this.id_directors;
 		}
 
-		public String IdLanguage;
+		public String id_languages;
 
-		public String getIdLanguage() {
-			return this.IdLanguage;
+		public String getId_languages() {
+			return this.id_languages;
 		}
 
-		public String IdCompany;
+		public String id_company;
 
-		public String getIdCompany() {
-			return this.IdCompany;
+		public String getId_company() {
+			return this.id_company;
 		}
 
-		public Long Budget;
-
-		public Long getBudget() {
-			return this.Budget;
-		}
-
-		public Long Revenue;
-
-		public Long getRevenue() {
-			return this.Revenue;
-		}
-
-		public Float AverageRating;
+		public Float averageRating;
 
 		public Float getAverageRating() {
-			return this.AverageRating;
+			return this.averageRating;
 		}
 
-		public Integer NumVotes;
+		public Long numVotes;
 
-		public Integer getNumVotes() {
-			return this.NumVotes;
+		public Long getNumVotes() {
+			return this.numVotes;
+		}
+
+		public Long revenue;
+
+		public Long getRevenue() {
+			return this.revenue;
+		}
+
+		public Long budget;
+
+		public Long getBudget() {
+			return this.budget;
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -1047,48 +1025,6 @@ public class Fact_movies implements TalendJob {
 			}
 		}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
 		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
@@ -1097,40 +1033,45 @@ public class Fact_movies implements TalendJob {
 
 					int length = 0;
 
-					this.IdMovies = readString(dis);
+					this.id_movies = readString(dis);
 
-					this.IdDate = readString(dis);
+					this.id_date = readString(dis);
 
-					this.IdActors = readString(dis);
+					this.id_actors = readString(dis);
 
-					this.IdDirectors = readString(dis);
+					this.id_directors = readString(dis);
 
-					this.IdLanguage = readString(dis);
+					this.id_languages = readString(dis);
 
-					this.IdCompany = readString(dis);
+					this.id_company = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Budget = null;
+						this.averageRating = null;
 					} else {
-						this.Budget = dis.readLong();
+						this.averageRating = dis.readFloat();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Revenue = null;
+						this.numVotes = null;
 					} else {
-						this.Revenue = dis.readLong();
+						this.numVotes = dis.readLong();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.AverageRating = null;
+						this.revenue = null;
 					} else {
-						this.AverageRating = dis.readFloat();
+						this.revenue = dis.readLong();
 					}
 
-					this.NumVotes = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.budget = null;
+					} else {
+						this.budget = dis.readLong();
+					}
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -1149,40 +1090,45 @@ public class Fact_movies implements TalendJob {
 
 					int length = 0;
 
-					this.IdMovies = readString(dis);
+					this.id_movies = readString(dis);
 
-					this.IdDate = readString(dis);
+					this.id_date = readString(dis);
 
-					this.IdActors = readString(dis);
+					this.id_actors = readString(dis);
 
-					this.IdDirectors = readString(dis);
+					this.id_directors = readString(dis);
 
-					this.IdLanguage = readString(dis);
+					this.id_languages = readString(dis);
 
-					this.IdCompany = readString(dis);
+					this.id_company = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Budget = null;
+						this.averageRating = null;
 					} else {
-						this.Budget = dis.readLong();
+						this.averageRating = dis.readFloat();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.Revenue = null;
+						this.numVotes = null;
 					} else {
-						this.Revenue = dis.readLong();
+						this.numVotes = dis.readLong();
 					}
 
 					length = dis.readByte();
 					if (length == -1) {
-						this.AverageRating = null;
+						this.revenue = null;
 					} else {
-						this.AverageRating = dis.readFloat();
+						this.revenue = dis.readLong();
 					}
 
-					this.NumVotes = readInteger(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.budget = null;
+					} else {
+						this.budget = dis.readLong();
+					}
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -1198,58 +1144,63 @@ public class Fact_movies implements TalendJob {
 
 				// String
 
-				writeString(this.IdMovies, dos);
+				writeString(this.id_movies, dos);
 
 				// String
 
-				writeString(this.IdDate, dos);
+				writeString(this.id_date, dos);
 
 				// String
 
-				writeString(this.IdActors, dos);
+				writeString(this.id_actors, dos);
 
 				// String
 
-				writeString(this.IdDirectors, dos);
+				writeString(this.id_directors, dos);
 
 				// String
 
-				writeString(this.IdLanguage, dos);
+				writeString(this.id_languages, dos);
 
 				// String
 
-				writeString(this.IdCompany, dos);
-
-				// Long
-
-				if (this.Budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Budget);
-				}
-
-				// Long
-
-				if (this.Revenue == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Revenue);
-				}
+				writeString(this.id_company, dos);
 
 				// Float
 
-				if (this.AverageRating == null) {
+				if (this.averageRating == null) {
 					dos.writeByte(-1);
 				} else {
 					dos.writeByte(0);
-					dos.writeFloat(this.AverageRating);
+					dos.writeFloat(this.averageRating);
 				}
 
-				// Integer
+				// Long
 
-				writeInteger(this.NumVotes, dos);
+				if (this.numVotes == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.numVotes);
+				}
+
+				// Long
+
+				if (this.revenue == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.revenue);
+				}
+
+				// Long
+
+				if (this.budget == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.budget);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -1262,58 +1213,63 @@ public class Fact_movies implements TalendJob {
 
 				// String
 
-				writeString(this.IdMovies, dos);
+				writeString(this.id_movies, dos);
 
 				// String
 
-				writeString(this.IdDate, dos);
+				writeString(this.id_date, dos);
 
 				// String
 
-				writeString(this.IdActors, dos);
+				writeString(this.id_actors, dos);
 
 				// String
 
-				writeString(this.IdDirectors, dos);
+				writeString(this.id_directors, dos);
 
 				// String
 
-				writeString(this.IdLanguage, dos);
+				writeString(this.id_languages, dos);
 
 				// String
 
-				writeString(this.IdCompany, dos);
-
-				// Long
-
-				if (this.Budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Budget);
-				}
-
-				// Long
-
-				if (this.Revenue == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Revenue);
-				}
+				writeString(this.id_company, dos);
 
 				// Float
 
-				if (this.AverageRating == null) {
+				if (this.averageRating == null) {
 					dos.writeByte(-1);
 				} else {
 					dos.writeByte(0);
-					dos.writeFloat(this.AverageRating);
+					dos.writeFloat(this.averageRating);
 				}
 
-				// Integer
+				// Long
 
-				writeInteger(this.NumVotes, dos);
+				if (this.numVotes == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.numVotes);
+				}
+
+				// Long
+
+				if (this.revenue == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.revenue);
+				}
+
+				// Long
+
+				if (this.budget == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.budget);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -1326,16 +1282,16 @@ public class Fact_movies implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("IdMovies=" + IdMovies);
-			sb.append(",IdDate=" + IdDate);
-			sb.append(",IdActors=" + IdActors);
-			sb.append(",IdDirectors=" + IdDirectors);
-			sb.append(",IdLanguage=" + IdLanguage);
-			sb.append(",IdCompany=" + IdCompany);
-			sb.append(",Budget=" + String.valueOf(Budget));
-			sb.append(",Revenue=" + String.valueOf(Revenue));
-			sb.append(",AverageRating=" + String.valueOf(AverageRating));
-			sb.append(",NumVotes=" + String.valueOf(NumVotes));
+			sb.append("id_movies=" + id_movies);
+			sb.append(",id_date=" + id_date);
+			sb.append(",id_actors=" + id_actors);
+			sb.append(",id_directors=" + id_directors);
+			sb.append(",id_languages=" + id_languages);
+			sb.append(",id_company=" + id_company);
+			sb.append(",averageRating=" + String.valueOf(averageRating));
+			sb.append(",numVotes=" + String.valueOf(numVotes));
+			sb.append(",revenue=" + String.valueOf(revenue));
+			sb.append(",budget=" + String.valueOf(budget));
 			sb.append("]");
 
 			return sb.toString();
@@ -1344,7 +1300,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(Fact_MovieStruct other) {
+		public int compareTo(Facts_MoviesStruct other) {
 
 			int returnValue = -1;
 
@@ -2018,8 +1974,8 @@ public class Fact_movies implements TalendJob {
 				tFileInputDelimited_2Process(globalMap);
 
 				row1Struct row1 = new row1Struct();
-				Fact_MovieStruct Fact_Movie = new Fact_MovieStruct();
-				Fact_MovieStruct row9 = Fact_Movie;
+				Facts_MoviesStruct Facts_Movies = new Facts_MoviesStruct();
+				Facts_MoviesStruct row9 = Facts_Movies;
 
 				/**
 				 * [tDBOutput_1 begin ] start
@@ -2048,7 +2004,7 @@ public class Fact_movies implements TalendJob {
 				int rowsToCommitCount_tDBOutput_1 = 0;
 				int rejectedCount_tDBOutput_1 = 0;
 
-				String tableName_tDBOutput_1 = "Fact_Movies";
+				String tableName_tDBOutput_1 = "facts_movies";
 				boolean whetherReject_tDBOutput_1 = false;
 
 				java.util.Calendar calendar_tDBOutput_1 = java.util.Calendar.getInstance();
@@ -2081,7 +2037,7 @@ public class Fact_movies implements TalendJob {
 				String dbUser_tDBOutput_1 = "root";
 
 				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:yyu3vcF/hswHEB6nqHEjjJ7606opZ1TIFIVugg==");
+						.decryptPassword("enc:routine.encryption.key.v1:v7sJw7V+Fj/+45L+QnmtElmDeHKimIU041Qm8A==");
 
 				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
 				java.lang.Class.forName(driverClass_tDBOutput_1);
@@ -2102,7 +2058,7 @@ public class Fact_movies implements TalendJob {
 				boolean whetherExist_tDBOutput_1 = false;
 				while (rsTable_tDBOutput_1.next()) {
 					String table_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_NAME");
-					if (table_tDBOutput_1.equalsIgnoreCase("Fact_Movies")) {
+					if (table_tDBOutput_1.equalsIgnoreCase("facts_movies")) {
 						whetherExist_tDBOutput_1 = true;
 						break;
 					}
@@ -2114,11 +2070,11 @@ public class Fact_movies implements TalendJob {
 				}
 				try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
 					stmtCreate_tDBOutput_1.execute("CREATE TABLE `" + tableName_tDBOutput_1
-							+ "`(`IdMovies` VARCHAR(9)  ,`IdDate` VARCHAR(10)  ,`IdActors` VARCHAR(19)  ,`IdDirectors` VARCHAR(19)  ,`IdLanguage` VARCHAR(2)  ,`IdCompany` VARCHAR(9)  ,`Budget` BIGINT(11)  ,`Revenue` BIGINT(12)  ,`AverageRating` FLOAT(3,2)  ,`NumVotes` INT(5)  )");
+							+ "`(`id_movies` VARCHAR(9)  ,`id_date` VARCHAR(9)  ,`id_actors` VARCHAR(9)  ,`id_directors` VARCHAR(9)  ,`id_languages` VARCHAR(9)  ,`id_company` VARCHAR(9)  ,`averageRating` FLOAT(5,2)  ,`numVotes` BIGINT(255)  ,`revenue` BIGINT(255)  ,`budget` BIGINT(255)  )");
 				}
 
-				String insert_tDBOutput_1 = "INSERT INTO `" + "Fact_Movies"
-						+ "` (`IdMovies`,`IdDate`,`IdActors`,`IdDirectors`,`IdLanguage`,`IdCompany`,`Budget`,`Revenue`,`AverageRating`,`NumVotes`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+				String insert_tDBOutput_1 = "INSERT INTO `" + "facts_movies"
+						+ "` (`id_movies`,`id_date`,`id_actors`,`id_directors`,`id_languages`,`id_company`,`averageRating`,`numVotes`,`revenue`,`budget`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 				int batchSize_tDBOutput_1 = 100;
 				int batchSizeCounter_tDBOutput_1 = 0;
 
@@ -2139,7 +2095,7 @@ public class Fact_movies implements TalendJob {
 				currentComponent = "tLogRow_1";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Fact_Movie");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Facts_Movies");
 				}
 
 				int tos_count_tLogRow_1 = 0;
@@ -2320,8 +2276,8 @@ public class Fact_movies implements TalendJob {
 				}
 				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
 				util_tLogRow_1.setTableName("tLogRow_1");
-				util_tLogRow_1.addRow(new String[] { "IdMovies", "IdDate", "IdActors", "IdDirectors", "IdLanguage",
-						"IdCompany", "Budget", "Revenue", "AverageRating", "NumVotes", });
+				util_tLogRow_1.addRow(new String[] { "id_movies", "id_date", "id_actors", "id_directors",
+						"id_languages", "id_company", "averageRating", "numVotes", "revenue", "budget", });
 				StringBuilder strBuffer_tLogRow_1 = null;
 				int nb_line_tLogRow_1 = 0;
 ///////////////////////    			
@@ -2400,7 +2356,7 @@ public class Fact_movies implements TalendJob {
 
 // ###############################
 // # Outputs initialization
-				Fact_MovieStruct Fact_Movie_tmp = new Fact_MovieStruct();
+				Facts_MoviesStruct Facts_Movies_tmp = new Facts_MoviesStruct();
 // ###############################
 
 				/**
@@ -2428,7 +2384,7 @@ public class Fact_movies implements TalendJob {
 				String dbUser_tDBInput_1 = "root";
 
 				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:eyFq1HLxE9K/qKZyjXLpyHNFVseCKoDUxDeP2w==");
+						.decryptPassword("enc:routine.encryption.key.v1:kw0FioUgYSWSNCXp37HB8UgQNHw+nD/z+C6B7g==");
 
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 
@@ -2546,7 +2502,7 @@ public class Fact_movies implements TalendJob {
 
 							hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row2HashKey.tconst = row1.id;
+							row2HashKey.id = row1.id;
 
 							row2HashKey.hashCodeDirty = true;
 
@@ -2557,8 +2513,8 @@ public class Fact_movies implements TalendJob {
 						if (tHash_Lookup_row2 != null && tHash_Lookup_row2.getCount(row2HashKey) > 1) { // G 071
 
 							// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row2'
-							// and it contains more one result from keys : row2.tconst = '" +
-							// row2HashKey.tconst + "'");
+							// and it contains more one result from keys : row2.id = '" + row2HashKey.id +
+							// "'");
 						} // G 071
 
 						row2Struct row2 = null;
@@ -2756,7 +2712,7 @@ public class Fact_movies implements TalendJob {
 
 							hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row7HashKey.imdb_id = row1.id;
+							row7HashKey.tconst = row1.id;
 
 							row7HashKey.hashCodeDirty = true;
 
@@ -2767,8 +2723,8 @@ public class Fact_movies implements TalendJob {
 						if (tHash_Lookup_row7 != null && tHash_Lookup_row7.getCount(row7HashKey) > 1) { // G 071
 
 							// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row7'
-							// and it contains more one result from keys : row7.imdb_id = '" +
-							// row7HashKey.imdb_id + "'");
+							// and it contains more one result from keys : row7.tconst = '" +
+							// row7HashKey.tconst + "'");
 						} // G 071
 
 						row7Struct row7 = null;
@@ -2798,7 +2754,7 @@ public class Fact_movies implements TalendJob {
 
 							hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row8HashKey.id = row1.id;
+							row8HashKey.imdb_id = row1.id;
 
 							row8HashKey.hashCodeDirty = true;
 
@@ -2809,8 +2765,8 @@ public class Fact_movies implements TalendJob {
 						if (tHash_Lookup_row8 != null && tHash_Lookup_row8.getCount(row8HashKey) > 1) { // G 071
 
 							// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row8'
-							// and it contains more one result from keys : row8.id = '" + row8HashKey.id +
-							// "'");
+							// and it contains more one result from keys : row8.imdb_id = '" +
+							// row8HashKey.imdb_id + "'");
 						} // G 071
 
 						row8Struct row8 = null;
@@ -2838,20 +2794,20 @@ public class Fact_movies implements TalendJob {
 							// ###############################
 							// # Output tables
 
-							Fact_Movie = null;
+							Facts_Movies = null;
 
-// # Output table : 'Fact_Movie'
-							Fact_Movie_tmp.IdMovies = row1.id;
-							Fact_Movie_tmp.IdDate = row3.id;
-							Fact_Movie_tmp.IdActors = row4.id;
-							Fact_Movie_tmp.IdDirectors = row5.id;
-							Fact_Movie_tmp.IdLanguage = row6.id;
-							Fact_Movie_tmp.IdCompany = row8.id;
-							Fact_Movie_tmp.Budget = row7.budget;
-							Fact_Movie_tmp.Revenue = row7.revenue;
-							Fact_Movie_tmp.AverageRating = row2.averageRating;
-							Fact_Movie_tmp.NumVotes = row2.numVotes;
-							Fact_Movie = Fact_Movie_tmp;
+// # Output table : 'Facts_Movies'
+							Facts_Movies_tmp.id_movies = row1.id;
+							Facts_Movies_tmp.id_date = row2.id;
+							Facts_Movies_tmp.id_actors = row3.id;
+							Facts_Movies_tmp.id_directors = row4.id;
+							Facts_Movies_tmp.id_languages = row5.id;
+							Facts_Movies_tmp.id_company = row6.id;
+							Facts_Movies_tmp.averageRating = row7.averageRating;
+							Facts_Movies_tmp.numVotes = row7.numVotes;
+							Facts_Movies_tmp.revenue = row8.revenue;
+							Facts_Movies_tmp.budget = row8.budget;
+							Facts_Movies = Facts_Movies_tmp;
 // ###############################
 
 						} // end of Var scope
@@ -2873,8 +2829,8 @@ public class Fact_movies implements TalendJob {
 						/**
 						 * [tMap_1 process_data_begin ] stop
 						 */
-// Start of branch "Fact_Movie"
-						if (Fact_Movie != null) {
+// Start of branch "Facts_Movies"
+						if (Facts_Movies != null) {
 
 							/**
 							 * [tLogRow_1 main ] start
@@ -2885,7 +2841,7 @@ public class Fact_movies implements TalendJob {
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1
 
-										, "Fact_Movie"
+										, "Facts_Movies"
 
 								);
 							}
@@ -2894,53 +2850,53 @@ public class Fact_movies implements TalendJob {
 
 							String[] row_tLogRow_1 = new String[10];
 
-							if (Fact_Movie.IdMovies != null) { //
-								row_tLogRow_1[0] = String.valueOf(Fact_Movie.IdMovies);
+							if (Facts_Movies.id_movies != null) { //
+								row_tLogRow_1[0] = String.valueOf(Facts_Movies.id_movies);
 
 							} //
 
-							if (Fact_Movie.IdDate != null) { //
-								row_tLogRow_1[1] = String.valueOf(Fact_Movie.IdDate);
+							if (Facts_Movies.id_date != null) { //
+								row_tLogRow_1[1] = String.valueOf(Facts_Movies.id_date);
 
 							} //
 
-							if (Fact_Movie.IdActors != null) { //
-								row_tLogRow_1[2] = String.valueOf(Fact_Movie.IdActors);
+							if (Facts_Movies.id_actors != null) { //
+								row_tLogRow_1[2] = String.valueOf(Facts_Movies.id_actors);
 
 							} //
 
-							if (Fact_Movie.IdDirectors != null) { //
-								row_tLogRow_1[3] = String.valueOf(Fact_Movie.IdDirectors);
+							if (Facts_Movies.id_directors != null) { //
+								row_tLogRow_1[3] = String.valueOf(Facts_Movies.id_directors);
 
 							} //
 
-							if (Fact_Movie.IdLanguage != null) { //
-								row_tLogRow_1[4] = String.valueOf(Fact_Movie.IdLanguage);
+							if (Facts_Movies.id_languages != null) { //
+								row_tLogRow_1[4] = String.valueOf(Facts_Movies.id_languages);
 
 							} //
 
-							if (Fact_Movie.IdCompany != null) { //
-								row_tLogRow_1[5] = String.valueOf(Fact_Movie.IdCompany);
+							if (Facts_Movies.id_company != null) { //
+								row_tLogRow_1[5] = String.valueOf(Facts_Movies.id_company);
 
 							} //
 
-							if (Fact_Movie.Budget != null) { //
-								row_tLogRow_1[6] = String.valueOf(Fact_Movie.Budget);
+							if (Facts_Movies.averageRating != null) { //
+								row_tLogRow_1[6] = FormatterUtils.formatUnwithE(Facts_Movies.averageRating);
 
 							} //
 
-							if (Fact_Movie.Revenue != null) { //
-								row_tLogRow_1[7] = String.valueOf(Fact_Movie.Revenue);
+							if (Facts_Movies.numVotes != null) { //
+								row_tLogRow_1[7] = String.valueOf(Facts_Movies.numVotes);
 
 							} //
 
-							if (Fact_Movie.AverageRating != null) { //
-								row_tLogRow_1[8] = FormatterUtils.formatUnwithE(Fact_Movie.AverageRating);
+							if (Facts_Movies.revenue != null) { //
+								row_tLogRow_1[8] = String.valueOf(Facts_Movies.revenue);
 
 							} //
 
-							if (Fact_Movie.NumVotes != null) { //
-								row_tLogRow_1[9] = String.valueOf(Fact_Movie.NumVotes);
+							if (Facts_Movies.budget != null) { //
+								row_tLogRow_1[9] = String.valueOf(Facts_Movies.budget);
 
 							} //
 
@@ -2952,7 +2908,7 @@ public class Fact_movies implements TalendJob {
 
 ///////////////////////    			
 
-							row9 = Fact_Movie;
+							row9 = Facts_Movies;
 
 							tos_count_tLogRow_1++;
 
@@ -2985,64 +2941,64 @@ public class Fact_movies implements TalendJob {
 							}
 
 							whetherReject_tDBOutput_1 = false;
-							if (row9.IdMovies == null) {
+							if (row9.id_movies == null) {
 								pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(1, row9.IdMovies);
+								pstmt_tDBOutput_1.setString(1, row9.id_movies);
 							}
 
-							if (row9.IdDate == null) {
+							if (row9.id_date == null) {
 								pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(2, row9.IdDate);
+								pstmt_tDBOutput_1.setString(2, row9.id_date);
 							}
 
-							if (row9.IdActors == null) {
+							if (row9.id_actors == null) {
 								pstmt_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(3, row9.IdActors);
+								pstmt_tDBOutput_1.setString(3, row9.id_actors);
 							}
 
-							if (row9.IdDirectors == null) {
+							if (row9.id_directors == null) {
 								pstmt_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(4, row9.IdDirectors);
+								pstmt_tDBOutput_1.setString(4, row9.id_directors);
 							}
 
-							if (row9.IdLanguage == null) {
+							if (row9.id_languages == null) {
 								pstmt_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(5, row9.IdLanguage);
+								pstmt_tDBOutput_1.setString(5, row9.id_languages);
 							}
 
-							if (row9.IdCompany == null) {
+							if (row9.id_company == null) {
 								pstmt_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
 							} else {
-								pstmt_tDBOutput_1.setString(6, row9.IdCompany);
+								pstmt_tDBOutput_1.setString(6, row9.id_company);
 							}
 
-							if (row9.Budget == null) {
-								pstmt_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
+							if (row9.averageRating == null) {
+								pstmt_tDBOutput_1.setNull(7, java.sql.Types.FLOAT);
 							} else {
-								pstmt_tDBOutput_1.setLong(7, row9.Budget);
+								pstmt_tDBOutput_1.setFloat(7, row9.averageRating);
 							}
 
-							if (row9.Revenue == null) {
+							if (row9.numVotes == null) {
 								pstmt_tDBOutput_1.setNull(8, java.sql.Types.INTEGER);
 							} else {
-								pstmt_tDBOutput_1.setLong(8, row9.Revenue);
+								pstmt_tDBOutput_1.setLong(8, row9.numVotes);
 							}
 
-							if (row9.AverageRating == null) {
-								pstmt_tDBOutput_1.setNull(9, java.sql.Types.FLOAT);
+							if (row9.revenue == null) {
+								pstmt_tDBOutput_1.setNull(9, java.sql.Types.INTEGER);
 							} else {
-								pstmt_tDBOutput_1.setFloat(9, row9.AverageRating);
+								pstmt_tDBOutput_1.setLong(9, row9.revenue);
 							}
 
-							if (row9.NumVotes == null) {
+							if (row9.budget == null) {
 								pstmt_tDBOutput_1.setNull(10, java.sql.Types.INTEGER);
 							} else {
-								pstmt_tDBOutput_1.setInt(10, row9.NumVotes);
+								pstmt_tDBOutput_1.setLong(10, row9.budget);
 							}
 
 							pstmt_tDBOutput_1.addBatch();
@@ -3140,7 +3096,7 @@ public class Fact_movies implements TalendJob {
 							 * [tLogRow_1 process_data_end ] stop
 							 */
 
-						} // End of branch "Fact_Movie"
+						} // End of branch "Facts_Movies"
 
 						/**
 						 * [tMap_1 process_data_end ] start
@@ -3279,7 +3235,7 @@ public class Fact_movies implements TalendJob {
 ///////////////////////    			
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "Fact_Movie");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Facts_Movies");
 				}
 
 				ok_Hash.put("tLogRow_1", true);
@@ -3383,7 +3339,13 @@ public class Fact_movies implements TalendJob {
 		} finally {
 
 			// free memory for "tMap_1"
+			globalMap.remove("tHash_Lookup_row2");
+
+			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row3");
+
+			// free memory for "tMap_1"
+			globalMap.remove("tHash_Lookup_row4");
 
 			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row5");
@@ -3392,16 +3354,10 @@ public class Fact_movies implements TalendJob {
 			globalMap.remove("tHash_Lookup_row6");
 
 			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row4");
+			globalMap.remove("tHash_Lookup_row7");
 
 			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row8");
-
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row2");
-
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row7");
 
 			try {
 
@@ -3479,7 +3435,7 @@ public class Fact_movies implements TalendJob {
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row3Struct implements routines.system.IPersistableComparableLookupRow<row3Struct> {
+	public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -3523,7 +3479,7 @@ public class Fact_movies implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final row3Struct other = (row3Struct) obj;
+			final row2Struct other = (row2Struct) obj;
 
 			if (this.id == null) {
 				if (other.id != null)
@@ -3536,14 +3492,14 @@ public class Fact_movies implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(row3Struct other) {
+		public void copyDataTo(row2Struct other) {
 
 			other.id = this.id;
 			other.year = this.year;
 
 		}
 
-		public void copyKeysDataTo(row3Struct other) {
+		public void copyKeysDataTo(row2Struct other) {
 
 			other.id = this.id;
 
@@ -3790,7 +3746,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row3Struct other) {
+		public int compareTo(row2Struct other) {
 
 			int returnValue = -1;
 
@@ -3845,38 +3801,38 @@ public class Fact_movies implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row3Struct row3 = new row3Struct();
+				row2Struct row2 = new row2Struct();
 
 				/**
-				 * [tAdvancedHash_row3 begin ] start
+				 * [tAdvancedHash_row2 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row3", false);
-				start_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row2", false);
+				start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row3";
+				currentComponent = "tAdvancedHash_row2";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
 				}
 
-				int tos_count_tAdvancedHash_row3 = 0;
+				int tos_count_tAdvancedHash_row2 = 0;
 
-				// connection name:row3
-				// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(row3,row3) |
-				// target node:tAdvancedHash_row3 - inputs:(row3) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// connection name:row2
+				// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(row2,row2) |
+				// target node:tAdvancedHash_row2 - inputs:(row2) outputs:()
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row3Struct>getLookup(matchingModeEnum_row3);
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row2Struct>getLookup(matchingModeEnum_row2);
 
-				globalMap.put("tHash_Lookup_row3", tHash_Lookup_row3);
+				globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
 
 				/**
-				 * [tAdvancedHash_row3 begin ] stop
+				 * [tAdvancedHash_row2 begin ] stop
 				 */
 
 				/**
@@ -3900,7 +3856,7 @@ public class Fact_movies implements TalendJob {
 				String dbUser_tDBInput_2 = "root";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:1CV8RMV3/AxhAIz3HhXyfydqwDmqSHzecY2kdg==");
+						.decryptPassword("enc:routine.encryption.key.v1:ECebS7ouYQ8cvpTB6lBn01HcEbxsu1DzS4/eXw==");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -3932,18 +3888,18 @@ public class Fact_movies implements TalendJob {
 						nb_line_tDBInput_2++;
 
 						if (colQtyInRs_tDBInput_2 < 1) {
-							row3.id = null;
+							row2.id = null;
 						} else {
 
-							row3.id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 1, false);
+							row2.id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 1, false);
 						}
 						if (colQtyInRs_tDBInput_2 < 2) {
-							row3.year = null;
+							row2.year = null;
 						} else {
 
-							row3.year = rs_tDBInput_2.getInt(2);
+							row2.year = rs_tDBInput_2.getInt(2);
 							if (rs_tDBInput_2.wasNull()) {
-								row3.year = null;
+								row2.year = null;
 							}
 						}
 
@@ -3974,51 +3930,51 @@ public class Fact_movies implements TalendJob {
 						 */
 
 						/**
-						 * [tAdvancedHash_row3 main ] start
+						 * [tAdvancedHash_row2 main ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row3";
+						currentComponent = "tAdvancedHash_row2";
 
 						if (execStat) {
 							runStat.updateStatOnConnection(iterateId, 1, 1
 
-									, "row3"
+									, "row2"
 
 							);
 						}
 
-						row3Struct row3_HashRow = new row3Struct();
+						row2Struct row2_HashRow = new row2Struct();
 
-						row3_HashRow.id = row3.id;
+						row2_HashRow.id = row2.id;
 
-						row3_HashRow.year = row3.year;
+						row2_HashRow.year = row2.year;
 
-						tHash_Lookup_row3.put(row3_HashRow);
+						tHash_Lookup_row2.put(row2_HashRow);
 
-						tos_count_tAdvancedHash_row3++;
+						tos_count_tAdvancedHash_row2++;
 
 						/**
-						 * [tAdvancedHash_row3 main ] stop
+						 * [tAdvancedHash_row2 main ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row3 process_data_begin ] start
+						 * [tAdvancedHash_row2 process_data_begin ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row3";
+						currentComponent = "tAdvancedHash_row2";
 
 						/**
-						 * [tAdvancedHash_row3 process_data_begin ] stop
+						 * [tAdvancedHash_row2 process_data_begin ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row3 process_data_end ] start
+						 * [tAdvancedHash_row2 process_data_end ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row3";
+						currentComponent = "tAdvancedHash_row2";
 
 						/**
-						 * [tAdvancedHash_row3 process_data_end ] stop
+						 * [tAdvancedHash_row2 process_data_end ] stop
 						 */
 
 						/**
@@ -4069,22 +4025,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row3 end ] start
+				 * [tAdvancedHash_row2 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row3";
+				currentComponent = "tAdvancedHash_row2";
 
-				tHash_Lookup_row3.endPut();
+				tHash_Lookup_row2.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
 				}
 
-				ok_Hash.put("tAdvancedHash_row3", true);
-				end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row2", true);
+				end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row3 end ] stop
+				 * [tAdvancedHash_row2 end ] stop
 				 */
 
 			} // end the resume
@@ -4114,13 +4070,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row3 finally ] start
+				 * [tAdvancedHash_row2 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row3";
+				currentComponent = "tAdvancedHash_row2";
 
 				/**
-				 * [tAdvancedHash_row3 finally ] stop
+				 * [tAdvancedHash_row2 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -4134,7 +4090,7 @@ public class Fact_movies implements TalendJob {
 		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+	public static class row3Struct implements routines.system.IPersistableComparableLookupRow<row3Struct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -4178,7 +4134,7 @@ public class Fact_movies implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final row5Struct other = (row5Struct) obj;
+			final row3Struct other = (row3Struct) obj;
 
 			if (this.id == null) {
 				if (other.id != null)
@@ -4191,14 +4147,14 @@ public class Fact_movies implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(row5Struct other) {
+		public void copyDataTo(row3Struct other) {
 
 			other.id = this.id;
 			other.name = this.name;
 
 		}
 
-		public void copyKeysDataTo(row5Struct other) {
+		public void copyKeysDataTo(row3Struct other) {
 
 			other.id = this.id;
 
@@ -4451,7 +4407,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row5Struct other) {
+		public int compareTo(row3Struct other) {
 
 			int returnValue = -1;
 
@@ -4506,38 +4462,38 @@ public class Fact_movies implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row5Struct row5 = new row5Struct();
+				row3Struct row3 = new row3Struct();
 
 				/**
-				 * [tAdvancedHash_row5 begin ] start
+				 * [tAdvancedHash_row3 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row5", false);
-				start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row3", false);
+				start_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row5";
+				currentComponent = "tAdvancedHash_row3";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
 				}
 
-				int tos_count_tAdvancedHash_row5 = 0;
+				int tos_count_tAdvancedHash_row3 = 0;
 
-				// connection name:row5
-				// source node:tDBInput_3 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
-				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// connection name:row3
+				// source node:tDBInput_3 - inputs:(after_tDBInput_1) outputs:(row3,row3) |
+				// target node:tAdvancedHash_row3 - inputs:(row3) outputs:()
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row5Struct>getLookup(matchingModeEnum_row5);
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row3Struct> tHash_Lookup_row3 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row3Struct>getLookup(matchingModeEnum_row3);
 
-				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+				globalMap.put("tHash_Lookup_row3", tHash_Lookup_row3);
 
 				/**
-				 * [tAdvancedHash_row5 begin ] stop
+				 * [tAdvancedHash_row3 begin ] stop
 				 */
 
 				/**
@@ -4561,7 +4517,7 @@ public class Fact_movies implements TalendJob {
 				String dbUser_tDBInput_3 = "root";
 
 				final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:X1SlZIOvL4FE583vnWoW6yJL5ml2RGhehCHYJQ==");
+						.decryptPassword("enc:routine.encryption.key.v1:5ssHdK0CwV7dctF3j2yidtkwFUceXTeBSdLq7A==");
 
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 
@@ -4577,7 +4533,7 @@ public class Fact_movies implements TalendJob {
 
 				java.sql.Statement stmt_tDBInput_3 = conn_tDBInput_3.createStatement();
 
-				String dbquery_tDBInput_3 = "SELECT \n  `directors`.`id`, \n  `directors`.`name`\nFROM `directors`";
+				String dbquery_tDBInput_3 = "SELECT \n  `actors`.`id`, \n  `actors`.`name`\nFROM `actors`";
 
 				globalMap.put("tDBInput_3_QUERY", dbquery_tDBInput_3);
 				java.sql.ResultSet rs_tDBInput_3 = null;
@@ -4593,16 +4549,16 @@ public class Fact_movies implements TalendJob {
 						nb_line_tDBInput_3++;
 
 						if (colQtyInRs_tDBInput_3 < 1) {
-							row5.id = null;
+							row3.id = null;
 						} else {
 
-							row5.id = routines.system.JDBCUtil.getString(rs_tDBInput_3, 1, false);
+							row3.id = routines.system.JDBCUtil.getString(rs_tDBInput_3, 1, false);
 						}
 						if (colQtyInRs_tDBInput_3 < 2) {
-							row5.name = null;
+							row3.name = null;
 						} else {
 
-							row5.name = routines.system.JDBCUtil.getString(rs_tDBInput_3, 2, false);
+							row3.name = routines.system.JDBCUtil.getString(rs_tDBInput_3, 2, false);
 						}
 
 						/**
@@ -4632,51 +4588,51 @@ public class Fact_movies implements TalendJob {
 						 */
 
 						/**
-						 * [tAdvancedHash_row5 main ] start
+						 * [tAdvancedHash_row3 main ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row5";
+						currentComponent = "tAdvancedHash_row3";
 
 						if (execStat) {
 							runStat.updateStatOnConnection(iterateId, 1, 1
 
-									, "row5"
+									, "row3"
 
 							);
 						}
 
-						row5Struct row5_HashRow = new row5Struct();
+						row3Struct row3_HashRow = new row3Struct();
 
-						row5_HashRow.id = row5.id;
+						row3_HashRow.id = row3.id;
 
-						row5_HashRow.name = row5.name;
+						row3_HashRow.name = row3.name;
 
-						tHash_Lookup_row5.put(row5_HashRow);
+						tHash_Lookup_row3.put(row3_HashRow);
 
-						tos_count_tAdvancedHash_row5++;
+						tos_count_tAdvancedHash_row3++;
 
 						/**
-						 * [tAdvancedHash_row5 main ] stop
+						 * [tAdvancedHash_row3 main ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row5 process_data_begin ] start
+						 * [tAdvancedHash_row3 process_data_begin ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row5";
+						currentComponent = "tAdvancedHash_row3";
 
 						/**
-						 * [tAdvancedHash_row5 process_data_begin ] stop
+						 * [tAdvancedHash_row3 process_data_begin ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row5 process_data_end ] start
+						 * [tAdvancedHash_row3 process_data_end ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row5";
+						currentComponent = "tAdvancedHash_row3";
 
 						/**
-						 * [tAdvancedHash_row5 process_data_end ] stop
+						 * [tAdvancedHash_row3 process_data_end ] stop
 						 */
 
 						/**
@@ -4727,22 +4683,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row5 end ] start
+				 * [tAdvancedHash_row3 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row5";
+				currentComponent = "tAdvancedHash_row3";
 
-				tHash_Lookup_row5.endPut();
+				tHash_Lookup_row3.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
 				}
 
-				ok_Hash.put("tAdvancedHash_row5", true);
-				end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row3", true);
+				end_Hash.put("tAdvancedHash_row3", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row5 end ] stop
+				 * [tAdvancedHash_row3 end ] stop
 				 */
 
 			} // end the resume
@@ -4772,13 +4728,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row5 finally ] start
+				 * [tAdvancedHash_row3 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row5";
+				currentComponent = "tAdvancedHash_row3";
 
 				/**
-				 * [tAdvancedHash_row5 finally ] stop
+				 * [tAdvancedHash_row3 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -4790,664 +4746,6 @@ public class Fact_movies implements TalendJob {
 		}
 
 		globalMap.put("tDBInput_3_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row6Struct implements routines.system.IPersistableComparableLookupRow<row6Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
-		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String id;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public String language;
-
-		public String getLanguage() {
-			return this.language;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row6Struct other = (row6Struct) obj;
-
-			if (this.id == null) {
-				if (other.id != null)
-					return false;
-
-			} else if (!this.id.equals(other.id))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row6Struct other) {
-
-			other.id = this.id;
-			other.language = this.language;
-
-		}
-
-		public void copyKeysDataTo(row6Struct other) {
-
-			other.id = this.id;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Fact_movies.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Fact_movies.length == 0) {
-						commonByteArray_MOVIES_Fact_movies = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Fact_movies = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_MOVIES_Fact_movies, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Fact_movies, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Fact_movies.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Fact_movies.length == 0) {
-						commonByteArray_MOVIES_Fact_movies = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Fact_movies = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Fact_movies, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Fact_movies, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				unmarshaller.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
-
-				try {
-
-					int length = 0;
-
-					this.id = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
-
-				try {
-
-					int length = 0;
-
-					this.id = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.language = readString(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-			try {
-				int length = 0;
-
-				this.language = readString(dis, objectIn);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.language, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
-			try {
-
-				writeString(this.language, dos, objectOut);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
-		public boolean supportMarshaller() {
-			return true;
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",language=" + language);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row6Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.id, other.id);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_4_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				row6Struct row6 = new row6Struct();
-
-				/**
-				 * [tAdvancedHash_row6 begin ] start
-				 */
-
-				ok_Hash.put("tAdvancedHash_row6", false);
-				start_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
-
-				currentComponent = "tAdvancedHash_row6";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row6");
-				}
-
-				int tos_count_tAdvancedHash_row6 = 0;
-
-				// connection name:row6
-				// source node:tDBInput_4 - inputs:(after_tDBInput_1) outputs:(row6,row6) |
-				// target node:tAdvancedHash_row6 - inputs:(row6) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
-
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row6Struct>getLookup(matchingModeEnum_row6);
-
-				globalMap.put("tHash_Lookup_row6", tHash_Lookup_row6);
-
-				/**
-				 * [tAdvancedHash_row6 begin ] stop
-				 */
-
-				/**
-				 * [tDBInput_4 begin ] start
-				 */
-
-				ok_Hash.put("tDBInput_4", false);
-				start_Hash.put("tDBInput_4", System.currentTimeMillis());
-
-				currentComponent = "tDBInput_4";
-
-				int tos_count_tDBInput_4 = 0;
-
-				java.util.Calendar calendar_tDBInput_4 = java.util.Calendar.getInstance();
-				calendar_tDBInput_4.set(0, 0, 0, 0, 0, 0);
-				java.util.Date year0_tDBInput_4 = calendar_tDBInput_4.getTime();
-				int nb_line_tDBInput_4 = 0;
-				java.sql.Connection conn_tDBInput_4 = null;
-				String driverClass_tDBInput_4 = "com.mysql.cj.jdbc.Driver";
-				java.lang.Class jdbcclazz_tDBInput_4 = java.lang.Class.forName(driverClass_tDBInput_4);
-				String dbUser_tDBInput_4 = "root";
-
-				final String decryptedPassword_tDBInput_4 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:XfDwiVjxiEnX2VKHyB37e14Y3KYwvuNkxqiNMA==");
-
-				String dbPwd_tDBInput_4 = decryptedPassword_tDBInput_4;
-
-				String properties_tDBInput_4 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
-				if (properties_tDBInput_4 == null || properties_tDBInput_4.trim().length() == 0) {
-					properties_tDBInput_4 = "";
-				}
-				String url_tDBInput_4 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
-						+ properties_tDBInput_4;
-
-				conn_tDBInput_4 = java.sql.DriverManager.getConnection(url_tDBInput_4, dbUser_tDBInput_4,
-						dbPwd_tDBInput_4);
-
-				java.sql.Statement stmt_tDBInput_4 = conn_tDBInput_4.createStatement();
-
-				String dbquery_tDBInput_4 = "SELECT \n  `languages`.`id`, \n  `languages`.`language`\nFROM `languages`";
-
-				globalMap.put("tDBInput_4_QUERY", dbquery_tDBInput_4);
-				java.sql.ResultSet rs_tDBInput_4 = null;
-
-				try {
-					rs_tDBInput_4 = stmt_tDBInput_4.executeQuery(dbquery_tDBInput_4);
-					java.sql.ResultSetMetaData rsmd_tDBInput_4 = rs_tDBInput_4.getMetaData();
-					int colQtyInRs_tDBInput_4 = rsmd_tDBInput_4.getColumnCount();
-
-					String tmpContent_tDBInput_4 = null;
-
-					while (rs_tDBInput_4.next()) {
-						nb_line_tDBInput_4++;
-
-						if (colQtyInRs_tDBInput_4 < 1) {
-							row6.id = null;
-						} else {
-
-							row6.id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 1, false);
-						}
-						if (colQtyInRs_tDBInput_4 < 2) {
-							row6.language = null;
-						} else {
-
-							row6.language = routines.system.JDBCUtil.getString(rs_tDBInput_4, 2, false);
-						}
-
-						/**
-						 * [tDBInput_4 begin ] stop
-						 */
-
-						/**
-						 * [tDBInput_4 main ] start
-						 */
-
-						currentComponent = "tDBInput_4";
-
-						tos_count_tDBInput_4++;
-
-						/**
-						 * [tDBInput_4 main ] stop
-						 */
-
-						/**
-						 * [tDBInput_4 process_data_begin ] start
-						 */
-
-						currentComponent = "tDBInput_4";
-
-						/**
-						 * [tDBInput_4 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tAdvancedHash_row6 main ] start
-						 */
-
-						currentComponent = "tAdvancedHash_row6";
-
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1
-
-									, "row6"
-
-							);
-						}
-
-						row6Struct row6_HashRow = new row6Struct();
-
-						row6_HashRow.id = row6.id;
-
-						row6_HashRow.language = row6.language;
-
-						tHash_Lookup_row6.put(row6_HashRow);
-
-						tos_count_tAdvancedHash_row6++;
-
-						/**
-						 * [tAdvancedHash_row6 main ] stop
-						 */
-
-						/**
-						 * [tAdvancedHash_row6 process_data_begin ] start
-						 */
-
-						currentComponent = "tAdvancedHash_row6";
-
-						/**
-						 * [tAdvancedHash_row6 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tAdvancedHash_row6 process_data_end ] start
-						 */
-
-						currentComponent = "tAdvancedHash_row6";
-
-						/**
-						 * [tAdvancedHash_row6 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_4 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_4";
-
-						/**
-						 * [tDBInput_4 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_4 end ] start
-						 */
-
-						currentComponent = "tDBInput_4";
-
-					}
-				} finally {
-					if (rs_tDBInput_4 != null) {
-						rs_tDBInput_4.close();
-					}
-					if (stmt_tDBInput_4 != null) {
-						stmt_tDBInput_4.close();
-					}
-					if (conn_tDBInput_4 != null && !conn_tDBInput_4.isClosed()) {
-
-						conn_tDBInput_4.close();
-
-						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
-								&& routines.system.BundleUtils.inOSGi()) {
-							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
-									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
-						}
-
-					}
-
-				}
-
-				globalMap.put("tDBInput_4_NB_LINE", nb_line_tDBInput_4);
-
-				ok_Hash.put("tDBInput_4", true);
-				end_Hash.put("tDBInput_4", System.currentTimeMillis());
-
-				/**
-				 * [tDBInput_4 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row6 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row6";
-
-				tHash_Lookup_row6.endPut();
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row6");
-				}
-
-				ok_Hash.put("tAdvancedHash_row6", true);
-				end_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row6 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDBInput_4 finally ] start
-				 */
-
-				currentComponent = "tDBInput_4";
-
-				/**
-				 * [tDBInput_4 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row6 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row6";
-
-				/**
-				 * [tAdvancedHash_row6 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tDBInput_4_SUBPROCESS_STATE", 1);
 	}
 
 	public static class row4Struct implements routines.system.IPersistableComparableLookupRow<row4Struct> {
@@ -5802,8 +5100,8 @@ public class Fact_movies implements TalendJob {
 
 	}
 
-	public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_5_SUBPROCESS_STATE", 0);
+	public void tDBInput_4Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tDBInput_4_SUBPROCESS_STATE", 0);
 
 		final boolean execStat = this.execStat;
 
@@ -5840,10 +5138,10 @@ public class Fact_movies implements TalendJob {
 				int tos_count_tAdvancedHash_row4 = 0;
 
 				// connection name:row4
-				// source node:tDBInput_5 - inputs:(after_tDBInput_1) outputs:(row4,row4) |
+				// source node:tDBInput_4 - inputs:(after_tDBInput_1) outputs:(row4,row4) |
 				// target node:tAdvancedHash_row4 - inputs:(row4) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
@@ -5857,94 +5155,94 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tDBInput_5 begin ] start
+				 * [tDBInput_4 begin ] start
 				 */
 
-				ok_Hash.put("tDBInput_5", false);
-				start_Hash.put("tDBInput_5", System.currentTimeMillis());
+				ok_Hash.put("tDBInput_4", false);
+				start_Hash.put("tDBInput_4", System.currentTimeMillis());
 
-				currentComponent = "tDBInput_5";
+				currentComponent = "tDBInput_4";
 
-				int tos_count_tDBInput_5 = 0;
+				int tos_count_tDBInput_4 = 0;
 
-				java.util.Calendar calendar_tDBInput_5 = java.util.Calendar.getInstance();
-				calendar_tDBInput_5.set(0, 0, 0, 0, 0, 0);
-				java.util.Date year0_tDBInput_5 = calendar_tDBInput_5.getTime();
-				int nb_line_tDBInput_5 = 0;
-				java.sql.Connection conn_tDBInput_5 = null;
-				String driverClass_tDBInput_5 = "com.mysql.cj.jdbc.Driver";
-				java.lang.Class jdbcclazz_tDBInput_5 = java.lang.Class.forName(driverClass_tDBInput_5);
-				String dbUser_tDBInput_5 = "root";
+				java.util.Calendar calendar_tDBInput_4 = java.util.Calendar.getInstance();
+				calendar_tDBInput_4.set(0, 0, 0, 0, 0, 0);
+				java.util.Date year0_tDBInput_4 = calendar_tDBInput_4.getTime();
+				int nb_line_tDBInput_4 = 0;
+				java.sql.Connection conn_tDBInput_4 = null;
+				String driverClass_tDBInput_4 = "com.mysql.cj.jdbc.Driver";
+				java.lang.Class jdbcclazz_tDBInput_4 = java.lang.Class.forName(driverClass_tDBInput_4);
+				String dbUser_tDBInput_4 = "root";
 
-				final String decryptedPassword_tDBInput_5 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:kT3lyb1JIj5vb6+uXQiRkvF/mtaXKc2gJspzZg==");
+				final String decryptedPassword_tDBInput_4 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:bu7lg8MlP++ZBJnUhvEqnWontWsjH79bz+2fsA==");
 
-				String dbPwd_tDBInput_5 = decryptedPassword_tDBInput_5;
+				String dbPwd_tDBInput_4 = decryptedPassword_tDBInput_4;
 
-				String properties_tDBInput_5 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
-				if (properties_tDBInput_5 == null || properties_tDBInput_5.trim().length() == 0) {
-					properties_tDBInput_5 = "";
+				String properties_tDBInput_4 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
+				if (properties_tDBInput_4 == null || properties_tDBInput_4.trim().length() == 0) {
+					properties_tDBInput_4 = "";
 				}
-				String url_tDBInput_5 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
-						+ properties_tDBInput_5;
+				String url_tDBInput_4 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
+						+ properties_tDBInput_4;
 
-				conn_tDBInput_5 = java.sql.DriverManager.getConnection(url_tDBInput_5, dbUser_tDBInput_5,
-						dbPwd_tDBInput_5);
+				conn_tDBInput_4 = java.sql.DriverManager.getConnection(url_tDBInput_4, dbUser_tDBInput_4,
+						dbPwd_tDBInput_4);
 
-				java.sql.Statement stmt_tDBInput_5 = conn_tDBInput_5.createStatement();
+				java.sql.Statement stmt_tDBInput_4 = conn_tDBInput_4.createStatement();
 
-				String dbquery_tDBInput_5 = "SELECT \n  `actors`.`id`, \n  `actors`.`name`\nFROM `actors`";
+				String dbquery_tDBInput_4 = "SELECT \n  `directors`.`id`, \n  `directors`.`name`\nFROM `directors`";
 
-				globalMap.put("tDBInput_5_QUERY", dbquery_tDBInput_5);
-				java.sql.ResultSet rs_tDBInput_5 = null;
+				globalMap.put("tDBInput_4_QUERY", dbquery_tDBInput_4);
+				java.sql.ResultSet rs_tDBInput_4 = null;
 
 				try {
-					rs_tDBInput_5 = stmt_tDBInput_5.executeQuery(dbquery_tDBInput_5);
-					java.sql.ResultSetMetaData rsmd_tDBInput_5 = rs_tDBInput_5.getMetaData();
-					int colQtyInRs_tDBInput_5 = rsmd_tDBInput_5.getColumnCount();
+					rs_tDBInput_4 = stmt_tDBInput_4.executeQuery(dbquery_tDBInput_4);
+					java.sql.ResultSetMetaData rsmd_tDBInput_4 = rs_tDBInput_4.getMetaData();
+					int colQtyInRs_tDBInput_4 = rsmd_tDBInput_4.getColumnCount();
 
-					String tmpContent_tDBInput_5 = null;
+					String tmpContent_tDBInput_4 = null;
 
-					while (rs_tDBInput_5.next()) {
-						nb_line_tDBInput_5++;
+					while (rs_tDBInput_4.next()) {
+						nb_line_tDBInput_4++;
 
-						if (colQtyInRs_tDBInput_5 < 1) {
+						if (colQtyInRs_tDBInput_4 < 1) {
 							row4.id = null;
 						} else {
 
-							row4.id = routines.system.JDBCUtil.getString(rs_tDBInput_5, 1, false);
+							row4.id = routines.system.JDBCUtil.getString(rs_tDBInput_4, 1, false);
 						}
-						if (colQtyInRs_tDBInput_5 < 2) {
+						if (colQtyInRs_tDBInput_4 < 2) {
 							row4.name = null;
 						} else {
 
-							row4.name = routines.system.JDBCUtil.getString(rs_tDBInput_5, 2, false);
+							row4.name = routines.system.JDBCUtil.getString(rs_tDBInput_4, 2, false);
 						}
 
 						/**
-						 * [tDBInput_5 begin ] stop
+						 * [tDBInput_4 begin ] stop
 						 */
 
 						/**
-						 * [tDBInput_5 main ] start
+						 * [tDBInput_4 main ] start
 						 */
 
-						currentComponent = "tDBInput_5";
+						currentComponent = "tDBInput_4";
 
-						tos_count_tDBInput_5++;
+						tos_count_tDBInput_4++;
 
 						/**
-						 * [tDBInput_5 main ] stop
+						 * [tDBInput_4 main ] stop
 						 */
 
 						/**
-						 * [tDBInput_5 process_data_begin ] start
+						 * [tDBInput_4 process_data_begin ] start
 						 */
 
-						currentComponent = "tDBInput_5";
+						currentComponent = "tDBInput_4";
 
 						/**
-						 * [tDBInput_5 process_data_begin ] stop
+						 * [tDBInput_4 process_data_begin ] stop
 						 */
 
 						/**
@@ -5996,6 +5294,664 @@ public class Fact_movies implements TalendJob {
 						 */
 
 						/**
+						 * [tDBInput_4 process_data_end ] start
+						 */
+
+						currentComponent = "tDBInput_4";
+
+						/**
+						 * [tDBInput_4 process_data_end ] stop
+						 */
+
+						/**
+						 * [tDBInput_4 end ] start
+						 */
+
+						currentComponent = "tDBInput_4";
+
+					}
+				} finally {
+					if (rs_tDBInput_4 != null) {
+						rs_tDBInput_4.close();
+					}
+					if (stmt_tDBInput_4 != null) {
+						stmt_tDBInput_4.close();
+					}
+					if (conn_tDBInput_4 != null && !conn_tDBInput_4.isClosed()) {
+
+						conn_tDBInput_4.close();
+
+						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
+								&& routines.system.BundleUtils.inOSGi()) {
+							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
+									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
+						}
+
+					}
+
+				}
+
+				globalMap.put("tDBInput_4_NB_LINE", nb_line_tDBInput_4);
+
+				ok_Hash.put("tDBInput_4", true);
+				end_Hash.put("tDBInput_4", System.currentTimeMillis());
+
+				/**
+				 * [tDBInput_4 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row4 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row4";
+
+				tHash_Lookup_row4.endPut();
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
+				}
+
+				ok_Hash.put("tAdvancedHash_row4", true);
+				end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row4 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tDBInput_4 finally ] start
+				 */
+
+				currentComponent = "tDBInput_4";
+
+				/**
+				 * [tDBInput_4 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row4 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row4";
+
+				/**
+				 * [tAdvancedHash_row4 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tDBInput_4_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String language;
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row5Struct other = (row5Struct) obj;
+
+			if (this.id == null) {
+				if (other.id != null)
+					return false;
+
+			} else if (!this.id.equals(other.id))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row5Struct other) {
+
+			other.id = this.id;
+			other.language = this.language;
+
+		}
+
+		public void copyKeysDataTo(row5Struct other) {
+
+			other.id = this.id;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Fact_movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Fact_movies.length == 0) {
+						commonByteArray_MOVIES_Fact_movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Fact_movies = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_MOVIES_Fact_movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Fact_movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Fact_movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Fact_movies.length == 0) {
+						commonByteArray_MOVIES_Fact_movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Fact_movies = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_MOVIES_Fact_movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Fact_movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
+				throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				unmarshaller.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
+				throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Fact_movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.language = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
+			try {
+				int length = 0;
+
+				this.language = readString(dis, objectIn);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				writeString(this.language, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
+			try {
+
+				writeString(this.language, dos, objectOut);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+
+		public boolean supportMarshaller() {
+			return true;
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",language=" + language);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row5Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.id, other.id);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tDBInput_5_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row5Struct row5 = new row5Struct();
+
+				/**
+				 * [tAdvancedHash_row5 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row5", false);
+				start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row5";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+				}
+
+				int tos_count_tAdvancedHash_row5 = 0;
+
+				// connection name:row5
+				// source node:tDBInput_5 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
+				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row5Struct>getLookup(matchingModeEnum_row5);
+
+				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+
+				/**
+				 * [tAdvancedHash_row5 begin ] stop
+				 */
+
+				/**
+				 * [tDBInput_5 begin ] start
+				 */
+
+				ok_Hash.put("tDBInput_5", false);
+				start_Hash.put("tDBInput_5", System.currentTimeMillis());
+
+				currentComponent = "tDBInput_5";
+
+				int tos_count_tDBInput_5 = 0;
+
+				java.util.Calendar calendar_tDBInput_5 = java.util.Calendar.getInstance();
+				calendar_tDBInput_5.set(0, 0, 0, 0, 0, 0);
+				java.util.Date year0_tDBInput_5 = calendar_tDBInput_5.getTime();
+				int nb_line_tDBInput_5 = 0;
+				java.sql.Connection conn_tDBInput_5 = null;
+				String driverClass_tDBInput_5 = "com.mysql.cj.jdbc.Driver";
+				java.lang.Class jdbcclazz_tDBInput_5 = java.lang.Class.forName(driverClass_tDBInput_5);
+				String dbUser_tDBInput_5 = "root";
+
+				final String decryptedPassword_tDBInput_5 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:2BS+bT+3yHH3BAVcOwcHZXpN1P/XX6t2QZ7Rlg==");
+
+				String dbPwd_tDBInput_5 = decryptedPassword_tDBInput_5;
+
+				String properties_tDBInput_5 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
+				if (properties_tDBInput_5 == null || properties_tDBInput_5.trim().length() == 0) {
+					properties_tDBInput_5 = "";
+				}
+				String url_tDBInput_5 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
+						+ properties_tDBInput_5;
+
+				conn_tDBInput_5 = java.sql.DriverManager.getConnection(url_tDBInput_5, dbUser_tDBInput_5,
+						dbPwd_tDBInput_5);
+
+				java.sql.Statement stmt_tDBInput_5 = conn_tDBInput_5.createStatement();
+
+				String dbquery_tDBInput_5 = "SELECT \n  `languages`.`id`, \n  `languages`.`language`\nFROM `languages`";
+
+				globalMap.put("tDBInput_5_QUERY", dbquery_tDBInput_5);
+				java.sql.ResultSet rs_tDBInput_5 = null;
+
+				try {
+					rs_tDBInput_5 = stmt_tDBInput_5.executeQuery(dbquery_tDBInput_5);
+					java.sql.ResultSetMetaData rsmd_tDBInput_5 = rs_tDBInput_5.getMetaData();
+					int colQtyInRs_tDBInput_5 = rsmd_tDBInput_5.getColumnCount();
+
+					String tmpContent_tDBInput_5 = null;
+
+					while (rs_tDBInput_5.next()) {
+						nb_line_tDBInput_5++;
+
+						if (colQtyInRs_tDBInput_5 < 1) {
+							row5.id = null;
+						} else {
+
+							row5.id = routines.system.JDBCUtil.getString(rs_tDBInput_5, 1, false);
+						}
+						if (colQtyInRs_tDBInput_5 < 2) {
+							row5.language = null;
+						} else {
+
+							row5.language = routines.system.JDBCUtil.getString(rs_tDBInput_5, 2, false);
+						}
+
+						/**
+						 * [tDBInput_5 begin ] stop
+						 */
+
+						/**
+						 * [tDBInput_5 main ] start
+						 */
+
+						currentComponent = "tDBInput_5";
+
+						tos_count_tDBInput_5++;
+
+						/**
+						 * [tDBInput_5 main ] stop
+						 */
+
+						/**
+						 * [tDBInput_5 process_data_begin ] start
+						 */
+
+						currentComponent = "tDBInput_5";
+
+						/**
+						 * [tDBInput_5 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tAdvancedHash_row5 main ] start
+						 */
+
+						currentComponent = "tAdvancedHash_row5";
+
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1
+
+									, "row5"
+
+							);
+						}
+
+						row5Struct row5_HashRow = new row5Struct();
+
+						row5_HashRow.id = row5.id;
+
+						row5_HashRow.language = row5.language;
+
+						tHash_Lookup_row5.put(row5_HashRow);
+
+						tos_count_tAdvancedHash_row5++;
+
+						/**
+						 * [tAdvancedHash_row5 main ] stop
+						 */
+
+						/**
+						 * [tAdvancedHash_row5 process_data_begin ] start
+						 */
+
+						currentComponent = "tAdvancedHash_row5";
+
+						/**
+						 * [tAdvancedHash_row5 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tAdvancedHash_row5 process_data_end ] start
+						 */
+
+						currentComponent = "tAdvancedHash_row5";
+
+						/**
+						 * [tAdvancedHash_row5 process_data_end ] stop
+						 */
+
+						/**
 						 * [tDBInput_5 process_data_end ] start
 						 */
 
@@ -6043,22 +5999,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row4 end ] start
+				 * [tAdvancedHash_row5 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row4";
+				currentComponent = "tAdvancedHash_row5";
 
-				tHash_Lookup_row4.endPut();
+				tHash_Lookup_row5.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
 				}
 
-				ok_Hash.put("tAdvancedHash_row4", true);
-				end_Hash.put("tAdvancedHash_row4", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row5", true);
+				end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row4 end ] stop
+				 * [tAdvancedHash_row5 end ] stop
 				 */
 
 			} // end the resume
@@ -6088,13 +6044,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row4 finally ] start
+				 * [tAdvancedHash_row5 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row4";
+				currentComponent = "tAdvancedHash_row5";
 
 				/**
-				 * [tAdvancedHash_row4 finally ] stop
+				 * [tAdvancedHash_row5 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -6108,7 +6064,7 @@ public class Fact_movies implements TalendJob {
 		globalMap.put("tDBInput_5_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row8Struct implements routines.system.IPersistableComparableLookupRow<row8Struct> {
+	public static class row6Struct implements routines.system.IPersistableComparableLookupRow<row6Struct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -6152,7 +6108,7 @@ public class Fact_movies implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final row8Struct other = (row8Struct) obj;
+			final row6Struct other = (row6Struct) obj;
 
 			if (this.id == null) {
 				if (other.id != null)
@@ -6165,14 +6121,14 @@ public class Fact_movies implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(row8Struct other) {
+		public void copyDataTo(row6Struct other) {
 
 			other.id = this.id;
 			other.production_companies = this.production_companies;
 
 		}
 
-		public void copyKeysDataTo(row8Struct other) {
+		public void copyKeysDataTo(row6Struct other) {
 
 			other.id = this.id;
 
@@ -6425,7 +6381,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row8Struct other) {
+		public int compareTo(row6Struct other) {
 
 			int returnValue = -1;
 
@@ -6480,38 +6436,38 @@ public class Fact_movies implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row8Struct row8 = new row8Struct();
+				row6Struct row6 = new row6Struct();
 
 				/**
-				 * [tAdvancedHash_row8 begin ] start
+				 * [tAdvancedHash_row6 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row8", false);
-				start_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row6", false);
+				start_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row8";
+				currentComponent = "tAdvancedHash_row6";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row8");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row6");
 				}
 
-				int tos_count_tAdvancedHash_row8 = 0;
+				int tos_count_tAdvancedHash_row6 = 0;
 
-				// connection name:row8
-				// source node:tDBInput_6 - inputs:(after_tDBInput_1) outputs:(row8,row8) |
-				// target node:tAdvancedHash_row8 - inputs:(row8) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// connection name:row6
+				// source node:tDBInput_6 - inputs:(after_tDBInput_1) outputs:(row6,row6) |
+				// target node:tAdvancedHash_row6 - inputs:(row6) outputs:()
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row8Struct>getLookup(matchingModeEnum_row8);
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row6Struct>getLookup(matchingModeEnum_row6);
 
-				globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
+				globalMap.put("tHash_Lookup_row6", tHash_Lookup_row6);
 
 				/**
-				 * [tAdvancedHash_row8 begin ] stop
+				 * [tAdvancedHash_row6 begin ] stop
 				 */
 
 				/**
@@ -6535,7 +6491,7 @@ public class Fact_movies implements TalendJob {
 				String dbUser_tDBInput_6 = "root";
 
 				final String decryptedPassword_tDBInput_6 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:8I/pOoc9h3LkSFkAe5d8p3e8khEXM/1jOLS6nA==");
+						.decryptPassword("enc:routine.encryption.key.v1:ugQR/c1LjKWfMUAF0El+hM15VcggnQiFacC9FQ==");
 
 				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
 
@@ -6567,16 +6523,16 @@ public class Fact_movies implements TalendJob {
 						nb_line_tDBInput_6++;
 
 						if (colQtyInRs_tDBInput_6 < 1) {
-							row8.id = null;
+							row6.id = null;
 						} else {
 
-							row8.id = routines.system.JDBCUtil.getString(rs_tDBInput_6, 1, false);
+							row6.id = routines.system.JDBCUtil.getString(rs_tDBInput_6, 1, false);
 						}
 						if (colQtyInRs_tDBInput_6 < 2) {
-							row8.production_companies = null;
+							row6.production_companies = null;
 						} else {
 
-							row8.production_companies = routines.system.JDBCUtil.getString(rs_tDBInput_6, 2, false);
+							row6.production_companies = routines.system.JDBCUtil.getString(rs_tDBInput_6, 2, false);
 						}
 
 						/**
@@ -6606,51 +6562,51 @@ public class Fact_movies implements TalendJob {
 						 */
 
 						/**
-						 * [tAdvancedHash_row8 main ] start
+						 * [tAdvancedHash_row6 main ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row8";
+						currentComponent = "tAdvancedHash_row6";
 
 						if (execStat) {
 							runStat.updateStatOnConnection(iterateId, 1, 1
 
-									, "row8"
+									, "row6"
 
 							);
 						}
 
-						row8Struct row8_HashRow = new row8Struct();
+						row6Struct row6_HashRow = new row6Struct();
 
-						row8_HashRow.id = row8.id;
+						row6_HashRow.id = row6.id;
 
-						row8_HashRow.production_companies = row8.production_companies;
+						row6_HashRow.production_companies = row6.production_companies;
 
-						tHash_Lookup_row8.put(row8_HashRow);
+						tHash_Lookup_row6.put(row6_HashRow);
 
-						tos_count_tAdvancedHash_row8++;
+						tos_count_tAdvancedHash_row6++;
 
 						/**
-						 * [tAdvancedHash_row8 main ] stop
+						 * [tAdvancedHash_row6 main ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row8 process_data_begin ] start
+						 * [tAdvancedHash_row6 process_data_begin ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row8";
+						currentComponent = "tAdvancedHash_row6";
 
 						/**
-						 * [tAdvancedHash_row8 process_data_begin ] stop
+						 * [tAdvancedHash_row6 process_data_begin ] stop
 						 */
 
 						/**
-						 * [tAdvancedHash_row8 process_data_end ] start
+						 * [tAdvancedHash_row6 process_data_end ] start
 						 */
 
-						currentComponent = "tAdvancedHash_row8";
+						currentComponent = "tAdvancedHash_row6";
 
 						/**
-						 * [tAdvancedHash_row8 process_data_end ] stop
+						 * [tAdvancedHash_row6 process_data_end ] stop
 						 */
 
 						/**
@@ -6701,22 +6657,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row8 end ] start
+				 * [tAdvancedHash_row6 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row8";
+				currentComponent = "tAdvancedHash_row6";
 
-				tHash_Lookup_row8.endPut();
+				tHash_Lookup_row6.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row8");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row6");
 				}
 
-				ok_Hash.put("tAdvancedHash_row8", true);
-				end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row6", true);
+				end_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row8 end ] stop
+				 * [tAdvancedHash_row6 end ] stop
 				 */
 
 			} // end the resume
@@ -6746,13 +6702,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row8 finally ] start
+				 * [tAdvancedHash_row6 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row8";
+				currentComponent = "tAdvancedHash_row6";
 
 				/**
-				 * [tAdvancedHash_row8 finally ] stop
+				 * [tAdvancedHash_row6 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -6766,7 +6722,7 @@ public class Fact_movies implements TalendJob {
 		globalMap.put("tDBInput_6_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
+	public static class row7Struct implements routines.system.IPersistableComparableLookupRow<row7Struct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -6788,9 +6744,9 @@ public class Fact_movies implements TalendJob {
 			return this.averageRating;
 		}
 
-		public Integer numVotes;
+		public Long numVotes;
 
-		public Integer getNumVotes() {
+		public Long getNumVotes() {
 			return this.numVotes;
 		}
 
@@ -6816,7 +6772,7 @@ public class Fact_movies implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final row2Struct other = (row2Struct) obj;
+			final row7Struct other = (row7Struct) obj;
 
 			if (this.tconst == null) {
 				if (other.tconst != null)
@@ -6829,7 +6785,7 @@ public class Fact_movies implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(row2Struct other) {
+		public void copyDataTo(row7Struct other) {
 
 			other.tconst = this.tconst;
 			other.averageRating = this.averageRating;
@@ -6837,7 +6793,7 @@ public class Fact_movies implements TalendJob {
 
 		}
 
-		public void copyKeysDataTo(row2Struct other) {
+		public void copyKeysDataTo(row7Struct other) {
 
 			other.tconst = this.tconst;
 
@@ -6900,50 +6856,6 @@ public class Fact_movies implements TalendJob {
 				byte[] byteArray = str.getBytes(utf8Charset);
 				marshaller.writeInt(byteArray.length);
 				marshaller.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = unmarshaller.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
 			}
 		}
 
@@ -7026,7 +6938,12 @@ public class Fact_movies implements TalendJob {
 					this.averageRating = dis.readFloat();
 				}
 
-				this.numVotes = readInteger(dis, ois);
+				length = dis.readByte();
+				if (length == -1) {
+					this.numVotes = null;
+				} else {
+					this.numVotes = dis.readLong();
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -7046,7 +6963,12 @@ public class Fact_movies implements TalendJob {
 					this.averageRating = objectIn.readFloat();
 				}
 
-				this.numVotes = readInteger(dis, objectIn);
+				length = objectIn.readByte();
+				if (length == -1) {
+					this.numVotes = null;
+				} else {
+					this.numVotes = objectIn.readLong();
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -7068,7 +6990,12 @@ public class Fact_movies implements TalendJob {
 					dos.writeFloat(this.averageRating);
 				}
 
-				writeInteger(this.numVotes, dos, oos);
+				if (this.numVotes == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.numVotes);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -7086,7 +7013,12 @@ public class Fact_movies implements TalendJob {
 					objectOut.writeFloat(this.averageRating);
 				}
 
-				writeInteger(this.numVotes, dos, objectOut);
+				if (this.numVotes == null) {
+					objectOut.writeByte(-1);
+				} else {
+					objectOut.writeByte(0);
+					objectOut.writeLong(this.numVotes);
+				}
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -7113,7 +7045,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row2Struct other) {
+		public int compareTo(row7Struct other) {
 
 			int returnValue = -1;
 
@@ -7168,39 +7100,39 @@ public class Fact_movies implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row2Struct row2 = new row2Struct();
+				row7Struct row7 = new row7Struct();
 
 				/**
-				 * [tAdvancedHash_row2 begin ] start
+				 * [tAdvancedHash_row7 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row2", false);
-				start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row7", false);
+				start_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tAdvancedHash_row7";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row7");
 				}
 
-				int tos_count_tAdvancedHash_row2 = 0;
+				int tos_count_tAdvancedHash_row7 = 0;
 
-				// connection name:row2
+				// connection name:row7
 				// source node:tFileInputDelimited_1 - inputs:(after_tDBInput_1)
-				// outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2)
+				// outputs:(row7,row7) | target node:tAdvancedHash_row7 - inputs:(row7)
 				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row7 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row2Struct>getLookup(matchingModeEnum_row2);
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row7Struct> tHash_Lookup_row7 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row7Struct>getLookup(matchingModeEnum_row7);
 
-				globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+				globalMap.put("tHash_Lookup_row7", tHash_Lookup_row7);
 
 				/**
-				 * [tAdvancedHash_row2 begin ] stop
+				 * [tAdvancedHash_row7 begin ] stop
 				 */
 
 				/**
@@ -7356,12 +7288,12 @@ public class Fact_movies implements TalendJob {
 							break;
 						}
 
-						row2 = null;
+						row7 = null;
 
-						row2 = null;
+						row7 = null;
 
 						boolean whetherReject_tFileInputDelimited_1 = false;
-						row2 = new row2Struct();
+						row7 = new row7Struct();
 						try {
 
 							char fieldSeparator_tFileInputDelimited_1_ListType[] = null;
@@ -7380,11 +7312,11 @@ public class Fact_movies implements TalendJob {
 																														// is
 																														// '\n'
 
-								row2.tconst = null;
+								row7.tconst = null;
 
-								row2.averageRating = null;
+								row7.averageRating = null;
 
-								row2.numVotes = null;
+								row7.numVotes = null;
 
 							} else {
 
@@ -7394,11 +7326,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.tconst = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row7.tconst = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.tconst = null;
+									row7.tconst = null;
 
 								}
 
@@ -7409,7 +7341,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
 										try {
 
-											row2.averageRating = ParserUtils.parseTo_Float(
+											row7.averageRating = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
@@ -7417,20 +7349,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_1.getMessage());
 											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"averageRating", "row2",
+															"averageRating", "row7",
 															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
 															ex_tFileInputDelimited_1),
 													ex_tFileInputDelimited_1));
 										}
 									} else {
 
-										row2.averageRating = null;
+										row7.averageRating = null;
 
 									}
 
 								} else {
 
-									row2.averageRating = null;
+									row7.averageRating = null;
 
 								}
 
@@ -7441,7 +7373,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
 										try {
 
-											row2.numVotes = ParserUtils.parseTo_Integer(
+											row7.numVotes = ParserUtils.parseTo_Long(
 													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
@@ -7449,20 +7381,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_1.getMessage());
 											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"numVotes", "row2",
+															"numVotes", "row7",
 															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
 															ex_tFileInputDelimited_1),
 													ex_tFileInputDelimited_1));
 										}
 									} else {
 
-										row2.numVotes = null;
+										row7.numVotes = null;
 
 									}
 
 								} else {
 
-									row2.numVotes = null;
+									row7.numVotes = null;
 
 								}
 
@@ -7477,7 +7409,7 @@ public class Fact_movies implements TalendJob {
 							whetherReject_tFileInputDelimited_1 = true;
 
 							System.err.println(e.getMessage());
-							row2 = null;
+							row7 = null;
 
 							globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE", e.getMessage());
 
@@ -7508,60 +7440,60 @@ public class Fact_movies implements TalendJob {
 						/**
 						 * [tFileInputDelimited_1 process_data_begin ] stop
 						 */
-// Start of branch "row2"
-						if (row2 != null) {
+// Start of branch "row7"
+						if (row7 != null) {
 
 							/**
-							 * [tAdvancedHash_row2 main ] start
+							 * [tAdvancedHash_row7 main ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
+							currentComponent = "tAdvancedHash_row7";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1
 
-										, "row2"
+										, "row7"
 
 								);
 							}
 
-							row2Struct row2_HashRow = new row2Struct();
+							row7Struct row7_HashRow = new row7Struct();
 
-							row2_HashRow.tconst = row2.tconst;
+							row7_HashRow.tconst = row7.tconst;
 
-							row2_HashRow.averageRating = row2.averageRating;
+							row7_HashRow.averageRating = row7.averageRating;
 
-							row2_HashRow.numVotes = row2.numVotes;
+							row7_HashRow.numVotes = row7.numVotes;
 
-							tHash_Lookup_row2.put(row2_HashRow);
+							tHash_Lookup_row7.put(row7_HashRow);
 
-							tos_count_tAdvancedHash_row2++;
+							tos_count_tAdvancedHash_row7++;
 
 							/**
-							 * [tAdvancedHash_row2 main ] stop
+							 * [tAdvancedHash_row7 main ] stop
 							 */
 
 							/**
-							 * [tAdvancedHash_row2 process_data_begin ] start
+							 * [tAdvancedHash_row7 process_data_begin ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
+							currentComponent = "tAdvancedHash_row7";
 
 							/**
-							 * [tAdvancedHash_row2 process_data_begin ] stop
+							 * [tAdvancedHash_row7 process_data_begin ] stop
 							 */
 
 							/**
-							 * [tAdvancedHash_row2 process_data_end ] start
+							 * [tAdvancedHash_row7 process_data_end ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
+							currentComponent = "tAdvancedHash_row7";
 
 							/**
-							 * [tAdvancedHash_row2 process_data_end ] stop
+							 * [tAdvancedHash_row7 process_data_end ] stop
 							 */
 
-						} // End of branch "row2"
+						} // End of branch "row7"
 
 						/**
 						 * [tFileInputDelimited_1 process_data_end ] start
@@ -7602,22 +7534,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 end ] start
+				 * [tAdvancedHash_row7 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tAdvancedHash_row7";
 
-				tHash_Lookup_row2.endPut();
+				tHash_Lookup_row7.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row7");
 				}
 
-				ok_Hash.put("tAdvancedHash_row2", true);
-				end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row7", true);
+				end_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row2 end ] stop
+				 * [tAdvancedHash_row7 end ] stop
 				 */
 
 			} // end the resume
@@ -7647,13 +7579,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 finally ] start
+				 * [tAdvancedHash_row7 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tAdvancedHash_row7";
 
 				/**
-				 * [tAdvancedHash_row2 finally ] stop
+				 * [tAdvancedHash_row7 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -7667,7 +7599,7 @@ public class Fact_movies implements TalendJob {
 		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
 	}
 
-	public static class row7Struct implements routines.system.IPersistableComparableLookupRow<row7Struct> {
+	public static class row8Struct implements routines.system.IPersistableComparableLookupRow<row8Struct> {
 		final static byte[] commonByteArrayLock_MOVIES_Fact_movies = new byte[0];
 		static byte[] commonByteArray_MOVIES_Fact_movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -7867,7 +7799,7 @@ public class Fact_movies implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final row7Struct other = (row7Struct) obj;
+			final row8Struct other = (row8Struct) obj;
 
 			if (this.imdb_id == null) {
 				if (other.imdb_id != null)
@@ -7880,7 +7812,7 @@ public class Fact_movies implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(row7Struct other) {
+		public void copyDataTo(row8Struct other) {
 
 			other.id = this.id;
 			other.title = this.title;
@@ -7913,7 +7845,7 @@ public class Fact_movies implements TalendJob {
 
 		}
 
-		public void copyKeysDataTo(row7Struct other) {
+		public void copyKeysDataTo(row8Struct other) {
 
 			other.imdb_id = this.imdb_id;
 
@@ -8604,7 +8536,7 @@ public class Fact_movies implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row7Struct other) {
+		public int compareTo(row8Struct other) {
 
 			int returnValue = -1;
 
@@ -8659,39 +8591,39 @@ public class Fact_movies implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row7Struct row7 = new row7Struct();
+				row8Struct row8 = new row8Struct();
 
 				/**
-				 * [tAdvancedHash_row7 begin ] start
+				 * [tAdvancedHash_row8 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row7", false);
-				start_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row8", false);
+				start_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row7";
+				currentComponent = "tAdvancedHash_row8";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row7");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row8");
 				}
 
-				int tos_count_tAdvancedHash_row7 = 0;
+				int tos_count_tAdvancedHash_row8 = 0;
 
-				// connection name:row7
+				// connection name:row8
 				// source node:tFileInputDelimited_2 - inputs:(after_tDBInput_1)
-				// outputs:(row7,row7) | target node:tAdvancedHash_row7 - inputs:(row7)
+				// outputs:(row8,row8) | target node:tAdvancedHash_row8 - inputs:(row8)
 				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row3,row5,row6,row4,row8,row2,row7)
-				// outputs:(Fact_Movie)
+				// linked node: tMap_1 - inputs:(row1,row2,row3,row4,row5,row6,row7,row8)
+				// outputs:(Facts_Movies)
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row7 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row7Struct> tHash_Lookup_row7 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row7Struct>getLookup(matchingModeEnum_row7);
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row8Struct>getLookup(matchingModeEnum_row8);
 
-				globalMap.put("tHash_Lookup_row7", tHash_Lookup_row7);
+				globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
 
 				/**
-				 * [tAdvancedHash_row7 begin ] stop
+				 * [tAdvancedHash_row8 begin ] stop
 				 */
 
 				/**
@@ -8851,12 +8783,12 @@ public class Fact_movies implements TalendJob {
 							break;
 						}
 
-						row7 = null;
+						row8 = null;
 
-						row7 = null;
+						row8 = null;
 
 						boolean whetherReject_tFileInputDelimited_2 = false;
-						row7 = new row7Struct();
+						row8 = new row8Struct();
 						try {
 
 							char fieldSeparator_tFileInputDelimited_2_ListType[] = null;
@@ -8875,61 +8807,61 @@ public class Fact_movies implements TalendJob {
 																														// is
 																														// '\n'
 
-								row7.id = null;
+								row8.id = null;
 
-								row7.title = null;
+								row8.title = null;
 
-								row7.vote_average = null;
+								row8.vote_average = null;
 
-								row7.vote_count = null;
+								row8.vote_count = null;
 
-								row7.status = null;
+								row8.status = null;
 
-								row7.release_date = null;
+								row8.release_date = null;
 
-								row7.revenue = null;
+								row8.revenue = null;
 
-								row7.runtime = null;
+								row8.runtime = null;
 
-								row7.budget = null;
+								row8.budget = null;
 
-								row7.imdb_id = null;
+								row8.imdb_id = null;
 
-								row7.original_language = null;
+								row8.original_language = null;
 
-								row7.original_title = null;
+								row8.original_title = null;
 
-								row7.overview = null;
+								row8.overview = null;
 
-								row7.popularity = null;
+								row8.popularity = null;
 
-								row7.tagline = null;
+								row8.tagline = null;
 
-								row7.genres = null;
+								row8.genres = null;
 
-								row7.production_companies = null;
+								row8.production_companies = null;
 
-								row7.production_countries = null;
+								row8.production_countries = null;
 
-								row7.spoken_languages = null;
+								row8.spoken_languages = null;
 
-								row7.cast = null;
+								row8.cast = null;
 
-								row7.director = null;
+								row8.director = null;
 
-								row7.director_of_photography = null;
+								row8.director_of_photography = null;
 
-								row7.writers = null;
+								row8.writers = null;
 
-								row7.producers = null;
+								row8.producers = null;
 
-								row7.music_composer = null;
+								row8.music_composer = null;
 
-								row7.imdb_rating = null;
+								row8.imdb_rating = null;
 
-								row7.imdb_votes = null;
+								row8.imdb_votes = null;
 
-								row7.poster_path = null;
+								row8.poster_path = null;
 
 							} else {
 
@@ -8942,7 +8874,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.id = ParserUtils.parseTo_Integer(
+											row8.id = ParserUtils.parseTo_Integer(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -8950,20 +8882,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"id", "row7",
+															"id", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.id = null;
+										row8.id = null;
 
 									}
 
 								} else {
 
-									row7.id = null;
+									row8.id = null;
 
 								}
 
@@ -8971,11 +8903,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.title = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.title = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.title = null;
+									row8.title = null;
 
 								}
 
@@ -8986,7 +8918,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.vote_average = ParserUtils.parseTo_Float(
+											row8.vote_average = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -8994,20 +8926,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"vote_average", "row7",
+															"vote_average", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.vote_average = null;
+										row8.vote_average = null;
 
 									}
 
 								} else {
 
-									row7.vote_average = null;
+									row8.vote_average = null;
 
 								}
 
@@ -9018,7 +8950,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.vote_count = ParserUtils.parseTo_Float(
+											row8.vote_count = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9026,20 +8958,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"vote_count", "row7",
+															"vote_count", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.vote_count = null;
+										row8.vote_count = null;
 
 									}
 
 								} else {
 
-									row7.vote_count = null;
+									row8.vote_count = null;
 
 								}
 
@@ -9047,11 +8979,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.status = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.status = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.status = null;
+									row8.status = null;
 
 								}
 
@@ -9059,11 +8991,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.release_date = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.release_date = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.release_date = null;
+									row8.release_date = null;
 
 								}
 
@@ -9074,7 +9006,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.revenue = ParserUtils.parseTo_Long(
+											row8.revenue = ParserUtils.parseTo_Long(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9082,20 +9014,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"revenue", "row7",
+															"revenue", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.revenue = null;
+										row8.revenue = null;
 
 									}
 
 								} else {
 
-									row7.revenue = null;
+									row8.revenue = null;
 
 								}
 
@@ -9106,7 +9038,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.runtime = ParserUtils.parseTo_Float(
+											row8.runtime = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9114,20 +9046,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"runtime", "row7",
+															"runtime", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.runtime = null;
+										row8.runtime = null;
 
 									}
 
 								} else {
 
-									row7.runtime = null;
+									row8.runtime = null;
 
 								}
 
@@ -9138,7 +9070,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.budget = ParserUtils.parseTo_Long(
+											row8.budget = ParserUtils.parseTo_Long(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9146,20 +9078,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"budget", "row7",
+															"budget", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.budget = null;
+										row8.budget = null;
 
 									}
 
 								} else {
 
-									row7.budget = null;
+									row8.budget = null;
 
 								}
 
@@ -9167,11 +9099,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.imdb_id = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.imdb_id = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.imdb_id = null;
+									row8.imdb_id = null;
 
 								}
 
@@ -9179,11 +9111,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.original_language = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.original_language = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.original_language = null;
+									row8.original_language = null;
 
 								}
 
@@ -9191,11 +9123,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.original_title = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.original_title = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.original_title = null;
+									row8.original_title = null;
 
 								}
 
@@ -9203,11 +9135,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.overview = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.overview = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.overview = null;
+									row8.overview = null;
 
 								}
 
@@ -9218,7 +9150,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.popularity = ParserUtils.parseTo_Float(
+											row8.popularity = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9226,20 +9158,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"popularity", "row7",
+															"popularity", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.popularity = null;
+										row8.popularity = null;
 
 									}
 
 								} else {
 
-									row7.popularity = null;
+									row8.popularity = null;
 
 								}
 
@@ -9247,11 +9179,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.tagline = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.tagline = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.tagline = null;
+									row8.tagline = null;
 
 								}
 
@@ -9259,11 +9191,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.genres = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.genres = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.genres = null;
+									row8.genres = null;
 
 								}
 
@@ -9271,11 +9203,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.production_companies = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.production_companies = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.production_companies = null;
+									row8.production_companies = null;
 
 								}
 
@@ -9283,11 +9215,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.production_countries = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.production_countries = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.production_countries = null;
+									row8.production_countries = null;
 
 								}
 
@@ -9295,11 +9227,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.spoken_languages = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.spoken_languages = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.spoken_languages = null;
+									row8.spoken_languages = null;
 
 								}
 
@@ -9307,11 +9239,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.cast = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.cast = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.cast = null;
+									row8.cast = null;
 
 								}
 
@@ -9319,11 +9251,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.director = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.director = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.director = null;
+									row8.director = null;
 
 								}
 
@@ -9331,11 +9263,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.director_of_photography = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.director_of_photography = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.director_of_photography = null;
+									row8.director_of_photography = null;
 
 								}
 
@@ -9343,11 +9275,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.writers = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.writers = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.writers = null;
+									row8.writers = null;
 
 								}
 
@@ -9355,11 +9287,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.producers = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.producers = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.producers = null;
+									row8.producers = null;
 
 								}
 
@@ -9367,11 +9299,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.music_composer = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.music_composer = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.music_composer = null;
+									row8.music_composer = null;
 
 								}
 
@@ -9382,7 +9314,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.imdb_rating = ParserUtils.parseTo_Float(
+											row8.imdb_rating = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9390,20 +9322,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"imdb_rating", "row7",
+															"imdb_rating", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.imdb_rating = null;
+										row8.imdb_rating = null;
 
 									}
 
 								} else {
 
-									row7.imdb_rating = null;
+									row8.imdb_rating = null;
 
 								}
 
@@ -9414,7 +9346,7 @@ public class Fact_movies implements TalendJob {
 									if (rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2].length() > 0) {
 										try {
 
-											row7.imdb_votes = ParserUtils.parseTo_Float(
+											row8.imdb_votes = ParserUtils.parseTo_Float(
 													rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_2) {
@@ -9422,20 +9354,20 @@ public class Fact_movies implements TalendJob {
 													ex_tFileInputDelimited_2.getMessage());
 											rowstate_tFileInputDelimited_2.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"imdb_votes", "row7",
+															"imdb_votes", "row8",
 															rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2],
 															ex_tFileInputDelimited_2),
 													ex_tFileInputDelimited_2));
 										}
 									} else {
 
-										row7.imdb_votes = null;
+										row8.imdb_votes = null;
 
 									}
 
 								} else {
 
-									row7.imdb_votes = null;
+									row8.imdb_votes = null;
 
 								}
 
@@ -9443,11 +9375,11 @@ public class Fact_movies implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
 
-									row7.poster_path = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
+									row8.poster_path = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
 
 								} else {
 
-									row7.poster_path = null;
+									row8.poster_path = null;
 
 								}
 
@@ -9462,7 +9394,7 @@ public class Fact_movies implements TalendJob {
 							whetherReject_tFileInputDelimited_2 = true;
 
 							System.err.println(e.getMessage());
-							row7 = null;
+							row8 = null;
 
 							globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE", e.getMessage());
 
@@ -9493,110 +9425,110 @@ public class Fact_movies implements TalendJob {
 						/**
 						 * [tFileInputDelimited_2 process_data_begin ] stop
 						 */
-// Start of branch "row7"
-						if (row7 != null) {
+// Start of branch "row8"
+						if (row8 != null) {
 
 							/**
-							 * [tAdvancedHash_row7 main ] start
+							 * [tAdvancedHash_row8 main ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row7";
+							currentComponent = "tAdvancedHash_row8";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1
 
-										, "row7"
+										, "row8"
 
 								);
 							}
 
-							row7Struct row7_HashRow = new row7Struct();
+							row8Struct row8_HashRow = new row8Struct();
 
-							row7_HashRow.id = row7.id;
+							row8_HashRow.id = row8.id;
 
-							row7_HashRow.title = row7.title;
+							row8_HashRow.title = row8.title;
 
-							row7_HashRow.vote_average = row7.vote_average;
+							row8_HashRow.vote_average = row8.vote_average;
 
-							row7_HashRow.vote_count = row7.vote_count;
+							row8_HashRow.vote_count = row8.vote_count;
 
-							row7_HashRow.status = row7.status;
+							row8_HashRow.status = row8.status;
 
-							row7_HashRow.release_date = row7.release_date;
+							row8_HashRow.release_date = row8.release_date;
 
-							row7_HashRow.revenue = row7.revenue;
+							row8_HashRow.revenue = row8.revenue;
 
-							row7_HashRow.runtime = row7.runtime;
+							row8_HashRow.runtime = row8.runtime;
 
-							row7_HashRow.budget = row7.budget;
+							row8_HashRow.budget = row8.budget;
 
-							row7_HashRow.imdb_id = row7.imdb_id;
+							row8_HashRow.imdb_id = row8.imdb_id;
 
-							row7_HashRow.original_language = row7.original_language;
+							row8_HashRow.original_language = row8.original_language;
 
-							row7_HashRow.original_title = row7.original_title;
+							row8_HashRow.original_title = row8.original_title;
 
-							row7_HashRow.overview = row7.overview;
+							row8_HashRow.overview = row8.overview;
 
-							row7_HashRow.popularity = row7.popularity;
+							row8_HashRow.popularity = row8.popularity;
 
-							row7_HashRow.tagline = row7.tagline;
+							row8_HashRow.tagline = row8.tagline;
 
-							row7_HashRow.genres = row7.genres;
+							row8_HashRow.genres = row8.genres;
 
-							row7_HashRow.production_companies = row7.production_companies;
+							row8_HashRow.production_companies = row8.production_companies;
 
-							row7_HashRow.production_countries = row7.production_countries;
+							row8_HashRow.production_countries = row8.production_countries;
 
-							row7_HashRow.spoken_languages = row7.spoken_languages;
+							row8_HashRow.spoken_languages = row8.spoken_languages;
 
-							row7_HashRow.cast = row7.cast;
+							row8_HashRow.cast = row8.cast;
 
-							row7_HashRow.director = row7.director;
+							row8_HashRow.director = row8.director;
 
-							row7_HashRow.director_of_photography = row7.director_of_photography;
+							row8_HashRow.director_of_photography = row8.director_of_photography;
 
-							row7_HashRow.writers = row7.writers;
+							row8_HashRow.writers = row8.writers;
 
-							row7_HashRow.producers = row7.producers;
+							row8_HashRow.producers = row8.producers;
 
-							row7_HashRow.music_composer = row7.music_composer;
+							row8_HashRow.music_composer = row8.music_composer;
 
-							row7_HashRow.imdb_rating = row7.imdb_rating;
+							row8_HashRow.imdb_rating = row8.imdb_rating;
 
-							row7_HashRow.imdb_votes = row7.imdb_votes;
+							row8_HashRow.imdb_votes = row8.imdb_votes;
 
-							row7_HashRow.poster_path = row7.poster_path;
+							row8_HashRow.poster_path = row8.poster_path;
 
-							tHash_Lookup_row7.put(row7_HashRow);
+							tHash_Lookup_row8.put(row8_HashRow);
 
-							tos_count_tAdvancedHash_row7++;
+							tos_count_tAdvancedHash_row8++;
 
 							/**
-							 * [tAdvancedHash_row7 main ] stop
+							 * [tAdvancedHash_row8 main ] stop
 							 */
 
 							/**
-							 * [tAdvancedHash_row7 process_data_begin ] start
+							 * [tAdvancedHash_row8 process_data_begin ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row7";
+							currentComponent = "tAdvancedHash_row8";
 
 							/**
-							 * [tAdvancedHash_row7 process_data_begin ] stop
+							 * [tAdvancedHash_row8 process_data_begin ] stop
 							 */
 
 							/**
-							 * [tAdvancedHash_row7 process_data_end ] start
+							 * [tAdvancedHash_row8 process_data_end ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row7";
+							currentComponent = "tAdvancedHash_row8";
 
 							/**
-							 * [tAdvancedHash_row7 process_data_end ] stop
+							 * [tAdvancedHash_row8 process_data_end ] stop
 							 */
 
-						} // End of branch "row7"
+						} // End of branch "row8"
 
 						/**
 						 * [tFileInputDelimited_2 process_data_end ] start
@@ -9637,22 +9569,22 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row7 end ] start
+				 * [tAdvancedHash_row8 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row7";
+				currentComponent = "tAdvancedHash_row8";
 
-				tHash_Lookup_row7.endPut();
+				tHash_Lookup_row8.endPut();
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row7");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row8");
 				}
 
-				ok_Hash.put("tAdvancedHash_row7", true);
-				end_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
+				ok_Hash.put("tAdvancedHash_row8", true);
+				end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row7 end ] stop
+				 * [tAdvancedHash_row8 end ] stop
 				 */
 
 			} // end the resume
@@ -9682,13 +9614,13 @@ public class Fact_movies implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row7 finally ] start
+				 * [tAdvancedHash_row8 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row7";
+				currentComponent = "tAdvancedHash_row8";
 
 				/**
-				 * [tAdvancedHash_row7 finally ] stop
+				 * [tAdvancedHash_row8 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -10069,6 +10001,6 @@ public class Fact_movies implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 300829 characters generated by Talend Open Studio for Data Integration on the
- * November 30, 2024 at 1:15:25 PM CET
+ * 299809 characters generated by Talend Open Studio for Data Integration on the
+ * November 30, 2024 at 1:42:57 PM CET
  ************************************************************************************************/

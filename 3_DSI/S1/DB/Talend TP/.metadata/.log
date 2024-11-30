@@ -3870,3 +3870,414 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 !ENTRY org.talend.platform.logging 1 0 2024-11-30 13:17:05.747
 !MESSAGE 2024-11-30 13:17:05,746 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/dim_language_0.1/target/classpath.jar; movies.dim_language_0_1.Dim_Language --context=Default --stat_port=3809 %*
 
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:24.214
+!MESSAGE 2024-11-30 13:22:24,214 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:24.218
+!MESSAGE 2024-11-30 13:22:24,217 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:24.876
+!MESSAGE 2024-11-30 13:22:24,876 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:25.137
+!MESSAGE 2024-11-30 13:22:25,136 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:25.138
+!MESSAGE 2024-11-30 13:22:25,137 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:25.140
+!MESSAGE 2024-11-30 13:22:25,140 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:25.141
+!MESSAGE 2024-11-30 13:22:25,141 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:25.306
+!MESSAGE 2024-11-30 13:22:25,306 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 1 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:26.920
+!MESSAGE 2024-11-30 13:22:26,919 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:22:27.111
+!MESSAGE 2024-11-30 13:22:27,110 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=4047 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.476
+!MESSAGE 2024-11-30 13:35:53,475 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.479
+!MESSAGE 2024-11-30 13:35:53,478 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.569
+!MESSAGE 2024-11-30 13:35:53,568 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.725
+!MESSAGE 2024-11-30 13:35:53,724 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.726
+!MESSAGE 2024-11-30 13:35:53,725 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.728
+!MESSAGE 2024-11-30 13:35:53,728 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.729
+!MESSAGE 2024-11-30 13:35:53,729 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:53.827
+!MESSAGE 2024-11-30 13:35:53,826 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:54.755
+!MESSAGE 2024-11-30 13:35:54,754 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:35:54.907
+!MESSAGE 2024-11-30 13:35:54,906 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3566 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.097
+!MESSAGE 2024-11-30 13:36:54,096 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.100
+!MESSAGE 2024-11-30 13:36:54,099 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.265
+!MESSAGE 2024-11-30 13:36:54,264 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.357
+!MESSAGE 2024-11-30 13:36:54,356 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.358
+!MESSAGE 2024-11-30 13:36:54,357 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.360
+!MESSAGE 2024-11-30 13:36:54,359 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.361
+!MESSAGE 2024-11-30 13:36:54,360 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:54.492
+!MESSAGE 2024-11-30 13:36:54,492 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:55.423
+!MESSAGE 2024-11-30 13:36:55,423 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:36:55.585
+!MESSAGE 2024-11-30 13:36:55,585 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3695 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.513
+!MESSAGE 2024-11-30 13:37:16,513 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.517
+!MESSAGE 2024-11-30 13:37:16,516 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.620
+!MESSAGE 2024-11-30 13:37:16,619 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.790
+!MESSAGE 2024-11-30 13:37:16,790 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.792
+!MESSAGE 2024-11-30 13:37:16,791 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.794
+!MESSAGE 2024-11-30 13:37:16,793 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.795
+!MESSAGE 2024-11-30 13:37:16,794 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:16.913
+!MESSAGE 2024-11-30 13:37:16,913 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:17.678
+!MESSAGE 2024-11-30 13:37:17,678 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:37:17.823
+!MESSAGE 2024-11-30 13:37:17,823 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=4076 %*
+
+
+!ENTRY org.eclipse.ui 4 0 2024-11-30 13:37:52.714
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: Index 10000 out of bounds for length 10000
+	at java.base/java.util.LinkedList.toArray(LinkedList.java:1057)
+	at org.talend.designer.runprocess.ProcessMessageManager.isLastMessageEndWithCR(ProcessMessageManager.java:146)
+	at org.talend.designer.runprocess.RunProcessContext.displayJobEndMessage(RunProcessContext.java:883)
+	at org.talend.designer.runprocess.RunProcessContext.kill(RunProcessContext.java:854)
+	at org.talend.designer.runprocess.RunProcessContext.kill(RunProcessContext.java:835)
+	at org.talend.designer.runprocess.ui.ProcessComposite.kill(ProcessComposite.java:1460)
+	at org.talend.designer.runprocess.ui.ProcessComposite$12.widgetSelected(ProcessComposite.java:917)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:252)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.293
+!MESSAGE 2024-11-30 13:38:19,293 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.296
+!MESSAGE 2024-11-30 13:38:19,295 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.362
+!MESSAGE 2024-11-30 13:38:19,362 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.471
+!MESSAGE 2024-11-30 13:38:19,471 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.472
+!MESSAGE 2024-11-30 13:38:19,472 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.474
+!MESSAGE 2024-11-30 13:38:19,473 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.474
+!MESSAGE 2024-11-30 13:38:19,474 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:19.559
+!MESSAGE 2024-11-30 13:38:19,559 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:20.409
+!MESSAGE 2024-11-30 13:38:20,408 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:38:20.565
+!MESSAGE 2024-11-30 13:38:20,565 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3409 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.470
+!MESSAGE 2024-11-30 13:39:41,469 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.472
+!MESSAGE 2024-11-30 13:39:41,472 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.544
+!MESSAGE 2024-11-30 13:39:41,543 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.644
+!MESSAGE 2024-11-30 13:39:41,644 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.645
+!MESSAGE 2024-11-30 13:39:41,644 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.647
+!MESSAGE 2024-11-30 13:39:41,647 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.648
+!MESSAGE 2024-11-30 13:39:41,648 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:41.723
+!MESSAGE 2024-11-30 13:39:41,723 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:42.338
+!MESSAGE 2024-11-30 13:39:42,338 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:39:42.412
+!MESSAGE 2024-11-30 13:39:42,412 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3865 %*
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.424
+!MESSAGE 2024-11-30 13:41:58,423 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.427
+!MESSAGE 2024-11-30 13:41:58,426 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.525
+!MESSAGE 2024-11-30 13:41:58,525 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.676
+!MESSAGE 2024-11-30 13:41:58,676 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.677
+!MESSAGE 2024-11-30 13:41:58,677 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.680
+!MESSAGE 2024-11-30 13:41:58,679 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.681
+!MESSAGE 2024-11-30 13:41:58,680 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:58.769
+!MESSAGE 2024-11-30 13:41:58,769 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:41:59.565
+!MESSAGE 2024-11-30 13:41:59,565 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-11-30 13:41:59.628
+!MESSAGE 2024-11-30 13:41:59,627 ERROR org.talend.commons.exception.CommonExceptionHandler  - Job compile errors 
+At least job "Fact_movies" has a compile errors, please fix and export again.
+Error Line: 2809
+Detail Message: Type mismatch: cannot convert from Float to Long
+There may be some other errors caused by JVM compatibility. Make sure your JVM setup is similar to the studio.
+
+!STACK 0
+org.talend.designer.runprocess.ProcessorException: Job compile errors 
+At least job "Fact_movies" has a compile errors, please fix and export again.
+Error Line: 2809
+Detail Message: Type mismatch: cannot convert from Float to Long
+There may be some other errors caused by JVM compatibility. Make sure your JVM setup is similar to the studio.
+	at org.talend.designer.runprocess.JobErrorsChecker.checkLastGenerationHasCompilationError(JobErrorsChecker.java:359)
+	at org.talend.designer.runprocess.DefaultRunProcessService.checkLastGenerationHasCompilationError(DefaultRunProcessService.java:534)
+	at org.talend.designer.runprocess.RunProcessService.checkLastGenerationHasCompilationError(RunProcessService.java:318)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateBuildInfo(ProcessorUtilities.java:826)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateCode(ProcessorUtilities.java:706)
+	at org.talend.designer.runprocess.ProcessorUtilities.generateCode(ProcessorUtilities.java:2029)
+	at org.talend.designer.runprocess.RunProcessContext$2.run(RunProcessContext.java:663)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:468)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:228)
+	at org.eclipse.ui.internal.progress.ProgressManager.run(ProgressManager.java:984)
+	at org.talend.designer.runprocess.RunProcessContext.exec(RunProcessContext.java:610)
+	at org.talend.designer.runprocess.ui.ProcessComposite.exec(ProcessComposite.java:1447)
+	at org.talend.designer.runprocess.ui.views.ProcessView$RunAction.run(ProcessView.java:736)
+	at org.talend.designer.runprocess.ui.actions.RunProcessAction.run(RunProcessAction.java:63)
+	at org.talend.designer.core.debug.JobLaunchConfigurationDelegate$1$1.run(JobLaunchConfigurationDelegate.java:98)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.talend.rcp.intro.Application.start(Application.java:303)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.544
+!MESSAGE 2024-11-30 13:42:57,543 INFO  org.talend.designer.runprocess.maven.MavenJavaProcessor  - build, threadParam: -T 1C
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.546
+!MESSAGE 2024-11-30 13:42:57,546 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update started
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.623
+!MESSAGE 2024-11-30 13:42:57,623 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.719
+!MESSAGE 2024-11-30 13:42:57,718 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.719
+!MESSAGE 2024-11-30 13:42:57,719 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.721
+!MESSAGE 2024-11-30 13:42:57,720 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_FACT_MOVIES_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.721
+!MESSAGE 2024-11-30 13:42:57,721 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_FACT_MOVIES_0.1/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:57.826
+!MESSAGE 2024-11-30 13:42:57,825 INFO  org.eclipse.m2e.core.internal.project.ProjectConfigurationManager  - Update completed: 0 sec
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:58.526
+!MESSAGE 2024-11-30 13:42:58,526 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-11-30 13:42:58.660
+!MESSAGE 2024-11-30 13:42:58,659 INFO  org.talend.designer.core.runprocess.Processor  - Command line: D:/Java/Jdk-17/bin/java.exe -Xms24576m -Xms24576m -Dfile.encoding=UTF-8 -Dtalend.component.manager.m2.repository=D:/Talend/configuration/.m2/repository -Dencryption.keys.file=/D:/Talend/configuration/studio.keys -cp C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Talend TP/MOVIES/poms/jobs/process/fact_movies_0.1/target/classpath.jar; movies.fact_movies_0_1.Fact_movies --context=Default --stat_port=3786 %*
+
