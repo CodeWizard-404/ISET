@@ -4930,3 +4930,184 @@ java.lang.Exception: The project description file (.project) for 'MOVIES_DATASET
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:22.934
+!MESSAGE 2024-12-01 10:40:22,934 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:22.935
+!MESSAGE 2024-12-01 10:40:22,935 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:22.936
+!MESSAGE 2024-12-01 10:40:22,936 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:24.362
+!MESSAGE 2024-12-01 10:40:24,361 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:25.931
+!MESSAGE 2024-12-01 10:40:25,930 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on MOVIES
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:28.338
+!MESSAGE 2024-12-01 10:40:28,337 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:29.005
+!MESSAGE 2024-12-01 10:40:29,004 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:40:32.464
+!MESSAGE 2024-12-01 10:40:32,463 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:33.143
+!MESSAGE 2024-12-01 10:40:33,143 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:60763/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:34.184
+!MESSAGE 2024-12-01 10:40:34,184 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 5389 ms
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:38.697
+!MESSAGE 2024-12-01 10:40:38,697 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:38.699
+!MESSAGE 2024-12-01 10:40:38,698 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_ROUTINES/src/main/java overlaps with sources folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:38.726
+!MESSAGE 2024-12-01 10:40:38,726 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:38.728
+!MESSAGE 2024-12-01 10:40:38,727 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:40.035
+!MESSAGE 2024-12-01 10:40:40,034 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:41.038
+!MESSAGE 2024-12-01 10:40:41,037 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:40:41.681
+!MESSAGE 2024-12-01 10:40:41,680 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:40:41.682
+!MESSAGE 2024-12-01 10:40:41,681 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:40:41.855
+!MESSAGE 2024-12-01 10:40:41,855 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:40:41.856
+!MESSAGE 2024-12-01 10:40:41,856 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:44.363
+!MESSAGE 2024-12-01 10:40:44,362 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:44.462
+!MESSAGE 2024-12-01 10:40:44,461 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:44.467
+!MESSAGE 2024-12-01 10:40:44,466 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_BEANS/src/main/java overlaps with sources folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:44.477
+!MESSAGE 2024-12-01 10:40:44,476 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:44.478
+!MESSAGE 2024-12-01 10:40:44,478 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_BEANS/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:40:46.168
+!MESSAGE 2024-12-01 10:40:46,167 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-01 10:42:30.742
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.core.resources 4 566 2024-12-01 10:42:30.787
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+!SESSION 2024-12-01 10:43:27.272 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.12
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-12-01 10:43:27.956
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-12-01 10:43:27.958
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1849)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1842)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1747)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-12-01 10:43:28.970
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:43:29.503
+!MESSAGE 2024-12-01 10:43:29,502 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: D:\Talend\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:43:29.611
+!MESSAGE 2024-12-01 10:43:29,611 INFO  org.talend.rcp.intro.Application  - 
+!!------------------------------------------------------------------------!!
+!!                                                                        !!
+!!                                 TALEND                                 !!
+!!   Starting Talend's platform log system.VERSION= 8.0.1.20211109_1610   !!
+!!                                                                        !!
+!!------------------------------------------------------------------------!!
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:43:29.731
+!MESSAGE 2024-12-01 10:43:29,731 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:43:29.732
+!MESSAGE 2024-12-01 10:43:29,731 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-01 10:43:29.819
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-01 10:44:21.791
+!MESSAGE The workspace will exit with unsaved changes in this session.
