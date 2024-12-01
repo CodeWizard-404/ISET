@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_KGEaIK1hEe-lGfc9JVUspQ" id="_KGDMAK1hEe-lGfc9JVUspQ" label="MySQLDropSourceTable" version="0.1" item="_KGEaIq1hEe-lGfc9JVUspQ">
+    <author href="../../../talend.project#_JmpTMK1hEe-lGfc9JVUspQ"/>
+    <additionalProperties xmi:id="_KGGPUK1hEe-lGfc9JVUspQ" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_KGGPUa1hEe-lGfc9JVUspQ" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_KGGPUq1hEe-lGfc9JVUspQ" key="created_date" value="2024-11-28T09:17:07.269+0100"/>
+    <additionalProperties xmi:id="_KGGPU61hEe-lGfc9JVUspQ" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_KGGPVK1hEe-lGfc9JVUspQ" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_KGGPVa1hEe-lGfc9JVUspQ" key="modified_date" value="2024-11-28T09:17:07.269+0100"/>
+    <additionalProperties xmi:id="_WA_HwK6EEe-lDsS6LQIekQ" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_WA_Hwa6EEe-lDsS6LQIekQ" key="import_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_WA_Hwq6EEe-lDsS6LQIekQ" key="import_date" value="2024-11-29T20:01:26.344+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_KGEaIa1hEe-lGfc9JVUspQ" path="MySQL/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_KGEaIq1hEe-lGfc9JVUspQ" property="_KGEaIK1hEe-lGfc9JVUspQ" state="_KGEaIa1hEe-lGfc9JVUspQ" system="true" eltName="MySQL">
+    <content href="MySQLDropSourceTable_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>
