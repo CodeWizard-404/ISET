@@ -1,4 +1,5 @@
 INDEX VERSION 1.131+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Project\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 931829424.index
 1599808726.index
 3060139026.index
@@ -10,3 +11,24 @@ INDEX VERSION 1.131+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Project\.met
 531471242.index
 2398940175.index
 2708728142.index
+=======
+2538186819.index
+2323114784.index
+28506149.index
+1855283203.index
+486979148.index
+1554150393.index
+697201684.index
+2855660013.index
+4147310557.index
+673869188.index
+4023490019.index
+3879156004.index
+3902930290.index
+76871400.index
+2823852403.index
+2946213567.index
+2944034242.index
+152615458.index
+3964299028.index
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24

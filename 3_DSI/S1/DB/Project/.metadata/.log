@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 !SESSION 2024-12-01 10:48:28.571 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=11.0.24
+=======
+!SESSION 2024-12-01 10:44:22.625 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.12
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/Project/
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-12-01 10:48:29.406
+=======
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2024-12-01 10:44:23.248
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
@@ -22,7 +32,11 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-12-01 10:48:29.409
+=======
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2024-12-01 10:44:23.250
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
@@ -39,6 +53,7 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.emf.ecore 2 0 2024-12-01 10:48:30.464
 !MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
 
@@ -48,6 +63,17 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 
 !ENTRY org.talend.platform.logging 1 0 2024-12-01 10:48:31.082
 !MESSAGE 2024-12-01 10:48:31,081 INFO  org.talend.rcp.intro.Application  - 
+=======
+!ENTRY org.eclipse.emf.ecore 2 0 2024-12-01 10:44:24.084
+!MESSAGE Both 'org.talend.model' and 'org.talend.model' register a package for 'http://www.talend.org/component_cache'
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:44:24.568
+!MESSAGE 2024-12-01 10:44:24,567 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: D:\Talend\configuration\studio.keys
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:44:24.666
+!MESSAGE 2024-12-01 10:44:24,666 INFO  org.talend.rcp.intro.Application  - 
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 !!------------------------------------------------------------------------!!
 !!                                                                        !!
 !!                                 TALEND                                 !!
@@ -56,6 +82,7 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 !!------------------------------------------------------------------------!!
 
 
+<<<<<<< HEAD
 !ENTRY org.talend.platform.logging 1 0 2024-12-01 10:48:31.312
 !MESSAGE 2024-12-01 10:48:31,312 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
 
@@ -66,6 +93,18 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 
 !ENTRY org.talend.platform.logging 0 0 2024-12-01 10:49:42.392
 !MESSAGE 2024-12-01 10:49:42,391 WARN  org.talend.commons.exception.CommonExceptionHandler  - Bad saving logic for Project
+=======
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:44:24.750
+!MESSAGE 2024-12-01 10:44:24,750 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into http.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:44:24.751
+!MESSAGE 2024-12-01 10:44:24,750 INFO  org.talend.commons.exception.CommonExceptionHandler  - org.talend.commons.utils.network.TalendProxySelector:-Dtalend.studio.proxy.excludeLoopbackAutomatically=true, adding missing loopback addresses into https.nonProxyHosts: [localhost, 0:0:0:0:0:0:0:1, 127.0.0.1]
+
+
+!ENTRY org.talend.platform.logging 0 0 2024-12-01 10:45:34.485
+!MESSAGE 2024-12-01 10:45:34,485 WARN  org.talend.commons.exception.CommonExceptionHandler  - Bad saving logic for Project
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 
 !STACK 0
 java.lang.Exception: Bad saving logic for Project
@@ -118,6 +157,7 @@ java.lang.Exception: Bad saving logic for Project
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
@@ -212,6 +252,97 @@ java.lang.Exception: Bad saving logic for Project
 
 !ENTRY org.talend.platform.logging 4 0 2024-12-01 10:51:19.346
 !MESSAGE 2024-12-01 10:51:19,345 ERROR org.talend.commons.exception.CommonExceptionHandler  - A JSONObject text must begin with '{' at 1 [character 2 line 1]
+=======
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:41.577
+!MESSAGE 2024-12-01 10:45:41,576 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:41.579
+!MESSAGE 2024-12-01 10:45:41,578 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:41.580
+!MESSAGE 2024-12-01 10:45:41,580 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:41.830
+!MESSAGE 2024-12-01 10:45:41,830 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:43.030
+!MESSAGE 2024-12-01 10:45:43,029 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on Movies
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:45:44.875
+!MESSAGE 2024-12-01 10:45:44,874 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:45.023
+!MESSAGE 2024-12-01 10:45:45,022 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:45.762
+!MESSAGE 2024-12-01 10:45:45,762 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:61201/api/v1/environment]
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.134
+!MESSAGE 2024-12-01 10:45:46,133 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.135
+!MESSAGE 2024-12-01 10:45:46,135 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_ROUTINES/src/main/java overlaps with sources folder /MOVIES_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.149
+!MESSAGE 2024-12-01 10:45:46,148 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.151
+!MESSAGE 2024-12-01 10:45:46,150 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.211
+!MESSAGE 2024-12-01 10:45:46,210 INFO  org.talend.designer.codegen.components.model.ComponentsLoader  - allSet size: 573, total: 573
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:46.463
+!MESSAGE 2024-12-01 10:45:46,462 INFO  org.talend.designer.codegen.components.model.ComponentsFactory  - 640 components loaded in 400 ms
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:52.131
+!MESSAGE 2024-12-01 10:45:52,131 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:52.671
+!MESSAGE 2024-12-01 10:45:52,670 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:52.673
+!MESSAGE 2024-12-01 10:45:52,673 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /MOVIES_BEANS/src/main/java overlaps with sources folder /MOVIES_BEANS/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:52.685
+!MESSAGE 2024-12-01 10:45:52,684 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /MOVIES_BEANS/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:52.686
+!MESSAGE 2024-12-01 10:45:52,685 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /MOVIES_BEANS/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:54.702
+!MESSAGE 2024-12-01 10:45:54,702 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/MOVIES_ROUTINES: org.example.movies.code:routines:8.0.1 with classifier  to /MOVIES_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 10:45:55.973
+!MESSAGE 2024-12-01 10:45:55,972 ERROR org.talend.commons.exception.CommonExceptionHandler  - A JSONObject text must begin with '{' at 1 [character 2 line 1]
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
 
 !STACK 0
 us.monoid.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
@@ -221,6 +352,7 @@ us.monoid.json.JSONException: A JSONObject text must begin with '{' at 1 [charac
 	at org.talend.core.ui.token.TokenCollectorFactory$2.run(TokenCollectorFactory.java:340)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
+<<<<<<< HEAD
 !ENTRY org.talend.platform.logging 2 0 2024-12-01 10:51:19.435
 !MESSAGE 2024-12-01 10:51:19,434 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
 
@@ -491,3 +623,396 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 
 !ENTRY org.eclipse.core.resources 2 10035 2024-12-01 11:20:59.475
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+=======
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:45:59.398
+!MESSAGE 2024-12-01 10:45:59,397 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:tdgssconfig:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:46:00.393
+!MESSAGE 2024-12-01 10:46:00,393 INFO  org.talend.librariesmanager.librarydata.LibraryDataService  - org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.teradata:terajdbc4:pom:16.20.00.02 in talend (https://talend-update.talend.com/nexus/content/repositories/libraries/)
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:46:00.837
+!MESSAGE 2024-12-01 10:46:00,836 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:46:00.838
+!MESSAGE 2024-12-01 10:46:00,838 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:46:00.946
+!MESSAGE 2024-12-01 10:46:00,945 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP220
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 10:46:00.946
+!MESSAGE 2024-12-01 10:46:00,946 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: TEZ-SERVER-LIB-HDP_2_3
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:46:20.874
+!MESSAGE 2024-12-01 10:46:20,873 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - Physical deletion [[repository.metadataFileDelimited] episodes] by user@talend.com.
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 10:46:21.048
+!MESSAGE 2024-12-01 10:46:21,047 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - Physical deletion [[repository.process] test] by user@talend.com.
+
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.195
+!MESSAGE 2024-12-01 11:26:15,194 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/DataOperation_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.200
+!MESSAGE 2024-12-01 11:26:15,200 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/Mathematical_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.204
+!MESSAGE 2024-12-01 11:26:15,203 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/Numeric_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.208
+!MESSAGE 2024-12-01 11:26:15,208 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/Relational_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.213
+!MESSAGE 2024-12-01 11:26:15,212 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/StringHandling_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.218
+!MESSAGE 2024-12-01 11:26:15,218 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/TalendDataGenerator_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.224
+!MESSAGE 2024-12-01 11:26:15,223 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/TalendDate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.229
+!MESSAGE 2024-12-01 11:26:15,228 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/TalendStringUtil_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:15.234
+!MESSAGE 2024-12-01 11:26:15,233 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/code/routines/system/TalendString_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 11:26:15.310
+!MESSAGE 2024-12-01 11:26:15,309 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tck, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 11:26:15.311
+!MESSAGE 2024-12-01 11:26:15,311 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcksdk, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 11:26:15.313
+!MESSAGE 2024-12-01 11:26:15,313 INFO  org.talend.updates.runtime.maven.M2repoBaseInstaller  - GAV [groupId=org.talend.studio, artifactId=repo-tcompv0, version=8.0.1.20211103_1602, classifier=null, type=pom, componentType=0] was already installed
+
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 11:26:15.807
+!MESSAGE 2024-12-01 11:26:15,806 INFO  org.talend.sdk.component.studio.ProcessManager  - Local addresses passed to sdk: [127.0.0.1, [0:0:0:0:0:0:0:1]]
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.421
+!MESSAGE 2024-12-01 11:26:16,421 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.425
+!MESSAGE 2024-12-01 11:26:16,425 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeCreateDeltaTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.430
+!MESSAGE 2024-12-01 11:26:16,429 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeCreateTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.434
+!MESSAGE 2024-12-01 11:26:16,433 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeDropTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.439
+!MESSAGE 2024-12-01 11:26:16,438 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.443
+!MESSAGE 2024-12-01 11:26:16,442 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeFilterRows_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.446
+!MESSAGE 2024-12-01 11:26:16,446 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/DeltaLake/system/DeltaLakeMerge_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.452
+!MESSAGE 2024-12-01 11:26:16,451 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/Aggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.457
+!MESSAGE 2024-12-01 11:26:16,456 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/Commit_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.461
+!MESSAGE 2024-12-01 11:26:16,460 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/DropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.465
+!MESSAGE 2024-12-01 11:26:16,464 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/DropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.468
+!MESSAGE 2024-12-01 11:26:16,468 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/FilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.473
+!MESSAGE 2024-12-01 11:26:16,472 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/FilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.478
+!MESSAGE 2024-12-01 11:26:16,476 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/MergeInsert_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.482
+!MESSAGE 2024-12-01 11:26:16,481 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/MergeUpdate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.486
+!MESSAGE 2024-12-01 11:26:16,485 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Generic/system/Rollback_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.490
+!MESSAGE 2024-12-01 11:26:16,490 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.495
+!MESSAGE 2024-12-01 11:26:16,494 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.499
+!MESSAGE 2024-12-01 11:26:16,499 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.506
+!MESSAGE 2024-12-01 11:26:16,503 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.515
+!MESSAGE 2024-12-01 11:26:16,515 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.521
+!MESSAGE 2024-12-01 11:26:16,520 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.525
+!MESSAGE 2024-12-01 11:26:16,525 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Hive/system/HiveFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.530
+!MESSAGE 2024-12-01 11:26:16,529 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.534
+!MESSAGE 2024-12-01 11:26:16,533 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.539
+!MESSAGE 2024-12-01 11:26:16,538 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.543
+!MESSAGE 2024-12-01 11:26:16,543 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.547
+!MESSAGE 2024-12-01 11:26:16,547 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.551
+!MESSAGE 2024-12-01 11:26:16,551 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.555
+!MESSAGE 2024-12-01 11:26:16,555 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/MySQL/system/MySQLFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.560
+!MESSAGE 2024-12-01 11:26:16,559 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.563
+!MESSAGE 2024-12-01 11:26:16,563 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.567
+!MESSAGE 2024-12-01 11:26:16,567 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.571
+!MESSAGE 2024-12-01 11:26:16,570 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.575
+!MESSAGE 2024-12-01 11:26:16,574 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.580
+!MESSAGE 2024-12-01 11:26:16,579 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.584
+!MESSAGE 2024-12-01 11:26:16,584 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Netezza/system/NetezzaFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.589
+!MESSAGE 2024-12-01 11:26:16,589 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.594
+!MESSAGE 2024-12-01 11:26:16,593 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.598
+!MESSAGE 2024-12-01 11:26:16,597 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.606
+!MESSAGE 2024-12-01 11:26:16,605 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.609
+!MESSAGE 2024-12-01 11:26:16,609 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.614
+!MESSAGE 2024-12-01 11:26:16,614 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.618
+!MESSAGE 2024-12-01 11:26:16,618 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.623
+!MESSAGE 2024-12-01 11:26:16,623 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Oracle/system/OracleMerge_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.632
+!MESSAGE 2024-12-01 11:26:16,631 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.636
+!MESSAGE 2024-12-01 11:26:16,635 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelCommit_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.640
+!MESSAGE 2024-12-01 11:26:16,639 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.644
+!MESSAGE 2024-12-01 11:26:16,644 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.648
+!MESSAGE 2024-12-01 11:26:16,648 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.652
+!MESSAGE 2024-12-01 11:26:16,652 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.656
+!MESSAGE 2024-12-01 11:26:16,655 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/ParAccel/system/ParAccelRollback_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.661
+!MESSAGE 2024-12-01 11:26:16,660 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Snowflake/system/SnowflakeCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.666
+!MESSAGE 2024-12-01 11:26:16,665 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Snowflake/system/SnowflakeCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.670
+!MESSAGE 2024-12-01 11:26:16,669 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Snowflake/system/SnowflakeDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.674
+!MESSAGE 2024-12-01 11:26:16,673 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Snowflake/system/SnowflakeDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.678
+!MESSAGE 2024-12-01 11:26:16,677 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Snowflake/system/SnowflakeMerge_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.684
+!MESSAGE 2024-12-01 11:26:16,682 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataAggregate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.688
+!MESSAGE 2024-12-01 11:26:16,687 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataColumnList_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.692
+!MESSAGE 2024-12-01 11:26:16,691 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataCreateSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.695
+!MESSAGE 2024-12-01 11:26:16,695 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataCreateTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.699
+!MESSAGE 2024-12-01 11:26:16,699 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataDropSourceTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.703
+!MESSAGE 2024-12-01 11:26:16,703 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataDropTargetTable_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.708
+!MESSAGE 2024-12-01 11:26:16,708 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataFilterColumns_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.734
+!MESSAGE 2024-12-01 11:26:16,733 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataFilterRow_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.738
+!MESSAGE 2024-12-01 11:26:16,738 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Teradata/system/TeradataTableList_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.744
+!MESSAGE 2024-12-01 11:26:16,743 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Vertica/system/VerticaMergeInsert_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:16.749
+!MESSAGE 2024-12-01 11:26:16,748 ERROR org.talend.repository.localprovider.model.LocalRepositoryFactory  - The Repository local provider was unable to load L/MOVIES/sqlPatterns/Vertica/system/VerticaMergeUpdate_0.1.properties
+
+
+!ENTRY org.talend.platform.logging 2 0 2024-12-01 11:26:17.634
+!MESSAGE 2024-12-01 11:26:17,632 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 4 0 2024-12-01 11:26:17.819
+!MESSAGE 2024-12-01 11:26:17,817 ERROR org.talend.commons.exception.CommonExceptionHandler  - 
+
+!STACK 0
+org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.core.runtime.SubMonitor$RootInfo.checkForCancellation(SubMonitor.java:274)
+	at org.eclipse.core.runtime.SubMonitor.split(SubMonitor.java:982)
+	at org.eclipse.core.runtime.SubMonitor.split(SubMonitor.java:895)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.write(FileSystemResourceManager.java:1172)
+	at org.eclipse.core.internal.resources.File.internalSetContents(File.java:301)
+	at org.eclipse.core.internal.resources.File.setContents(File.java:336)
+	at org.eclipse.core.internal.resources.File.setContents(File.java:427)
+	at org.talend.designer.maven.utils.PomUtil.savePom(PomUtil.java:143)
+	at org.talend.designer.maven.tools.AggregatorPomsHelper.createRootPom(AggregatorPomsHelper.java:117)
+	at org.talend.designer.maven.tools.AggregatorPomsHelper.createRootPom(AggregatorPomsHelper.java:131)
+	at org.talend.designer.runprocess.java.TalendJavaProjectManager$1.run(TalendJavaProjectManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2338)
+	at org.talend.designer.runprocess.java.TalendJavaProjectManager.initJavaProjects(TalendJavaProjectManager.java:167)
+	at org.talend.designer.runprocess.DefaultRunProcessService.initMavenJavaProject(DefaultRunProcessService.java:763)
+	at org.talend.designer.runprocess.RunProcessService.initMavenJavaProject(RunProcessService.java:419)
+	at org.talend.core.repository.model.ProxyRepositoryFactory.logOnProject(ProxyRepositoryFactory.java:2310)
+	at org.talend.repository.ui.login.LoginHelper$1.run(LoginHelper.java:579)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.talend.platform.logging 1 0 2024-12-01 11:26:18.211
+!MESSAGE 2024-12-01 11:26:18,210 INFO  org.talend.sdk.component.studio.ProcessManager  - Succeed to connect [http://127.0.0.1:53518/api/v1/environment]
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-01 11:26:20.385
+!MESSAGE The workspace will exit with unsaved changes in this session.

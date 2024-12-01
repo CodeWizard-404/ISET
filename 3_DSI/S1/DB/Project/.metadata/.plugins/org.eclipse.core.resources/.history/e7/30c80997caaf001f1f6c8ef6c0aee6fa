@@ -8,9 +8,15 @@
     <additionalProperties xmi:id="_aWMQM68CEe-B4MpD2b-Meg" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
     <additionalProperties xmi:id="_aWMQNK8CEe-B4MpD2b-Meg" key="modified_product_version" value="8.0.1.20211109_1610"/>
     <additionalProperties xmi:id="_aWMQNa8CEe-B4MpD2b-Meg" key="modified_date" value="2024-12-01T08:10:18.581+0100"/>
+<<<<<<<< HEAD:3_DSI/S1/DB/Project/.metadata/.plugins/org.eclipse.core.resources/.history/e7/30c80997caaf001f1f6c8ef6c0aee6fa
     <additionalProperties xmi:id="_l0di4K_JEe-IU7diyG5Tww" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
     <additionalProperties xmi:id="_l0di4a_JEe-IU7diyG5Tww" key="import_product_version" value="8.0.1.20211109_1610"/>
     <additionalProperties xmi:id="_l0di4q_JEe-IU7diyG5Tww" key="import_date" value="2024-12-01T10:49:42.467+0100"/>
+========
+    <additionalProperties xmi:id="_A1umQK_JEe-aLqJjuATMoA" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_A1umQa_JEe-aLqJjuATMoA" key="import_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_A1umQq_JEe-aLqJjuATMoA" key="import_date" value="2024-12-01T10:45:34.551+0100"/>
+>>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24:3_DSI/S1/DB/Project/MOVIES/process/Dim_Producer_0.1.properties
   </TalendProperties:Property>
   <TalendProperties:ItemState xmi:id="_aWLCEq8CEe-B4MpD2b-Meg" path=""/>
   <TalendProperties:ProcessItem xmi:id="_aWLCE68CEe-B4MpD2b-Meg" property="_aWLCEa8CEe-B4MpD2b-Meg" state="_aWLCEq8CEe-B4MpD2b-Meg">

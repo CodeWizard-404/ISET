@@ -10,7 +10,7 @@
     <additionalProperties xmi:id="_hQsiJa1rEe-lGfc9JVUspQ" key="modified_date" value="2024-12-01T10:31:59.895+0100"/>
     <additionalProperties xmi:id="_V5mGUK6EEe-lDsS6LQIekQ" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
     <additionalProperties xmi:id="_V5mGUa6EEe-lDsS6LQIekQ" key="import_product_version" value="8.0.1.20211109_1610"/>
-    <additionalProperties xmi:id="_V5mGUq6EEe-lDsS6LQIekQ" key="import_date" value="2024-11-29T20:01:26.344+0100"/>
+    <additionalProperties xmi:id="_V5mGUq6EEe-lDsS6LQIekQ" key="import_date" value="2024-12-01T10:45:34.551+0100"/>
   </TalendProperties:Property>
   <TalendProperties:ItemState xmi:id="_hQoQva1rEe-lGfc9JVUspQ" path=""/>
   <TalendProperties:DelimitedFileConnectionItem xmi:id="_hQoQvq1rEe-lGfc9JVUspQ" property="_hQoQvK1rEe-lGfc9JVUspQ" state="_hQoQva1rEe-lGfc9JVUspQ">
