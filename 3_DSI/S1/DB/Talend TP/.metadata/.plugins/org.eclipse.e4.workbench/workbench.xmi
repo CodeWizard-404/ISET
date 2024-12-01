@@ -29,10 +29,9 @@
           <tags>persp.actionSet:org.talend.repository.actionSet</tags>
           <tags>persp.actionSet:org.talend.repository.localprovider.actionSet</tags>
           <tags>persp.actionSet:org.talend.repository.demoprojcet.actionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw4K6EEe-lDsS6LQIekQ" selectedElement="_cTEw4a6EEe-lDsS6LQIekQ" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw4K6EEe-lDsS6LQIekQ" selectedElement="_cTEw6K6EEe-lDsS6LQIekQ" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw4a6EEe-lDsS6LQIekQ" containerData="1063" selectedElement="_cTEw4q6EEe-lDsS6LQIekQ">
               <children xsi:type="basic:PartStack" xmi:id="_cTEw4q6EEe-lDsS6LQIekQ" elementId="navigatorLayout" containerData="7871" selectedElement="_cTEw466EEe-lDsS6LQIekQ">
-                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_cTEw466EEe-lDsS6LQIekQ" elementId="org.talend.repository.cnf.view" ref="_cSx18K6EEe-lDsS6LQIekQ" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Other</tags>
@@ -54,9 +53,10 @@
               </children>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw6K6EEe-lDsS6LQIekQ" containerData="8937" selectedElement="_cTEw6a6EEe-lDsS6LQIekQ" horizontal="true">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw6a6EEe-lDsS6LQIekQ" containerData="8988" selectedElement="_cTEw6q6EEe-lDsS6LQIekQ">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_cTEw6a6EEe-lDsS6LQIekQ" containerData="8988" selectedElement="_cTEw666EEe-lDsS6LQIekQ">
                 <children xsi:type="advanced:Placeholder" xmi:id="_cTEw6q6EEe-lDsS6LQIekQ" elementId="org.eclipse.ui.editorss" containerData="4942" ref="_cSZbcK6EEe-lDsS6LQIekQ"/>
                 <children xsi:type="basic:PartStack" xmi:id="_cTEw666EEe-lDsS6LQIekQ" elementId="bottomLayout" containerData="5058" selectedElement="_cTEw766EEe-lDsS6LQIekQ">
+                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_cTEw7K6EEe-lDsS6LQIekQ" elementId="org.talend.designer.core.ui.views.jobsettings.JobSettingsView" ref="_cS0SMK6EEe-lDsS6LQIekQ" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:Other</tags>
@@ -131,8 +131,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Other</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_cmGakK6EEe-lDsS6LQIekQ" elementId="org.talend.repository.cnf.view">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -217,6 +215,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Other</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_DjA7IK6FEe-lDsS6LQIekQ" elementId="org.talend.designer.runprocess.ui.views.processview">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -2349,7 +2349,7 @@
   <addons xmi:id="_bU8Uxq6EEe-lDsS6LQIekQ" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_bU8Ux66EEe-lDsS6LQIekQ" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_bVGswK6EEe-lDsS6LQIekQ" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_kMNYMK-0Ee-ARIW5gBL49w" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_bVnDEK6EEe-lDsS6LQIekQ" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_bVnDEa6EEe-lDsS6LQIekQ" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
