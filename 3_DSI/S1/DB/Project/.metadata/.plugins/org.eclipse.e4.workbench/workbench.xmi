@@ -9,6 +9,7 @@
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_Cg02IK_JEe-aLqJjuATMoA" selectedElement="_Cg1dMK_JEe-aLqJjuATMoA" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_Cg1dMK_JEe-aLqJjuATMoA" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_Cu5HUK_JEe-aLqJjuATMoA">
         <children xsi:type="advanced:Perspective" xmi:id="_Cu5HUK_JEe-aLqJjuATMoA" elementId="org.talend.rcp.perspective" selectedElement="_Cu5HUa_JEe-aLqJjuATMoA" label="Integration" iconURI="platform:/plugin/org.talend.core/icons/process_icon.png">
