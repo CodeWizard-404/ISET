@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_aWLCEa8CEe-B4MpD2b-Meg" id="_aWLCEK8CEe-B4MpD2b-Meg" label="Dim_Producer" version="0.1" statusCode="" item="_aWLCE68CEe-B4MpD2b-Meg" displayName="Dim_Producer">
+    <author href="../talend.project#_JmpTMK1hEe-lGfc9JVUspQ"/>
+    <additionalProperties xmi:id="_aWMQMK8CEe-B4MpD2b-Meg" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_aWMQMa8CEe-B4MpD2b-Meg" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_aWMQMq8CEe-B4MpD2b-Meg" key="created_date" value="2024-11-30T11:03:56.467+0100"/>
+    <additionalProperties xmi:id="_aWMQM68CEe-B4MpD2b-Meg" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_aWMQNK8CEe-B4MpD2b-Meg" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_aWMQNa8CEe-B4MpD2b-Meg" key="modified_date" value="2024-12-01T10:56:52.402+0100"/>
+    <additionalProperties xmi:id="_l0di4K_JEe-IU7diyG5Tww" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_l0di4a_JEe-IU7diyG5Tww" key="import_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_l0di4q_JEe-IU7diyG5Tww" key="import_date" value="2024-12-01T10:49:42.467+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_aWLCEq8CEe-B4MpD2b-Meg" path="" locked="true" lockDate="2024-12-01T10:56:52.402+0100">
+    <locker href="../talend.project#_JmpTMK1hEe-lGfc9JVUspQ"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_aWLCE68CEe-B4MpD2b-Meg" property="_aWLCEa8CEe-B4MpD2b-Meg" state="_aWLCEq8CEe-B4MpD2b-Meg">
+    <process href="Dim_Producer_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

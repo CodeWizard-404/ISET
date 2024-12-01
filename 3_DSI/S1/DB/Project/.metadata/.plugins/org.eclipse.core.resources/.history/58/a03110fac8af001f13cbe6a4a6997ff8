@@ -35,22 +35,22 @@
             <filtered>true</filtered>
         </file>
         <file>
-            <source>D:\Talend\configuration\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar</source>
+            <source>C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar</source>
             <outputDirectory>lib</outputDirectory>
             <destName>dom4j-2.1.3.jar</destName>
         </file>
         <file>
-            <source>D:\Talend\configuration\.m2\repository\org\talend\daikon\crypto-utils\0.31.12\crypto-utils-0.31.12.jar</source>
+            <source>C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\.m2\repository\org\talend\daikon\crypto-utils\0.31.12\crypto-utils-0.31.12.jar</source>
             <outputDirectory>lib</outputDirectory>
             <destName>crypto-utils-0.31.12.jar</destName>
         </file>
         <file>
-            <source>D:\Talend\configuration\.m2\repository\org\jboss\marshalling\jboss-marshalling\2.0.12.Final\jboss-marshalling-2.0.12.Final.jar</source>
+            <source>C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\.m2\repository\org\jboss\marshalling\jboss-marshalling\2.0.12.Final\jboss-marshalling-2.0.12.Final.jar</source>
             <outputDirectory>lib</outputDirectory>
             <destName>jboss-marshalling-2.0.12.Final.jar</destName>
         </file>
         <file>
-            <source>D:\Talend\configuration\.m2\repository\org\slf4j\slf4j-api\1.7.29\slf4j-api-1.7.29.jar</source>
+            <source>C:\Apps\Talend\TOS_DI-20211109_1610-V8.0.1\configuration\.m2\repository\org\slf4j\slf4j-api\1.7.29\slf4j-api-1.7.29.jar</source>
             <outputDirectory>lib</outputDirectory>
             <destName>slf4j-api-1.7.29.jar</destName>
         </file>

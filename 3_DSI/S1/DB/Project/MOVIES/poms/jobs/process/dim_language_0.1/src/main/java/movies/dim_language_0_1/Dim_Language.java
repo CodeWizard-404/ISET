@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package movies.dim_language_0_1;
+package movies.dim_movies_0_1;
 
 import routines.Numeric;
 import routines.DataOperation;
@@ -44,14 +44,14 @@ import java.util.Comparator;
 @SuppressWarnings("unused")
 
 /**
- * Job: Dim_Language Purpose: <br>
+ * Job: Dim_Movies Purpose: <br>
  * Description: <br>
  * 
  * @author user@talend.com
  * @version 8.0.1.20211109_1610
  * @status
  */
-public class Dim_Language implements TalendJob {
+public class Dim_Movies implements TalendJob {
 
 	protected static void logIgnoredError(String message, Throwable cause) {
 		System.err.println(message);
@@ -138,7 +138,7 @@ public class Dim_Language implements TalendJob {
 	}
 
 	private final String jobVersion = "0.1";
-	private final String jobName = "Dim_Language";
+	private final String jobName = "Dim_Movies";
 	private final String projectName = "MOVIES";
 	public Integer errorCode = null;
 	private String currentComponent = "";
@@ -263,14 +263,14 @@ public class Dim_Language implements TalendJob {
 				} else {
 					e.printStackTrace();
 					e.printStackTrace(errorMessagePS);
-					Dim_Language.this.exception = e;
+					Dim_Movies.this.exception = e;
 				}
 			}
 			if (!(e instanceof TalendException)) {
 				try {
 					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
 						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(Dim_Language.this, new Object[] { e, currentComponent, globalMap });
+							m.invoke(Dim_Movies.this, new Object[] { e, currentComponent, globalMap });
 							break;
 						}
 					}
@@ -284,14 +284,14 @@ public class Dim_Language implements TalendJob {
 		}
 	}
 
-	public void tFileInputDelimited_2_error(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
@@ -301,7 +301,17 @@ public class Dim_Language implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tConvertType_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tLogRow_1_error(Exception exception, String errorComponent,
@@ -311,7 +321,7 @@ public class Dim_Language implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tDBOutput_1_error(Exception exception, String errorComponent,
@@ -321,30 +331,10 @@ public class Dim_Language implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileInputDelimited_2_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -352,9 +342,9 @@ public class Dim_Language implements TalendJob {
 
 	}
 
-	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_Dim_Language = new byte[0];
-		static byte[] commonByteArray_MOVIES_Dim_Language = new byte[0];
+	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
 		protected static final int PRIME = 31;
 		protected int hashCode = DEFAULT_HASHCODE;
@@ -368,10 +358,360 @@ public class Dim_Language implements TalendJob {
 			return this.id;
 		}
 
-		public String language;
+		public String title;
 
-		public String getLanguage() {
-			return this.language;
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String genre;
+
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public Integer time;
+
+		public Integer getTime() {
+			return this.time;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row2Struct other = (row2Struct) obj;
+
+			if (this.id == null) {
+				if (other.id != null)
+					return false;
+
+			} else if (!this.id.equals(other.id))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row2Struct other) {
+
+			other.id = this.id;
+			other.title = this.title;
+			other.genre = this.genre;
+			other.time = this.time;
+
+		}
+
+		public void copyKeysDataTo(row2Struct other) {
+
+			other.id = this.id;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",title=" + title);
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + String.valueOf(time));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row2Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.id, other.id);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String title;
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String genre;
+
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public Integer time;
+
+		public Integer getTime() {
+			return this.time;
 		}
 
 		@Override
@@ -412,7 +752,9 @@ public class Dim_Language implements TalendJob {
 		public void copyDataTo(row3Struct other) {
 
 			other.id = this.id;
-			other.language = this.language;
+			other.title = this.title;
+			other.genre = this.genre;
+			other.time = this.time;
 
 		}
 
@@ -429,15 +771,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				dis.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -449,15 +791,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -482,9 +824,51 @@ public class Dim_Language implements TalendJob {
 			}
 		}
 
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
 		public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -492,7 +876,11 @@ public class Dim_Language implements TalendJob {
 
 					this.id = readString(dis);
 
-					this.language = readString(dis);
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -505,7 +893,7 @@ public class Dim_Language implements TalendJob {
 
 		public void readData(org.jboss.marshalling.Unmarshaller dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -513,7 +901,11 @@ public class Dim_Language implements TalendJob {
 
 					this.id = readString(dis);
 
-					this.language = readString(dis);
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -533,7 +925,15 @@ public class Dim_Language implements TalendJob {
 
 				// String
 
-				writeString(this.language, dos);
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -550,7 +950,15 @@ public class Dim_Language implements TalendJob {
 
 				// String
 
-				writeString(this.language, dos);
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -564,7 +972,9 @@ public class Dim_Language implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("id=" + id);
-			sb.append(",language=" + language);
+			sb.append(",title=" + title);
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + String.valueOf(time));
 			sb.append("]");
 
 			return sb.toString();
@@ -608,9 +1018,9 @@ public class Dim_Language implements TalendJob {
 
 	}
 
-	public static class LanguageStruct implements routines.system.IPersistableRow<LanguageStruct> {
-		final static byte[] commonByteArrayLock_MOVIES_Dim_Language = new byte[0];
-		static byte[] commonByteArray_MOVIES_Dim_Language = new byte[0];
+	public static class MoviesStruct implements routines.system.IPersistableRow<MoviesStruct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
 		protected static final int PRIME = 31;
 		protected int hashCode = DEFAULT_HASHCODE;
@@ -624,10 +1034,22 @@ public class Dim_Language implements TalendJob {
 			return this.id;
 		}
 
-		public String language;
+		public String title;
 
-		public String getLanguage() {
-			return this.language;
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String genre;
+
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public String time;
+
+		public String getTime() {
+			return this.time;
 		}
 
 		@Override
@@ -652,7 +1074,7 @@ public class Dim_Language implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final LanguageStruct other = (LanguageStruct) obj;
+			final MoviesStruct other = (MoviesStruct) obj;
 
 			if (this.id == null) {
 				if (other.id != null)
@@ -665,14 +1087,16 @@ public class Dim_Language implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(LanguageStruct other) {
+		public void copyDataTo(MoviesStruct other) {
 
 			other.id = this.id;
-			other.language = this.language;
+			other.title = this.title;
+			other.genre = this.genre;
+			other.time = this.time;
 
 		}
 
-		public void copyKeysDataTo(LanguageStruct other) {
+		public void copyKeysDataTo(MoviesStruct other) {
 
 			other.id = this.id;
 
@@ -685,15 +1109,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				dis.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -705,15 +1129,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -740,7 +1164,7 @@ public class Dim_Language implements TalendJob {
 
 		public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -748,7 +1172,11 @@ public class Dim_Language implements TalendJob {
 
 					this.id = readString(dis);
 
-					this.language = readString(dis);
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -761,7 +1189,7 @@ public class Dim_Language implements TalendJob {
 
 		public void readData(org.jboss.marshalling.Unmarshaller dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -769,7 +1197,11 @@ public class Dim_Language implements TalendJob {
 
 					this.id = readString(dis);
 
-					this.language = readString(dis);
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -789,7 +1221,15 @@ public class Dim_Language implements TalendJob {
 
 				// String
 
-				writeString(this.language, dos);
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// String
+
+				writeString(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -806,7 +1246,15 @@ public class Dim_Language implements TalendJob {
 
 				// String
 
-				writeString(this.language, dos);
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// String
+
+				writeString(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -820,7 +1268,9 @@ public class Dim_Language implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("id=" + id);
-			sb.append(",language=" + language);
+			sb.append(",title=" + title);
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + time);
 			sb.append("]");
 
 			return sb.toString();
@@ -829,7 +1279,7 @@ public class Dim_Language implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(LanguageStruct other) {
+		public int compareTo(MoviesStruct other) {
 
 			int returnValue = -1;
 
@@ -865,8 +1315,8 @@ public class Dim_Language implements TalendJob {
 	}
 
 	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_Dim_Language = new byte[0];
-		static byte[] commonByteArray_MOVIES_Dim_Language = new byte[0];
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
 
 		public String tconst;
 
@@ -892,9 +1342,9 @@ public class Dim_Language implements TalendJob {
 			return this.originalTitle;
 		}
 
-		public String isAdult;
+		public Boolean isAdult;
 
-		public String getIsAdult() {
+		public Boolean getIsAdult() {
 			return this.isAdult;
 		}
 
@@ -929,15 +1379,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				dis.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -949,15 +1399,15 @@ public class Dim_Language implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -984,7 +1434,7 @@ public class Dim_Language implements TalendJob {
 
 		public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -998,7 +1448,12 @@ public class Dim_Language implements TalendJob {
 
 					this.originalTitle = readString(dis);
 
-					this.isAdult = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.isAdult = null;
+					} else {
+						this.isAdult = dis.readBoolean();
+					}
 
 					this.startYear = readString(dis);
 
@@ -1019,7 +1474,7 @@ public class Dim_Language implements TalendJob {
 
 		public void readData(org.jboss.marshalling.Unmarshaller dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -1033,7 +1488,12 @@ public class Dim_Language implements TalendJob {
 
 					this.originalTitle = readString(dis);
 
-					this.isAdult = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.isAdult = null;
+					} else {
+						this.isAdult = dis.readBoolean();
+					}
 
 					this.startYear = readString(dis);
 
@@ -1071,9 +1531,14 @@ public class Dim_Language implements TalendJob {
 
 				writeString(this.originalTitle, dos);
 
-				// String
+				// Boolean
 
-				writeString(this.isAdult, dos);
+				if (this.isAdult == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeBoolean(this.isAdult);
+				}
 
 				// String
 
@@ -1116,9 +1581,14 @@ public class Dim_Language implements TalendJob {
 
 				writeString(this.originalTitle, dos);
 
-				// String
+				// Boolean
 
-				writeString(this.isAdult, dos);
+				if (this.isAdult == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeBoolean(this.isAdult);
+				}
 
 				// String
 
@@ -1151,7 +1621,7 @@ public class Dim_Language implements TalendJob {
 			sb.append(",titleType=" + titleType);
 			sb.append(",primaryTitle=" + primaryTitle);
 			sb.append(",originalTitle=" + originalTitle);
-			sb.append(",isAdult=" + isAdult);
+			sb.append(",isAdult=" + String.valueOf(isAdult));
 			sb.append(",startYear=" + startYear);
 			sb.append(",endYear=" + endYear);
 			sb.append(",runtimeMinutes=" + runtimeMinutes);
@@ -1167,2135 +1637,6 @@ public class Dim_Language implements TalendJob {
 		public int compareTo(row1Struct other) {
 
 			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public static class after_tFileInputDelimited_2Struct
-			implements routines.system.IPersistableRow<after_tFileInputDelimited_2Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_Dim_Language = new byte[0];
-		static byte[] commonByteArray_MOVIES_Dim_Language = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String tconst;
-
-		public String getTconst() {
-			return this.tconst;
-		}
-
-		public String titleType;
-
-		public String getTitleType() {
-			return this.titleType;
-		}
-
-		public String primaryTitle;
-
-		public String getPrimaryTitle() {
-			return this.primaryTitle;
-		}
-
-		public String originalTitle;
-
-		public String getOriginalTitle() {
-			return this.originalTitle;
-		}
-
-		public String isAdult;
-
-		public String getIsAdult() {
-			return this.isAdult;
-		}
-
-		public String startYear;
-
-		public String getStartYear() {
-			return this.startYear;
-		}
-
-		public String endYear;
-
-		public String getEndYear() {
-			return this.endYear;
-		}
-
-		public String runtimeMinutes;
-
-		public String getRuntimeMinutes() {
-			return this.runtimeMinutes;
-		}
-
-		public String genres;
-
-		public String getGenres() {
-			return this.genres;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.tconst == null) ? 0 : this.tconst.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final after_tFileInputDelimited_2Struct other = (after_tFileInputDelimited_2Struct) obj;
-
-			if (this.tconst == null) {
-				if (other.tconst != null)
-					return false;
-
-			} else if (!this.tconst.equals(other.tconst))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(after_tFileInputDelimited_2Struct other) {
-
-			other.tconst = this.tconst;
-			other.titleType = this.titleType;
-			other.primaryTitle = this.primaryTitle;
-			other.originalTitle = this.originalTitle;
-			other.isAdult = this.isAdult;
-			other.startYear = this.startYear;
-			other.endYear = this.endYear;
-			other.runtimeMinutes = this.runtimeMinutes;
-			other.genres = this.genres;
-
-		}
-
-		public void copyKeysDataTo(after_tFileInputDelimited_2Struct other) {
-
-			other.tconst = this.tconst;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
-
-				try {
-
-					int length = 0;
-
-					this.tconst = readString(dis);
-
-					this.titleType = readString(dis);
-
-					this.primaryTitle = readString(dis);
-
-					this.originalTitle = readString(dis);
-
-					this.isAdult = readString(dis);
-
-					this.startYear = readString(dis);
-
-					this.endYear = readString(dis);
-
-					this.runtimeMinutes = readString(dis);
-
-					this.genres = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
-
-				try {
-
-					int length = 0;
-
-					this.tconst = readString(dis);
-
-					this.titleType = readString(dis);
-
-					this.primaryTitle = readString(dis);
-
-					this.originalTitle = readString(dis);
-
-					this.isAdult = readString(dis);
-
-					this.startYear = readString(dis);
-
-					this.endYear = readString(dis);
-
-					this.runtimeMinutes = readString(dis);
-
-					this.genres = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.tconst, dos);
-
-				// String
-
-				writeString(this.titleType, dos);
-
-				// String
-
-				writeString(this.primaryTitle, dos);
-
-				// String
-
-				writeString(this.originalTitle, dos);
-
-				// String
-
-				writeString(this.isAdult, dos);
-
-				// String
-
-				writeString(this.startYear, dos);
-
-				// String
-
-				writeString(this.endYear, dos);
-
-				// String
-
-				writeString(this.runtimeMinutes, dos);
-
-				// String
-
-				writeString(this.genres, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.tconst, dos);
-
-				// String
-
-				writeString(this.titleType, dos);
-
-				// String
-
-				writeString(this.primaryTitle, dos);
-
-				// String
-
-				writeString(this.originalTitle, dos);
-
-				// String
-
-				writeString(this.isAdult, dos);
-
-				// String
-
-				writeString(this.startYear, dos);
-
-				// String
-
-				writeString(this.endYear, dos);
-
-				// String
-
-				writeString(this.runtimeMinutes, dos);
-
-				// String
-
-				writeString(this.genres, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("tconst=" + tconst);
-			sb.append(",titleType=" + titleType);
-			sb.append(",primaryTitle=" + primaryTitle);
-			sb.append(",originalTitle=" + originalTitle);
-			sb.append(",isAdult=" + isAdult);
-			sb.append(",startYear=" + startYear);
-			sb.append(",endYear=" + endYear);
-			sb.append(",runtimeMinutes=" + runtimeMinutes);
-			sb.append(",genres=" + genres);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tFileInputDelimited_2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.tconst, other.tconst);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tFileInputDelimited_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputDelimited_2_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				tFileInputDelimited_1Process(globalMap);
-
-				row1Struct row1 = new row1Struct();
-				LanguageStruct Language = new LanguageStruct();
-				LanguageStruct row3 = Language;
-
-				/**
-				 * [tDBOutput_1 begin ] start
-				 */
-
-				ok_Hash.put("tDBOutput_1", false);
-				start_Hash.put("tDBOutput_1", System.currentTimeMillis());
-
-				currentComponent = "tDBOutput_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
-				}
-
-				int tos_count_tDBOutput_1 = 0;
-
-				int updateKeyCount_tDBOutput_1 = 1;
-				if (updateKeyCount_tDBOutput_1 < 1) {
-					throw new RuntimeException("For update, Schema must have a key");
-				} else if (updateKeyCount_tDBOutput_1 == 2 && true) {
-					System.err.println("For update, every Schema column can not be a key");
-				}
-
-				int nb_line_tDBOutput_1 = 0;
-				int nb_line_update_tDBOutput_1 = 0;
-				int nb_line_inserted_tDBOutput_1 = 0;
-				int nb_line_deleted_tDBOutput_1 = 0;
-				int nb_line_rejected_tDBOutput_1 = 0;
-
-				int deletedCount_tDBOutput_1 = 0;
-				int updatedCount_tDBOutput_1 = 0;
-				int insertedCount_tDBOutput_1 = 0;
-				int rowsToCommitCount_tDBOutput_1 = 0;
-				int rejectedCount_tDBOutput_1 = 0;
-
-				String tableName_tDBOutput_1 = "Languages";
-				boolean whetherReject_tDBOutput_1 = false;
-
-				java.util.Calendar calendar_tDBOutput_1 = java.util.Calendar.getInstance();
-				calendar_tDBOutput_1.set(1, 0, 1, 0, 0, 0);
-				long year1_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
-				calendar_tDBOutput_1.set(10000, 0, 1, 0, 0, 0);
-				long year10000_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
-				long date_tDBOutput_1;
-
-				java.sql.Connection conn_tDBOutput_1 = null;
-
-				String properties_tDBOutput_1 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
-				if (properties_tDBOutput_1 == null || properties_tDBOutput_1.trim().length() == 0) {
-					properties_tDBOutput_1 = "rewriteBatchedStatements=true&allowLoadLocalInfile=true";
-				} else {
-					if (!properties_tDBOutput_1.contains("rewriteBatchedStatements=")) {
-						properties_tDBOutput_1 += "&rewriteBatchedStatements=true";
-					}
-
-					if (!properties_tDBOutput_1.contains("allowLoadLocalInfile=")) {
-						properties_tDBOutput_1 += "&allowLoadLocalInfile=true";
-					}
-				}
-
-				String url_tDBOutput_1 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
-						+ properties_tDBOutput_1;
-
-				String driverClass_tDBOutput_1 = "com.mysql.cj.jdbc.Driver";
-
-				String dbUser_tDBOutput_1 = "root";
-
-				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:JmT+UbVeyFo3xnrr7DF5/VhDiTjuX+AjlaCXKg==");
-
-				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
-				java.lang.Class.forName(driverClass_tDBOutput_1);
-
-				conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
-						dbPwd_tDBOutput_1);
-
-				resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
-				conn_tDBOutput_1.setAutoCommit(false);
-				int commitEvery_tDBOutput_1 = 10000;
-				int commitCounter_tDBOutput_1 = 0;
-
-				int count_tDBOutput_1 = 0;
-
-				java.sql.DatabaseMetaData dbMetaData_tDBOutput_1 = conn_tDBOutput_1.getMetaData();
-				java.sql.ResultSet rsTable_tDBOutput_1 = dbMetaData_tDBOutput_1.getTables("movies_db", null, null,
-						new String[] { "TABLE" });
-				boolean whetherExist_tDBOutput_1 = false;
-				while (rsTable_tDBOutput_1.next()) {
-					String table_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_NAME");
-					if (table_tDBOutput_1.equalsIgnoreCase("Languages")) {
-						whetherExist_tDBOutput_1 = true;
-						break;
-					}
-				}
-				if (whetherExist_tDBOutput_1) {
-					try (java.sql.Statement stmtDrop_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
-						stmtDrop_tDBOutput_1.execute("DROP TABLE `" + tableName_tDBOutput_1 + "`");
-					}
-				}
-				try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
-					stmtCreate_tDBOutput_1.execute("CREATE TABLE `" + tableName_tDBOutput_1
-							+ "`(`id` VARCHAR(9)  ,`language` VARCHAR(2)  ,primary key(`id`))");
-				}
-				java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1
-						.prepareStatement("SELECT COUNT(1) FROM `" + "Languages" + "` WHERE `id` = ?");
-				resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-				String insert_tDBOutput_1 = "INSERT INTO `" + "Languages" + "` (`id`,`language`) VALUES (?,?)";
-
-				java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1
-						.prepareStatement(insert_tDBOutput_1);
-				resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
-				String update_tDBOutput_1 = "UPDATE `" + "Languages" + "` SET `language` = ? WHERE `id` = ?";
-
-				java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1
-						.prepareStatement(update_tDBOutput_1);
-				resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
-
-				/**
-				 * [tDBOutput_1 begin ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 begin ] start
-				 */
-
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				currentComponent = "tLogRow_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Language");
-				}
-
-				int tos_count_tLogRow_1 = 0;
-
-				///////////////////////
-
-				class Util_tLogRow_1 {
-
-					String[] des_top = { ".", ".", "-", "+" };
-
-					String[] des_head = { "|=", "=|", "-", "+" };
-
-					String[] des_bottom = { "'", "'", "-", "+" };
-
-					String name = "";
-
-					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-					int[] colLengths = new int[2];
-
-					public void addRow(String[] row) {
-
-						for (int i = 0; i < 2; i++) {
-							if (row[i] != null) {
-								colLengths[i] = Math.max(colLengths[i], row[i].length());
-							}
-						}
-						list.add(row);
-					}
-
-					public void setTableName(String name) {
-
-						this.name = name;
-					}
-
-					public StringBuilder format() {
-
-						StringBuilder sb = new StringBuilder();
-
-						sb.append(print(des_top));
-
-						int totals = 0;
-						for (int i = 0; i < colLengths.length; i++) {
-							totals = totals + colLengths[i];
-						}
-
-						// name
-						sb.append("|");
-						int k = 0;
-						for (k = 0; k < (totals + 1 - name.length()) / 2; k++) {
-							sb.append(' ');
-						}
-						sb.append(name);
-						for (int i = 0; i < totals + 1 - name.length() - k; i++) {
-							sb.append(' ');
-						}
-						sb.append("|\n");
-
-						// head and rows
-						sb.append(print(des_head));
-						for (int i = 0; i < list.size(); i++) {
-
-							String[] row = list.get(i);
-
-							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-
-							StringBuilder sbformat = new StringBuilder();
-							sbformat.append("|%1$-");
-							sbformat.append(colLengths[0]);
-							sbformat.append("s");
-
-							sbformat.append("|%2$-");
-							sbformat.append(colLengths[1]);
-							sbformat.append("s");
-
-							sbformat.append("|\n");
-
-							formatter.format(sbformat.toString(), (Object[]) row);
-
-							sb.append(formatter.toString());
-							if (i == 0)
-								sb.append(print(des_head)); // print the head
-						}
-
-						// end
-						sb.append(print(des_bottom));
-						return sb;
-					}
-
-					private StringBuilder print(String[] fillChars) {
-						StringBuilder sb = new StringBuilder();
-						// first column
-						sb.append(fillChars[0]);
-						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-							sb.append(fillChars[2]);
-						}
-						sb.append(fillChars[3]);
-
-						// last column
-						for (int i = 0; i < colLengths[1] - fillChars[1].length() + 1; i++) {
-							sb.append(fillChars[2]);
-						}
-						sb.append(fillChars[1]);
-						sb.append("\n");
-						return sb;
-					}
-
-					public boolean isTableEmpty() {
-						if (list.size() > 1)
-							return false;
-						return true;
-					}
-				}
-				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-				util_tLogRow_1.setTableName("tLogRow_1");
-				util_tLogRow_1.addRow(new String[] { "id", "language", });
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-				/**
-				 * [tLogRow_1 begin ] stop
-				 */
-
-				/**
-				 * [tMap_1 begin ] start
-				 */
-
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
-
-				currentComponent = "tMap_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
-
-				int tos_count_tMap_1 = 0;
-
-// ###############################
-// # Lookup's keys initialization
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) globalMap
-						.get("tHash_Lookup_row2"));
-
-				row2Struct row2HashKey = new row2Struct();
-				row2Struct row2Default = new row2Struct();
-// ###############################        
-
-// ###############################
-// # Vars initialization
-				class Var__tMap_1__Struct {
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-				LanguageStruct Language_tmp = new LanguageStruct();
-// ###############################
-
-				/**
-				 * [tMap_1 begin ] stop
-				 */
-
-				/**
-				 * [tFileInputDelimited_2 begin ] start
-				 */
-
-				ok_Hash.put("tFileInputDelimited_2", false);
-				start_Hash.put("tFileInputDelimited_2", System.currentTimeMillis());
-
-				currentComponent = "tFileInputDelimited_2";
-
-				int tos_count_tFileInputDelimited_2 = 0;
-
-				final routines.system.RowState rowstate_tFileInputDelimited_2 = new routines.system.RowState();
-
-				int nb_line_tFileInputDelimited_2 = 0;
-				int footer_tFileInputDelimited_2 = 0;
-				int totalLinetFileInputDelimited_2 = 0;
-				int limittFileInputDelimited_2 = -1;
-				int lastLinetFileInputDelimited_2 = -1;
-
-				char fieldSeparator_tFileInputDelimited_2[] = null;
-
-				// support passing value (property: Field Separator) by 'context.fs' or
-				// 'globalMap.get("fs")'.
-				if (((String) "\t").length() > 0) {
-					fieldSeparator_tFileInputDelimited_2 = ((String) "\t").toCharArray();
-				} else {
-					throw new IllegalArgumentException("Field Separator must be assigned a char.");
-				}
-
-				char rowSeparator_tFileInputDelimited_2[] = null;
-
-				// support passing value (property: Row Separator) by 'context.rs' or
-				// 'globalMap.get("rs")'.
-				if (((String) "\n").length() > 0) {
-					rowSeparator_tFileInputDelimited_2 = ((String) "\n").toCharArray();
-				} else {
-					throw new IllegalArgumentException("Row Separator must be assigned a char.");
-				}
-
-				Object filename_tFileInputDelimited_2 = /** Start field tFileInputDelimited_2:FILENAME */
-						"C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/title.basics.tsv"/**
-																										 * End field
-																										 * tFileInputDelimited_2:FILENAME
-																										 */
-				;
-				com.talend.csv.CSVReader csvReadertFileInputDelimited_2 = null;
-
-				try {
-
-					String[] rowtFileInputDelimited_2 = null;
-					int currentLinetFileInputDelimited_2 = 0;
-					int outputLinetFileInputDelimited_2 = 0;
-					try {// TD110 begin
-						if (filename_tFileInputDelimited_2 instanceof java.io.InputStream) {
-
-							int footer_value_tFileInputDelimited_2 = 0;
-							if (footer_value_tFileInputDelimited_2 > 0) {
-								throw new java.lang.Exception(
-										"When the input source is a stream,footer shouldn't be bigger than 0.");
-							}
-
-							csvReadertFileInputDelimited_2 = new com.talend.csv.CSVReader(
-									(java.io.InputStream) filename_tFileInputDelimited_2,
-									fieldSeparator_tFileInputDelimited_2[0], "UTF-8");
-						} else {
-							csvReadertFileInputDelimited_2 = new com.talend.csv.CSVReader(
-									String.valueOf(filename_tFileInputDelimited_2),
-									fieldSeparator_tFileInputDelimited_2[0], "UTF-8");
-						}
-
-						csvReadertFileInputDelimited_2.setTrimWhitespace(false);
-						if ((rowSeparator_tFileInputDelimited_2[0] != '\n')
-								&& (rowSeparator_tFileInputDelimited_2[0] != '\r'))
-							csvReadertFileInputDelimited_2.setLineEnd("" + rowSeparator_tFileInputDelimited_2[0]);
-
-						csvReadertFileInputDelimited_2.setQuoteChar('"');
-
-						csvReadertFileInputDelimited_2.setEscapeChar(csvReadertFileInputDelimited_2.getQuoteChar());
-
-						if (footer_tFileInputDelimited_2 > 0) {
-							for (totalLinetFileInputDelimited_2 = 0; totalLinetFileInputDelimited_2 < 1; totalLinetFileInputDelimited_2++) {
-								csvReadertFileInputDelimited_2.readNext();
-							}
-							csvReadertFileInputDelimited_2.setSkipEmptyRecords(false);
-							while (csvReadertFileInputDelimited_2.readNext()) {
-
-								totalLinetFileInputDelimited_2++;
-
-							}
-							int lastLineTemptFileInputDelimited_2 = totalLinetFileInputDelimited_2
-									- footer_tFileInputDelimited_2 < 0 ? 0
-											: totalLinetFileInputDelimited_2 - footer_tFileInputDelimited_2;
-							if (lastLinetFileInputDelimited_2 > 0) {
-								lastLinetFileInputDelimited_2 = lastLinetFileInputDelimited_2 < lastLineTemptFileInputDelimited_2
-										? lastLinetFileInputDelimited_2
-										: lastLineTemptFileInputDelimited_2;
-							} else {
-								lastLinetFileInputDelimited_2 = lastLineTemptFileInputDelimited_2;
-							}
-
-							csvReadertFileInputDelimited_2.close();
-							if (filename_tFileInputDelimited_2 instanceof java.io.InputStream) {
-								csvReadertFileInputDelimited_2 = new com.talend.csv.CSVReader(
-										(java.io.InputStream) filename_tFileInputDelimited_2,
-										fieldSeparator_tFileInputDelimited_2[0], "UTF-8");
-							} else {
-								csvReadertFileInputDelimited_2 = new com.talend.csv.CSVReader(
-										String.valueOf(filename_tFileInputDelimited_2),
-										fieldSeparator_tFileInputDelimited_2[0], "UTF-8");
-							}
-							csvReadertFileInputDelimited_2.setTrimWhitespace(false);
-							if ((rowSeparator_tFileInputDelimited_2[0] != '\n')
-									&& (rowSeparator_tFileInputDelimited_2[0] != '\r'))
-								csvReadertFileInputDelimited_2.setLineEnd("" + rowSeparator_tFileInputDelimited_2[0]);
-
-							csvReadertFileInputDelimited_2.setQuoteChar('"');
-
-							csvReadertFileInputDelimited_2.setEscapeChar(csvReadertFileInputDelimited_2.getQuoteChar());
-
-						}
-
-						if (limittFileInputDelimited_2 != 0) {
-							for (currentLinetFileInputDelimited_2 = 0; currentLinetFileInputDelimited_2 < 1; currentLinetFileInputDelimited_2++) {
-								csvReadertFileInputDelimited_2.readNext();
-							}
-						}
-						csvReadertFileInputDelimited_2.setSkipEmptyRecords(false);
-
-					} catch (java.lang.Exception e) {
-						globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE", e.getMessage());
-
-						System.err.println(e.getMessage());
-
-					} // TD110 end
-
-					while (limittFileInputDelimited_2 != 0 && csvReadertFileInputDelimited_2 != null
-							&& csvReadertFileInputDelimited_2.readNext()) {
-						rowstate_tFileInputDelimited_2.reset();
-
-						rowtFileInputDelimited_2 = csvReadertFileInputDelimited_2.getValues();
-
-						currentLinetFileInputDelimited_2++;
-
-						if (lastLinetFileInputDelimited_2 > -1
-								&& currentLinetFileInputDelimited_2 > lastLinetFileInputDelimited_2) {
-							break;
-						}
-						outputLinetFileInputDelimited_2++;
-						if (limittFileInputDelimited_2 > 0
-								&& outputLinetFileInputDelimited_2 > limittFileInputDelimited_2) {
-							break;
-						}
-
-						row1 = null;
-
-						boolean whetherReject_tFileInputDelimited_2 = false;
-						row1 = new row1Struct();
-						try {
-
-							char fieldSeparator_tFileInputDelimited_2_ListType[] = null;
-							// support passing value (property: Field Separator) by 'context.fs' or
-							// 'globalMap.get("fs")'.
-							if (((String) "\t").length() > 0) {
-								fieldSeparator_tFileInputDelimited_2_ListType = ((String) "\t").toCharArray();
-							} else {
-								throw new IllegalArgumentException("Field Separator must be assigned a char.");
-							}
-							if (rowtFileInputDelimited_2.length == 1 && ("\015").equals(rowtFileInputDelimited_2[0])) {// empty
-																														// line
-																														// when
-																														// row
-																														// separator
-																														// is
-																														// '\n'
-
-								row1.tconst = null;
-
-								row1.titleType = null;
-
-								row1.primaryTitle = null;
-
-								row1.originalTitle = null;
-
-								row1.isAdult = null;
-
-								row1.startYear = null;
-
-								row1.endYear = null;
-
-								row1.runtimeMinutes = null;
-
-								row1.genres = null;
-
-							} else {
-
-								int columnIndexWithD_tFileInputDelimited_2 = 0; // Column Index
-
-								columnIndexWithD_tFileInputDelimited_2 = 0;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.tconst = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.tconst = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 1;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.titleType = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.titleType = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 2;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.primaryTitle = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.primaryTitle = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 3;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.originalTitle = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.originalTitle = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 4;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.isAdult = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.isAdult = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 5;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.startYear = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.startYear = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 6;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.endYear = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.endYear = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 7;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.runtimeMinutes = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.runtimeMinutes = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_2 = 8;
-
-								if (columnIndexWithD_tFileInputDelimited_2 < rowtFileInputDelimited_2.length) {
-
-									row1.genres = rowtFileInputDelimited_2[columnIndexWithD_tFileInputDelimited_2];
-
-								} else {
-
-									row1.genres = null;
-
-								}
-
-							}
-
-							if (rowstate_tFileInputDelimited_2.getException() != null) {
-								throw rowstate_tFileInputDelimited_2.getException();
-							}
-
-						} catch (java.lang.Exception e) {
-							globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE", e.getMessage());
-							whetherReject_tFileInputDelimited_2 = true;
-
-							System.err.println(e.getMessage());
-							row1 = null;
-
-							globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE", e.getMessage());
-
-						}
-
-						/**
-						 * [tFileInputDelimited_2 begin ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_2 main ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_2";
-
-						tos_count_tFileInputDelimited_2++;
-
-						/**
-						 * [tFileInputDelimited_2 main ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_2 process_data_begin ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_2";
-
-						/**
-						 * [tFileInputDelimited_2 process_data_begin ] stop
-						 */
-// Start of branch "row1"
-						if (row1 != null) {
-
-							/**
-							 * [tMap_1 main ] start
-							 */
-
-							currentComponent = "tMap_1";
-
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1
-
-										, "row1"
-
-								);
-							}
-
-							boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-							// ###############################
-							// # Input tables (lookups)
-							boolean rejectedInnerJoin_tMap_1 = false;
-							boolean mainRowRejected_tMap_1 = false;
-
-							if (
-
-							(
-
-							row1.titleType.equals("movie")
-
-							)
-
-							) { // G_TM_M_280
-
-								// CALL close main tMap filter for table 'row1'
-
-								///////////////////////////////////////////////
-								// Starting Lookup Table "row2"
-								///////////////////////////////////////////////
-
-								boolean forceLooprow2 = false;
-
-								row2Struct row2ObjectFromLookup = null;
-
-								if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-									hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-									row2HashKey.titleId = row1.tconst;
-
-									row2HashKey.hashCodeDirty = true;
-
-									tHash_Lookup_row2.lookup(row2HashKey);
-
-								} // G_TM_M_020
-
-								if (tHash_Lookup_row2 != null && tHash_Lookup_row2.getCount(row2HashKey) > 1) { // G 071
-
-									// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row2'
-									// and it contains more one result from keys : row2.titleId = '" +
-									// row2HashKey.titleId + "'");
-								} // G 071
-
-								row2Struct row2 = null;
-
-								row2Struct fromLookup_row2 = null;
-								row2 = row2Default;
-
-								if (tHash_Lookup_row2 != null && tHash_Lookup_row2.hasNext()) { // G 099
-
-									fromLookup_row2 = tHash_Lookup_row2.next();
-
-								} // G 099
-
-								if (fromLookup_row2 != null) {
-									row2 = fromLookup_row2;
-								}
-
-								// ###############################
-								{ // start of Var scope
-
-									// ###############################
-									// # Vars tables
-
-									Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
-									// ###############################
-									// # Output tables
-
-									Language = null;
-
-// # Output table : 'Language'
-									Language_tmp.id = row1.tconst;
-									Language_tmp.language = row2.language;
-									Language = Language_tmp;
-// ###############################
-
-								} // end of Var scope
-
-								rejectedInnerJoin_tMap_1 = false;
-
-								tos_count_tMap_1++;
-
-								/**
-								 * [tMap_1 main ] stop
-								 */
-
-								/**
-								 * [tMap_1 process_data_begin ] start
-								 */
-
-								currentComponent = "tMap_1";
-
-								/**
-								 * [tMap_1 process_data_begin ] stop
-								 */
-// Start of branch "Language"
-								if (Language != null) {
-
-									/**
-									 * [tLogRow_1 main ] start
-									 */
-
-									currentComponent = "tLogRow_1";
-
-									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1
-
-												, "Language"
-
-										);
-									}
-
-///////////////////////		
-
-									String[] row_tLogRow_1 = new String[2];
-
-									if (Language.id != null) { //
-										row_tLogRow_1[0] = String.valueOf(Language.id);
-
-									} //
-
-									if (Language.language != null) { //
-										row_tLogRow_1[1] = String.valueOf(Language.language);
-
-									} //
-
-									util_tLogRow_1.addRow(row_tLogRow_1);
-									nb_line_tLogRow_1++;
-//////
-
-//////                    
-
-///////////////////////    			
-
-									row3 = Language;
-
-									tos_count_tLogRow_1++;
-
-									/**
-									 * [tLogRow_1 main ] stop
-									 */
-
-									/**
-									 * [tLogRow_1 process_data_begin ] start
-									 */
-
-									currentComponent = "tLogRow_1";
-
-									/**
-									 * [tLogRow_1 process_data_begin ] stop
-									 */
-
-									/**
-									 * [tDBOutput_1 main ] start
-									 */
-
-									currentComponent = "tDBOutput_1";
-
-									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1
-
-												, "row3"
-
-										);
-									}
-
-									whetherReject_tDBOutput_1 = false;
-									if (row3.id == null) {
-										pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
-									} else {
-										pstmt_tDBOutput_1.setString(1, row3.id);
-									}
-
-									int checkCount_tDBOutput_1 = -1;
-									try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
-										while (rs_tDBOutput_1.next()) {
-											checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
-										}
-									}
-									if (checkCount_tDBOutput_1 > 0) {
-										if (row3.language == null) {
-											pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
-										} else {
-											pstmtUpdate_tDBOutput_1.setString(1, row3.language);
-										}
-
-										if (row3.id == null) {
-											pstmtUpdate_tDBOutput_1.setNull(2 + count_tDBOutput_1,
-													java.sql.Types.VARCHAR);
-										} else {
-											pstmtUpdate_tDBOutput_1.setString(2 + count_tDBOutput_1, row3.id);
-										}
-
-										try {
-											int processedCount_tDBOutput_1 = pstmtUpdate_tDBOutput_1.executeUpdate();
-											updatedCount_tDBOutput_1 += processedCount_tDBOutput_1;
-											rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
-											nb_line_tDBOutput_1++;
-										} catch (java.lang.Exception e) {
-											globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
-											whetherReject_tDBOutput_1 = true;
-											nb_line_tDBOutput_1++;
-											System.err.print(e.getMessage());
-										}
-									} else {
-										if (row3.id == null) {
-											pstmtInsert_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
-										} else {
-											pstmtInsert_tDBOutput_1.setString(1, row3.id);
-										}
-
-										if (row3.language == null) {
-											pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
-										} else {
-											pstmtInsert_tDBOutput_1.setString(2, row3.language);
-										}
-
-										try {
-											int processedCount_tDBOutput_1 = pstmtInsert_tDBOutput_1.executeUpdate();
-											insertedCount_tDBOutput_1 += processedCount_tDBOutput_1;
-											rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
-											nb_line_tDBOutput_1++;
-										} catch (java.lang.Exception e) {
-											globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
-											whetherReject_tDBOutput_1 = true;
-											nb_line_tDBOutput_1++;
-											System.err.print(e.getMessage());
-										}
-									}
-									commitCounter_tDBOutput_1++;
-
-									if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
-
-										if (rowsToCommitCount_tDBOutput_1 != 0) {
-										}
-										conn_tDBOutput_1.commit();
-										if (rowsToCommitCount_tDBOutput_1 != 0) {
-											rowsToCommitCount_tDBOutput_1 = 0;
-										}
-										commitCounter_tDBOutput_1 = 0;
-
-									}
-
-									tos_count_tDBOutput_1++;
-
-									/**
-									 * [tDBOutput_1 main ] stop
-									 */
-
-									/**
-									 * [tDBOutput_1 process_data_begin ] start
-									 */
-
-									currentComponent = "tDBOutput_1";
-
-									/**
-									 * [tDBOutput_1 process_data_begin ] stop
-									 */
-
-									/**
-									 * [tDBOutput_1 process_data_end ] start
-									 */
-
-									currentComponent = "tDBOutput_1";
-
-									/**
-									 * [tDBOutput_1 process_data_end ] stop
-									 */
-
-									/**
-									 * [tLogRow_1 process_data_end ] start
-									 */
-
-									currentComponent = "tLogRow_1";
-
-									/**
-									 * [tLogRow_1 process_data_end ] stop
-									 */
-
-								} // End of branch "Language"
-
-							} // G_TM_M_280 close main tMap filter for table 'row1'
-
-							/**
-							 * [tMap_1 process_data_end ] start
-							 */
-
-							currentComponent = "tMap_1";
-
-							/**
-							 * [tMap_1 process_data_end ] stop
-							 */
-
-						} // End of branch "row1"
-
-						/**
-						 * [tFileInputDelimited_2 process_data_end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_2";
-
-						/**
-						 * [tFileInputDelimited_2 process_data_end ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_2 end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_2";
-
-						nb_line_tFileInputDelimited_2++;
-					}
-
-				} finally {
-					if (!(filename_tFileInputDelimited_2 instanceof java.io.InputStream)) {
-						if (csvReadertFileInputDelimited_2 != null) {
-							csvReadertFileInputDelimited_2.close();
-						}
-					}
-					if (csvReadertFileInputDelimited_2 != null) {
-						globalMap.put("tFileInputDelimited_2_NB_LINE", nb_line_tFileInputDelimited_2);
-					}
-
-				}
-
-				ok_Hash.put("tFileInputDelimited_2", true);
-				end_Hash.put("tFileInputDelimited_2", System.currentTimeMillis());
-
-				/**
-				 * [tFileInputDelimited_2 end ] stop
-				 */
-
-				/**
-				 * [tMap_1 end ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-// ###############################
-// # Lookup hashes releasing
-				if (tHash_Lookup_row2 != null) {
-					tHash_Lookup_row2.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row2");
-
-// ###############################      
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
-
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
-
-				/**
-				 * [tMap_1 end ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 end ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-//////
-
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
-				if (globalMap.get("tLogRow_CONSOLE") != null) {
-					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-				} else {
-					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-				}
-
-				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-				consoleOut_tLogRow_1.flush();
-//////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-
-///////////////////////    			
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "Language");
-				}
-
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				/**
-				 * [tLogRow_1 end ] stop
-				 */
-
-				/**
-				 * [tDBOutput_1 end ] start
-				 */
-
-				currentComponent = "tDBOutput_1";
-
-				if (pstmtUpdate_tDBOutput_1 != null) {
-					pstmtUpdate_tDBOutput_1.close();
-					resourceMap.remove("pstmtUpdate_tDBOutput_1");
-				}
-				if (pstmtInsert_tDBOutput_1 != null) {
-					pstmtInsert_tDBOutput_1.close();
-					resourceMap.remove("pstmtInsert_tDBOutput_1");
-				}
-				if (pstmt_tDBOutput_1 != null) {
-					pstmt_tDBOutput_1.close();
-					resourceMap.remove("pstmt_tDBOutput_1");
-				}
-				resourceMap.put("statementClosed_tDBOutput_1", true);
-				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
-
-				}
-				conn_tDBOutput_1.commit();
-				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
-
-					rowsToCommitCount_tDBOutput_1 = 0;
-				}
-				commitCounter_tDBOutput_1 = 0;
-
-				conn_tDBOutput_1.close();
-
-				resourceMap.put("finish_tDBOutput_1", true);
-
-				nb_line_deleted_tDBOutput_1 = nb_line_deleted_tDBOutput_1 + deletedCount_tDBOutput_1;
-				nb_line_update_tDBOutput_1 = nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
-				nb_line_inserted_tDBOutput_1 = nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
-				nb_line_rejected_tDBOutput_1 = nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
-
-				globalMap.put("tDBOutput_1_NB_LINE", nb_line_tDBOutput_1);
-				globalMap.put("tDBOutput_1_NB_LINE_UPDATED", nb_line_update_tDBOutput_1);
-				globalMap.put("tDBOutput_1_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_1);
-				globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
-				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
-				}
-
-				ok_Hash.put("tDBOutput_1", true);
-				end_Hash.put("tDBOutput_1", System.currentTimeMillis());
-
-				/**
-				 * [tDBOutput_1 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row2");
-
-			try {
-
-				/**
-				 * [tFileInputDelimited_2 finally ] start
-				 */
-
-				currentComponent = "tFileInputDelimited_2";
-
-				/**
-				 * [tFileInputDelimited_2 finally ] stop
-				 */
-
-				/**
-				 * [tMap_1 finally ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-				/**
-				 * [tMap_1 finally ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 finally ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-				/**
-				 * [tLogRow_1 finally ] stop
-				 */
-
-				/**
-				 * [tDBOutput_1 finally ] start
-				 */
-
-				currentComponent = "tDBOutput_1";
-
-				try {
-					if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
-						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_1 = null;
-						if ((pstmtUpdateToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
-								.remove("pstmtUpdate_tDBOutput_1")) != null) {
-							pstmtUpdateToClose_tDBOutput_1.close();
-						}
-						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_1 = null;
-						if ((pstmtInsertToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
-								.remove("pstmtInsert_tDBOutput_1")) != null) {
-							pstmtInsertToClose_tDBOutput_1.close();
-						}
-						java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
-						if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
-								.remove("pstmt_tDBOutput_1")) != null) {
-							pstmtToClose_tDBOutput_1.close();
-						}
-					}
-				} finally {
-					if (resourceMap.get("finish_tDBOutput_1") == null) {
-						java.sql.Connection ctn_tDBOutput_1 = null;
-						if ((ctn_tDBOutput_1 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_1")) != null) {
-							try {
-								ctn_tDBOutput_1.close();
-							} catch (java.sql.SQLException sqlEx_tDBOutput_1) {
-								String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :"
-										+ sqlEx_tDBOutput_1.getMessage();
-								System.err.println(errorMessage_tDBOutput_1);
-							}
-						}
-					}
-				}
-
-				/**
-				 * [tDBOutput_1 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tFileInputDelimited_2_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_Dim_Language = new byte[0];
-		static byte[] commonByteArray_MOVIES_Dim_Language = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String titleId;
-
-		public String getTitleId() {
-			return this.titleId;
-		}
-
-		public Integer ordering;
-
-		public Integer getOrdering() {
-			return this.ordering;
-		}
-
-		public String title;
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public String region;
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public String language;
-
-		public String getLanguage() {
-			return this.language;
-		}
-
-		public String types;
-
-		public String getTypes() {
-			return this.types;
-		}
-
-		public String attributes;
-
-		public String getAttributes() {
-			return this.attributes;
-		}
-
-		public Integer isOriginalTitle;
-
-		public Integer getIsOriginalTitle() {
-			return this.isOriginalTitle;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.titleId == null) ? 0 : this.titleId.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row2Struct other = (row2Struct) obj;
-
-			if (this.titleId == null) {
-				if (other.titleId != null)
-					return false;
-
-			} else if (!this.titleId.equals(other.titleId))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row2Struct other) {
-
-			other.titleId = this.titleId;
-			other.ordering = this.ordering;
-			other.title = this.title;
-			other.region = this.region;
-			other.language = this.language;
-			other.types = this.types;
-			other.attributes = this.attributes;
-			other.isOriginalTitle = this.isOriginalTitle;
-
-		}
-
-		public void copyKeysDataTo(row2Struct other) {
-
-			other.titleId = this.titleId;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_Dim_Language.length) {
-					if (length < 1024 && commonByteArray_MOVIES_Dim_Language.length == 0) {
-						commonByteArray_MOVIES_Dim_Language = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_Dim_Language = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Language, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_Dim_Language, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = unmarshaller.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				unmarshaller.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
-
-				try {
-
-					int length = 0;
-
-					this.titleId = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_Dim_Language) {
-
-				try {
-
-					int length = 0;
-
-					this.titleId = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.titleId, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.titleId, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.ordering = readInteger(dis, ois);
-
-				this.title = readString(dis, ois);
-
-				this.region = readString(dis, ois);
-
-				this.language = readString(dis, ois);
-
-				this.types = readString(dis, ois);
-
-				this.attributes = readString(dis, ois);
-
-				this.isOriginalTitle = readInteger(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-			try {
-				int length = 0;
-
-				this.ordering = readInteger(dis, objectIn);
-
-				this.title = readString(dis, objectIn);
-
-				this.region = readString(dis, objectIn);
-
-				this.language = readString(dis, objectIn);
-
-				this.types = readString(dis, objectIn);
-
-				this.attributes = readString(dis, objectIn);
-
-				this.isOriginalTitle = readInteger(dis, objectIn);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeInteger(this.ordering, dos, oos);
-
-				writeString(this.title, dos, oos);
-
-				writeString(this.region, dos, oos);
-
-				writeString(this.language, dos, oos);
-
-				writeString(this.types, dos, oos);
-
-				writeString(this.attributes, dos, oos);
-
-				writeInteger(this.isOriginalTitle, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
-			try {
-
-				writeInteger(this.ordering, dos, objectOut);
-
-				writeString(this.title, dos, objectOut);
-
-				writeString(this.region, dos, objectOut);
-
-				writeString(this.language, dos, objectOut);
-
-				writeString(this.types, dos, objectOut);
-
-				writeString(this.attributes, dos, objectOut);
-
-				writeInteger(this.isOriginalTitle, dos, objectOut);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
-		public boolean supportMarshaller() {
-			return true;
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("titleId=" + titleId);
-			sb.append(",ordering=" + String.valueOf(ordering));
-			sb.append(",title=" + title);
-			sb.append(",region=" + region);
-			sb.append(",language=" + language);
-			sb.append(",types=" + types);
-			sb.append(",attributes=" + attributes);
-			sb.append(",isOriginalTitle=" + String.valueOf(isOriginalTitle));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.titleId, other.titleId);
-			if (returnValue != 0) {
-				return returnValue;
-			}
 
 			return returnValue;
 		}
@@ -3343,38 +1684,339 @@ public class Dim_Language implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row2Struct row2 = new row2Struct();
+				row1Struct row1 = new row1Struct();
+				MoviesStruct Movies = new MoviesStruct();
+				row3Struct row3 = new row3Struct();
+				row3Struct row2 = row3;
 
 				/**
-				 * [tAdvancedHash_row2 begin ] start
+				 * [tDBOutput_1 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row2", false);
-				start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tDBOutput_1", false);
+				start_Hash.put("tDBOutput_1", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tDBOutput_1";
 
 				if (execStat) {
 					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
 				}
 
-				int tos_count_tAdvancedHash_row2 = 0;
+				int tos_count_tDBOutput_1 = 0;
 
-				// connection name:row2
-				// source node:tFileInputDelimited_1 - inputs:(after_tFileInputDelimited_2)
-				// outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2)
-				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2) outputs:(Language)
+				int updateKeyCount_tDBOutput_1 = 1;
+				if (updateKeyCount_tDBOutput_1 < 1) {
+					throw new RuntimeException("For update, Schema must have a key");
+				} else if (updateKeyCount_tDBOutput_1 == 4 && true) {
+					System.err.println("For update, every Schema column can not be a key");
+				}
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				int nb_line_tDBOutput_1 = 0;
+				int nb_line_update_tDBOutput_1 = 0;
+				int nb_line_inserted_tDBOutput_1 = 0;
+				int nb_line_deleted_tDBOutput_1 = 0;
+				int nb_line_rejected_tDBOutput_1 = 0;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row2Struct>getLookup(matchingModeEnum_row2);
+				int deletedCount_tDBOutput_1 = 0;
+				int updatedCount_tDBOutput_1 = 0;
+				int insertedCount_tDBOutput_1 = 0;
+				int rowsToCommitCount_tDBOutput_1 = 0;
+				int rejectedCount_tDBOutput_1 = 0;
 
-				globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+				String tableName_tDBOutput_1 = "Movies";
+				boolean whetherReject_tDBOutput_1 = false;
+
+				java.util.Calendar calendar_tDBOutput_1 = java.util.Calendar.getInstance();
+				calendar_tDBOutput_1.set(1, 0, 1, 0, 0, 0);
+				long year1_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
+				calendar_tDBOutput_1.set(10000, 0, 1, 0, 0, 0);
+				long year10000_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
+				long date_tDBOutput_1;
+
+				java.sql.Connection conn_tDBOutput_1 = null;
+
+				String properties_tDBOutput_1 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
+				if (properties_tDBOutput_1 == null || properties_tDBOutput_1.trim().length() == 0) {
+					properties_tDBOutput_1 = "rewriteBatchedStatements=true&allowLoadLocalInfile=true";
+				} else {
+					if (!properties_tDBOutput_1.contains("rewriteBatchedStatements=")) {
+						properties_tDBOutput_1 += "&rewriteBatchedStatements=true";
+					}
+
+					if (!properties_tDBOutput_1.contains("allowLoadLocalInfile=")) {
+						properties_tDBOutput_1 += "&allowLoadLocalInfile=true";
+					}
+				}
+
+				String url_tDBOutput_1 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
+						+ properties_tDBOutput_1;
+
+				String driverClass_tDBOutput_1 = "com.mysql.cj.jdbc.Driver";
+
+				String dbUser_tDBOutput_1 = "root";
+
+				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:/k2Qy7x8w+qj8/+aT0VR8m63BzPIWuiwayTwfQ==");
+
+				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
+				java.lang.Class.forName(driverClass_tDBOutput_1);
+
+				conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
+						dbPwd_tDBOutput_1);
+
+				resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
+				conn_tDBOutput_1.setAutoCommit(false);
+				int commitEvery_tDBOutput_1 = 10000;
+				int commitCounter_tDBOutput_1 = 0;
+
+				int count_tDBOutput_1 = 0;
+
+				java.sql.DatabaseMetaData dbMetaData_tDBOutput_1 = conn_tDBOutput_1.getMetaData();
+				java.sql.ResultSet rsTable_tDBOutput_1 = dbMetaData_tDBOutput_1.getTables("movies_db", null, null,
+						new String[] { "TABLE" });
+				boolean whetherExist_tDBOutput_1 = false;
+				while (rsTable_tDBOutput_1.next()) {
+					String table_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_NAME");
+					if (table_tDBOutput_1.equalsIgnoreCase("Movies")) {
+						whetherExist_tDBOutput_1 = true;
+						break;
+					}
+				}
+				if (whetherExist_tDBOutput_1) {
+					try (java.sql.Statement stmtDrop_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
+						stmtDrop_tDBOutput_1.execute("DROP TABLE `" + tableName_tDBOutput_1 + "`");
+					}
+				}
+				try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
+					stmtCreate_tDBOutput_1.execute("CREATE TABLE `" + tableName_tDBOutput_1
+							+ "`(`id` VARCHAR(9)  ,`title` VARCHAR(255)  ,`genre` VARCHAR(255)  ,`time` INT(10)  ,primary key(`id`))");
+				}
+				java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement("SELECT COUNT(1) FROM `" + "Movies" + "` WHERE `id` = ?");
+				resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
+				String insert_tDBOutput_1 = "INSERT INTO `" + "Movies"
+						+ "` (`id`,`title`,`genre`,`time`) VALUES (?,?,?,?)";
+
+				java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement(insert_tDBOutput_1);
+				resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
+				String update_tDBOutput_1 = "UPDATE `" + "Movies"
+						+ "` SET `title` = ?,`genre` = ?,`time` = ? WHERE `id` = ?";
+
+				java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement(update_tDBOutput_1);
+				resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 
 				/**
-				 * [tAdvancedHash_row2 begin ] stop
+				 * [tDBOutput_1 begin ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+				}
+
+				int tos_count_tLogRow_1 = 0;
+
+				///////////////////////
+
+				class Util_tLogRow_1 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[4];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 4; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						sb.append(print(des_top));
+
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
+
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 3 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 3 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
+
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
+
+							String[] row = list.get(i);
+
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
+
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
+
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
+
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[3] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+				util_tLogRow_1.setTableName("tLogRow_1");
+				util_tLogRow_1.addRow(new String[] { "id", "title", "genre", "time", });
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 begin ] start
+				 */
+
+				ok_Hash.put("tConvertType_1", false);
+				start_Hash.put("tConvertType_1", System.currentTimeMillis());
+
+				currentComponent = "tConvertType_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Movies");
+				}
+
+				int tos_count_tConvertType_1 = 0;
+
+				int nb_line_tConvertType_1 = 0;
+
+				/**
+				 * [tConvertType_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_1 begin ] start
+				 */
+
+				ok_Hash.put("tMap_1", false);
+				start_Hash.put("tMap_1", System.currentTimeMillis());
+
+				currentComponent = "tMap_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tMap_1 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_1__Struct {
+				}
+				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				MoviesStruct Movies_tmp = new MoviesStruct();
+// ###############################
+
+				/**
+				 * [tMap_1 begin ] stop
 				 */
 
 				/**
@@ -3417,7 +2059,7 @@ public class Dim_Language implements TalendJob {
 				}
 
 				Object filename_tFileInputDelimited_1 = /** Start field tFileInputDelimited_1:FILENAME */
-						"C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/title.akas.tsv"/**
+						"C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/title.basics.tsv"/**
 																										 * End field
 																										 * tFileInputDelimited_1:FILENAME
 																										 */
@@ -3530,12 +2172,10 @@ public class Dim_Language implements TalendJob {
 							break;
 						}
 
-						row2 = null;
-
-						row2 = null;
+						row1 = null;
 
 						boolean whetherReject_tFileInputDelimited_1 = false;
-						row2 = new row2Struct();
+						row1 = new row1Struct();
 						try {
 
 							char fieldSeparator_tFileInputDelimited_1_ListType[] = null;
@@ -3554,21 +2194,23 @@ public class Dim_Language implements TalendJob {
 																														// is
 																														// '\n'
 
-								row2.titleId = null;
+								row1.tconst = null;
 
-								row2.ordering = null;
+								row1.titleType = null;
 
-								row2.title = null;
+								row1.primaryTitle = null;
 
-								row2.region = null;
+								row1.originalTitle = null;
 
-								row2.language = null;
+								row1.isAdult = null;
 
-								row2.types = null;
+								row1.startYear = null;
 
-								row2.attributes = null;
+								row1.endYear = null;
 
-								row2.isOriginalTitle = null;
+								row1.runtimeMinutes = null;
+
+								row1.genres = null;
 
 							} else {
 
@@ -3578,11 +2220,11 @@ public class Dim_Language implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.titleId = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row1.tconst = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.titleId = null;
+									row1.tconst = null;
 
 								}
 
@@ -3590,31 +2232,11 @@ public class Dim_Language implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.ordering = ParserUtils.parseTo_Integer(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"ordering", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.ordering = null;
-
-									}
+									row1.titleType = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.ordering = null;
+									row1.titleType = null;
 
 								}
 
@@ -3622,11 +2244,11 @@ public class Dim_Language implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.title = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row1.primaryTitle = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.title = null;
+									row1.primaryTitle = null;
 
 								}
 
@@ -3634,11 +2256,11 @@ public class Dim_Language implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.region = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row1.originalTitle = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.region = null;
+									row1.originalTitle = null;
 
 								}
 
@@ -3646,46 +2268,10 @@ public class Dim_Language implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.language = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.language = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 5;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.types = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.types = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 6;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.attributes = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.attributes = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 7;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
 									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
 										try {
 
-											row2.isOriginalTitle = ParserUtils.parseTo_Integer(
+											row1.isAdult = ParserUtils.parseTo_Boolean(
 													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
 
 										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
@@ -3693,20 +2279,68 @@ public class Dim_Language implements TalendJob {
 													ex_tFileInputDelimited_1.getMessage());
 											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
 													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"isOriginalTitle", "row2",
+															"isAdult", "row1",
 															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
 															ex_tFileInputDelimited_1),
 													ex_tFileInputDelimited_1));
 										}
 									} else {
 
-										row2.isOriginalTitle = null;
+										row1.isAdult = null;
 
 									}
 
 								} else {
 
-									row2.isOriginalTitle = null;
+									row1.isAdult = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 5;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.startYear = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.startYear = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 6;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.endYear = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.endYear = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 7;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.runtimeMinutes = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.runtimeMinutes = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited_1 = 8;
+
+								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
+
+									row1.genres = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+
+								} else {
+
+									row1.genres = null;
 
 								}
 
@@ -3721,7 +2355,7 @@ public class Dim_Language implements TalendJob {
 							whetherReject_tFileInputDelimited_1 = true;
 
 							System.err.println(e.getMessage());
-							row2 = null;
+							row1 = null;
 
 							globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE", e.getMessage());
 
@@ -3752,70 +2386,414 @@ public class Dim_Language implements TalendJob {
 						/**
 						 * [tFileInputDelimited_1 process_data_begin ] stop
 						 */
-// Start of branch "row2"
-						if (row2 != null) {
+// Start of branch "row1"
+						if (row1 != null) {
 
 							/**
-							 * [tAdvancedHash_row2 main ] start
+							 * [tMap_1 main ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
+							currentComponent = "tMap_1";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1
 
-										, "row2"
+										, "row1"
 
 								);
 							}
 
-							row2Struct row2_HashRow = new row2Struct();
+							boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row2_HashRow.titleId = row2.titleId;
+							// ###############################
+							// # Input tables (lookups)
+							boolean rejectedInnerJoin_tMap_1 = false;
+							boolean mainRowRejected_tMap_1 = false;
 
-							row2_HashRow.ordering = row2.ordering;
+							if (
 
-							row2_HashRow.title = row2.title;
+							(
 
-							row2_HashRow.region = row2.region;
+							row1.titleType.equals("movie")
 
-							row2_HashRow.language = row2.language;
+							)
 
-							row2_HashRow.types = row2.types;
+							) { // G_TM_M_280
 
-							row2_HashRow.attributes = row2.attributes;
+								// CALL close main tMap filter for table 'row1'
+								// ###############################
+								{ // start of Var scope
 
-							row2_HashRow.isOriginalTitle = row2.isOriginalTitle;
+									// ###############################
+									// # Vars tables
 
-							tHash_Lookup_row2.put(row2_HashRow);
+									Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+									// ###############################
+									// # Output tables
 
-							tos_count_tAdvancedHash_row2++;
+									Movies = null;
+
+// # Output table : 'Movies'
+// # Filter conditions 
+									if (
+
+									(!row1.runtimeMinutes.equals("\\N"))
+
+									) {
+										Movies_tmp.id = row1.tconst;
+										Movies_tmp.title = row1.originalTitle;
+										Movies_tmp.genre = row1.genres;
+										Movies_tmp.time = row1.runtimeMinutes;
+										Movies = Movies_tmp;
+									} // closing filter/reject
+// ###############################
+
+								} // end of Var scope
+
+								rejectedInnerJoin_tMap_1 = false;
+
+								tos_count_tMap_1++;
+
+								/**
+								 * [tMap_1 main ] stop
+								 */
+
+								/**
+								 * [tMap_1 process_data_begin ] start
+								 */
+
+								currentComponent = "tMap_1";
+
+								/**
+								 * [tMap_1 process_data_begin ] stop
+								 */
+// Start of branch "Movies"
+								if (Movies != null) {
+
+									/**
+									 * [tConvertType_1 main ] start
+									 */
+
+									currentComponent = "tConvertType_1";
+
+									if (execStat) {
+										runStat.updateStatOnConnection(iterateId, 1, 1
+
+												, "Movies"
+
+										);
+									}
+
+									row3 = new row3Struct();
+									boolean bHasError_tConvertType_1 = false;
+									try {
+										if ("".equals(Movies.id)) {
+											Movies.id = null;
+										}
+										row3.id = TypeConvert.String2String(Movies.id);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.title)) {
+											Movies.title = null;
+										}
+										row3.title = TypeConvert.String2String(Movies.title);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.genre)) {
+											Movies.genre = null;
+										}
+										row3.genre = TypeConvert.String2String(Movies.genre);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.time)) {
+											Movies.time = null;
+										}
+										row3.time = TypeConvert.String2Integer(Movies.time);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									if (bHasError_tConvertType_1) {
+										row3 = null;
+									}
+
+									nb_line_tConvertType_1++;
+
+									tos_count_tConvertType_1++;
+
+									/**
+									 * [tConvertType_1 main ] stop
+									 */
+
+									/**
+									 * [tConvertType_1 process_data_begin ] start
+									 */
+
+									currentComponent = "tConvertType_1";
+
+									/**
+									 * [tConvertType_1 process_data_begin ] stop
+									 */
+// Start of branch "row3"
+									if (row3 != null) {
+
+										/**
+										 * [tLogRow_1 main ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										if (execStat) {
+											runStat.updateStatOnConnection(iterateId, 1, 1
+
+													, "row3"
+
+											);
+										}
+
+///////////////////////		
+
+										String[] row_tLogRow_1 = new String[4];
+
+										if (row3.id != null) { //
+											row_tLogRow_1[0] = String.valueOf(row3.id);
+
+										} //
+
+										if (row3.title != null) { //
+											row_tLogRow_1[1] = String.valueOf(row3.title);
+
+										} //
+
+										if (row3.genre != null) { //
+											row_tLogRow_1[2] = String.valueOf(row3.genre);
+
+										} //
+
+										if (row3.time != null) { //
+											row_tLogRow_1[3] = String.valueOf(row3.time);
+
+										} //
+
+										util_tLogRow_1.addRow(row_tLogRow_1);
+										nb_line_tLogRow_1++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+										row2 = row3;
+
+										tos_count_tLogRow_1++;
+
+										/**
+										 * [tLogRow_1 main ] stop
+										 */
+
+										/**
+										 * [tLogRow_1 process_data_begin ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										/**
+										 * [tLogRow_1 process_data_begin ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 main ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										if (execStat) {
+											runStat.updateStatOnConnection(iterateId, 1, 1
+
+													, "row2"
+
+											);
+										}
+
+										whetherReject_tDBOutput_1 = false;
+										if (row2.id == null) {
+											pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmt_tDBOutput_1.setString(1, row2.id);
+										}
+
+										int checkCount_tDBOutput_1 = -1;
+										try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
+											while (rs_tDBOutput_1.next()) {
+												checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
+											}
+										}
+										if (checkCount_tDBOutput_1 > 0) {
+											if (row2.title == null) {
+												pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(1, row2.title);
+											}
+
+											if (row2.genre == null) {
+												pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(2, row2.genre);
+											}
+
+											if (row2.time == null) {
+												pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.INTEGER);
+											} else {
+												pstmtUpdate_tDBOutput_1.setInt(3, row2.time);
+											}
+
+											if (row2.id == null) {
+												pstmtUpdate_tDBOutput_1.setNull(4 + count_tDBOutput_1,
+														java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(4 + count_tDBOutput_1, row2.id);
+											}
+
+											try {
+												int processedCount_tDBOutput_1 = pstmtUpdate_tDBOutput_1
+														.executeUpdate();
+												updatedCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												nb_line_tDBOutput_1++;
+											} catch (java.lang.Exception e) {
+												globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
+												whetherReject_tDBOutput_1 = true;
+												nb_line_tDBOutput_1++;
+												System.err.print(e.getMessage());
+											}
+										} else {
+											if (row2.id == null) {
+												pstmtInsert_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(1, row2.id);
+											}
+
+											if (row2.title == null) {
+												pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(2, row2.title);
+											}
+
+											if (row2.genre == null) {
+												pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(3, row2.genre);
+											}
+
+											if (row2.time == null) {
+												pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.INTEGER);
+											} else {
+												pstmtInsert_tDBOutput_1.setInt(4, row2.time);
+											}
+
+											try {
+												int processedCount_tDBOutput_1 = pstmtInsert_tDBOutput_1
+														.executeUpdate();
+												insertedCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												nb_line_tDBOutput_1++;
+											} catch (java.lang.Exception e) {
+												globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
+												whetherReject_tDBOutput_1 = true;
+												nb_line_tDBOutput_1++;
+												System.err.print(e.getMessage());
+											}
+										}
+										commitCounter_tDBOutput_1++;
+
+										if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
+
+											if (rowsToCommitCount_tDBOutput_1 != 0) {
+											}
+											conn_tDBOutput_1.commit();
+											if (rowsToCommitCount_tDBOutput_1 != 0) {
+												rowsToCommitCount_tDBOutput_1 = 0;
+											}
+											commitCounter_tDBOutput_1 = 0;
+
+										}
+
+										tos_count_tDBOutput_1++;
+
+										/**
+										 * [tDBOutput_1 main ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 process_data_begin ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										/**
+										 * [tDBOutput_1 process_data_begin ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 process_data_end ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										/**
+										 * [tDBOutput_1 process_data_end ] stop
+										 */
+
+										/**
+										 * [tLogRow_1 process_data_end ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										/**
+										 * [tLogRow_1 process_data_end ] stop
+										 */
+
+									} // End of branch "row3"
+
+									/**
+									 * [tConvertType_1 process_data_end ] start
+									 */
+
+									currentComponent = "tConvertType_1";
+
+									/**
+									 * [tConvertType_1 process_data_end ] stop
+									 */
+
+								} // End of branch "Movies"
+
+							} // G_TM_M_280 close main tMap filter for table 'row1'
 
 							/**
-							 * [tAdvancedHash_row2 main ] stop
+							 * [tMap_1 process_data_end ] start
 							 */
+
+							currentComponent = "tMap_1";
 
 							/**
-							 * [tAdvancedHash_row2 process_data_begin ] start
+							 * [tMap_1 process_data_end ] stop
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
-
-							/**
-							 * [tAdvancedHash_row2 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row2 process_data_end ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row2";
-
-							/**
-							 * [tAdvancedHash_row2 process_data_end ] stop
-							 */
-
-						} // End of branch "row2"
+						} // End of branch "row1"
 
 						/**
 						 * [tFileInputDelimited_1 process_data_end ] start
@@ -3856,22 +2834,131 @@ public class Dim_Language implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 end ] start
+				 * [tMap_1 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tMap_1";
 
-				tHash_Lookup_row2.endPut();
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tMap_1", true);
+				end_Hash.put("tMap_1", System.currentTimeMillis());
+
+				/**
+				 * [tMap_1 end ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 end ] start
+				 */
+
+				currentComponent = "tConvertType_1";
+
+				globalMap.put("tConvertType_1_NB_LINE", nb_line_tConvertType_1);
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Movies");
+				}
+
+				ok_Hash.put("tConvertType_1", true);
+				end_Hash.put("tConvertType_1", System.currentTimeMillis());
+
+				/**
+				 * [tConvertType_1 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+				}
+
+				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
+				consoleOut_tLogRow_1.flush();
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+				}
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 end ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				if (pstmtUpdate_tDBOutput_1 != null) {
+					pstmtUpdate_tDBOutput_1.close();
+					resourceMap.remove("pstmtUpdate_tDBOutput_1");
+				}
+				if (pstmtInsert_tDBOutput_1 != null) {
+					pstmtInsert_tDBOutput_1.close();
+					resourceMap.remove("pstmtInsert_tDBOutput_1");
+				}
+				if (pstmt_tDBOutput_1 != null) {
+					pstmt_tDBOutput_1.close();
+					resourceMap.remove("pstmt_tDBOutput_1");
+				}
+				resourceMap.put("statementClosed_tDBOutput_1", true);
+				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
+
+				}
+				conn_tDBOutput_1.commit();
+				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
+
+					rowsToCommitCount_tDBOutput_1 = 0;
+				}
+				commitCounter_tDBOutput_1 = 0;
+
+				conn_tDBOutput_1.close();
+
+				resourceMap.put("finish_tDBOutput_1", true);
+
+				nb_line_deleted_tDBOutput_1 = nb_line_deleted_tDBOutput_1 + deletedCount_tDBOutput_1;
+				nb_line_update_tDBOutput_1 = nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
+				nb_line_inserted_tDBOutput_1 = nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
+				nb_line_rejected_tDBOutput_1 = nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
+
+				globalMap.put("tDBOutput_1_NB_LINE", nb_line_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_UPDATED", nb_line_update_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
 
 				if (execStat) {
 					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
 				}
 
-				ok_Hash.put("tAdvancedHash_row2", true);
-				end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tDBOutput_1", true);
+				end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row2 end ] stop
+				 * [tDBOutput_1 end ] stop
 				 */
 
 			} // end the resume
@@ -3901,13 +2988,76 @@ public class Dim_Language implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 finally ] start
+				 * [tMap_1 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tMap_1";
 
 				/**
-				 * [tAdvancedHash_row2 finally ] stop
+				 * [tMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 finally ] start
+				 */
+
+				currentComponent = "tConvertType_1";
+
+				/**
+				 * [tConvertType_1 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
+						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_1 = null;
+						if ((pstmtUpdateToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtUpdate_tDBOutput_1")) != null) {
+							pstmtUpdateToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_1 = null;
+						if ((pstmtInsertToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtInsert_tDBOutput_1")) != null) {
+							pstmtInsertToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
+						if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_1")) != null) {
+							pstmtToClose_tDBOutput_1.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_1") == null) {
+						java.sql.Connection ctn_tDBOutput_1 = null;
+						if ((ctn_tDBOutput_1 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_1")) != null) {
+							try {
+								ctn_tDBOutput_1.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_1) {
+								String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :"
+										+ sqlEx_tDBOutput_1.getMessage();
+								System.err.println(errorMessage_tDBOutput_1);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_1 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -3962,9 +3112,9 @@ public class Dim_Language implements TalendJob {
 	public String status = "";
 
 	public static void main(String[] args) {
-		final Dim_Language Dim_LanguageClass = new Dim_Language();
+		final Dim_Movies Dim_MoviesClass = new Dim_Movies();
 
-		int exitCode = Dim_LanguageClass.runJobInTOS(args);
+		int exitCode = Dim_MoviesClass.runJobInTOS(args);
 
 		System.exit(exitCode);
 	}
@@ -4040,10 +3190,10 @@ public class Dim_Language implements TalendJob {
 		try {
 			// call job/subjob with an existing context, like: --context=production. if
 			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = Dim_Language.class.getClassLoader()
-					.getResourceAsStream("movies/dim_language_0_1/contexts/" + contextStr + ".properties");
+			java.io.InputStream inContext = Dim_Movies.class.getClassLoader()
+					.getResourceAsStream("movies/dim_movies_0_1/contexts/" + contextStr + ".properties");
 			if (inContext == null) {
-				inContext = Dim_Language.class.getClassLoader()
+				inContext = Dim_Movies.class.getClassLoader()
 						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
 			}
 			if (inContext != null) {
@@ -4126,14 +3276,14 @@ public class Dim_Language implements TalendJob {
 
 		try {
 			errorCode = null;
-			tFileInputDelimited_2Process(globalMap);
+			tFileInputDelimited_1Process(globalMap);
 			if (!"failure".equals(status)) {
 				status = "end";
 			}
-		} catch (TalendException e_tFileInputDelimited_2) {
-			globalMap.put("tFileInputDelimited_2_SUBPROCESS_STATE", -1);
+		} catch (TalendException e_tFileInputDelimited_1) {
+			globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", -1);
 
-			e_tFileInputDelimited_2.printStackTrace();
+			e_tFileInputDelimited_1.printStackTrace();
 
 		}
 
@@ -4147,8 +3297,7 @@ public class Dim_Language implements TalendJob {
 
 		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 		if (false) {
-			System.out
-					.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : Dim_Language");
+			System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : Dim_Movies");
 		}
 
 		if (execStat) {
@@ -4289,6 +3438,6 @@ public class Dim_Language implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 130515 characters generated by Talend Open Studio for Data Integration on the
- * November 30, 2024 at 1:17:04 PM CET
+ * 102933 characters generated by Talend Open Studio for Data Integration on the
+ * December 1, 2024 at 10:32:12 AM CET
  ************************************************************************************************/

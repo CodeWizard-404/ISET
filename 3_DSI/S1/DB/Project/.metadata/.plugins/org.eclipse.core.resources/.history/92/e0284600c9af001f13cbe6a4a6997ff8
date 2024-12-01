@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package movies.test_0_1;
+package movies.dim_movies_0_1;
 
 import routines.Numeric;
 import routines.DataOperation;
@@ -44,14 +44,14 @@ import java.util.Comparator;
 @SuppressWarnings("unused")
 
 /**
- * Job: test Purpose: <br>
+ * Job: Dim_Movies Purpose: <br>
  * Description: <br>
  * 
  * @author user@talend.com
  * @version 8.0.1.20211109_1610
  * @status
  */
-public class test implements TalendJob {
+public class Dim_Movies implements TalendJob {
 
 	protected static void logIgnoredError(String message, Throwable cause) {
 		System.err.println(message);
@@ -138,7 +138,7 @@ public class test implements TalendJob {
 	}
 
 	private final String jobVersion = "0.1";
-	private final String jobName = "test";
+	private final String jobName = "Dim_Movies";
 	private final String projectName = "MOVIES";
 	public Integer errorCode = null;
 	private String currentComponent = "";
@@ -263,14 +263,14 @@ public class test implements TalendJob {
 				} else {
 					e.printStackTrace();
 					e.printStackTrace(errorMessagePS);
-					test.this.exception = e;
+					Dim_Movies.this.exception = e;
 				}
 			}
 			if (!(e instanceof TalendException)) {
 				try {
 					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
 						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(test.this, new Object[] { e, currentComponent, globalMap });
+							m.invoke(Dim_Movies.this, new Object[] { e, currentComponent, globalMap });
 							break;
 						}
 					}
@@ -284,14 +284,14 @@ public class test implements TalendJob {
 		}
 	}
 
-	public void tDBInput_2_error(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
@@ -301,7 +301,17 @@ public class test implements TalendJob {
 
 		status = "failure";
 
-		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tConvertType_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tLogRow_1_error(Exception exception, String errorComponent,
@@ -311,30 +321,20 @@ public class test implements TalendJob {
 
 		status = "failure";
 
-		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
+	public void tDBOutput_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDBInput_2_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -342,9 +342,9 @@ public class test implements TalendJob {
 
 	}
 
-	public static class out1Struct implements routines.system.IPersistableRow<out1Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_test = new byte[0];
-		static byte[] commonByteArray_MOVIES_test = new byte[0];
+	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
 		protected static final int PRIME = 31;
 		protected int hashCode = DEFAULT_HASHCODE;
@@ -364,10 +364,16 @@ public class test implements TalendJob {
 			return this.title;
 		}
 
-		public Long budget;
+		public String genre;
 
-		public Long getBudget() {
-			return this.budget;
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public Integer time;
+
+		public Integer getTime() {
+			return this.time;
 		}
 
 		@Override
@@ -392,7 +398,7 @@ public class test implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final out1Struct other = (out1Struct) obj;
+			final row2Struct other = (row2Struct) obj;
 
 			if (this.id == null) {
 				if (other.id != null)
@@ -405,15 +411,16 @@ public class test implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(out1Struct other) {
+		public void copyDataTo(row2Struct other) {
 
 			other.id = this.id;
 			other.title = this.title;
-			other.budget = this.budget;
+			other.genre = this.genre;
+			other.time = this.time;
 
 		}
 
-		public void copyKeysDataTo(out1Struct other) {
+		public void copyKeysDataTo(row2Struct other) {
 
 			other.id = this.id;
 
@@ -426,15 +433,15 @@ public class test implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				dis.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -446,15 +453,691 @@ public class test implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				unmarshaller.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",title=" + title);
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + String.valueOf(time));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row2Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.id, other.id);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String title;
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String genre;
+
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public Integer time;
+
+		public Integer getTime() {
+			return this.time;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row3Struct other = (row3Struct) obj;
+
+			if (this.id == null) {
+				if (other.id != null)
+					return false;
+
+			} else if (!this.id.equals(other.id))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row3Struct other) {
+
+			other.id = this.id;
+			other.title = this.title;
+			other.genre = this.genre;
+			other.time = this.time;
+
+		}
+
+		public void copyKeysDataTo(row3Struct other) {
+
+			other.id = this.id;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.title = readString(dis);
+
+					this.genre = readString(dis);
+
+					this.time = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// String
+
+				writeString(this.genre, dos);
+
+				// Integer
+
+				writeInteger(this.time, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",title=" + title);
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + String.valueOf(time));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.id, other.id);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class MoviesStruct implements routines.system.IPersistableRow<MoviesStruct> {
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String title;
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String genre;
+
+		public String getGenre() {
+			return this.genre;
+		}
+
+		public String time;
+
+		public String getTime() {
+			return this.time;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final MoviesStruct other = (MoviesStruct) obj;
+
+			if (this.id == null) {
+				if (other.id != null)
+					return false;
+
+			} else if (!this.id.equals(other.id))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(MoviesStruct other) {
+
+			other.id = this.id;
+			other.title = this.title;
+			other.genre = this.genre;
+			other.time = this.time;
+
+		}
+
+		public void copyKeysDataTo(MoviesStruct other) {
+
+			other.id = this.id;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
+					} else {
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -481,7 +1164,7 @@ public class test implements TalendJob {
 
 		public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_test) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -491,12 +1174,9 @@ public class test implements TalendJob {
 
 					this.title = readString(dis);
 
-					length = dis.readByte();
-					if (length == -1) {
-						this.budget = null;
-					} else {
-						this.budget = dis.readLong();
-					}
+					this.genre = readString(dis);
+
+					this.time = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -509,7 +1189,7 @@ public class test implements TalendJob {
 
 		public void readData(org.jboss.marshalling.Unmarshaller dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_test) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
@@ -519,12 +1199,9 @@ public class test implements TalendJob {
 
 					this.title = readString(dis);
 
-					length = dis.readByte();
-					if (length == -1) {
-						this.budget = null;
-					} else {
-						this.budget = dis.readLong();
-					}
+					this.genre = readString(dis);
+
+					this.time = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -546,14 +1223,13 @@ public class test implements TalendJob {
 
 				writeString(this.title, dos);
 
-				// Long
+				// String
 
-				if (this.budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.budget);
-				}
+				writeString(this.genre, dos);
+
+				// String
+
+				writeString(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -572,14 +1248,13 @@ public class test implements TalendJob {
 
 				writeString(this.title, dos);
 
-				// Long
+				// String
 
-				if (this.budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.budget);
-				}
+				writeString(this.genre, dos);
+
+				// String
+
+				writeString(this.time, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -594,7 +1269,8 @@ public class test implements TalendJob {
 			sb.append("[");
 			sb.append("id=" + id);
 			sb.append(",title=" + title);
-			sb.append(",budget=" + String.valueOf(budget));
+			sb.append(",genre=" + genre);
+			sb.append(",time=" + time);
 			sb.append("]");
 
 			return sb.toString();
@@ -603,7 +1279,7 @@ public class test implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(out1Struct other) {
+		public int compareTo(MoviesStruct other) {
 
 			int returnValue = -1;
 
@@ -639,31 +1315,61 @@ public class test implements TalendJob {
 	}
 
 	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_test = new byte[0];
-		static byte[] commonByteArray_MOVIES_test = new byte[0];
+		final static byte[] commonByteArrayLock_MOVIES_Dim_Movies = new byte[0];
+		static byte[] commonByteArray_MOVIES_Dim_Movies = new byte[0];
 
-		public String id;
+		public String tconst;
 
-		public String getId() {
-			return this.id;
+		public String getTconst() {
+			return this.tconst;
 		}
 
-		public String title;
+		public String titleType;
 
-		public String getTitle() {
-			return this.title;
+		public String getTitleType() {
+			return this.titleType;
 		}
 
-		public String genre;
+		public String primaryTitle;
 
-		public String getGenre() {
-			return this.genre;
+		public String getPrimaryTitle() {
+			return this.primaryTitle;
 		}
 
-		public Integer time;
+		public String originalTitle;
 
-		public Integer getTime() {
-			return this.time;
+		public String getOriginalTitle() {
+			return this.originalTitle;
+		}
+
+		public Boolean isAdult;
+
+		public Boolean getIsAdult() {
+			return this.isAdult;
+		}
+
+		public String startYear;
+
+		public String getStartYear() {
+			return this.startYear;
+		}
+
+		public String endYear;
+
+		public String getEndYear() {
+			return this.endYear;
+		}
+
+		public String runtimeMinutes;
+
+		public String getRuntimeMinutes() {
+			return this.runtimeMinutes;
+		}
+
+		public String genres;
+
+		public String getGenres() {
+			return this.genres;
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -673,15 +1379,15 @@ public class test implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				dis.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
+				dis.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -693,15 +1399,15 @@ public class test implements TalendJob {
 			if (length == -1) {
 				strReturn = null;
 			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
+				if (length > commonByteArray_MOVIES_Dim_Movies.length) {
+					if (length < 1024 && commonByteArray_MOVIES_Dim_Movies.length == 0) {
+						commonByteArray_MOVIES_Dim_Movies = new byte[1024];
 					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
+						commonByteArray_MOVIES_Dim_Movies = new byte[2 * length];
 					}
 				}
-				unmarshaller.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
+				unmarshaller.readFully(commonByteArray_MOVIES_Dim_Movies, 0, length);
+				strReturn = new String(commonByteArray_MOVIES_Dim_Movies, 0, length, utf8Charset);
 			}
 			return strReturn;
 		}
@@ -726,63 +1432,36 @@ public class test implements TalendJob {
 			}
 		}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
 		public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_test) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
 					int length = 0;
 
-					this.id = readString(dis);
+					this.tconst = readString(dis);
 
-					this.title = readString(dis);
+					this.titleType = readString(dis);
 
-					this.genre = readString(dis);
+					this.primaryTitle = readString(dis);
 
-					this.time = readInteger(dis);
+					this.originalTitle = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.isAdult = null;
+					} else {
+						this.isAdult = dis.readBoolean();
+					}
+
+					this.startYear = readString(dis);
+
+					this.endYear = readString(dis);
+
+					this.runtimeMinutes = readString(dis);
+
+					this.genres = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -795,19 +1474,34 @@ public class test implements TalendJob {
 
 		public void readData(org.jboss.marshalling.Unmarshaller dis) {
 
-			synchronized (commonByteArrayLock_MOVIES_test) {
+			synchronized (commonByteArrayLock_MOVIES_Dim_Movies) {
 
 				try {
 
 					int length = 0;
 
-					this.id = readString(dis);
+					this.tconst = readString(dis);
 
-					this.title = readString(dis);
+					this.titleType = readString(dis);
 
-					this.genre = readString(dis);
+					this.primaryTitle = readString(dis);
 
-					this.time = readInteger(dis);
+					this.originalTitle = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.isAdult = null;
+					} else {
+						this.isAdult = dis.readBoolean();
+					}
+
+					this.startYear = readString(dis);
+
+					this.endYear = readString(dis);
+
+					this.runtimeMinutes = readString(dis);
+
+					this.genres = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -823,19 +1517,44 @@ public class test implements TalendJob {
 
 				// String
 
-				writeString(this.id, dos);
+				writeString(this.tconst, dos);
 
 				// String
 
-				writeString(this.title, dos);
+				writeString(this.titleType, dos);
 
 				// String
 
-				writeString(this.genre, dos);
+				writeString(this.primaryTitle, dos);
 
-				// Integer
+				// String
 
-				writeInteger(this.time, dos);
+				writeString(this.originalTitle, dos);
+
+				// Boolean
+
+				if (this.isAdult == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeBoolean(this.isAdult);
+				}
+
+				// String
+
+				writeString(this.startYear, dos);
+
+				// String
+
+				writeString(this.endYear, dos);
+
+				// String
+
+				writeString(this.runtimeMinutes, dos);
+
+				// String
+
+				writeString(this.genres, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -848,19 +1567,44 @@ public class test implements TalendJob {
 
 				// String
 
-				writeString(this.id, dos);
+				writeString(this.tconst, dos);
 
 				// String
 
-				writeString(this.title, dos);
+				writeString(this.titleType, dos);
 
 				// String
 
-				writeString(this.genre, dos);
+				writeString(this.primaryTitle, dos);
 
-				// Integer
+				// String
 
-				writeInteger(this.time, dos);
+				writeString(this.originalTitle, dos);
+
+				// Boolean
+
+				if (this.isAdult == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeBoolean(this.isAdult);
+				}
+
+				// String
+
+				writeString(this.startYear, dos);
+
+				// String
+
+				writeString(this.endYear, dos);
+
+				// String
+
+				writeString(this.runtimeMinutes, dos);
+
+				// String
+
+				writeString(this.genres, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -873,10 +1617,15 @@ public class test implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",title=" + title);
-			sb.append(",genre=" + genre);
-			sb.append(",time=" + String.valueOf(time));
+			sb.append("tconst=" + tconst);
+			sb.append(",titleType=" + titleType);
+			sb.append(",primaryTitle=" + primaryTitle);
+			sb.append(",originalTitle=" + originalTitle);
+			sb.append(",isAdult=" + String.valueOf(isAdult));
+			sb.append(",startYear=" + startYear);
+			sb.append(",endYear=" + endYear);
+			sb.append(",runtimeMinutes=" + runtimeMinutes);
+			sb.append(",genres=" + genres);
 			sb.append("]");
 
 			return sb.toString();
@@ -888,1870 +1637,6 @@ public class test implements TalendJob {
 		public int compareTo(row1Struct other) {
 
 			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public static class after_tDBInput_2Struct implements routines.system.IPersistableRow<after_tDBInput_2Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_test = new byte[0];
-		static byte[] commonByteArray_MOVIES_test = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String id;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public String title;
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public String genre;
-
-		public String getGenre() {
-			return this.genre;
-		}
-
-		public Integer time;
-
-		public Integer getTime() {
-			return this.time;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final after_tDBInput_2Struct other = (after_tDBInput_2Struct) obj;
-
-			if (this.id == null) {
-				if (other.id != null)
-					return false;
-
-			} else if (!this.id.equals(other.id))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(after_tDBInput_2Struct other) {
-
-			other.id = this.id;
-			other.title = this.title;
-			other.genre = this.genre;
-			other.time = this.time;
-
-		}
-
-		public void copyKeysDataTo(after_tDBInput_2Struct other) {
-
-			other.id = this.id;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_test) {
-
-				try {
-
-					int length = 0;
-
-					this.id = readString(dis);
-
-					this.title = readString(dis);
-
-					this.genre = readString(dis);
-
-					this.time = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_test) {
-
-				try {
-
-					int length = 0;
-
-					this.id = readString(dis);
-
-					this.title = readString(dis);
-
-					this.genre = readString(dis);
-
-					this.time = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.title, dos);
-
-				// String
-
-				writeString(this.genre, dos);
-
-				// Integer
-
-				writeInteger(this.time, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.title, dos);
-
-				// String
-
-				writeString(this.genre, dos);
-
-				// Integer
-
-				writeInteger(this.time, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",title=" + title);
-			sb.append(",genre=" + genre);
-			sb.append(",time=" + String.valueOf(time));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tDBInput_2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.id, other.id);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				tFileInputDelimited_1Process(globalMap);
-
-				row1Struct row1 = new row1Struct();
-				out1Struct out1 = new out1Struct();
-
-				/**
-				 * [tLogRow_1 begin ] start
-				 */
-
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				currentComponent = "tLogRow_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "out1");
-				}
-
-				int tos_count_tLogRow_1 = 0;
-
-				///////////////////////
-
-				final String OUTPUT_FIELD_SEPARATOR_tLogRow_1 = "|";
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
-
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-				/**
-				 * [tLogRow_1 begin ] stop
-				 */
-
-				/**
-				 * [tMap_1 begin ] start
-				 */
-
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
-
-				currentComponent = "tMap_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
-
-				int tos_count_tMap_1 = 0;
-
-// ###############################
-// # Lookup's keys initialization
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) globalMap
-						.get("tHash_Lookup_row2"));
-
-				row2Struct row2HashKey = new row2Struct();
-				row2Struct row2Default = new row2Struct();
-// ###############################        
-
-// ###############################
-// # Vars initialization
-				class Var__tMap_1__Struct {
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-				out1Struct out1_tmp = new out1Struct();
-// ###############################
-
-				/**
-				 * [tMap_1 begin ] stop
-				 */
-
-				/**
-				 * [tDBInput_2 begin ] start
-				 */
-
-				ok_Hash.put("tDBInput_2", false);
-				start_Hash.put("tDBInput_2", System.currentTimeMillis());
-
-				currentComponent = "tDBInput_2";
-
-				int tos_count_tDBInput_2 = 0;
-
-				java.util.Calendar calendar_tDBInput_2 = java.util.Calendar.getInstance();
-				calendar_tDBInput_2.set(0, 0, 0, 0, 0, 0);
-				java.util.Date year0_tDBInput_2 = calendar_tDBInput_2.getTime();
-				int nb_line_tDBInput_2 = 0;
-				java.sql.Connection conn_tDBInput_2 = null;
-				String driverClass_tDBInput_2 = "com.mysql.cj.jdbc.Driver";
-				java.lang.Class jdbcclazz_tDBInput_2 = java.lang.Class.forName(driverClass_tDBInput_2);
-				String dbUser_tDBInput_2 = "root";
-
-				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil
-						.decryptPassword("enc:routine.encryption.key.v1:MFR6AGj2VIhfwcoh85M8qYvYHQDlTxvYkobnRg==");
-
-				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
-
-				String properties_tDBInput_2 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
-				if (properties_tDBInput_2 == null || properties_tDBInput_2.trim().length() == 0) {
-					properties_tDBInput_2 = "";
-				}
-				String url_tDBInput_2 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
-						+ properties_tDBInput_2;
-
-				conn_tDBInput_2 = java.sql.DriverManager.getConnection(url_tDBInput_2, dbUser_tDBInput_2,
-						dbPwd_tDBInput_2);
-
-				java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
-
-				String dbquery_tDBInput_2 = "SELECT \n  `movies`.`id`, \n  `movies`.`title`, \n  `movies`.`genre`, \n  `movies`.`time`\nFROM `movies`";
-
-				globalMap.put("tDBInput_2_QUERY", dbquery_tDBInput_2);
-				java.sql.ResultSet rs_tDBInput_2 = null;
-
-				try {
-					rs_tDBInput_2 = stmt_tDBInput_2.executeQuery(dbquery_tDBInput_2);
-					java.sql.ResultSetMetaData rsmd_tDBInput_2 = rs_tDBInput_2.getMetaData();
-					int colQtyInRs_tDBInput_2 = rsmd_tDBInput_2.getColumnCount();
-
-					String tmpContent_tDBInput_2 = null;
-
-					while (rs_tDBInput_2.next()) {
-						nb_line_tDBInput_2++;
-
-						if (colQtyInRs_tDBInput_2 < 1) {
-							row1.id = null;
-						} else {
-
-							row1.id = routines.system.JDBCUtil.getString(rs_tDBInput_2, 1, false);
-						}
-						if (colQtyInRs_tDBInput_2 < 2) {
-							row1.title = null;
-						} else {
-
-							row1.title = routines.system.JDBCUtil.getString(rs_tDBInput_2, 2, false);
-						}
-						if (colQtyInRs_tDBInput_2 < 3) {
-							row1.genre = null;
-						} else {
-
-							row1.genre = routines.system.JDBCUtil.getString(rs_tDBInput_2, 3, false);
-						}
-						if (colQtyInRs_tDBInput_2 < 4) {
-							row1.time = null;
-						} else {
-
-							row1.time = rs_tDBInput_2.getInt(4);
-							if (rs_tDBInput_2.wasNull()) {
-								row1.time = null;
-							}
-						}
-
-						/**
-						 * [tDBInput_2 begin ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 main ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
-						tos_count_tDBInput_2++;
-
-						/**
-						 * [tDBInput_2 main ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 process_data_begin ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
-						/**
-						 * [tDBInput_2 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tMap_1 main ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1
-
-									, "row1"
-
-							);
-						}
-
-						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-						// ###############################
-						// # Input tables (lookups)
-						boolean rejectedInnerJoin_tMap_1 = false;
-						boolean mainRowRejected_tMap_1 = false;
-
-						///////////////////////////////////////////////
-						// Starting Lookup Table "row2"
-						///////////////////////////////////////////////
-
-						boolean forceLooprow2 = false;
-
-						row2Struct row2ObjectFromLookup = null;
-
-						if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-							hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-							row2HashKey.imdb_id = row1.id;
-
-							row2HashKey.hashCodeDirty = true;
-
-							tHash_Lookup_row2.lookup(row2HashKey);
-
-						} // G_TM_M_020
-
-						if (tHash_Lookup_row2 != null && tHash_Lookup_row2.getCount(row2HashKey) > 1) { // G 071
-
-							// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row2'
-							// and it contains more one result from keys : row2.imdb_id = '" +
-							// row2HashKey.imdb_id + "'");
-						} // G 071
-
-						row2Struct row2 = null;
-
-						row2Struct fromLookup_row2 = null;
-						row2 = row2Default;
-
-						if (tHash_Lookup_row2 != null && tHash_Lookup_row2.hasNext()) { // G 099
-
-							fromLookup_row2 = tHash_Lookup_row2.next();
-
-						} // G 099
-
-						if (fromLookup_row2 != null) {
-							row2 = fromLookup_row2;
-						}
-
-						// ###############################
-						{ // start of Var scope
-
-							// ###############################
-							// # Vars tables
-
-							Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
-							// ###############################
-							// # Output tables
-
-							out1 = null;
-
-// # Output table : 'out1'
-							out1_tmp.id = row1.id;
-							out1_tmp.title = row1.title;
-							out1_tmp.budget = row2.budget;
-							out1 = out1_tmp;
-// ###############################
-
-						} // end of Var scope
-
-						rejectedInnerJoin_tMap_1 = false;
-
-						tos_count_tMap_1++;
-
-						/**
-						 * [tMap_1 main ] stop
-						 */
-
-						/**
-						 * [tMap_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_begin ] stop
-						 */
-// Start of branch "out1"
-						if (out1 != null) {
-
-							/**
-							 * [tLogRow_1 main ] start
-							 */
-
-							currentComponent = "tLogRow_1";
-
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1
-
-										, "out1"
-
-								);
-							}
-
-///////////////////////		
-
-							strBuffer_tLogRow_1 = new StringBuilder();
-
-							if (out1.id != null) { //
-
-								strBuffer_tLogRow_1.append(String.valueOf(out1.id));
-
-							} //
-
-							strBuffer_tLogRow_1.append("|");
-
-							if (out1.title != null) { //
-
-								strBuffer_tLogRow_1.append(String.valueOf(out1.title));
-
-							} //
-
-							strBuffer_tLogRow_1.append("|");
-
-							if (out1.budget != null) { //
-
-								strBuffer_tLogRow_1.append(String.valueOf(out1.budget));
-
-							} //
-
-							if (globalMap.get("tLogRow_CONSOLE") != null) {
-								consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-							} else {
-								consoleOut_tLogRow_1 = new java.io.PrintStream(
-										new java.io.BufferedOutputStream(System.out));
-								globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-							}
-							consoleOut_tLogRow_1.println(strBuffer_tLogRow_1.toString());
-							consoleOut_tLogRow_1.flush();
-							nb_line_tLogRow_1++;
-//////
-
-//////                    
-
-///////////////////////    			
-
-							tos_count_tLogRow_1++;
-
-							/**
-							 * [tLogRow_1 main ] stop
-							 */
-
-							/**
-							 * [tLogRow_1 process_data_begin ] start
-							 */
-
-							currentComponent = "tLogRow_1";
-
-							/**
-							 * [tLogRow_1 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tLogRow_1 process_data_end ] start
-							 */
-
-							currentComponent = "tLogRow_1";
-
-							/**
-							 * [tLogRow_1 process_data_end ] stop
-							 */
-
-						} // End of branch "out1"
-
-						/**
-						 * [tMap_1 process_data_end ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
-						/**
-						 * [tDBInput_2 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 end ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
-					}
-				} finally {
-					if (rs_tDBInput_2 != null) {
-						rs_tDBInput_2.close();
-					}
-					if (stmt_tDBInput_2 != null) {
-						stmt_tDBInput_2.close();
-					}
-					if (conn_tDBInput_2 != null && !conn_tDBInput_2.isClosed()) {
-
-						conn_tDBInput_2.close();
-
-						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
-								&& routines.system.BundleUtils.inOSGi()) {
-							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
-									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
-						}
-
-					}
-
-				}
-
-				globalMap.put("tDBInput_2_NB_LINE", nb_line_tDBInput_2);
-
-				ok_Hash.put("tDBInput_2", true);
-				end_Hash.put("tDBInput_2", System.currentTimeMillis());
-
-				/**
-				 * [tDBInput_2 end ] stop
-				 */
-
-				/**
-				 * [tMap_1 end ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-// ###############################
-// # Lookup hashes releasing
-				if (tHash_Lookup_row2 != null) {
-					tHash_Lookup_row2.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row2");
-
-// ###############################      
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
-
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
-
-				/**
-				 * [tMap_1 end ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 end ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-//////
-//////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-
-///////////////////////    			
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "out1");
-				}
-
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				/**
-				 * [tLogRow_1 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row2");
-
-			try {
-
-				/**
-				 * [tDBInput_2 finally ] start
-				 */
-
-				currentComponent = "tDBInput_2";
-
-				/**
-				 * [tDBInput_2 finally ] stop
-				 */
-
-				/**
-				 * [tMap_1 finally ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-				/**
-				 * [tMap_1 finally ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 finally ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-				/**
-				 * [tLogRow_1 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
-		final static byte[] commonByteArrayLock_MOVIES_test = new byte[0];
-		static byte[] commonByteArray_MOVIES_test = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public Integer id;
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public String title;
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public Float vote_average;
-
-		public Float getVote_average() {
-			return this.vote_average;
-		}
-
-		public Float vote_count;
-
-		public Float getVote_count() {
-			return this.vote_count;
-		}
-
-		public String status;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public String release_date;
-
-		public String getRelease_date() {
-			return this.release_date;
-		}
-
-		public Float revenue;
-
-		public Float getRevenue() {
-			return this.revenue;
-		}
-
-		public Float runtime;
-
-		public Float getRuntime() {
-			return this.runtime;
-		}
-
-		public Long budget;
-
-		public Long getBudget() {
-			return this.budget;
-		}
-
-		public String imdb_id;
-
-		public String getImdb_id() {
-			return this.imdb_id;
-		}
-
-		public String original_language;
-
-		public String getOriginal_language() {
-			return this.original_language;
-		}
-
-		public String original_title;
-
-		public String getOriginal_title() {
-			return this.original_title;
-		}
-
-		public String overview;
-
-		public String getOverview() {
-			return this.overview;
-		}
-
-		public Float popularity;
-
-		public Float getPopularity() {
-			return this.popularity;
-		}
-
-		public String tagline;
-
-		public String getTagline() {
-			return this.tagline;
-		}
-
-		public String genres;
-
-		public String getGenres() {
-			return this.genres;
-		}
-
-		public String production_companies;
-
-		public String getProduction_companies() {
-			return this.production_companies;
-		}
-
-		public String production_countries;
-
-		public String getProduction_countries() {
-			return this.production_countries;
-		}
-
-		public String spoken_languages;
-
-		public String getSpoken_languages() {
-			return this.spoken_languages;
-		}
-
-		public String cast;
-
-		public String getCast() {
-			return this.cast;
-		}
-
-		public String director;
-
-		public String getDirector() {
-			return this.director;
-		}
-
-		public String director_of_photography;
-
-		public String getDirector_of_photography() {
-			return this.director_of_photography;
-		}
-
-		public String writers;
-
-		public String getWriters() {
-			return this.writers;
-		}
-
-		public String producers;
-
-		public String getProducers() {
-			return this.producers;
-		}
-
-		public String music_composer;
-
-		public String getMusic_composer() {
-			return this.music_composer;
-		}
-
-		public Float imdb_rating;
-
-		public Float getImdb_rating() {
-			return this.imdb_rating;
-		}
-
-		public Float imdb_votes;
-
-		public Float getImdb_votes() {
-			return this.imdb_votes;
-		}
-
-		public String poster_path;
-
-		public String getPoster_path() {
-			return this.poster_path;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.imdb_id == null) ? 0 : this.imdb_id.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row2Struct other = (row2Struct) obj;
-
-			if (this.imdb_id == null) {
-				if (other.imdb_id != null)
-					return false;
-
-			} else if (!this.imdb_id.equals(other.imdb_id))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row2Struct other) {
-
-			other.id = this.id;
-			other.title = this.title;
-			other.vote_average = this.vote_average;
-			other.vote_count = this.vote_count;
-			other.status = this.status;
-			other.release_date = this.release_date;
-			other.revenue = this.revenue;
-			other.runtime = this.runtime;
-			other.budget = this.budget;
-			other.imdb_id = this.imdb_id;
-			other.original_language = this.original_language;
-			other.original_title = this.original_title;
-			other.overview = this.overview;
-			other.popularity = this.popularity;
-			other.tagline = this.tagline;
-			other.genres = this.genres;
-			other.production_companies = this.production_companies;
-			other.production_countries = this.production_countries;
-			other.spoken_languages = this.spoken_languages;
-			other.cast = this.cast;
-			other.director = this.director;
-			other.director_of_photography = this.director_of_photography;
-			other.writers = this.writers;
-			other.producers = this.producers;
-			other.music_composer = this.music_composer;
-			other.imdb_rating = this.imdb_rating;
-			other.imdb_votes = this.imdb_votes;
-			other.poster_path = this.poster_path;
-
-		}
-
-		public void copyKeysDataTo(row2Struct other) {
-
-			other.imdb_id = this.imdb_id;
-
-		}
-
-		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = unmarshaller.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				unmarshaller.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_MOVIES_test.length) {
-					if (length < 1024 && commonByteArray_MOVIES_test.length == 0) {
-						commonByteArray_MOVIES_test = new byte[1024];
-					} else {
-						commonByteArray_MOVIES_test = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_MOVIES_test, 0, length);
-				strReturn = new String(commonByteArray_MOVIES_test, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_test) {
-
-				try {
-
-					int length = 0;
-
-					this.imdb_id = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_MOVIES_test) {
-
-				try {
-
-					int length = 0;
-
-					this.imdb_id = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.imdb_id, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.imdb_id, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.id = readInteger(dis, ois);
-
-				this.title = readString(dis, ois);
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.vote_average = null;
-				} else {
-					this.vote_average = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.vote_count = null;
-				} else {
-					this.vote_count = dis.readFloat();
-				}
-
-				this.status = readString(dis, ois);
-
-				this.release_date = readString(dis, ois);
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.revenue = null;
-				} else {
-					this.revenue = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.runtime = null;
-				} else {
-					this.runtime = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.budget = null;
-				} else {
-					this.budget = dis.readLong();
-				}
-
-				this.original_language = readString(dis, ois);
-
-				this.original_title = readString(dis, ois);
-
-				this.overview = readString(dis, ois);
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.popularity = null;
-				} else {
-					this.popularity = dis.readFloat();
-				}
-
-				this.tagline = readString(dis, ois);
-
-				this.genres = readString(dis, ois);
-
-				this.production_companies = readString(dis, ois);
-
-				this.production_countries = readString(dis, ois);
-
-				this.spoken_languages = readString(dis, ois);
-
-				this.cast = readString(dis, ois);
-
-				this.director = readString(dis, ois);
-
-				this.director_of_photography = readString(dis, ois);
-
-				this.writers = readString(dis, ois);
-
-				this.producers = readString(dis, ois);
-
-				this.music_composer = readString(dis, ois);
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.imdb_rating = null;
-				} else {
-					this.imdb_rating = dis.readFloat();
-				}
-
-				length = dis.readByte();
-				if (length == -1) {
-					this.imdb_votes = null;
-				} else {
-					this.imdb_votes = dis.readFloat();
-				}
-
-				this.poster_path = readString(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-			try {
-				int length = 0;
-
-				this.id = readInteger(dis, objectIn);
-
-				this.title = readString(dis, objectIn);
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.vote_average = null;
-				} else {
-					this.vote_average = objectIn.readFloat();
-				}
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.vote_count = null;
-				} else {
-					this.vote_count = objectIn.readFloat();
-				}
-
-				this.status = readString(dis, objectIn);
-
-				this.release_date = readString(dis, objectIn);
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.revenue = null;
-				} else {
-					this.revenue = objectIn.readFloat();
-				}
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.runtime = null;
-				} else {
-					this.runtime = objectIn.readFloat();
-				}
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.budget = null;
-				} else {
-					this.budget = objectIn.readLong();
-				}
-
-				this.original_language = readString(dis, objectIn);
-
-				this.original_title = readString(dis, objectIn);
-
-				this.overview = readString(dis, objectIn);
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.popularity = null;
-				} else {
-					this.popularity = objectIn.readFloat();
-				}
-
-				this.tagline = readString(dis, objectIn);
-
-				this.genres = readString(dis, objectIn);
-
-				this.production_companies = readString(dis, objectIn);
-
-				this.production_countries = readString(dis, objectIn);
-
-				this.spoken_languages = readString(dis, objectIn);
-
-				this.cast = readString(dis, objectIn);
-
-				this.director = readString(dis, objectIn);
-
-				this.director_of_photography = readString(dis, objectIn);
-
-				this.writers = readString(dis, objectIn);
-
-				this.producers = readString(dis, objectIn);
-
-				this.music_composer = readString(dis, objectIn);
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.imdb_rating = null;
-				} else {
-					this.imdb_rating = objectIn.readFloat();
-				}
-
-				length = objectIn.readByte();
-				if (length == -1) {
-					this.imdb_votes = null;
-				} else {
-					this.imdb_votes = objectIn.readFloat();
-				}
-
-				this.poster_path = readString(dis, objectIn);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeInteger(this.id, dos, oos);
-
-				writeString(this.title, dos, oos);
-
-				if (this.vote_average == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.vote_average);
-				}
-
-				if (this.vote_count == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.vote_count);
-				}
-
-				writeString(this.status, dos, oos);
-
-				writeString(this.release_date, dos, oos);
-
-				if (this.revenue == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.revenue);
-				}
-
-				if (this.runtime == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.runtime);
-				}
-
-				if (this.budget == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.budget);
-				}
-
-				writeString(this.original_language, dos, oos);
-
-				writeString(this.original_title, dos, oos);
-
-				writeString(this.overview, dos, oos);
-
-				if (this.popularity == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.popularity);
-				}
-
-				writeString(this.tagline, dos, oos);
-
-				writeString(this.genres, dos, oos);
-
-				writeString(this.production_companies, dos, oos);
-
-				writeString(this.production_countries, dos, oos);
-
-				writeString(this.spoken_languages, dos, oos);
-
-				writeString(this.cast, dos, oos);
-
-				writeString(this.director, dos, oos);
-
-				writeString(this.director_of_photography, dos, oos);
-
-				writeString(this.writers, dos, oos);
-
-				writeString(this.producers, dos, oos);
-
-				writeString(this.music_composer, dos, oos);
-
-				if (this.imdb_rating == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.imdb_rating);
-				}
-
-				if (this.imdb_votes == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeFloat(this.imdb_votes);
-				}
-
-				writeString(this.poster_path, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
-			try {
-
-				writeInteger(this.id, dos, objectOut);
-
-				writeString(this.title, dos, objectOut);
-
-				if (this.vote_average == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.vote_average);
-				}
-
-				if (this.vote_count == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.vote_count);
-				}
-
-				writeString(this.status, dos, objectOut);
-
-				writeString(this.release_date, dos, objectOut);
-
-				if (this.revenue == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.revenue);
-				}
-
-				if (this.runtime == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.runtime);
-				}
-
-				if (this.budget == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeLong(this.budget);
-				}
-
-				writeString(this.original_language, dos, objectOut);
-
-				writeString(this.original_title, dos, objectOut);
-
-				writeString(this.overview, dos, objectOut);
-
-				if (this.popularity == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.popularity);
-				}
-
-				writeString(this.tagline, dos, objectOut);
-
-				writeString(this.genres, dos, objectOut);
-
-				writeString(this.production_companies, dos, objectOut);
-
-				writeString(this.production_countries, dos, objectOut);
-
-				writeString(this.spoken_languages, dos, objectOut);
-
-				writeString(this.cast, dos, objectOut);
-
-				writeString(this.director, dos, objectOut);
-
-				writeString(this.director_of_photography, dos, objectOut);
-
-				writeString(this.writers, dos, objectOut);
-
-				writeString(this.producers, dos, objectOut);
-
-				writeString(this.music_composer, dos, objectOut);
-
-				if (this.imdb_rating == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.imdb_rating);
-				}
-
-				if (this.imdb_votes == null) {
-					objectOut.writeByte(-1);
-				} else {
-					objectOut.writeByte(0);
-					objectOut.writeFloat(this.imdb_votes);
-				}
-
-				writeString(this.poster_path, dos, objectOut);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
-		public boolean supportMarshaller() {
-			return true;
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + String.valueOf(id));
-			sb.append(",title=" + title);
-			sb.append(",vote_average=" + String.valueOf(vote_average));
-			sb.append(",vote_count=" + String.valueOf(vote_count));
-			sb.append(",status=" + status);
-			sb.append(",release_date=" + release_date);
-			sb.append(",revenue=" + String.valueOf(revenue));
-			sb.append(",runtime=" + String.valueOf(runtime));
-			sb.append(",budget=" + String.valueOf(budget));
-			sb.append(",imdb_id=" + imdb_id);
-			sb.append(",original_language=" + original_language);
-			sb.append(",original_title=" + original_title);
-			sb.append(",overview=" + overview);
-			sb.append(",popularity=" + String.valueOf(popularity));
-			sb.append(",tagline=" + tagline);
-			sb.append(",genres=" + genres);
-			sb.append(",production_companies=" + production_companies);
-			sb.append(",production_countries=" + production_countries);
-			sb.append(",spoken_languages=" + spoken_languages);
-			sb.append(",cast=" + cast);
-			sb.append(",director=" + director);
-			sb.append(",director_of_photography=" + director_of_photography);
-			sb.append(",writers=" + writers);
-			sb.append(",producers=" + producers);
-			sb.append(",music_composer=" + music_composer);
-			sb.append(",imdb_rating=" + String.valueOf(imdb_rating));
-			sb.append(",imdb_votes=" + String.valueOf(imdb_votes));
-			sb.append(",poster_path=" + poster_path);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.imdb_id, other.imdb_id);
-			if (returnValue != 0) {
-				return returnValue;
-			}
 
 			return returnValue;
 		}
@@ -2799,38 +1684,339 @@ public class test implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				row2Struct row2 = new row2Struct();
+				row1Struct row1 = new row1Struct();
+				MoviesStruct Movies = new MoviesStruct();
+				row3Struct row3 = new row3Struct();
+				row3Struct row2 = row3;
 
 				/**
-				 * [tAdvancedHash_row2 begin ] start
+				 * [tDBOutput_1 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_row2", false);
-				start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tDBOutput_1", false);
+				start_Hash.put("tDBOutput_1", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tDBOutput_1";
 
 				if (execStat) {
 					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
 				}
 
-				int tos_count_tAdvancedHash_row2 = 0;
+				int tos_count_tDBOutput_1 = 0;
 
-				// connection name:row2
-				// source node:tFileInputDelimited_1 - inputs:(after_tDBInput_2)
-				// outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2)
-				// outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2) outputs:(out1)
+				int updateKeyCount_tDBOutput_1 = 1;
+				if (updateKeyCount_tDBOutput_1 < 1) {
+					throw new RuntimeException("For update, Schema must have a key");
+				} else if (updateKeyCount_tDBOutput_1 == 4 && true) {
+					System.err.println("For update, every Schema column can not be a key");
+				}
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+				int nb_line_tDBOutput_1 = 0;
+				int nb_line_update_tDBOutput_1 = 0;
+				int nb_line_inserted_tDBOutput_1 = 0;
+				int nb_line_deleted_tDBOutput_1 = 0;
+				int nb_line_rejected_tDBOutput_1 = 0;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row2Struct>getLookup(matchingModeEnum_row2);
+				int deletedCount_tDBOutput_1 = 0;
+				int updatedCount_tDBOutput_1 = 0;
+				int insertedCount_tDBOutput_1 = 0;
+				int rowsToCommitCount_tDBOutput_1 = 0;
+				int rejectedCount_tDBOutput_1 = 0;
 
-				globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+				String tableName_tDBOutput_1 = "Movies";
+				boolean whetherReject_tDBOutput_1 = false;
+
+				java.util.Calendar calendar_tDBOutput_1 = java.util.Calendar.getInstance();
+				calendar_tDBOutput_1.set(1, 0, 1, 0, 0, 0);
+				long year1_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
+				calendar_tDBOutput_1.set(10000, 0, 1, 0, 0, 0);
+				long year10000_tDBOutput_1 = calendar_tDBOutput_1.getTime().getTime();
+				long date_tDBOutput_1;
+
+				java.sql.Connection conn_tDBOutput_1 = null;
+
+				String properties_tDBOutput_1 = "noDatetimeStringSync=true&enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1";
+				if (properties_tDBOutput_1 == null || properties_tDBOutput_1.trim().length() == 0) {
+					properties_tDBOutput_1 = "rewriteBatchedStatements=true&allowLoadLocalInfile=true";
+				} else {
+					if (!properties_tDBOutput_1.contains("rewriteBatchedStatements=")) {
+						properties_tDBOutput_1 += "&rewriteBatchedStatements=true";
+					}
+
+					if (!properties_tDBOutput_1.contains("allowLoadLocalInfile=")) {
+						properties_tDBOutput_1 += "&allowLoadLocalInfile=true";
+					}
+				}
+
+				String url_tDBOutput_1 = "jdbc:mysql://" + "" + ":" + "3306" + "/" + "movies_db" + "?"
+						+ properties_tDBOutput_1;
+
+				String driverClass_tDBOutput_1 = "com.mysql.cj.jdbc.Driver";
+
+				String dbUser_tDBOutput_1 = "root";
+
+				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:/k2Qy7x8w+qj8/+aT0VR8m63BzPIWuiwayTwfQ==");
+
+				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
+				java.lang.Class.forName(driverClass_tDBOutput_1);
+
+				conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
+						dbPwd_tDBOutput_1);
+
+				resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
+				conn_tDBOutput_1.setAutoCommit(false);
+				int commitEvery_tDBOutput_1 = 10000;
+				int commitCounter_tDBOutput_1 = 0;
+
+				int count_tDBOutput_1 = 0;
+
+				java.sql.DatabaseMetaData dbMetaData_tDBOutput_1 = conn_tDBOutput_1.getMetaData();
+				java.sql.ResultSet rsTable_tDBOutput_1 = dbMetaData_tDBOutput_1.getTables("movies_db", null, null,
+						new String[] { "TABLE" });
+				boolean whetherExist_tDBOutput_1 = false;
+				while (rsTable_tDBOutput_1.next()) {
+					String table_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_NAME");
+					if (table_tDBOutput_1.equalsIgnoreCase("Movies")) {
+						whetherExist_tDBOutput_1 = true;
+						break;
+					}
+				}
+				if (whetherExist_tDBOutput_1) {
+					try (java.sql.Statement stmtDrop_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
+						stmtDrop_tDBOutput_1.execute("DROP TABLE `" + tableName_tDBOutput_1 + "`");
+					}
+				}
+				try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
+					stmtCreate_tDBOutput_1.execute("CREATE TABLE `" + tableName_tDBOutput_1
+							+ "`(`id` VARCHAR(9)  ,`title` VARCHAR(255)  ,`genre` VARCHAR(255)  ,`time` INT(10)  ,primary key(`id`))");
+				}
+				java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement("SELECT COUNT(1) FROM `" + "Movies" + "` WHERE `id` = ?");
+				resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
+				String insert_tDBOutput_1 = "INSERT INTO `" + "Movies"
+						+ "` (`id`,`title`,`genre`,`time`) VALUES (?,?,?,?)";
+
+				java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement(insert_tDBOutput_1);
+				resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
+				String update_tDBOutput_1 = "UPDATE `" + "Movies"
+						+ "` SET `title` = ?,`genre` = ?,`time` = ? WHERE `id` = ?";
+
+				java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1
+						.prepareStatement(update_tDBOutput_1);
+				resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
 
 				/**
-				 * [tAdvancedHash_row2 begin ] stop
+				 * [tDBOutput_1 begin ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+				}
+
+				int tos_count_tLogRow_1 = 0;
+
+				///////////////////////
+
+				class Util_tLogRow_1 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[4];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 4; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						sb.append(print(des_top));
+
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
+
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 3 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 3 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
+
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
+
+							String[] row = list.get(i);
+
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
+
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
+
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
+
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[3] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+				util_tLogRow_1.setTableName("tLogRow_1");
+				util_tLogRow_1.addRow(new String[] { "id", "title", "genre", "time", });
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 begin ] start
+				 */
+
+				ok_Hash.put("tConvertType_1", false);
+				start_Hash.put("tConvertType_1", System.currentTimeMillis());
+
+				currentComponent = "tConvertType_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Movies");
+				}
+
+				int tos_count_tConvertType_1 = 0;
+
+				int nb_line_tConvertType_1 = 0;
+
+				/**
+				 * [tConvertType_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_1 begin ] start
+				 */
+
+				ok_Hash.put("tMap_1", false);
+				start_Hash.put("tMap_1", System.currentTimeMillis());
+
+				currentComponent = "tMap_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tMap_1 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_1__Struct {
+				}
+				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				MoviesStruct Movies_tmp = new MoviesStruct();
+// ###############################
+
+				/**
+				 * [tMap_1 begin ] stop
 				 */
 
 				/**
@@ -2856,8 +2042,8 @@ public class test implements TalendJob {
 
 				// support passing value (property: Field Separator) by 'context.fs' or
 				// 'globalMap.get("fs")'.
-				if (((String) ",").length() > 0) {
-					fieldSeparator_tFileInputDelimited_1 = ((String) ",").toCharArray();
+				if (((String) "\t").length() > 0) {
+					fieldSeparator_tFileInputDelimited_1 = ((String) "\t").toCharArray();
 				} else {
 					throw new IllegalArgumentException("Field Separator must be assigned a char.");
 				}
@@ -2873,10 +2059,10 @@ public class test implements TalendJob {
 				}
 
 				Object filename_tFileInputDelimited_1 = /** Start field tFileInputDelimited_1:FILENAME */
-						"C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/TMDB_all_movies.csv"/**
-																											 * End field
-																											 * tFileInputDelimited_1:FILENAME
-																											 */
+						"C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/title.basics.tsv"/**
+																										 * End field
+																										 * tFileInputDelimited_1:FILENAME
+																										 */
 				;
 				com.talend.csv.CSVReader csvReadertFileInputDelimited_1 = null;
 
@@ -2908,10 +2094,8 @@ public class test implements TalendJob {
 								&& (rowSeparator_tFileInputDelimited_1[0] != '\r'))
 							csvReadertFileInputDelimited_1.setLineEnd("" + rowSeparator_tFileInputDelimited_1[0]);
 
-						csvReadertFileInputDelimited_1.setQuoteChar('\"');
+						csvReadertFileInputDelimited_1.setQuoteChar('"');
 
-						// ?????doesn't work for other escapeChar
-						// the default escape mode is double escape
 						csvReadertFileInputDelimited_1.setEscapeChar(csvReadertFileInputDelimited_1.getQuoteChar());
 
 						if (footer_tFileInputDelimited_1 > 0) {
@@ -2950,10 +2134,8 @@ public class test implements TalendJob {
 									&& (rowSeparator_tFileInputDelimited_1[0] != '\r'))
 								csvReadertFileInputDelimited_1.setLineEnd("" + rowSeparator_tFileInputDelimited_1[0]);
 
-							csvReadertFileInputDelimited_1.setQuoteChar('\"');
+							csvReadertFileInputDelimited_1.setQuoteChar('"');
 
-							// ?????doesn't work for other escapeChar
-							// the default escape mode is double escape
 							csvReadertFileInputDelimited_1.setEscapeChar(csvReadertFileInputDelimited_1.getQuoteChar());
 
 						}
@@ -2990,19 +2172,17 @@ public class test implements TalendJob {
 							break;
 						}
 
-						row2 = null;
-
-						row2 = null;
+						row1 = null;
 
 						boolean whetherReject_tFileInputDelimited_1 = false;
-						row2 = new row2Struct();
+						row1 = new row1Struct();
 						try {
 
 							char fieldSeparator_tFileInputDelimited_1_ListType[] = null;
 							// support passing value (property: Field Separator) by 'context.fs' or
 							// 'globalMap.get("fs")'.
-							if (((String) ",").length() > 0) {
-								fieldSeparator_tFileInputDelimited_1_ListType = ((String) ",").toCharArray();
+							if (((String) "\t").length() > 0) {
+								fieldSeparator_tFileInputDelimited_1_ListType = ((String) "\t").toCharArray();
 							} else {
 								throw new IllegalArgumentException("Field Separator must be assigned a char.");
 							}
@@ -3014,61 +2194,23 @@ public class test implements TalendJob {
 																														// is
 																														// '\n'
 
-								row2.id = null;
+								row1.tconst = null;
 
-								row2.title = null;
+								row1.titleType = null;
 
-								row2.vote_average = null;
+								row1.primaryTitle = null;
 
-								row2.vote_count = null;
+								row1.originalTitle = null;
 
-								row2.status = null;
+								row1.isAdult = null;
 
-								row2.release_date = null;
+								row1.startYear = null;
 
-								row2.revenue = null;
+								row1.endYear = null;
 
-								row2.runtime = null;
+								row1.runtimeMinutes = null;
 
-								row2.budget = null;
-
-								row2.imdb_id = null;
-
-								row2.original_language = null;
-
-								row2.original_title = null;
-
-								row2.overview = null;
-
-								row2.popularity = null;
-
-								row2.tagline = null;
-
-								row2.genres = null;
-
-								row2.production_companies = null;
-
-								row2.production_countries = null;
-
-								row2.spoken_languages = null;
-
-								row2.cast = null;
-
-								row2.director = null;
-
-								row2.director_of_photography = null;
-
-								row2.writers = null;
-
-								row2.producers = null;
-
-								row2.music_composer = null;
-
-								row2.imdb_rating = null;
-
-								row2.imdb_votes = null;
-
-								row2.poster_path = null;
+								row1.genres = null;
 
 							} else {
 
@@ -3078,31 +2220,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.id = ParserUtils.parseTo_Integer(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"id", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.id = null;
-
-									}
+									row1.tconst = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.id = null;
+									row1.tconst = null;
 
 								}
 
@@ -3110,11 +2232,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.title = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row1.titleType = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.title = null;
+									row1.titleType = null;
 
 								}
 
@@ -3122,31 +2244,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.vote_average = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"vote_average", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.vote_average = null;
-
-									}
+									row1.primaryTitle = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.vote_average = null;
+									row1.primaryTitle = null;
 
 								}
 
@@ -3154,31 +2256,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.vote_count = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"vote_count", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.vote_count = null;
-
-									}
+									row1.originalTitle = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.vote_count = null;
+									row1.originalTitle = null;
 
 								}
 
@@ -3186,11 +2268,31 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.status = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
+										try {
+
+											row1.isAdult = ParserUtils.parseTo_Boolean(
+													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
+
+										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
+											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
+													ex_tFileInputDelimited_1.getMessage());
+											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
+													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+															"isAdult", "row1",
+															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
+															ex_tFileInputDelimited_1),
+													ex_tFileInputDelimited_1));
+										}
+									} else {
+
+										row1.isAdult = null;
+
+									}
 
 								} else {
 
-									row2.status = null;
+									row1.isAdult = null;
 
 								}
 
@@ -3198,11 +2300,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									row2.release_date = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
+									row1.startYear = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.release_date = null;
+									row1.startYear = null;
 
 								}
 
@@ -3210,31 +2312,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.revenue = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"revenue", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.revenue = null;
-
-									}
+									row1.endYear = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.revenue = null;
+									row1.endYear = null;
 
 								}
 
@@ -3242,31 +2324,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.runtime = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"runtime", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.runtime = null;
-
-									}
+									row1.runtimeMinutes = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.runtime = null;
+									row1.runtimeMinutes = null;
 
 								}
 
@@ -3274,319 +2336,11 @@ public class test implements TalendJob {
 
 								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
 
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.budget = ParserUtils.parseTo_Long(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"budget", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.budget = null;
-
-									}
+									row1.genres = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
 
 								} else {
 
-									row2.budget = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 9;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.imdb_id = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.imdb_id = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 10;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.original_language = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.original_language = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 11;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.original_title = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.original_title = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 12;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.overview = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.overview = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 13;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.popularity = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"popularity", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.popularity = null;
-
-									}
-
-								} else {
-
-									row2.popularity = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 14;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.tagline = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.tagline = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 15;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.genres = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.genres = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 16;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.production_companies = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.production_companies = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 17;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.production_countries = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.production_countries = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 18;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.spoken_languages = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.spoken_languages = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 19;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.cast = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.cast = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 20;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.director = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.director = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 21;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.director_of_photography = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.director_of_photography = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 22;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.writers = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.writers = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 23;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.producers = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.producers = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 24;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.music_composer = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.music_composer = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 25;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.imdb_rating = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"imdb_rating", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.imdb_rating = null;
-
-									}
-
-								} else {
-
-									row2.imdb_rating = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 26;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									if (rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1].length() > 0) {
-										try {
-
-											row2.imdb_votes = ParserUtils.parseTo_Float(
-													rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1]);
-
-										} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-											globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",
-													ex_tFileInputDelimited_1.getMessage());
-											rowstate_tFileInputDelimited_1.setException(new RuntimeException(String
-													.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-															"imdb_votes", "row2",
-															rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1],
-															ex_tFileInputDelimited_1),
-													ex_tFileInputDelimited_1));
-										}
-									} else {
-
-										row2.imdb_votes = null;
-
-									}
-
-								} else {
-
-									row2.imdb_votes = null;
-
-								}
-
-								columnIndexWithD_tFileInputDelimited_1 = 27;
-
-								if (columnIndexWithD_tFileInputDelimited_1 < rowtFileInputDelimited_1.length) {
-
-									row2.poster_path = rowtFileInputDelimited_1[columnIndexWithD_tFileInputDelimited_1];
-
-								} else {
-
-									row2.poster_path = null;
+									row1.genres = null;
 
 								}
 
@@ -3601,7 +2355,7 @@ public class test implements TalendJob {
 							whetherReject_tFileInputDelimited_1 = true;
 
 							System.err.println(e.getMessage());
-							row2 = null;
+							row1 = null;
 
 							globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE", e.getMessage());
 
@@ -3632,110 +2386,414 @@ public class test implements TalendJob {
 						/**
 						 * [tFileInputDelimited_1 process_data_begin ] stop
 						 */
-// Start of branch "row2"
-						if (row2 != null) {
+// Start of branch "row1"
+						if (row1 != null) {
 
 							/**
-							 * [tAdvancedHash_row2 main ] start
+							 * [tMap_1 main ] start
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
+							currentComponent = "tMap_1";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1
 
-										, "row2"
+										, "row1"
 
 								);
 							}
 
-							row2Struct row2_HashRow = new row2Struct();
+							boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row2_HashRow.id = row2.id;
+							// ###############################
+							// # Input tables (lookups)
+							boolean rejectedInnerJoin_tMap_1 = false;
+							boolean mainRowRejected_tMap_1 = false;
 
-							row2_HashRow.title = row2.title;
+							if (
 
-							row2_HashRow.vote_average = row2.vote_average;
+							(
 
-							row2_HashRow.vote_count = row2.vote_count;
+							row1.titleType.equals("movie")
 
-							row2_HashRow.status = row2.status;
+							)
 
-							row2_HashRow.release_date = row2.release_date;
+							) { // G_TM_M_280
 
-							row2_HashRow.revenue = row2.revenue;
+								// CALL close main tMap filter for table 'row1'
+								// ###############################
+								{ // start of Var scope
 
-							row2_HashRow.runtime = row2.runtime;
+									// ###############################
+									// # Vars tables
 
-							row2_HashRow.budget = row2.budget;
+									Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+									// ###############################
+									// # Output tables
 
-							row2_HashRow.imdb_id = row2.imdb_id;
+									Movies = null;
 
-							row2_HashRow.original_language = row2.original_language;
+// # Output table : 'Movies'
+// # Filter conditions 
+									if (
 
-							row2_HashRow.original_title = row2.original_title;
+									(!row1.runtimeMinutes.equals("\\N"))
 
-							row2_HashRow.overview = row2.overview;
+									) {
+										Movies_tmp.id = row1.tconst;
+										Movies_tmp.title = row1.originalTitle;
+										Movies_tmp.genre = row1.genres;
+										Movies_tmp.time = row1.runtimeMinutes;
+										Movies = Movies_tmp;
+									} // closing filter/reject
+// ###############################
 
-							row2_HashRow.popularity = row2.popularity;
+								} // end of Var scope
 
-							row2_HashRow.tagline = row2.tagline;
+								rejectedInnerJoin_tMap_1 = false;
 
-							row2_HashRow.genres = row2.genres;
+								tos_count_tMap_1++;
 
-							row2_HashRow.production_companies = row2.production_companies;
+								/**
+								 * [tMap_1 main ] stop
+								 */
 
-							row2_HashRow.production_countries = row2.production_countries;
+								/**
+								 * [tMap_1 process_data_begin ] start
+								 */
 
-							row2_HashRow.spoken_languages = row2.spoken_languages;
+								currentComponent = "tMap_1";
 
-							row2_HashRow.cast = row2.cast;
+								/**
+								 * [tMap_1 process_data_begin ] stop
+								 */
+// Start of branch "Movies"
+								if (Movies != null) {
 
-							row2_HashRow.director = row2.director;
+									/**
+									 * [tConvertType_1 main ] start
+									 */
 
-							row2_HashRow.director_of_photography = row2.director_of_photography;
+									currentComponent = "tConvertType_1";
 
-							row2_HashRow.writers = row2.writers;
+									if (execStat) {
+										runStat.updateStatOnConnection(iterateId, 1, 1
 
-							row2_HashRow.producers = row2.producers;
+												, "Movies"
 
-							row2_HashRow.music_composer = row2.music_composer;
+										);
+									}
 
-							row2_HashRow.imdb_rating = row2.imdb_rating;
+									row3 = new row3Struct();
+									boolean bHasError_tConvertType_1 = false;
+									try {
+										if ("".equals(Movies.id)) {
+											Movies.id = null;
+										}
+										row3.id = TypeConvert.String2String(Movies.id);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.title)) {
+											Movies.title = null;
+										}
+										row3.title = TypeConvert.String2String(Movies.title);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.genre)) {
+											Movies.genre = null;
+										}
+										row3.genre = TypeConvert.String2String(Movies.genre);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									try {
+										if ("".equals(Movies.time)) {
+											Movies.time = null;
+										}
+										row3.time = TypeConvert.String2Integer(Movies.time);
+									} catch (java.lang.Exception e) {
+										globalMap.put("tConvertType_1_ERROR_MESSAGE", e.getMessage());
+										bHasError_tConvertType_1 = true;
+										throw e;
+									}
+									if (bHasError_tConvertType_1) {
+										row3 = null;
+									}
 
-							row2_HashRow.imdb_votes = row2.imdb_votes;
+									nb_line_tConvertType_1++;
 
-							row2_HashRow.poster_path = row2.poster_path;
+									tos_count_tConvertType_1++;
 
-							tHash_Lookup_row2.put(row2_HashRow);
+									/**
+									 * [tConvertType_1 main ] stop
+									 */
 
-							tos_count_tAdvancedHash_row2++;
+									/**
+									 * [tConvertType_1 process_data_begin ] start
+									 */
+
+									currentComponent = "tConvertType_1";
+
+									/**
+									 * [tConvertType_1 process_data_begin ] stop
+									 */
+// Start of branch "row3"
+									if (row3 != null) {
+
+										/**
+										 * [tLogRow_1 main ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										if (execStat) {
+											runStat.updateStatOnConnection(iterateId, 1, 1
+
+													, "row3"
+
+											);
+										}
+
+///////////////////////		
+
+										String[] row_tLogRow_1 = new String[4];
+
+										if (row3.id != null) { //
+											row_tLogRow_1[0] = String.valueOf(row3.id);
+
+										} //
+
+										if (row3.title != null) { //
+											row_tLogRow_1[1] = String.valueOf(row3.title);
+
+										} //
+
+										if (row3.genre != null) { //
+											row_tLogRow_1[2] = String.valueOf(row3.genre);
+
+										} //
+
+										if (row3.time != null) { //
+											row_tLogRow_1[3] = String.valueOf(row3.time);
+
+										} //
+
+										util_tLogRow_1.addRow(row_tLogRow_1);
+										nb_line_tLogRow_1++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+										row2 = row3;
+
+										tos_count_tLogRow_1++;
+
+										/**
+										 * [tLogRow_1 main ] stop
+										 */
+
+										/**
+										 * [tLogRow_1 process_data_begin ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										/**
+										 * [tLogRow_1 process_data_begin ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 main ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										if (execStat) {
+											runStat.updateStatOnConnection(iterateId, 1, 1
+
+													, "row2"
+
+											);
+										}
+
+										whetherReject_tDBOutput_1 = false;
+										if (row2.id == null) {
+											pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmt_tDBOutput_1.setString(1, row2.id);
+										}
+
+										int checkCount_tDBOutput_1 = -1;
+										try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
+											while (rs_tDBOutput_1.next()) {
+												checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
+											}
+										}
+										if (checkCount_tDBOutput_1 > 0) {
+											if (row2.title == null) {
+												pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(1, row2.title);
+											}
+
+											if (row2.genre == null) {
+												pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(2, row2.genre);
+											}
+
+											if (row2.time == null) {
+												pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.INTEGER);
+											} else {
+												pstmtUpdate_tDBOutput_1.setInt(3, row2.time);
+											}
+
+											if (row2.id == null) {
+												pstmtUpdate_tDBOutput_1.setNull(4 + count_tDBOutput_1,
+														java.sql.Types.VARCHAR);
+											} else {
+												pstmtUpdate_tDBOutput_1.setString(4 + count_tDBOutput_1, row2.id);
+											}
+
+											try {
+												int processedCount_tDBOutput_1 = pstmtUpdate_tDBOutput_1
+														.executeUpdate();
+												updatedCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												nb_line_tDBOutput_1++;
+											} catch (java.lang.Exception e) {
+												globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
+												whetherReject_tDBOutput_1 = true;
+												nb_line_tDBOutput_1++;
+												System.err.print(e.getMessage());
+											}
+										} else {
+											if (row2.id == null) {
+												pstmtInsert_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(1, row2.id);
+											}
+
+											if (row2.title == null) {
+												pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(2, row2.title);
+											}
+
+											if (row2.genre == null) {
+												pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+											} else {
+												pstmtInsert_tDBOutput_1.setString(3, row2.genre);
+											}
+
+											if (row2.time == null) {
+												pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.INTEGER);
+											} else {
+												pstmtInsert_tDBOutput_1.setInt(4, row2.time);
+											}
+
+											try {
+												int processedCount_tDBOutput_1 = pstmtInsert_tDBOutput_1
+														.executeUpdate();
+												insertedCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												rowsToCommitCount_tDBOutput_1 += processedCount_tDBOutput_1;
+												nb_line_tDBOutput_1++;
+											} catch (java.lang.Exception e) {
+												globalMap.put("tDBOutput_1_ERROR_MESSAGE", e.getMessage());
+												whetherReject_tDBOutput_1 = true;
+												nb_line_tDBOutput_1++;
+												System.err.print(e.getMessage());
+											}
+										}
+										commitCounter_tDBOutput_1++;
+
+										if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
+
+											if (rowsToCommitCount_tDBOutput_1 != 0) {
+											}
+											conn_tDBOutput_1.commit();
+											if (rowsToCommitCount_tDBOutput_1 != 0) {
+												rowsToCommitCount_tDBOutput_1 = 0;
+											}
+											commitCounter_tDBOutput_1 = 0;
+
+										}
+
+										tos_count_tDBOutput_1++;
+
+										/**
+										 * [tDBOutput_1 main ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 process_data_begin ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										/**
+										 * [tDBOutput_1 process_data_begin ] stop
+										 */
+
+										/**
+										 * [tDBOutput_1 process_data_end ] start
+										 */
+
+										currentComponent = "tDBOutput_1";
+
+										/**
+										 * [tDBOutput_1 process_data_end ] stop
+										 */
+
+										/**
+										 * [tLogRow_1 process_data_end ] start
+										 */
+
+										currentComponent = "tLogRow_1";
+
+										/**
+										 * [tLogRow_1 process_data_end ] stop
+										 */
+
+									} // End of branch "row3"
+
+									/**
+									 * [tConvertType_1 process_data_end ] start
+									 */
+
+									currentComponent = "tConvertType_1";
+
+									/**
+									 * [tConvertType_1 process_data_end ] stop
+									 */
+
+								} // End of branch "Movies"
+
+							} // G_TM_M_280 close main tMap filter for table 'row1'
 
 							/**
-							 * [tAdvancedHash_row2 main ] stop
+							 * [tMap_1 process_data_end ] start
 							 */
+
+							currentComponent = "tMap_1";
 
 							/**
-							 * [tAdvancedHash_row2 process_data_begin ] start
+							 * [tMap_1 process_data_end ] stop
 							 */
 
-							currentComponent = "tAdvancedHash_row2";
-
-							/**
-							 * [tAdvancedHash_row2 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row2 process_data_end ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row2";
-
-							/**
-							 * [tAdvancedHash_row2 process_data_end ] stop
-							 */
-
-						} // End of branch "row2"
+						} // End of branch "row1"
 
 						/**
 						 * [tFileInputDelimited_1 process_data_end ] start
@@ -3776,22 +2834,131 @@ public class test implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 end ] start
+				 * [tMap_1 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tMap_1";
 
-				tHash_Lookup_row2.endPut();
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tMap_1", true);
+				end_Hash.put("tMap_1", System.currentTimeMillis());
+
+				/**
+				 * [tMap_1 end ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 end ] start
+				 */
+
+				currentComponent = "tConvertType_1";
+
+				globalMap.put("tConvertType_1_NB_LINE", nb_line_tConvertType_1);
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Movies");
+				}
+
+				ok_Hash.put("tConvertType_1", true);
+				end_Hash.put("tConvertType_1", System.currentTimeMillis());
+
+				/**
+				 * [tConvertType_1 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+				}
+
+				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
+				consoleOut_tLogRow_1.flush();
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+				}
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 end ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				if (pstmtUpdate_tDBOutput_1 != null) {
+					pstmtUpdate_tDBOutput_1.close();
+					resourceMap.remove("pstmtUpdate_tDBOutput_1");
+				}
+				if (pstmtInsert_tDBOutput_1 != null) {
+					pstmtInsert_tDBOutput_1.close();
+					resourceMap.remove("pstmtInsert_tDBOutput_1");
+				}
+				if (pstmt_tDBOutput_1 != null) {
+					pstmt_tDBOutput_1.close();
+					resourceMap.remove("pstmt_tDBOutput_1");
+				}
+				resourceMap.put("statementClosed_tDBOutput_1", true);
+				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
+
+				}
+				conn_tDBOutput_1.commit();
+				if (commitCounter_tDBOutput_1 > 0 && rowsToCommitCount_tDBOutput_1 != 0) {
+
+					rowsToCommitCount_tDBOutput_1 = 0;
+				}
+				commitCounter_tDBOutput_1 = 0;
+
+				conn_tDBOutput_1.close();
+
+				resourceMap.put("finish_tDBOutput_1", true);
+
+				nb_line_deleted_tDBOutput_1 = nb_line_deleted_tDBOutput_1 + deletedCount_tDBOutput_1;
+				nb_line_update_tDBOutput_1 = nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
+				nb_line_inserted_tDBOutput_1 = nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
+				nb_line_rejected_tDBOutput_1 = nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
+
+				globalMap.put("tDBOutput_1_NB_LINE", nb_line_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_UPDATED", nb_line_update_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
 
 				if (execStat) {
 					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
 				}
 
-				ok_Hash.put("tAdvancedHash_row2", true);
-				end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+				ok_Hash.put("tDBOutput_1", true);
+				end_Hash.put("tDBOutput_1", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_row2 end ] stop
+				 * [tDBOutput_1 end ] stop
 				 */
 
 			} // end the resume
@@ -3821,13 +2988,76 @@ public class test implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_row2 finally ] start
+				 * [tMap_1 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_row2";
+				currentComponent = "tMap_1";
 
 				/**
-				 * [tAdvancedHash_row2 finally ] stop
+				 * [tMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tConvertType_1 finally ] start
+				 */
+
+				currentComponent = "tConvertType_1";
+
+				/**
+				 * [tConvertType_1 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
+						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_1 = null;
+						if ((pstmtUpdateToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtUpdate_tDBOutput_1")) != null) {
+							pstmtUpdateToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_1 = null;
+						if ((pstmtInsertToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtInsert_tDBOutput_1")) != null) {
+							pstmtInsertToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
+						if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_1")) != null) {
+							pstmtToClose_tDBOutput_1.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_1") == null) {
+						java.sql.Connection ctn_tDBOutput_1 = null;
+						if ((ctn_tDBOutput_1 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_1")) != null) {
+							try {
+								ctn_tDBOutput_1.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_1) {
+								String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :"
+										+ sqlEx_tDBOutput_1.getMessage();
+								System.err.println(errorMessage_tDBOutput_1);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_1 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -3882,9 +3112,9 @@ public class test implements TalendJob {
 	public String status = "";
 
 	public static void main(String[] args) {
-		final test testClass = new test();
+		final Dim_Movies Dim_MoviesClass = new Dim_Movies();
 
-		int exitCode = testClass.runJobInTOS(args);
+		int exitCode = Dim_MoviesClass.runJobInTOS(args);
 
 		System.exit(exitCode);
 	}
@@ -3960,10 +3190,10 @@ public class test implements TalendJob {
 		try {
 			// call job/subjob with an existing context, like: --context=production. if
 			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = test.class.getClassLoader()
-					.getResourceAsStream("movies/test_0_1/contexts/" + contextStr + ".properties");
+			java.io.InputStream inContext = Dim_Movies.class.getClassLoader()
+					.getResourceAsStream("movies/dim_movies_0_1/contexts/" + contextStr + ".properties");
 			if (inContext == null) {
-				inContext = test.class.getClassLoader()
+				inContext = Dim_Movies.class.getClassLoader()
 						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
 			}
 			if (inContext != null) {
@@ -4046,14 +3276,14 @@ public class test implements TalendJob {
 
 		try {
 			errorCode = null;
-			tDBInput_2Process(globalMap);
+			tFileInputDelimited_1Process(globalMap);
 			if (!"failure".equals(status)) {
 				status = "end";
 			}
-		} catch (TalendException e_tDBInput_2) {
-			globalMap.put("tDBInput_2_SUBPROCESS_STATE", -1);
+		} catch (TalendException e_tFileInputDelimited_1) {
+			globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", -1);
 
-			e_tDBInput_2.printStackTrace();
+			e_tFileInputDelimited_1.printStackTrace();
 
 		}
 
@@ -4067,7 +3297,7 @@ public class test implements TalendJob {
 
 		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 		if (false) {
-			System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : test");
+			System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : Dim_Movies");
 		}
 
 		if (execStat) {
@@ -4208,6 +3438,6 @@ public class test implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 125518 characters generated by Talend Open Studio for Data Integration on the
- * November 30, 2024 at 10:59:13 AM CET
+ * 102933 characters generated by Talend Open Studio for Data Integration on the
+ * December 1, 2024 at 10:32:12 AM CET
  ************************************************************************************************/
