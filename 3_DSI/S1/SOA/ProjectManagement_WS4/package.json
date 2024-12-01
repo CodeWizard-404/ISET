@@ -8,6 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1",
@@ -15,6 +16,5 @@
     "mysql2": "^3.11.4",
     "projectmanagement_ws4": "file:",
     "sequelize": "^6.37.5"
-  },
-  "description": ""
+  }
 }

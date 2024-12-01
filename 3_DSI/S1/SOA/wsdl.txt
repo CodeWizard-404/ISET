@@ -1,11 +1,6 @@
 ws1:
-<<<<<<< HEAD
-http://localhost:8088/projects
-http://localhost:8088/projects/id
-=======
 GET http://localhost:8088/projects
 GET http://localhost:8088/projects/id
->>>>>>> c0d7a7925ce8e17727a222c84c5538c8ec32430a
 
 ws2:
 http://localhost:56446/Service.svc?singleWsdl

@@ -47,13 +47,8 @@ ns ns0 http://tempuri.org/
 ---
 {
 	ns0#AssignMemberToTeam: {
-<<<<<<< HEAD
-		ns0#memberId: vars.Member ,
-		ns0#teamId: vars.Team 
-=======
 		ns0#memberId: vars.MemberID ,
 		ns0#teamId: vars.TeamID
->>>>>>> c0d7a7925ce8e17727a222c84c5538c8ec32430a
 	}
 }]]></ee:set-payload>
 			</ee:message>
