@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_IvtqOa1sEe-lGfc9JVUspQ" id="_IvtDIK1sEe-lGfc9JVUspQ" label="Name_Basics" version="0.1" statusCode="" item="_IvtqO61sEe-lGfc9JVUspQ" displayName="Name_Basics">
+    <author href="../../talend.project#_JmpTMK1hEe-lGfc9JVUspQ"/>
+    <additionalProperties xmi:id="_IvwGcK1sEe-lGfc9JVUspQ" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_IvwGca1sEe-lGfc9JVUspQ" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_IvwGcq1sEe-lGfc9JVUspQ" key="created_date" value="2024-11-28T10:35:42.679+0100"/>
+    <additionalProperties xmi:id="_IvwGc61sEe-lGfc9JVUspQ" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_IvwGdK1sEe-lGfc9JVUspQ" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_IvwGda1sEe-lGfc9JVUspQ" key="modified_date" value="2024-11-28T10:35:42.679+0100"/>
+    <additionalProperties xmi:id="_V6DZUK6EEe-lDsS6LQIekQ" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_V6DZUa6EEe-lDsS6LQIekQ" key="import_product_version" value="8.0.1.20211109_1610"/>
+<<<<<<< HEAD
+    <additionalProperties xmi:id="_V6DZUq6EEe-lDsS6LQIekQ" key="import_date" value="2024-12-01T10:49:42.467+0100"/>
+=======
+    <additionalProperties xmi:id="_V6DZUq6EEe-lDsS6LQIekQ" key="import_date" value="2024-12-01T10:45:34.551+0100"/>
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_IvtqOq1sEe-lGfc9JVUspQ" path=""/>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_IvtqO61sEe-lGfc9JVUspQ" property="_IvtqOa1sEe-lGfc9JVUspQ" state="_IvtqOq1sEe-lGfc9JVUspQ">
+    <connection href="Name_Basics_0.1.item#_IvtqMK1sEe-lGfc9JVUspQ"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>
