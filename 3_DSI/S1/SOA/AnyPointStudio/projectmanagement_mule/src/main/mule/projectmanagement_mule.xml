@@ -14,7 +14,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 		<http:request-connection host="localhost" port="8088" />
 	</http:request-config>
 	<wsc:config name="WS2" doc:name="Web Service Consumer Config" doc:id="4a49f371-11ac-4598-a9a3-ae45bec28daa" >
-		<wsc:connection soapVersion="SOAP12" wsdlLocation="http://localhost:56446/Service.svc?singleWsdl" service="MemberService" port="BasicHttpBinding_IMemberService" address="http://localhost:56446/Service.svc" />
+		<wsc:connection soapVersion="SOAP12" wsdlLocation="http://localhost:56446/Service.svc?wsdl" service="MemberService" port="BasicHttpBinding_IMemberService" address="http://localhost:56446/Service.svc" />
 	</wsc:config>
 	<http:request-config name="WS4" doc:name="HTTP Request configuration" doc:id="7a21a262-bfa9-41f5-8c2f-fba521b63e9f" basePath="/calendar" >
 		<http:request-connection host="localhost" port="4000" />
@@ -36,9 +36,9 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 		<http:request method="GET" doc:name="Request" doc:id="b7814da0-bed0-422f-840b-6f44c353e322" config-ref="WS1" path="#['/' ++ vars.ProjectId]" />
 	</flow>
 	<flow name="WS2_AssignMemberToTeam_(SOAP)" doc:id="7b38201b-1ed0-4d80-ae4b-b8e598e08cc3" >
-		<http:listener doc:name="Listener" doc:id="49e35a0a-a874-40c4-9d0b-bd135f2bb944" config-ref="WS" path="/AssignMemberToTeam?TeamID={TeamID}&amp;MemberID={MemberID}" allowedMethods="POST"/>
-		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="Set Variable" doc:id="5db81713-98ac-4a02-b0ce-da62c3013bab" variableName="Team"/>
-		<set-variable value="#[attributes.queryParams.MemberID]" doc:name="Set Variable" doc:id="1c616b7c-cc9d-4d95-a048-7a5691fa2a14" variableName="Member"/>
+		<http:listener doc:name="Listener" doc:id="49e35a0a-a874-40c4-9d0b-bd135f2bb944" config-ref="WS" path="/AssignMemberToTeam?TeamID={TeamID}&amp;MemberID={MemberID}"/>
+		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="Set Variable" doc:id="5db81713-98ac-4a02-b0ce-da62c3013bab" variableName="TeamID"/>
+		<set-variable value="#[attributes.queryParams.MemberID]" doc:name="Set Variable" doc:id="1c616b7c-cc9d-4d95-a048-7a5691fa2a14" variableName="MemberID"/>
 		<ee:transform doc:name="Transform Message" doc:id="071cba78-7e84-429c-985a-ebe6bc7df90b" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -47,8 +47,13 @@ ns ns0 http://tempuri.org/
 ---
 {
 	ns0#AssignMemberToTeam: {
-		ns0#memberId: vars.Member as Number,
-		ns0#teamId: vars.Team as Number
+<<<<<<< HEAD
+		ns0#memberId: vars.Member ,
+		ns0#teamId: vars.Team 
+=======
+		ns0#memberId: vars.MemberID ,
+		ns0#teamId: vars.TeamID
+>>>>>>> c0d7a7925ce8e17727a222c84c5538c8ec32430a
 	}
 }]]></ee:set-payload>
 			</ee:message>
@@ -62,31 +67,10 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<jms:publish doc:name="Publish" doc:id="8aef4d20-ad13-40dc-9136-5d0c0ba0ffe9" config-ref="JMS_Config" destination="test"/>
-	</flow>
-	<flow name="WS3_AssignTeamToProject(Soap)" doc:id="2a373b5d-8dcd-4558-9e98-728be0057e13" >
-		<http:listener doc:name="Listener" doc:id="34534397-4161-4196-8f37-ccc74e81df1b" config-ref="WS" path="/AssignTeamToProject?TeamID={TeamID}&amp;ProjectID={ProjectID}"/>
-		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="Set Variable" doc:id="2b4cc7f2-327c-4bf4-b1af-fc9377ac6667" variableName="Team"/>
-		<set-variable value="#[attributes.queryParams.ProjectID]" doc:name="Set Variable" doc:id="040fe7ca-7b88-4992-b75e-03a20754d505" variableName="Project"/>
-		<ee:transform doc:name="Transform Message" doc:id="54bde9f5-6cbf-46cf-be92-2aedcccdf606" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
----
-{
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
-		<wsc:consume doc:name="Consume" doc:id="4339b782-3675-4ba8-9161-b7cb2e1219a4" config-ref="WS3" operation="AssignMemberToTeam"/>
-		<ee:transform doc:name="Transform Message" doc:id="15d824f4-3159-45b7-afd4-ce47f2a56581" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
----
-{
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+		<jms:publish doc:name="Publish" doc:id="8aef4d20-ad13-40dc-9136-5d0c0ba0ffe9" config-ref="JMS_Config" destination="Team-assignments">
+			<jms:message sendContentType="false">
+			</jms:message>
+		</jms:publish>
 	</flow>
 	<flow name="WS4_GetCalendar(Rest)" doc:id="66c5bbb8-c1a3-47f6-970f-5ebb47811c8d" >
 		<http:listener doc:name="Listener" doc:id="6ab83837-27db-4b02-b6c5-20f47bd30dd5" config-ref="WS" path="/calendar"/>

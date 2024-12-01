@@ -1,5 +1,4 @@
 eclipse.preferences.version=1
-org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
 org.eclipse.jdt.core.classpathVariable.AVRO=C\:/Apps/Talend/TOS_DI-20211109_1610-V8.0.1/plugins/org.apache.servicemix.bundles.avro_1.8.2.1.jar
 org.eclipse.jdt.core.classpathVariable.CODEGEN_LIBRARIES=C\:/Apps/Talend/TOS_DI-20211109_1610-V8.0.1/plugins/org.talend.designer.codegen_8.0.1.20211103_1602/
 org.eclipse.jdt.core.classpathVariable.COMMON_LIBRARIES=C\:/Apps/Talend/TOS_DI-20211109_1610-V8.0.1/plugins/org.talend.commons.runtime_8.0.1.20211104_1103.jar

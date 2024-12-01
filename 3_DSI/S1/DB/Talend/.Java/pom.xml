@@ -106,7 +106,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.example.projet1.code</groupId>
+      <groupId>org.example.movies.code</groupId>
       <artifactId>routines</artifactId>
       <version>8.0.1</version>
     </dependency>

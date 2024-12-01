@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2024 at 07:43 PM
+-- Generation Time: Nov 21, 2024 at 09:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `calendar`
+--
+
+CREATE TABLE `calendar` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `project_id` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `calendar`
+--
+
+INSERT INTO `calendar` (`id`, `name`, `description`, `start_date`, `end_date`, `project_id`) VALUES
+(1, 'Project Kickoff', 'Initial meeting to discuss project scope and timeline', '2024-12-01 10:00:00', '2024-12-01 12:00:00', 1),
+(2, 'Sprint 1 Planning', 'Planning meeting for the first development sprint', '2024-12-05 09:00:00', '2024-12-05 11:00:00', 1),
+(3, 'Design Review', 'Review of UI/UX design before development starts', '2024-12-10 14:00:00', '2024-12-10 16:00:00', 2),
+(4, 'Project Deadline', 'Final submission of the project for approval', '2024-12-20 15:00:00', '2024-12-20 18:00:00', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
@@ -38,11 +63,9 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`Id`, `Name`, `TeamId`) VALUES
-(1, 'John Doe', 2),
-(2, 'Jane Smith', 1),
-(3, 'Alice Johnson', 2),
-(4, 'Bob Brown', 2),
-(5, 'Charlie White', 2);
+(1, 'Alice', 1),
+(2, 'Bob', 2),
+(3, 'Charlie', 3);
 
 -- --------------------------------------------------------
 
@@ -62,9 +85,9 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `description`, `name`, `status`) VALUES
-(1, 'A mobile app development project for e-commerce', 'E-Shop App', 'In Progress'),
-(2, 'A website redesign project for the client', 'Client Website Redesign', 'Completed'),
-(3, 'A marketing campaign for a new product launch', 'Product Launch Campaign', 'Planned');
+(1, 'A project to develop a new website', 'Website Development', 'Ongoing'),
+(2, 'A marketing campaign for the new product', 'Marketing Campaign', 'Completed'),
+(3, 'Designing the new logo and branding', 'Logo Design', 'Ongoing');
 
 -- --------------------------------------------------------
 
@@ -76,6 +99,16 @@ CREATE TABLE `projectteam` (
   `ProjectId` bigint(20) NOT NULL,
   `TeamId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `projectteam`
+--
+
+INSERT INTO `projectteam` (`ProjectId`, `TeamId`) VALUES
+(1, 1),
+(2, 1),
+(2, 2),
+(3, 1);
 
 -- --------------------------------------------------------
 
@@ -94,12 +127,19 @@ CREATE TABLE `team` (
 
 INSERT INTO `team` (`Id`, `Name`) VALUES
 (1, 'Development Team'),
-(2, 'Design Team'),
-(3, 'Marketing Team');
+(2, 'Marketing Team'),
+(3, 'Design Team');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `calendar`
+--
+ALTER TABLE `calendar`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `project_id` (`project_id`);
 
 --
 -- Indexes for table `member`
@@ -132,10 +172,16 @@ ALTER TABLE `team`
 --
 
 --
+-- AUTO_INCREMENT for table `calendar`
+--
+ALTER TABLE `calendar`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `project`
@@ -152,6 +198,12 @@ ALTER TABLE `team`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `calendar`
+--
+ALTER TABLE `calendar`
+  ADD CONSTRAINT `calendar_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`);
 
 --
 -- Constraints for table `member`

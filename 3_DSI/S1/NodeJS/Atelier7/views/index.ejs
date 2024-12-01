@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+
+</head>
+<body>
+    <h1>Student List</h1>
+
+        <form action="/add-student" method="POST">
+        <input type="text" id="username" name="username" placeholder="username" required>
+        <input type="email" id="email" name="email" placeholder="email" required>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Students</h2>
+    <ul>
+        <% students.forEach(student => { %>
+            <li><strong><%= student.username %></strong> - <%= student.email %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
