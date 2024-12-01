@@ -1,0 +1,19 @@
+{
+  "name": "projectmanagement_ws3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4",
+    "projectmanagement_ws3": "file:",
+    "strong-soap": "^4.1.6"
+  },
+  "description": ""
+}

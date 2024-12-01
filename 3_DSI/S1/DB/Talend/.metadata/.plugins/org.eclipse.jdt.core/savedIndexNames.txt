@@ -1,0 +1,12 @@
+INDEX VERSION 1.131+C:\Users\Kayto\Desktop\IT\CODE\ISET\3_DSI\S1\DB\Talend\.metadata\.plugins\org.eclipse.jdt.core
+3060139026.index
+2708728142.index
+1782154879.index
+531471242.index
+3429241164.index
+113353290.index
+3841241539.index
+1599808726.index
+2398940175.index
+3378469774.index
+931829424.index

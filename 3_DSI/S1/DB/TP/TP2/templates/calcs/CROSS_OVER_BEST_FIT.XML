@@ -1,0 +1,46 @@
+
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.1">
+  <Cube
+    Name="SALES_CUBE">
+    <Measure>
+      <DerivedMeasure
+        Name="CROSS_OVER_BEST_FIT"
+        ETMeasureColumnName="CROSS_OVER_BEST_FIT">
+        <Classification
+          Value="AwmDescriptionType=FREE_FORM"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="Cross Over Best Fit">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="Cross Over Best Fit">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="Cross Over Best Fit">
+        </Description>
+        <MeasureExpression>
+          <![CDATA[CASE 
+  WHEN "TIME".END_DATE < TO_DATE('01-JAN-2008') THEN SALES_CUBE.SALES
+  WHEN CHANNEL.DIM_KEY = 'ALL_CHANNELS' THEN FORECAST.BEST_FIT
+  ELSE NULL
+  END ]]>
+        </MeasureExpression>
+      </DerivedMeasure>
+    </Measure>
+  </Cube>
+</Metadata>

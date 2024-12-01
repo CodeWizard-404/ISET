@@ -1,0 +1,40 @@
+
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.1">
+  <Cube
+    Name="SALES_CUBE">
+    <Measure>
+      <DerivedMeasure
+        Name="SALES_YTD"
+        MeasureExpression="SUM(SALES_CUBE.SALES) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BETWEEN UNBOUNDED PRECEDING AND CURRENT MEMBER WITHIN ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR_YEAR)"
+        ETMeasureColumnName="SALES_YTD">
+        <Classification
+          Value="AwmDescriptionType=TIMESERIES_PERIOD TO DATE"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="TIMESERIES_PERIOD TO DATE">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="Sales Ytd">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="Sales Ytd">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="Sales Ytd">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+  </Cube>
+</Metadata>

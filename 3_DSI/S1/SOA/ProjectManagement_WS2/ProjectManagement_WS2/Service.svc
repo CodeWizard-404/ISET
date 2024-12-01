@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ProjectManagement_WS2.Services.MemberService" %>

@@ -1,0 +1,22 @@
+DEFINE ASSIGN_COS PROGRAM
+PROGRAM
+trap on error
+
+pushlevel 'assign_cos'
+push product, geography, channel, time
+
+limit product to product_levelrel eq 'ITEM'
+limit channel to channel_levelrel eq 'CHANNEL'
+limit time to time_levelrel eq 'MONTH'
+limit geography to geography_levelrel eq 'STATE_PROVINCE'
+
+sales_cube_stored(sales_cube_measure_dim 'COST_OF_SALES') = (cost_cube_unit_cost * sales_cube_stored(sales_cube_measure_dim 'QUANTITY')) across sales_cube_composite
+
+poplevel 'assign_cos'
+return
+
+error:
+show errortext
+poplevel 'assign_cos'
+return
+END

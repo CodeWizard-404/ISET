@@ -1,0 +1,89 @@
+
+DEFINE FORECAST_CUSTOM_AGGMAP AGGMAP
+AGGMAP
+RELATION this_aw!TIME_PARENTREL PRECOMPUTE(ALL) OPERATOR SUM args  DIVIDEBYZERO YES DECIMALOVERFLOW YES NASKIP YES COUNT NO
+RELATION this_aw!GEOGRAPHY_PARENTREL PRECOMPUTE(ALL) OPERATOR SUM args  DIVIDEBYZERO YES DECIMALOVERFLOW YES NASKIP YES COUNT NO
+RELATION this_aw!PRODUCT_PARENTREL PRECOMPUTE(ALL) OPERATOR SUM args  DIVIDEBYZERO YES DECIMALOVERFLOW YES NASKIP YES COUNT NO
+AGGINDEX NO
+CACHE SESSION
+END
+
+DEFINE DO_FORECAST PROGRAM
+PROGRAM
+vrb _handle    int
+
+trap on error
+
+"Save the state of the dimensions
+pushlevel 'do_forecast'
+push geography product time channel
+
+"LIMIT commands scope the data the will be operated on
+"The scope persists throughout the procedure
+limit geography to geography_levelrel eq 'REGION'
+limit product to product_levelrel eq 'TYPE'
+limit channel to 'ALL_CHANNELS'
+limit time to time_levelrel eq 'MONTH'
+sort time a time_end_date
+
+
+"Define variables used to help process the forecast function
+if not exists('forecast_seasonal')
+  then DEFINE FORECAST_SEASONAL VARIABLE NUMBER <TIME PRODUCT GEOGRAPHY>
+if not exists('forecast_smseasonal')
+  then DEFINE FORECAST_SMSEASONAL VARIABLE NUMBER <TIME PRODUCT GEOGRAPHY>
+
+
+"Initialize forecasts
+forecast_best_fit = NA
+forecast_linear_regression = NA
+
+"*******************************
+"* Best-fit
+"*******************************
+_handle = FCOPEN('MyForecast')
+
+"Set forecast parameters for 'best fit'
+fcset _handle APPROACH 'APPAUTO' periodicity 12 histperiods 36
+
+"Execute the forecast - save seasonal and seasonal smoothed into the variables just defined
+FCEXEC _handle time time INTO forecast_best_fit -
+       seasonal forecast_seasonal -
+       smseasonal forecast_smseasonal backcast -
+       sales_cube_sales
+
+"Close the forecast
+FCCLOSE _handle
+
+"*******************************
+"* Linear regression
+"*******************************
+_handle = FCOPEN('MyForecast')
+
+"Set forecast parameters for 'double exponential smoothing'
+fcset _handle APPROACH 'APPMANUAL' method 'LINREG' periodicity 12 histperiods 36
+
+"Execute the forecast
+FCEXEC _handle time time INTO forecast_linear_regression -
+       backcast -
+       sales_cube_sales
+
+"Close the forecast
+FCCLOSE _handle
+
+
+"Aggregate the forecasts
+AGGREGATE forecast_best_fit, forecast_linear_regression USING FORECAST_CUSTOM_AGGMAP
+
+update
+commit
+
+poplevel 'do_forecast'
+
+return
+
+error:
+poplevel 'do_forecast'
+if _handle ne NA
+then FCCLOSE _handle
+END

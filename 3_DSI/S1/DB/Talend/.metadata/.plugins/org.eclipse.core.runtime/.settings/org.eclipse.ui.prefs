@@ -1,0 +1,9 @@
+CLOSE_EDITORS_ON_EXIT=true
+LOGINCOUNT=3
+NOT_SHOW_ONBOARDING_AT_STARTUP=true
+PREFERENCE_TALEND_LOGON_STARTUP_TIMES=3
+eclipse.preferences.version=1
+lastUSedProject=M2
+logonDialog.alwaysAskMeAtStartUp=true
+showIntro=true
+workspaceTasksDone=org.talend.core.InitConnectionsMigrationTask|org.talend.core.EmptyConnectionsMigrationTask|org.talend.designer.core.ui.preferences.migration.AddQuotesForStatLogsPreference|org.talend.designer.runprocess.migrationtask.changeClasspath|org.talend.designer.runprocess.maven.ChangeCodeProjectClasspathMigrationTask2|org.talend.migrationTool.InitWorkspaceMigrationTask|org.talend.repository.model.migration.ChangeProjectTechinicalName

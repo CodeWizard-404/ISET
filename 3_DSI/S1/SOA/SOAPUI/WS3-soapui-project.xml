@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="72e89c0a-6459-4459-b90a-b694a67d8897" activeEnvironment="Default" name="WS3" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ddffa2da-306e-466e-8dc6-e0776727d6cf" wsaVersion="NONE" name="ProjectPortBinding" type="wsdl" bindingName="{http://example.com/projectservice}ProjectPortBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:3000/ProjectService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:3000/ProjectService?wsdl"><con:part><con:url>http://localhost:3000/ProjectService?wsdl</con:url><con:content><![CDATA[<definitions name="ProjectService" targetNamespace="http://example.com/projectservice" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://example.com/projectservice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <message name="assignTeamRequest">
+    <part name="teamId" type="xsd:int"/>
+    <part name="projectId" type="xsd:int"/>
+  </message>
+  <message name="assignTeamResponse">
+    <part name="message" type="xsd:string"/>
+  </message>
+  <portType name="ProjectPortType">
+    <operation name="assignTeam">
+      <input message="tns:assignTeamRequest"/>
+      <output message="tns:assignTeamResponse"/>
+    </operation>
+  </portType>
+  <binding name="ProjectPortBinding" type="tns:ProjectPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="assignTeam">
+      <soap:operation soapAction="assignTeam"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ProjectService">
+    <port name="ProjectPort" binding="tns:ProjectPortBinding">
+      <soap:address location="http://localhost:3000/ProjectService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:3000/ProjectService</con:endpoint></con:endpoints><con:operation id="bd46d955-86e6-4656-b3b9-037116d9bc18" isOneWay="false" action="assignTeam" name="assignTeam" bindingOperationName="assignTeam" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="47bfa585-cae6-476d-836b-550220b3ad0c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:3000/ProjectService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proj="http://example.com/projectservice">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <proj:assignTeam>\r
+         <teamId>1</teamId>\r
+         <projectId>2</projectId>\r
+      </proj:assignTeam>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="assignTeam"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

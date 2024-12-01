@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_IvtqMK1sEe-lGfc9JVUspQ" name="Name_Basics" dataPackage="_IvtqMa1sEe-lGfc9JVUspQ" Server="Localhost 127.0.0.1" FilePath="C:/Users/Kayto/Desktop/IT/CODE/ISET/3_DSI/S1/DB/IMDB_DataSet/name.basics.tsv" Encoding="US-ASCII" FieldSeparatorValue="&quot;\t&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" CsvOption="true" FieldSeparatorType="Tabulation"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_IvtqMa1sEe-lGfc9JVUspQ" name="default" dataManager="_IvtqMK1sEe-lGfc9JVUspQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_IvtqMq1sEe-lGfc9JVUspQ" id="_D9BXQK1sEe-lGfc9JVUspQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqM61sEe-lGfc9JVUspQ" label="nconst" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqNK1sEe-lGfc9JVUspQ" label="primaryName" length="19" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqNa1sEe-lGfc9JVUspQ" label="birthYear" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqNq1sEe-lGfc9JVUspQ" label="deathYear" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqN61sEe-lGfc9JVUspQ" label="primaryProfession" length="39" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_IvtqOK1sEe-lGfc9JVUspQ" label="knownForTitles" length="39" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

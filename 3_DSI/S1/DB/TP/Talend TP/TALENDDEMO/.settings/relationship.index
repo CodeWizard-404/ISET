@@ -1,0 +1,96 @@
+[ {
+  "baseItem" : {
+    "id" : "_9Yw2oEkkEeyR1fKR_asNiA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_CHF44EuUEey7Nb4T7D3m-Q - metadata",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_B9RGIKX3Eey69dtex14MaQ",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_Iy23INA3Eey6p4qhZuKPOw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA - moviesSchema",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_Nc-_kExDEeyUM7j-k76aEg",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_-yxOUIjREey1Yc4V2Jkgww",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_p41y4HUZEeyuCbUCrbHj4A - customers_unordered",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_WzkWIIgoEey-U8patifk0g",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_oJgEkI11EeyLH8Q2WIRpmg",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA - moviesSchema",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_hJeRMHeZEeyOgbvaGGwm_g",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_-yxOUIjREey1Yc4V2Jkgww",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "built-in",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_HCZEgHeiEeyOgbvaGGwm_g",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_HCZEgHeiEeyOgbvaGGwm_g - metadataSchema",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_iMWL0Hn8Eeyn2q2ne5zrpA - moviesSchema",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+} ]

@@ -1,0 +1,580 @@
+<!DOCTYPE Metadata [
+  <!ENTITY % BIND_VALUES PUBLIC "OLAP BIND VALUES" "OLAP METADATA">
+  %BIND_VALUES;
+  ]>
+<Metadata
+  Version="1.0">
+  <Cube
+    Name="SALES_CUBE">
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_YTD"
+        Name="SALES_YTD"
+        MeasureExpression="SUM(SALES_CUBE.SALES) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BETWEEN UNBOUNDED PRECEDING AND CURRENT MEMBER WITHIN ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR_YEAR)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIMESERIES_PERIOD TO DATE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Ytd">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Ytd">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Ytd">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_YTD_PY"
+        Name="SALES_YTD_PY"
+        MeasureExpression="LAG(SALES_CUBE.SALES_YTD, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BY ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR.CALENDAR_YEAR POSITION FROM BEGINNING)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_PAR_PERIOD">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Year">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Year">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Year">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_YTD_PY_PCT_CHG"
+        Name="SALES_YTD_PY_PCT_CHG"
+        MeasureExpression="100 * LAG_VARIANCE_PERCENT(SALES_CUBE.SALES_YTD, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BY ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR.CALENDAR_YEAR POSITION FROM BEGINNING)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_PDIFF_PAR_PERIOD">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Yr Pct Chg">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Yr Pct Chg">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales YTD Pr Yr Pct Chg">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_PY"
+        Name="SALES_PY"
+        MeasureExpression="LAG(SALES_CUBE.SALES, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BY ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR.CALENDAR_YEAR POSITION FROM BEGINNING)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_PAR_PERIOD">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_PY_PCT_CHG"
+        Name="SALES_PY_PCT_CHG"
+        MeasureExpression="100 * LAG_VARIANCE_PERCENT(SALES_CUBE.SALES, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BY ANCESTOR AT LEVEL &quot;TIME&quot;.CALENDAR.CALENDAR_YEAR POSITION FROM BEGINNING)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_PDIFF_PAR_PERIOD">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year Pct Chg">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year Pct Chg">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Year Pct Chg">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_PP"
+        Name="SALES_PP"
+        MeasureExpression="LAG(SALES_CUBE.SALES, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIMESERIES_PRIOR PERIOD">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_PP_PCT_CHG"
+        Name="SALES_PP_PCT_CHG"
+        MeasureExpression="100 * LAG_VARIANCE_PERCENT(SALES_CUBE.SALES, 1) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIMESERIES_PRIOR PERIOD PERCENT DIFFERENCE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period Pct Chg">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period Pct Chg">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Pr Period Pct Chg">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_SHARE_TOT_CHAN"
+        Name="SALES_SHARE_TOT_CHAN"
+        MeasureExpression="SHARE(SALES_CUBE.SALES OF CHANNEL.SALES_CHANNEL TOP) * 100">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="SHARE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Chan">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Chan">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Chan">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_SHARE_PRNT_CHAN"
+        Name="SALES_SHARE_PRNT_CHAN"
+        MeasureExpression="SHARE(SALES_CUBE.SALES OF CHANNEL.SALES_CHANNEL PARENT) * 100">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="SHARE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Chan">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Chan">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Chan">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_SHARE_TOT_PROD"
+        Name="SALES_SHARE_TOT_PROD"
+        MeasureExpression="SHARE(SALES_CUBE.SALES OF PRODUCT.STANDARD TOP) * 100">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="SHARE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Prod">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Prod">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Tot Prod">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_SHARE_PRNT_PROD"
+        Name="SALES_SHARE_PRNT_PROD"
+        MeasureExpression="SHARE(SALES_CUBE.SALES OF PRODUCT.STANDARD PARENT) * 100">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="SHARE">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Prod">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Prod">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Share Prnt Prod">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_RANK_PROD_LVL"
+        Name="SALES_RANK_PROD_LVL"
+        MeasureExpression="RANK() OVER HIERARCHY (PRODUCT.STANDARD ORDER BY SALES_CUBE.SALES DESC NULLS LAST WITHIN LEVEL)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="RANK">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Lvl">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Lvl">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Lvl">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_RANK_PROD_PRNT"
+        Name="SALES_RANK_PROD_PRNT"
+        MeasureExpression="RANK() OVER HIERARCHY (PRODUCT.STANDARD ORDER BY SALES_CUBE.SALES DESC NULLS LAST WITHIN PARENT)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="RANK">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Prnt">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Prnt">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales Rank In Prod Prnt">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_3P_MOV_AVG"
+        Name="SALES_3P_MOV_AVG"
+        MeasureExpression="AVG(SALES_CUBE.SALES) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BETWEEN 1 PRECEDING AND 2 FOLLOWING WITHIN LEVEL)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_MOV_AVG">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Avg">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_3P_MOV_TOT"
+        Name="SALES_3P_MOV_TOT"
+        MeasureExpression="SUM(SALES_CUBE.SALES) OVER HIERARCHY (&quot;TIME&quot;.CALENDAR BETWEEN 1 PRECEDING AND 2 FOLLOWING WITHIN LEVEL)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="TIME_MOV_SUM">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Tot">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Tot">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 3 Per Mov Tot">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="TO_GO"
+        Name="TO_GO"
+        MeasureExpression="SALES_CUBE.SALES_2006 - SALES_CUBE.SALES_YTD">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="To Go">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="To Go">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="To Go">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="SALES_2006"
+        Name="SALES_2006"
+        MeasureExpression="SALES_CUBE.SALES[&quot;TIME&quot; = &apos;CY2006&apos;]">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 2006">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 2006">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Sales 2006">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="AWMDescriptionType"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="LongDescription"
+          Value="">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="ShortDescription"
+          Value="">
+        </Description>
+        <Description
+          Language="AMERICAN_AMERICA.AL32UTF8"
+          Type="Description"
+          Value="">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        ETMeasureColumnName="PCT_OF_2006"
+        Name="PCT_OF_2006"
+        MeasureExpression="100 * (SALES_CUBE.SALES_YTD / SALES_CUBE.SALES_2006)">
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Pct Of 2006">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Pct Of 2006">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN_AMERICA.WE8DEC"
+          Value="Pct Of 2006">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+    <Measure>
+      <DerivedMeasure
+        Name="PRODUCT_ALERT"
+        MeasureExpression="OLAP_DML_EXPRESSION(&apos;PRODUCT_ALERT&apos;, VARCHAR2)"
+        ETMeasureColumnName="PRODUCT_ALERT">
+        <Classification
+          Value="AwmDescriptionType=FREE_FORM"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="Product Alert">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="Product Alert">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="Product Alert">
+        </Description>
+      </DerivedMeasure>
+    </Measure>
+        <Measure>
+      <DerivedMeasure
+        Name="HOW_IS_SALES_YTD"
+        ETMeasureColumnName="HOW_IS_SALES_YTD">
+        <Classification
+          Value="AwmDescriptionType=FREE_FORM"/>
+        <Description
+          Type="AWMDescriptionType"
+          Language="AMERICAN"
+          Value="FREE_FORM">
+        </Description>
+        <Description
+          Type="LongDescription"
+          Language="AMERICAN"
+          Value="How Is Sales Ytd">
+        </Description>
+        <Description
+          Type="ShortDescription"
+          Language="AMERICAN"
+          Value="How Is Sales Ytd">
+        </Description>
+        <Description
+          Type="Description"
+          Language="AMERICAN"
+          Value="How Is Sales Ytd">
+        </Description>
+        <MeasureExpression>
+          <![CDATA[CASE 
+  WHEN SALES_CUBE.SALES_YTD_PY_PCT_CHG < 0 THEN 'Needs Improvement'
+  WHEN SALES_CUBE.SALES_YTD_PY_PCT_CHG > 15 THEN 'Outstanding'
+  ELSE 'On track'
+  END ]]>
+        </MeasureExpression>
+      </DerivedMeasure>
+    </Measure>
+</Cube>
+</Metadata>
