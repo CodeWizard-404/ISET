@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_KJL_kK1hEe-lGfc9JVUspQ" id="_KJKxcK1hEe-lGfc9JVUspQ" label="ParAccelDropTargetTable" version="0.1" item="_KJL_kq1hEe-lGfc9JVUspQ">
+    <author href="../../../talend.project#_JmpTMK1hEe-lGfc9JVUspQ"/>
+    <additionalProperties xmi:id="_KJN0wK1hEe-lGfc9JVUspQ" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_KJN0wa1hEe-lGfc9JVUspQ" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_KJN0wq1hEe-lGfc9JVUspQ" key="created_date" value="2024-11-28T09:17:07.596+0100"/>
+    <additionalProperties xmi:id="_KJN0w61hEe-lGfc9JVUspQ" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_KJN0xK1hEe-lGfc9JVUspQ" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_KJN0xa1hEe-lGfc9JVUspQ" key="modified_date" value="2024-11-28T09:17:07.596+0100"/>
+    <additionalProperties xmi:id="_WCnfcK6EEe-lDsS6LQIekQ" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_WCnfca6EEe-lDsS6LQIekQ" key="import_product_version" value="8.0.1.20211109_1610"/>
+<<<<<<< HEAD
+    <additionalProperties xmi:id="_WCnfcq6EEe-lDsS6LQIekQ" key="import_date" value="2024-12-01T10:49:42.467+0100"/>
+=======
+    <additionalProperties xmi:id="_WCnfcq6EEe-lDsS6LQIekQ" key="import_date" value="2024-12-01T10:45:34.551+0100"/>
+>>>>>>> 1711de5390240c852b4a7cde2b8bd4c5f0036b24
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_KJL_ka1hEe-lGfc9JVUspQ" path="ParAccel/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_KJL_kq1hEe-lGfc9JVUspQ" property="_KJL_kK1hEe-lGfc9JVUspQ" state="_KJL_ka1hEe-lGfc9JVUspQ" system="true" eltName="ParAccel">
+    <content href="ParAccelDropTargetTable_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>
