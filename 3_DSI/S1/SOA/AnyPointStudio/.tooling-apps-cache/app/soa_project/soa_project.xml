@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<http:listener-config name="ws_project" doc:name="HTTP Listener config" doc:id="96e18264-2591-414a-a319-474ac405ee0e" >
+		<http:listener-connection host="localhost" port="4040" />
+	</http:listener-config>
+	<http:request-config name="ws_1_project" doc:name="HTTP Request configuration" doc:id="f1ee025b-625b-4c2b-9f23-e03cb5d0e5fe" >
+		<http:request-connection host="localhost" port="8088" />
+	</http:request-config>
+	<wsc:config name="WS_2_AMT" doc:name="Web Service Consumer Config" doc:id="0f86011b-fd65-4cae-846e-3f5d6d6fff5c" >
+		<wsc:connection wsdlLocation="http://localhost:56446/Service.svc?singleWsdl" service="MemberService" port="BasicHttpBinding_IMemberService" address="http://localhost:56446/Service.svc" >
+			<wsc:web-service-security actor="http://schemas.xmlsoap.org/soap/actor/next" />
+		</wsc:connection>
+	</wsc:config>
+	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="9d3b3ba3-20a4-47d8-a192-7e33fe0d3f3d" >
+		<jms:active-mq-connection />
+	</jms:config>
+	<http:request-config name="WS_3_ATP" doc:name="HTTP Request configuration" doc:id="a06a7ac1-6724-4640-85af-e35ea78de6d5" >
+		<http:request-connection host="localhost" port="3033" />
+	</http:request-config>
+	<http:request-config name="WS_4_calendar" doc:name="HTTP Request configuration" doc:id="cfb407b1-427e-476f-b2e8-5b466730ea50" >
+		<http:request-connection host="localhost" port="8080" />
+	</http:request-config>
+	<http:request-config name="WS_5_Feedback" doc:name="HTTP Request configuration" doc:id="c2604208-1159-41e3-b1c0-66f223e043fd" basePath="/api/feedback" >
+		<http:request-connection host="localhost" port="5050" />
+	</http:request-config>
+	<flow name="WS_1" doc:id="e3c451bc-c6dd-430c-a745-9118d215b6cb" >
+		<http:listener doc:name="Listener" doc:id="ff6f5607-1938-4d82-be70-ab78c0de7caf" config-ref="ws_project" path="/project"/>
+		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="ef489350-f364-4b8b-bd83-18f3edc00ed1" variableName="var"/>
+<http:request method="GET" doc:name="Project By ID" doc:id="cfba4395-d722-4024-9320-0e81c9e1bb65" config-ref="ws_1_project" path="#['/projects/'++ payload.project.id]">
+</http:request>
+		<file:write doc:name="Write" doc:id="fa21d312-5840-42f6-a689-09d5a1162c95" path="C:\Users\Kayto\Desktop\Output1.txt" mode="APPEND">
+		</file:write>
+		<ee:transform doc:name="Transform Message" doc:id="519b50f6-cbef-4215-8c2e-8e75a20d2674" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	member: vars."var".member,
+	team: vars."var".team,
+	project: vars."var".project,
+	feedback: vars."var".feedback
+	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<jms:publish doc:name="Publish" doc:id="daaadf09-d948-4307-b812-c93dca8a80af" destinationType="TOPIC" config-ref="JMS_Config" destination="project"/>
+	</flow>
+	<flow name="WS_2" doc:id="72536079-c830-45d6-9fd3-30ee585ffb7f" >
+		<jms:listener doc:name="On New Message" doc:id="0cfb9e94-8101-45bb-b02b-2e855c2193b6" config-ref="JMS_Config" destination="project" numberOfConsumers="1">
+			<jms:consumer-type >
+				<jms:topic-consumer shared="true" />
+			</jms:consumer-type>
+		</jms:listener>
+		<ee:transform doc:name="Transform Message" doc:id="ff1da5cd-fbd8-4a8d-aea4-3a77db81ab86" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://tempuri.org/
+---
+{
+	ns0#AssignMemberToTeam: {
+		ns0#memberId: payload.member.id,
+		ns0#teamId: payload.team.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume operation="AssignMemberToTeam" doc:name="Assign Member To Team" doc:id="e51e9d86-3ebc-447e-b4d4-ff6fe8a58620" config-ref="WS_2_AMT" />
+		<ee:transform doc:name="Transform Message" doc:id="7f3384cb-46dc-42c2-b77b-784af7358e7e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+ns ns0 http://tempuri.org/
+---
+{
+	message: payload.body.ns0#AssignMemberToTeamResponse.ns0#AssignMemberToTeamResult default "No response from service"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<file:write doc:name="Write" doc:id="bde090bc-d5ad-46aa-b89a-ef75a1de9484" path="C:\Users\Kayto\Desktop\Output2.txt"/>
+	
+</flow>
+	<flow name="WS_3" doc:id="fecb6ba1-11d8-4f98-8e26-94f2cd42d441">
+		<jms:listener doc:name="On New Message" doc:id="2b24c748-018d-44fa-b3ab-d8e937547f79" config-ref="JMS_Config" destination="project" numberOfConsumers="1">
+			<jms:consumer-type>
+				<jms:topic-consumer shared="true" />
+			</jms:consumer-type>
+		</jms:listener>
+		<ee:transform doc:name="Transform Message" doc:id="795079d3-627a-496e-ba74-8fe65ff4dc50">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+	team: {
+		id: payload.team.id
+	},
+	project: {
+		id: payload.project.id
+	},
+	projectId: payload.project.id,
+	teamId: payload.team.id
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="POST" doc:name="Assign Team To Project" doc:id="6fa3b3dc-7001-41d4-bd98-ead328ba6172" config-ref="WS_3_ATP" path="/assignTeam" />
+		<ee:transform doc:name="Transform Message" doc:id="b92e9bdd-9f67-4b06-ba8b-4dc400a493b3">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<file:write doc:name="Write" doc:id="58c89afb-9e77-4cd4-bdb0-a53ac919bc25" path="C:\Users\Kayto\Desktop\Output3.txt" />
+	
+</flow>
+	<flow name="WS_5" doc:id="ef63719a-a67a-4b19-ac40-a4983ac054c0">
+		<jms:listener doc:name="On New Message" doc:id="08f77d0a-e605-4e22-a399-2116f2d89e48" config-ref="JMS_Config" destination="project" numberOfConsumers="1">
+			<jms:consumer-type>
+				<jms:topic-consumer shared="true" />
+			</jms:consumer-type>
+		</jms:listener>
+		<ee:transform doc:name="Transform Message" doc:id="01089cb7-d9de-4718-b936-2895b2607ee8">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+    member: { id: payload.member.id },
+    project: { id: payload.project.id },
+    feedback: payload.feedback,
+    description: payload.feedback,
+    member_id: payload.member.id,
+    project_id: payload.project.id
+
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="869edc39-bbe3-4a23-b5d3-7736e9f13943" config-ref="WS_5_Feedback" path="/add">
+			<http:body><![CDATA[#[{
+  description: payload.feedback,
+  member_id: payload.member.id,
+  project_id: payload.project.id
+}]]]></http:body>
+		</http:request>
+		<file:write doc:name="Write" doc:id="6c5338ba-c3a2-43c4-ba46-6f02b6b830ca" path="C:\Users\Kayto\Desktop\Output5.txt" />
+	</flow>
+
+
+</mule>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="ProjectJson" format="json">
+      <types:shape format="weave" example="examples/projet-8.json"><![CDATA[%dw 2.0
+
+type ProjectJson = {|
+  member: {| id: Number {"typeId": "int"} |}, 
+  team: {| id: Number {"typeId": "int"} |}, 
+  project: {| id: Number {"typeId": "int"} |}, 
+  feedback: String
+|} {"example": "{\\\"member\\\":{\\\"id\\\":1},\\\"team\\\":{\\\"id\\\":1},\\\"project\\\":{\\\"id\\\":1},\\\"feedback\\\":\\\"feedback\\\"}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="ProjectResponse" format="json">
+      <types:shape format="weave" example="examples/ResponseJson.json"><![CDATA[%dw 2.0
+
+type ProjectResponse = {| message: String |} {"example": "{\\\"message\\\":\\\"ay msj dji fi mokhek\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#9f324824-cf37-4564-8e84-8da2e9828b72">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:variables>
+          <types:variable name="var" type="ProjectJson"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a68dc9c0-9e55-496c-bb35-c6ea45f74533">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#4308bffb-1d84-4ea4-9cb1-83d6e3dffc17">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectResponse"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#5424d4b7-fc5b-4073-9d9c-0e72f9b6aeb1">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#25cf7009-17d7-428d-875b-5bc10465a30c">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a251c84c-3568-409e-85d2-f91cadbabbbf">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#b6fec5bd-24a0-460e-96e2-e83c34e0f403">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="var" type="ProjectJson"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#64405d1b-b242-4ecc-b610-a6a7e403cd97">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#11814c1d-4f36-4158-b6ea-2743ef48ddde">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="var" type="ProjectJson"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#c460934f-15c0-4574-8e40-46ebdd86d283">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#0211b9b5-8c15-42e9-a3cb-891b3c217206">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectResponse"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#36550856-fc8f-4e32-bd33-6d138c135d88">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="ATP" type="ProjectJson"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#60d33987-01dd-4968-99a6-6ad82329a4dd">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#730a6e80-3009-42e9-8d85-930a3699cb5e">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectResponse"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectResponse"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#519b50f6-cbef-4215-8c2e-8e75a20d2674">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="var" type="ProjectJson"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#ff1da5cd-fbd8-4a8d-aea4-3a77db81ab86">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#795079d3-627a-496e-ba74-8fe65ff4dc50">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#b92e9bdd-9f67-4b06-ba8b-4dc400a493b3"/>
+  <types:enrichment select="#59954371-a547-46aa-aec6-f8813c10e579"/>
+  <types:enrichment select="#01089cb7-d9de-4718-b936-2895b2607ee8">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="ProjectJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

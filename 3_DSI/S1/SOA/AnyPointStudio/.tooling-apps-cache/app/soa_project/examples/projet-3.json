@@ -1,0 +1,14 @@
+{
+    "message": "msj",
+    "member": {
+        "id": 2,
+        "teamId": 2
+    },
+    "team": {
+        "id": 2,
+        "projectId": 1
+    },
+    "project": {
+        "id": 1
+    }
+}
