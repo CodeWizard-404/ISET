@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+	<http:request-config name="WS1" doc:name="HTTP Request configuration" doc:id="363833ad-693a-43d3-9e80-b9e4d1a99e13" >
+		<http:request-connection host="localhost" port="8088" />
+	</http:request-config>
+	<http:listener-config name="WS" doc:name="HTTP Listener config" doc:id="94b0fb96-0803-453c-bb22-69eada804a97" >
+		<http:listener-connection host="localhost" port="9090" />
+	</http:listener-config>
+	<wsc:config name="WS2" doc:name="Web Service Consumer Config" doc:id="d5f05c9e-6b87-486f-9dba-edad8f1586e1" >
+		<wsc:connection wsdlLocation="http://localhost:56446/Service.svc?singleWsdl" service="MemberService" port="BasicHttpBinding_IMemberService" address="http://localhost:56446/Service.svc" >
+			<wsc:web-service-security actor="http://schemas.xmlsoap.org/soap/actor/next" />
+		</wsc:connection>
+	</wsc:config>
+	<jms:config name="JMS_Config" doc:name="JMS Config" doc:id="1ba02e61-bff0-436b-9fae-dc7e7591c775" >
+		<jms:active-mq-connection />
+	</jms:config>
+	<http:request-config name="WS3" doc:name="HTTP Request configuration" doc:id="ddf91169-dbdb-4a0c-9d6b-a232a8e3000f" >
+		<http:request-connection host="localhost" port="3033" />
+	</http:request-config>
+	<http:request-config name="WS4" doc:name="HTTP Request configuration" doc:id="c1a6c08f-8e1b-4c43-b4b6-d8567970e290" >
+		<http:request-connection host="localhost" port="8000" />
+	</http:request-config>
+	<flow name="WS1_GetProjects_(REST)" doc:id="a3a19715-7284-465d-947b-87036cf1304f" >
+		<http:listener doc:name="Listener" doc:id="3d26867e-08b0-435a-a09f-6c8c347ef60a" config-ref="WS" path="/projects" />
+		<http:request method="GET" doc:name="Request" doc:id="5de5bd8d-e34b-4846-a6e6-c1917ca93792" config-ref="WS1" path="/" />
+	</flow>
+	<flow name="WS1_GetProjectByID_(REST)" doc:id="e2991400-8d0e-4027-be1a-cd2d631ae18c" >
+		<http:listener doc:name="Listener" doc:id="f2834395-e446-4754-af10-dd252f8a711d" config-ref="WS" path="/projects/{id}" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="ID" doc:id="733f0146-cef2-424b-84a7-ad207d2a2919" variableName="ProjectId" />
+		<http:request method="GET" doc:name="Request" doc:id="20fdc9aa-7b61-413f-8a1b-f1544943f6f6" config-ref="WS1" path="#['/' ++ vars.ProjectId]" />
+	</flow>
+	<flow name="WS2_AssignMemberToTeam_(SOAP)" doc:id="c230af90-b518-452a-bbf9-4f4d0c32695a" >
+		<http:listener doc:name="Listener" doc:id="4fb8a592-908c-4429-9235-2d574291830d" config-ref="WS" path="/AMT?MemberID={MemberID}&amp;TeamID={TeamID}" />
+		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="TeamID" doc:id="7a2d054f-39d9-47fd-aad6-0aabaff0205f" variableName="TeamID" />
+		<set-variable value="#[attributes.queryParams.MemberID]" doc:name="MemberID" doc:id="c8e9f229-bccf-4e77-bbb4-de0dde77d4f2" variableName="MemberID" />
+		<ee:transform doc:name="Transform Message" doc:id="83b898e9-f755-41dd-a8ad-2ec72edfaba1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://tempuri.org/
+---
+{
+	ns0#AssignMemberToTeam: {
+		ns0#memberId: vars.MemberID ,
+		ns0#teamId: vars.TeamID
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume operation="AssignMemberToTeam" doc:name="Consume" doc:id="0aba268c-be97-4c46-b88a-1e5b980913e9" config-ref="WS2" />
+		<ee:transform doc:name="Transform Message1" doc:id="a93df0ef-2362-4bcb-89ff-cfdcfc8610dc" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="WS3_AssignTeamToProject(Rest)" doc:id="9a0bfab8-4360-4822-a459-117ec44a4f09">
+		<http:listener doc:name="Listener" doc:id="343acc74-22a2-4ae8-ad4d-fd6d44d00d7c" config-ref="WS" path="/APT?ProjectID={ProjectID}&amp;TeamID={TeamID}" allowedMethods="POST" />
+		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="TeamID" doc:id="15ddd964-df5f-46a5-8bb1-136d8ce29f37" variableName="TeamID" />
+		<set-variable value="#[attributes.queryParams.ProjectID]" doc:name="ProjectID" doc:id="3a0270d0-1bef-4983-82fb-49e7ec731be9" variableName="ProjectID" />
+		<ee:transform doc:name="Transform Message" doc:id="cf144920-d4a8-4181-9e36-e791dcc9963b">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  teamId: vars['TeamID'],
+  projectId: vars['ProjectID']
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="0424bf34-87fc-43f3-b3d9-6c612efec574" config-ref="WS3" path="/assignTeam" outputMimeType="application/json" followRedirects="true" sendBodyMode="ALWAYS" />
+	</flow>
+	<flow name="WS3_GetTeams(Rest)" doc:id="58898c18-29f0-4138-a623-472c35841acc" >
+		<http:listener doc:name="Listener" doc:id="99577a3d-594e-4e52-8b2e-2c46309a76e7" config-ref="WS" path="/Teams" />
+		<http:request method="GET" doc:name="Request" doc:id="cfab62d8-ead7-4cd4-9ddf-c1de09f97bf8" config-ref="WS3" path="/teams" />
+	</flow>
+	<flow name="WS3_GetTeamById(Rest)" doc:id="81202081-e0ff-4f9a-94f1-c2ec0a806f07" >
+		<http:listener doc:name="Listener" doc:id="d8762403-f045-4528-83f2-36174f575e8b" config-ref="WS" path="/Team/{id}" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="Set Variable" doc:id="3d0a8e0a-9f16-42c2-b77a-f21222fd65d0" variableName="calendarID" />
+		<http:request method="GET" doc:name="Request" doc:id="b6986b3f-e667-4958-adcf-6a4848a1552d" config-ref="WS3" path="#['/team' ++ vars.TeamId]" />
+	</flow>
+	<flow name="WS3_UpdateAssignement(Rest)" doc:id="63d4e0bc-eeb1-45aa-8776-fc2f9cab5a83" >
+		<http:listener doc:name="Listener" doc:id="02537638-dc11-4256-9cc0-71e374e82a4b" config-ref="WS" path="/APT?ProjectID={ProjectID}&amp;TeamID={TeamID}" allowedMethods="POST" />
+		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="TeamID" doc:id="d73e82f7-000c-4cc5-ad8f-4bb994b3b3bf" variableName="TeamID" />
+		<set-variable value="#[attributes.queryParams.ProjectID]" doc:name="ProjectID" doc:id="2573e48c-6dff-40e0-b9c7-d6246f58a386" variableName="ProjectID" />
+		<ee:transform doc:name="Transform Message" doc:id="60e53998-1b24-4bcc-885b-ff4652f48597" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  teamId: vars['TeamID'],
+  projectId: vars['ProjectID']
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="PUT" doc:name="Request" doc:id="35f026bb-76b6-401f-8c1c-193160c67ad5" config-ref="WS3" path="/assignTeam" outputMimeType="application/json" followRedirects="true" sendBodyMode="ALWAYS" />
+	</flow>
+	<flow name="WS3_DeleteAssignement(Rest)" doc:id="59303d09-8861-4e81-8094-4d0f1d5004ec" >
+		<http:listener doc:name="Listener" doc:id="d60f8d2a-0be2-4723-9c8d-0026ee7a9c7c" config-ref="WS" path="/APT?ProjectID={ProjectID}&amp;TeamID={TeamID}" allowedMethods="POST" />
+		<set-variable value="#[attributes.queryParams.TeamID]" doc:name="TeamID" doc:id="11a79de1-8949-4dc1-91e4-756c009b3ad4" variableName="TeamID" />
+		<set-variable value="#[attributes.queryParams.ProjectID]" doc:name="ProjectID" doc:id="918fd638-ca1d-4222-9353-5363f2687ca5" variableName="ProjectID" />
+		<ee:transform doc:name="Transform Message" doc:id="91c21b8f-7201-4797-9637-18adec43e3f4" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+  teamId: vars['TeamID'],
+  projectId: vars['ProjectID']
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="DELETE" doc:name="Request" doc:id="e233b84e-8b35-4d0a-af07-8a9546324a5b" config-ref="WS3" path="/assignTeam" outputMimeType="application/json" followRedirects="true" sendBodyMode="ALWAYS" />
+	</flow>
+	<flow name="WS4_GetCalendar_(REST)" doc:id="13af6971-cf26-44a8-8eb0-53d3b3c87249" >
+		<http:listener doc:name="Listener" doc:id="fc2d73a7-eb24-420f-b048-834f029f5140" config-ref="WS" path="/calendars" />
+		<http:request method="GET" doc:name="Request" doc:id="c5c4e769-0afd-407a-a618-bbacb6d19f72" config-ref="WS4" path="/calendar" />
+	</flow>
+	<flow name="WS4_GetCalendarById(Rest)" doc:id="3c239bf6-a78f-4421-b7ca-75b94bd038e9" >
+		<http:listener doc:name="Listener" doc:id="17b50b07-c8a0-4c25-b51a-f5f8733310b6" config-ref="WS" path="/calendar/{id}" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="Set Variable" doc:id="b2e0960f-7134-4202-835a-f0987a6b7524" variableName="calendarID" />
+		<http:request method="GET" doc:name="Request" doc:id="921834d4-50e1-4930-ba44-31b39c5a92c5" config-ref="WS4" path="#['/calendar/'++ vars.calendarID]" />
+	</flow>
+	<flow name="WS4_AddCalendar(Rest)" doc:id="f09e3104-25f8-4883-9288-ab71654c5ef8" >
+		<http:listener doc:name="Listener" doc:id="0b106feb-53d3-4624-9993-5a7dc100ec2d" config-ref="WS" path="/calendar" allowedMethods="POST" />
+		<http:request method="POST" doc:name="Request" doc:id="eb977f2a-cbb4-4ee5-835c-92e1ec157547" config-ref="WS4" path="/calendar" outputMimeType="application/json" followRedirects="true" sendBodyMode="ALWAYS" />
+	</flow>
+	<flow name="WS4_DeleteCalander(Rest)" doc:id="a4fd88af-b146-40cd-b46d-9df5ec4249fd" >
+		<http:listener doc:name="Listener" doc:id="86ea15aa-4254-44dc-998b-bb3f7e45b1e6" config-ref="WS" path="/calendar/{id}" allowedMethods="DELETE" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="Set Variable" doc:id="2d5ae4a5-77f4-4c03-b76f-fa151fb477d2" variableName="calendarId" />
+		<http:request method="DELETE" doc:name="Request" doc:id="a7b18f89-f2df-4b0d-b0b0-ecd8ad60557c" config-ref="WS4" path="#['/calendar/' ++ vars.calendarId]" outputMimeType="application/json" sendBodyMode="NEVER" />
+	</flow>
+	<flow name="WS4_UpadetCalander(Rest)" doc:id="a80be3fb-0fed-42b9-b608-8fb6a6fb3bda" >
+		<http:listener doc:name="Listener" doc:id="a62e5696-cc57-4735-bb03-cc4f74ee0b96" config-ref="WS" path="/calendar/{id}" allowedMethods="PUT" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="Set Variable" doc:id="d7b12248-6725-476b-ac06-e55530c0092f" variableName="calendarId" />
+		<http:request method="PUT" doc:name="Request" doc:id="28af94e2-6329-43bc-9d0a-9abdad64c146" config-ref="WS4" path="#['/calendar/' ++ vars.calendarId]" outputMimeType="application/json" followRedirects="true" sendBodyMode="ALWAYS" />
+	</flow>
+</mule>
