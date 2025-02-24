@@ -1,0 +1,88 @@
+
+Mathématiques et Physique (MP)
+Physique et Technologie (PT)
+Sciences de I'lngénieur (Sl)
+Biologie, Chimie et Géologie (BCG)
+Économie et Gestion (EG)
+Lettres et Sciences Sociales (LSS)
+Lettres et Sciences Humaines (LSH)
+Mathématiques, Informatique et Sciences de l''Ingénieur (MPSI)
+Mathématiques, Physique et Sciences de l''Ingénieur (MPSI)
+Physique, Chimie et Sciences de l''Ingénieur (PCSI)
+Physique, Chimie et Technologie (PCT)
+Biologie, Chimie, Physique et Sciences de la Terre (BCPST)
+Technologie et Sciences Industrielles (TSI)
+Technologie, Sciences Industrielles et Développement Durable (TSIDD)
+
+
+1. **Mathématiques et Physique (MP)**
+   - **Description**: This stream focuses on advanced mathematics and physics.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Mathematics, Physics
+
+2. **Physique et Technologie (PT)**
+   - **Description**: Emphasizes physics and technology.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Physics, Technology
+
+3. **Sciences de l'Ingénieur (SI)**
+   - **Description**: Covers a combination of mathematics, physics, and engineering-related subjects.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Mathematics, Physics, Engineering Sciences
+
+4. **Biologie, Chimie et Géologie (BCG)**
+   - **Description**: Focuses on biology, chemistry, and geology.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Biology, Chemistry, Geology
+
+5. **Économie et Gestion (EG)**
+   - **Description**: Integrates economics and management with mathematics.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Mathematics, Economics, Management
+
+6. **Lettres et Sciences Sociales (LSS)**
+   - **Description**: Covers literature and social sciences.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Literature, Social Sciences
+
+7. **Lettres et Sciences Humaines (LSH)**
+   - **Description**: Focuses on literature and humanities.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Literature, Humanities
+
+8. **Mathématiques, Informatique et Sciences de l'Ingénieur (MPSI)**
+   - **Description**: Includes mathematics, computer science, and engineering sciences.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Mathematics, Computer Science, Engineering Sciences
+
+9. **Mathématiques, Physique et Sciences de l'Ingénieur (MPSI)**
+   - **Description**: Emphasizes mathematics, physics, and engineering sciences.
+   - **Level**: First Year (1ère Année)
+   - **Subjects**: Mathematics, Physics, Engineering Sciences
+
+10. **Physique, Chimie et Sciences de l'Ingénieur (PCSI)**
+    - **Description**: Covers physics, chemistry, and engineering sciences.
+    - **Level**: First Year (1ère Année)
+    - **Subjects**: Physics, Chemistry, Engineering Sciences
+
+11. **Physique, Chimie et Technologie (PCT)**
+    - **Description**: Focuses on physics, chemistry, and technology.
+    - **Level**: First Year (1ère Année)
+    - **Subjects**: Physics, Chemistry, Technology
+
+12. **Biologie, Chimie, Physique et Sciences de la Terre (BCPST)**
+    - **Description**: Integrates biology, chemistry, physics, and earth sciences.
+    - **Level**: First Year (1ère Année)
+    - **Subjects**: Biology, Chemistry, Physics, Earth Sciences
+
+13. **Technologie et Sciences Industrielles (TSI)**
+    - **Description**: Emphasizes technology and industrial sciences.
+    - **Level**: First Year (1ère Année)
+    - **Subjects**: Technology, Industrial Sciences
+
+14. **Technologie, Sciences Industrielles et Développement Durable (TSIDD)**
+    - **Description**: Integrates technology, industrial sciences, and sustainable development.
+    - **Level**: First Year (1ère Année)
+    - **Subjects**: Technology, Industrial Sciences, Sustainable Development
+
+

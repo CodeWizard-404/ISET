@@ -1,0 +1,9 @@
+INSERT INTO user (email, roles, role, password, username, telephone)
+VALUES (
+    'Admin@admin.com', 
+    '["Admin", "User"]', 
+    'admin', 
+    '$2y$10$QZrxt3lLx766FP7nYjjxt.XybdQ9XqbCU8fNut7K2F5mF/yEGxY3u', 
+    'Admin', 
+    '00000000'
+);

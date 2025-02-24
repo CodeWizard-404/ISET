@@ -1,0 +1,97 @@
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques et Physique (MP)', 'Ce cycle se concentre sur les mathématiques et la physique.', '1ère Année', '{"Mathématiques", "Physique"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique et Technologie (PT)', 'Ce cycle met l''accent sur la physique et la technologie.', '1ère Année', '{"Physique", "Technologie"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Sciences de l''Ingénieur (SI)', 'Ce cycle couvre une combinaison de mathématiques, de physique et de sciences de l''ingénieur.', '1ère Année', '{"Mathématiques", "Physique", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Biologie, Chimie et Géologie (BCG)', 'Ce cycle se concentre sur la biologie, la chimie et la géologie.', '1ère Année', '{"Biologie", "Chimie", "Géologie"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Économie et Gestion (EG)', 'Ce cycle intègre l''économie et la gestion avec les mathématiques.', '1ère Année', '{"Mathématiques", "Économie", "Gestion"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) s
+VALUES ('Lettres et Sciences Sociales (LSS)', 'Ce cycle couvre la littérature et les sciences sociales.', '1ère Année', '{"Littérature", "Sciences Sociales"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Lettres et Sciences Humaines (LSH)', 'Ce cycle se concentre sur la littérature et les sciences humaines.', '1ère Année', '{"Littérature", "Sciences Humaines"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques, Informatique et Sciences de l''Ingénieur (MPSI)', 'Ce cycle comprend des mathématiques, de l''informatique et des sciences de l''ingénieur.', '1ère Année', '{"Mathématiques", "Informatique", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques, Physique et Sciences de l''Ingénieur (MPSI)', 'Ce cycle met l''accent sur les mathématiques, la physique et les sciences de l''ingénieur.', '1ère Année', '{"Mathématiques", "Physique", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique, Chimie et Sciences de l''Ingénieur (PCSI)', 'Ce cycle couvre la physique, la chimie et les sciences de l''ingénieur.', '1ère Année', '{"Physique", "Chimie", "Sciences de l''Ingénieur"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique, Chimie et Technologie (PCT)', 'Ce cycle met l''accent sur la physique, la chimie et la technologie.', '1ère Année', '{"Physique", "Chimie", "Technologie"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Biologie, Chimie, Physique et Sciences de la Terre (BCPST)', 'Ce cycle intègre la biologie, la chimie, la physique et les sciences de la terre.', '1ère Année', '{"Biologie", "Chimie", "Physique", "Sciences de la Terre"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Technologie et Sciences Industrielles (TSI)', 'Ce cycle met l''accent sur la technologie et les sciences industrielles.', '1ère Année', '{"Technologie", "Sciences Industrielles"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Technologie, Sciences Industrielles et Développement Durable (TSIDD)', 'Ce cycle intègre la technologie, les sciences industrielles et le développement durable.', '1ère Année', '{"Technologie", "Sciences Industrielles", "Développement Durable"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques et Physique (MP)', 'Cycle avancé en mathématiques et physique.', '2ème Année', '{"Mathématiques", "Physique"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique et Technologie (PT)', 'Cycle en physique et technologie.', '2ème Année', '{"Physique", "Technologie"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Sciences de l''Ingénieur (SI)', 'Cycle avancé en mathématiques, physique et sciences de l''ingénieur.', '2ème Année', '{"Mathématiques", "Physique", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Biologie, Chimie et Géologie (BCG)', 'Cycle avancé en biologie, chimie et géologie.', '2ème Année', '{"Biologie", "Chimie", "Géologie"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Économie et Gestion (EG)', 'Cycle avancé en économie, gestion et mathématiques.', '2ème Année', '{"Mathématiques", "Économie", "Gestion"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Lettres et Sciences Sociales (LSS)', 'Cycle avancé en littérature et sciences sociales.', '2ème Année', '{"Littérature", "Sciences Sociales"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Lettres et Sciences Humaines (LSH)', 'Cycle avancé en littérature et sciences humaines.', '2ème Année', '{"Littérature", "Sciences Humaines"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques, Informatique et Sciences de l''Ingénieur (MPSI)', 'Cycle avancé en mathématiques, informatique et sciences de l''ingénieur.', '2ème Année', '{"Mathématiques", "Informatique", "Sciences de l''Ingénieur"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Mathématiques, Physique et Sciences de l''Ingénieur (MPSI)', 'Cycle avancé en mathématiques, physique et sciences de l''ingénieur.', '2ème Année', '{"Mathématiques", "Physique", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique, Chimie et Sciences de l''Ingénieur (PCSI)', 'Cycle avancé en physique, chimie et sciences de l''ingénieur.', '2ème Année', '{"Physique", "Chimie", "Sciences de l''Ingénieur"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Physique, Chimie et Technologie (PCT)', 'Cycle avancé en physique, chimie et technologie.', '2ème Année', '{"Physique", "Chimie", "Technologie"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Biologie, Chimie, Physique et Sciences de la Terre (BCPST)', 'Cycle avancé en biologie, chimie, physique et sciences de la terre.', '2ème Année', '{"Biologie", "Chimie", "Physique", "Sciences de la Terre"}');
+
+
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Technologie et Sciences Industrielles (TSI)', 'Cycle avancé en technologie et sciences industrielles.', '2ème Année', '{"Technologie", "Sciences Industrielles"}');
+
+INSERT INTO course (title, description, level, subjects) 
+VALUES ('Technologie, Sciences Industrielles et Développement Durable (TSIDD)', 'Cycle avancé en technologie, sciences industrielles et développement durable.', '2ème Année', '{"Technologie", "Sciences Industrielles", "Développement Durable"}');
+
+
